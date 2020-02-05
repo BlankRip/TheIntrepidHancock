@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316089536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.24, z: -6.13}
+  m_LocalPosition: {x: 0, y: 1.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 170785140}
@@ -329,6 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouchDisableCollider: {fileID: 316089544}
   crouchSpeedReduction: 0.504
+  rotateAround: {fileID: 622614978}
+  rotationSpeed: 30
   smoothMovementBy: 0.18
   moveThreshHold: 0.2
 --- !u!114 &316089543
@@ -359,6 +361,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1213536, z: 0.90186644}
   m_Center: {x: 0, y: 0.46291447, z: -0.0127847195}
+--- !u!1 &622614977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622614978}
+  m_Layer: 0
+  m_Name: Tracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622614978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622614977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 1.77, z: 1.8079457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175157517
 GameObject:
   m_ObjectHideFlags: 0
