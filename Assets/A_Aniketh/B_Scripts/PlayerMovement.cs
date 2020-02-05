@@ -37,33 +37,14 @@ public class PlayerMovement : MonoBehaviour
 
         //The velocity at which the object needs to be
         targetVelocity = new Vector3(horizontalMove * speed, rb.velocity.y, verticalMove * speed);
+        targetVelocity = transform.rotation * targetVelocity;
 
         //If the input values are over a perticualr thresh hold then the object will move with a desired velocity
         if (horizontalMove > moveThreshHold || horizontalMove < -moveThreshHold || verticalMove > moveThreshHold || verticalMove < -moveThreshHold)
         {
-            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, smoothMovementBy);
-        }
-
-        //If less than thresh hold speed then it will just rotate in that direction
-        if (horizontalMove > 0 && horizontalMove < moveThreshHold)
-        {
-            turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 90, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed * Time.deltaTime);
-        }
-        else if (horizontalMove < 0 && horizontalMove > -moveThreshHold)
-        {
-            turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y - 90, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed * Time.deltaTime);
-        }
-        else if (verticalMove > 0 && verticalMove < moveThreshHold)
-        {
             turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed * Time.deltaTime);
-        }
-        else if (verticalMove < 0 && verticalMove > -moveThreshHold)
-        {
-            turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 180, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed * Time.deltaTime);
+            rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, smoothMovementBy);
         }
     }
 }
