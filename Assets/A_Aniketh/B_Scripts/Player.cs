@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    PlayerMovement movementController;
+    PlayerMovement movementController;                           //The movement script
+    PlayerStats myStats;                                         //The Stats script
 
-    float horizontalInput;
-    float verticalInput;
-    float InitialSetSpeed;
-    bool crouch;
-    bool sprint;
-    [SerializeField] float speed;
-    [Range(0,5)] [SerializeField] float stoppingSpeed;
-    [SerializeField] KeyCode crouchKey;
-    [SerializeField] KeyCode sprintKey;
+    float horizontalInput;                                       //Horizontal motion or input values between 1 & 0 (Asises)
+    float verticalInput;                                         //Vertical motion or input values between 1 & 0 (Asises)
+    float InitialSetSpeed;                                       //The noraml speed the player for tracking purposes
+    bool crouch;                                                 //If the player is crouching
+    static bool sprint;                                          //If the player is sprinting
+    [SerializeField] float speed;                                //The normal speed of the player
+    [Range(0,5)] [SerializeField] float stoppingSpeed;           //The speed just before he stops moving
+    [SerializeField] KeyCode crouchKey;                          //The crouch key
+    [SerializeField] KeyCode sprintKey;                          //The sprint key
 
     private void Start()
     {
         movementController = GetComponent<PlayerMovement>();
+        myStats = GetComponent<PlayerStats>();
         InitialSetSpeed = speed;
     }
 
@@ -47,6 +49,12 @@ public class Player : MonoBehaviour
             sprint = true;
         else if (Input.GetKeyUp(sprintKey))
             sprint = false;
+
+        //Manageing the consumtion of stamina when sprinting
+        if (horizontalInput != 0 || verticalInput != 0)
+            myStats.StaminaReducion(ref sprint);
+        //Managing stamina recovary when not sprinting
+        myStats.StaminaRecovary(sprint);
     }
 
     private void FixedUpdate()
