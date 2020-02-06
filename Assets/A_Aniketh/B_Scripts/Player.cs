@@ -10,9 +10,11 @@ public class Player : MonoBehaviour
     float verticalInput;
     float InitialSetSpeed;
     bool crouch;
+    bool sprint;
     [SerializeField] float speed;
     [Range(0,5)] [SerializeField] float stoppingSpeed;
     [SerializeField] KeyCode crouchKey;
+    [SerializeField] KeyCode sprintKey;
 
     private void Start()
     {
@@ -39,12 +41,18 @@ public class Player : MonoBehaviour
             crouch = true;
         else if (Input.GetKeyUp(crouchKey))
             crouch = false;
+
+        //Check if sprinting and has stamina
+        if (Input.GetKeyDown(sprintKey))
+            sprint = true;
+        else if (Input.GetKeyUp(sprintKey))
+            sprint = false;
     }
 
     private void FixedUpdate()
     {
         //Calling movement from the movement script
-        movementController.Movement(horizontalInput, verticalInput, speed, crouch);
+        movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 
 
