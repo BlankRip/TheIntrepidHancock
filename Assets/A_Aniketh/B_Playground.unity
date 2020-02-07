@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 230591119}
   - component: {fileID: 230591118}
   m_Layer: 0
-  m_Name: Player
+  m_Name: FuckerMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 316089542}
   - component: {fileID: 316089545}
   m_Layer: 0
-  m_Name: FuckerMain
+  m_Name: PlayerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

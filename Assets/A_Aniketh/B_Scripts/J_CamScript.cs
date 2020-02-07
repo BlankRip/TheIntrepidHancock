@@ -45,7 +45,7 @@ public class J_CamScript : MonoBehaviour
         desiredCameraPos = target.transform.TransformPoint(dollyDir * maxDistance);       //Local position fo the vector; Getting vector by multyping the direcion and magnitude
 
         // Check if there is a wall or object between the camera and move the camera close to the target if so else set the camera to be at the normal distance from the target
-        if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit))
+        if (Physics.Linecast(target.transform.position, desiredCameraPos, out hit))
         {
             distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
         }
