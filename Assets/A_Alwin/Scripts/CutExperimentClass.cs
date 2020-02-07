@@ -81,7 +81,7 @@ public class CutExperimentClass : MonoBehaviour
             bool vertC_isLeft = bladePlane.GetSide(allVerts[triangleVertC]);
 
             // send the triangel to left
-            if (vertA_isLeft && vertB_isLeft && vertC_isLeft) 
+            if (vertA_isLeft && vertB_isLeft && vertC_isLeft)
             {
                 leftMesh.AddTriangle(meshTriangle);
             }
@@ -90,6 +90,12 @@ public class CutExperimentClass : MonoBehaviour
             else if (!vertA_isLeft && !vertB_isLeft && !vertC_isLeft)
             {
                 rightMesh.AddTriangle(meshTriangle);
+            }
+
+            // cut the triangle
+            else 
+            {
+
             }
 
         }
