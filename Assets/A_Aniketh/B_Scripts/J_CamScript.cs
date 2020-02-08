@@ -16,6 +16,7 @@ public class J_CamScript : MonoBehaviour
     [SerializeField] float minDistance = 1.0f;               //Minimum distance the object will be from the target
     [SerializeField] float maxDistance = 8.0f;               //Maximum distance the object can be from the target
     [SerializeField] float smoothCamMovement = 10.0f;        //Smoothening done while lerping the object to desired position
+    [SerializeField] LayerMask WallClipLayerMask;            //The layers that work for wall clipping
     float distance;                                          //The current distance the object will be from the target
     Vector3 dollyDir;                 //vector3 that stores the local unit direction the object is from the camera
     Vector3 desiredCameraPos;         //The expected camera postion, used in linear cast as end point of the ray check
@@ -45,7 +46,7 @@ public class J_CamScript : MonoBehaviour
         desiredCameraPos = target.transform.TransformPoint(dollyDir * maxDistance);       //Local position fo the vector; Getting vector by multyping the direcion and magnitude
 
         // Check if there is a wall or object between the camera and move the camera close to the target if so else set the camera to be at the normal distance from the target
-        if (Physics.Linecast(target.transform.position, desiredCameraPos, out hit))
+        if (Physics.Linecast(target.transform.position, desiredCameraPos, out hit, WallClipLayerMask))
         {
             distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
         }
