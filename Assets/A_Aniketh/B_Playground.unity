@@ -1523,7 +1523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855664897}
   m_LocalRotation: {x: 0.113613054, y: -0, z: -0, w: 0.9935251}
-  m_LocalPosition: {x: 0.060000002, y: 1.38, z: -4.51}
+  m_LocalPosition: {x: -1.11, y: 1.38, z: -4.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622614978}
@@ -1543,14 +1543,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 622614978}
   mouseSensitivity: 2
-  verticalClampMin: 0
-  verticalClampMax: 0
+  verticalClampMin: -15
+  verticalClampMax: 60
+  offSet: {x: 1, y: 0, z: 0}
   minDistance: 1
   maxDistance: 4
   smoothCamMovement: 10
   WallClipLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  dollyDirAdjustment: {x: 0, y: 0, z: 0}
 --- !u!1 &1906805353
 GameObject:
   m_ObjectHideFlags: 0

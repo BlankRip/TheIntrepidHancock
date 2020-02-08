@@ -9,6 +9,8 @@ public class J_CamScript : MonoBehaviour
     [SerializeField] float mouseSensitivity = 2;             //The mouse sensitivity, AKA rotation speed multiplier
     [SerializeField] float verticalClampMin = -15.0f;        //Minimum vertical movement possible
     [SerializeField] float verticalClampMax = 60.0f;         //Maximum vertical movement possible
+    [SerializeField] Vector3 offSet;                         //Offset where the cam will look at
+    Vector3 lookAtPosition;
     float mouseX;                                            //The current horizontal input value for horizontal rotaion
     float mouseY;                                            //The current vertical input value for the vertical rotation
     
@@ -17,6 +19,7 @@ public class J_CamScript : MonoBehaviour
     [SerializeField] float maxDistance = 8.0f;               //Maximum distance the object can be from the target
     [SerializeField] float smoothCamMovement = 10.0f;        //Smoothening done while lerping the object to desired position
     [SerializeField] LayerMask WallClipLayerMask;            //The layers that work for wall clipping
+    [SerializeField] Vector3 dollyDirAdjustment;             //To adjust direction of the camera
     float distance;                                          //The current distance the object will be from the target
     Vector3 dollyDir;                 //vector3 that stores the local unit direction the object is from the camera
     Vector3 desiredCameraPos;         //The expected camera postion, used in linear cast as end point of the ray check
@@ -37,8 +40,8 @@ public class J_CamScript : MonoBehaviour
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
         mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);    //Clamping the vertical value
-
-        transform.LookAt(target);       //Setting object to always look at target
+        lookAtPosition = new Vector3(target.position.x + offSet.x, target.position.y + offSet.y, target.position.z + offSet.z);               //Setting location to look at with the offset
+        transform.LookAt(lookAtPosition);       //Setting object to always look at target
 
         target.rotation = Quaternion.Euler(mouseY, mouseX, 0);        //Rotating the target based on horizontal and vertical mouse input values
 
@@ -54,6 +57,6 @@ public class J_CamScript : MonoBehaviour
         {
             distance = maxDistance;
         }
-        transform.localPosition = Vector3.Lerp(transform.localPosition, dollyDir * distance, Time.deltaTime * smoothCamMovement);   //Lerping postion to the desired spot
+        transform.localPosition = Vector3.Lerp(transform.localPosition, (dollyDir + dollyDirAdjustment) * distance, Time.deltaTime * smoothCamMovement);   //Lerping postion to the desired spot
     }
 }
