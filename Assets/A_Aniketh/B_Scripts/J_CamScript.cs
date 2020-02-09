@@ -5,6 +5,8 @@ using UnityEngine;
 public class J_CamScript : MonoBehaviour
 {
     [Header("Things needed to move camera around")]
+    [SerializeField] Transform player;                       //The postion the target will be placed at
+    [SerializeField] float targetOffSet = 0.5f;                     //The offset on Y-axes where the target will be place on
     [SerializeField] Transform target;                       //The that will be followed and rotated
     [SerializeField] float mouseSensitivity = 2;             //The mouse sensitivity, AKA rotation speed multiplier
     [SerializeField] float verticalClampMin = -15.0f;        //Minimum vertical movement possible
@@ -40,6 +42,7 @@ public class J_CamScript : MonoBehaviour
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
         mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);    //Clamping the vertical value
+        target.position = player.position + new Vector3(0, targetOffSet, 0);
         target.rotation = Quaternion.Euler(mouseY, mouseX, 0);        //Rotating the target based on horizontal and vertical mouse input values
         lookAtPosition = new Vector3(target.position.x + offSet.x, target.position.y + offSet.y, target.position.z + offSet.z);               //Setting location to look at with the offset
 
