@@ -40,10 +40,10 @@ public class J_CamScript : MonoBehaviour
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
         mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);    //Clamping the vertical value
-        lookAtPosition = new Vector3(target.position.x + offSet.x, target.position.y + offSet.y, target.position.z + offSet.z);               //Setting location to look at with the offset
-        transform.LookAt(lookAtPosition);       //Setting object to always look at target
-
         target.rotation = Quaternion.Euler(mouseY, mouseX, 0);        //Rotating the target based on horizontal and vertical mouse input values
+        lookAtPosition = new Vector3(target.position.x + offSet.x, target.position.y + offSet.y, target.position.z + offSet.z);               //Setting location to look at with the offset
+
+        transform.LookAt(lookAtPosition);       //Setting object to always look at target
 
         // Clamping camera 
         desiredCameraPos = target.transform.TransformPoint(dollyDir * maxDistance);       //Local position fo the vector; Getting vector by multyping the direcion and magnitude
@@ -57,6 +57,6 @@ public class J_CamScript : MonoBehaviour
         {
             distance = maxDistance;
         }
-        transform.localPosition = Vector3.Lerp(transform.localPosition, (dollyDir + dollyDirAdjustment) * distance, Time.deltaTime * smoothCamMovement);   //Lerping postion to the desired spot
+        transform.localPosition = Vector3.Lerp(transform.localPosition, (dollyDir + dollyDirAdjustment) * distance, Time.fixedDeltaTime * smoothCamMovement);   //Lerping postion to the desired spot
     }
 }
