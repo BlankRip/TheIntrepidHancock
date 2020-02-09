@@ -6,6 +6,7 @@ public class MovementTest : MonoBehaviour
 {
 
     public int speed;
+    public int godSpeed;
     public int jump;
     Vector3 _EulerAngleVelocity;
     Rigidbody rb;
@@ -41,6 +42,12 @@ public class MovementTest : MonoBehaviour
             //transform.position += transform.right * speed * Time.deltaTime;
             //rb.velocity = transform.right * speed * Time.deltaTime;
             rb.MovePosition(transform.position += (transform.right * speed * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //transform.position += transform.right * speed * Time.deltaTime;
+            //rb.velocity = transform.right * speed * Time.deltaTime;
+            rb.MovePosition(transform.position += (transform.right * godSpeed * Time.deltaTime));
         }
         if (Input.GetKey(KeyCode.Q))
         {
