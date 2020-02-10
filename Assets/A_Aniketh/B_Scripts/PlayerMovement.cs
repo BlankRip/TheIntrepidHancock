@@ -51,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
             if (useRotate)
             {
                 turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y, 0);
-                //rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, Time.fixedDeltaTime * rotationSpeed);
-                rb.rotation = turnAngle;
+                rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
+               // rb.rotation = turnAngle;
             }
             //rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, Time.fixedDeltaTime * smoothMovementBy);
             rb.velocity = targetVelocity;
