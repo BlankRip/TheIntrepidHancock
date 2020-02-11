@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class J_CamScript : MonoBehaviour
 {
+    PauseScript pauseCheck;                                  //Check if the game is paused
+
     [Header("Things needed to move camera around")]
     [SerializeField] Transform target;                       //The that will be followed and rotated
     [SerializeField] float mouseSensitivity = 2;             //The mouse sensitivity, AKA rotation speed multiplier
@@ -34,25 +36,34 @@ public class J_CamScript : MonoBehaviour
         distance = dollyDir.magnitude;               //Getting the local magnitude to the postion with is basically distance from parent to camera
     }
 
+    private void Start()
+    {
+        pauseCheck = FindObjectOfType<PauseScript>();
+    }
+
     void Update()
     {
-        mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
-        mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
-        mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);    //Clamping the vertical value    //Setting object to always look at target
 
-        // Clamping camera 
-        desiredCameraDir = Quaternion.Euler(mouseY, mouseX, 0) * Vector3.back;       //The direction the camera will be facing
+        if (!pauseCheck.paused)
+        {
+            mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
+            mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
+            mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);    //Clamping the vertical value    //Setting object to always look at target
 
-        // Check if there is a wall or object between the camera and move the camera close to the target if so else set the camera to be at the normal distance from the target
-        if (Physics.Raycast(target.transform.position, desiredCameraDir, out hit, maxDistance, WallClipLayerMask))
-        {
-            distance = Mathf.Clamp((hit.distance), minDistance, maxDistance);
+            // Clamping camera 
+            desiredCameraDir = Quaternion.Euler(mouseY, mouseX, 0) * Vector3.back;       //The direction the camera will be facing
+
+            // Check if there is a wall or object between the camera and move the camera close to the target if so else set the camera to be at the normal distance from the target
+            if (Physics.Raycast(target.transform.position, desiredCameraDir, out hit, maxDistance, WallClipLayerMask))
+            {
+                distance = Mathf.Clamp((hit.distance), minDistance, maxDistance);
+            }
+            else
+            {
+                distance = maxDistance;
+            }
+            transform.position = Vector3.Lerp(transform.position, desiredCameraDir * distance + target.position, Time.deltaTime * smoothCamMovement);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-desiredCameraDir), Time.deltaTime * smoothCamRotation);
         }
-        else
-        {
-            distance = maxDistance;
-        }
-        transform.position = Vector3.Lerp(transform.position, desiredCameraDir * distance + target.position,Time.deltaTime * smoothCamMovement); 
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-desiredCameraDir),Time.deltaTime * smoothCamRotation);
     }
 }

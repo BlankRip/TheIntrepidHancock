@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseKey: 112
   pauseScreen: {fileID: 760358554}
+  paused: 0
 --- !u!4 &1001578104
 Transform:
   m_ObjectHideFlags: 0
