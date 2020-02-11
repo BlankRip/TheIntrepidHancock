@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  godSpeed: 50
   jump: 10
 --- !u!65 &274871233
 BoxCollider:
