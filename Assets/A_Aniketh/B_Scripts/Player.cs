@@ -65,30 +65,36 @@ public class Player : MonoBehaviour
 
 
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            myStats.ReduceHealth(20);
+        }
+    }
 
     //Maybe use as ref for animations
     //void RotationAnimation()
     //{
-        //If less than thresh hold speed then it will just rotate in that direction
-        //if (verticalMove > 0 && verticalMove < moveThreshHold)
-        //{
+    //If less than thresh hold speed then it will just rotate in that direction
+    //if (verticalMove > 0 && verticalMove < moveThreshHold)
+    //{
 
-        //}
-        //else if (verticalMove < 0 && verticalMove > -moveThreshHold)
-        //{
-        //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 180, 0);
-        //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-        //}
-        //else if (horizontalMove > 0 && horizontalMove < moveThreshHold)
-        //{
-        //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 90, 0);
-        //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-        //}
-        //else if (horizontalMove < 0 && horizontalMove > -moveThreshHold)
-        //{
-        //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y - 90, 0);
-        //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-        //}
+    //}
+    //else if (verticalMove < 0 && verticalMove > -moveThreshHold)
+    //{
+    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 180, 0);
+    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
+    //}
+    //else if (horizontalMove > 0 && horizontalMove < moveThreshHold)
+    //{
+    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 90, 0);
+    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
+    //}
+    //else if (horizontalMove < 0 && horizontalMove > -moveThreshHold)
+    //{
+    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y - 90, 0);
+    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
+    //}
     //}
 }
