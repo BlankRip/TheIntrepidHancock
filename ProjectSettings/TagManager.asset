@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Enemy
+=======
+  - Weapon
+>>>>>>> f66db090ff09bbc71c974928f63bbb8339d21599
   layers:
   - Default
   - TransparentFX
