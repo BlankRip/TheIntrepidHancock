@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         //The velocity at which the object needs to be
         targetVelocity = new Vector3(horizontalMove * speed, rb.velocity.y, verticalMove * speed);
-        targetVelocity = transform.rotation * targetVelocity;
+        targetVelocity = transform.rotation * targetVelocity;                //To apply verlocity in the direction the player is rotated
 
         //If the input values are over a perticualr thresh hold then the object will move with a desired velocity
         if (horizontalMove > moveThreshHold || horizontalMove < -moveThreshHold || verticalMove > moveThreshHold || verticalMove < -moveThreshHold)
@@ -52,10 +52,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y, 0);
                 rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-               // rb.rotation = turnAngle;
             }
-            //rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, Time.fixedDeltaTime * smoothMovementBy);
-            rb.velocity = targetVelocity;
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, Time.deltaTime * smoothMovementBy);
         }
     }
 }

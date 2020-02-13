@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouchDisableCollider: {fileID: 316089544}
   crouchSpeedReduction: 0.504
-  sprintSpeedMultiplyer: 2
+  sprintSpeedMultiplyer: 1.422
   useRotate: 1
   rotateAround: {fileID: 1855664900}
   rotationSpeed: 0.1

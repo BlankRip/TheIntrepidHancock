@@ -22,7 +22,7 @@ public class J_CamScript : MonoBehaviour
     [SerializeField] float smoothCamMovement = 10.0f;        //Smoothening done while lerping the object to desired position
     [SerializeField] LayerMask WallClipLayerMask;            //The layers that work for wall clipping
     float distance;                                          //The current distance the object will be from the target
-    Vector3 dollyDir;                 //vector3 that stores the local unit direction the object is from the camera
+    Vector3 camDirection;                 //vector3 that stores the local unit direction the object is from the camera
     Vector3 desiredCameraDir;         //The expected camera direction
     RaycastHit hit;                   //Object that stores details of the objects it hit during the linear cast
 
@@ -32,8 +32,8 @@ public class J_CamScript : MonoBehaviour
         Cursor.visible = false;                                     //Setting cursor to not be visible when playing the game
         Cursor.lockState = CursorLockMode.Locked;                   //Locking the cursor to the center of the screen so that it does not move out of the window
         //For wall clipping
-        dollyDir = transform.position-target.position;              //Getting the local unit direction vector
-        distance = dollyDir.magnitude;               //Getting the local magnitude to the postion with is basically distance from parent to camera
+        camDirection = transform.position-target.position;          //Getting the local unit direction vector
+        distance = camDirection.magnitude;                          //Getting the local magnitude to the postion with is basically distance from parent to camera
     }
 
     private void Start()
@@ -41,7 +41,7 @@ public class J_CamScript : MonoBehaviour
         pauseCheck = FindObjectOfType<PauseScript>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (!pauseCheck.paused)
