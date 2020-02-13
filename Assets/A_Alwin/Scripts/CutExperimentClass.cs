@@ -19,13 +19,6 @@ public class CutExperimentClass : MonoBehaviour
     public Mesh leftMesh_Base;
     public Mesh rightMesh_Base;
 
-    public Vector3 centrePointSum;
-
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -41,7 +34,7 @@ public class CutExperimentClass : MonoBehaviour
 
     public void Reset() 
     {
-        centrePointSum = Vector3.zero;
+
     }
 
     public void CutMesh(GameObject cutObject, Vector3 contactPoint, Vector3 direction)
@@ -63,6 +56,8 @@ public class CutExperimentClass : MonoBehaviour
 
         // edges used to finally cap the end of the cut mesh
         List<CutEdge> allEdges = new List<CutEdge>();
+
+        List<EdgeLoop> edgeLoops = new List<EdgeLoop>();
 
         // the triangle indices
         int[] triangleIndices = objectMesh.GetTriangles(0);
@@ -111,8 +106,14 @@ public class CutExperimentClass : MonoBehaviour
 
         }
 
+        // form edge loops
+        CreateLoops(allEdges, edgeLoops);
+
         // cap the edge
-        CapTheEdge(bladePlane, leftMesh, rightMesh, allEdges);
+        // CapTheEdge(bladePlane, leftMesh, rightMesh, allEdges);
+
+        // cap the loop
+        CapTheLoops(bladePlane, leftMesh, rightMesh, edgeLoops);
 
         // make two game objects and replace the mesh
         GameObject leftObject = Instantiate(cutObject, cutObject.transform.position, cutObject.transform.rotation);
@@ -131,8 +132,108 @@ public class CutExperimentClass : MonoBehaviour
 
     }
 
+    void CreateLoops(List<CutEdge> cutEdges, List<EdgeLoop> loopList) 
+    {
+
+        // new loop container
+        List<CutEdge> edgeLoop = new List<CutEdge>();
+
+        while (cutEdges.Count > 0)
+        {
+            CutEdge loopStartEdge = cutEdges[0];
+            Vector3 capCentre = Vector3.zero;
+            Vector3 headVertex = loopStartEdge.Edge[0];
+
+            // add primary edge
+            capCentre += headVertex;
+            capCentre += loopStartEdge.Edge[1];
+
+            edgeLoop.Add(loopStartEdge);
+            cutEdges.Remove(loopStartEdge);
+
+            bool searchMatch = true;
+
+            // try to circle loop
+            while (searchMatch)
+            {
+                // pick an edge
+
+                bool newHeadFound = false;
+                for (int i = 0; i < cutEdges.Count; i++)
+                {
+                    float distMatch_A = Vector3.Magnitude(cutEdges[i].Edge[0] - headVertex);
+                    float distMatch_B = Vector3.Magnitude(cutEdges[i].Edge[1] - headVertex);
+
+                    if (distMatch_A < 0.00001f)
+                    {
+                        headVertex = cutEdges[i].Edge[1];
+                        capCentre += headVertex;
+                        edgeLoop.Add(cutEdges[i]);
+                        cutEdges.Remove(cutEdges[i]);
+                        newHeadFound = true;
+                        break;
+                    }
+                    else if (distMatch_B < 0.00001f)
+                    {
+                        headVertex = cutEdges[i].Edge[0];
+                        capCentre += headVertex;
+                        edgeLoop.Add(cutEdges[i]);
+                        cutEdges.Remove(cutEdges[i]);
+                        newHeadFound = true;
+                        break;
+                    }
+                }
+
+                // if now matches were found 
+                // usually if no solution found 
+                // the loop is done
+
+                if (!newHeadFound)
+                {
+                    searchMatch = false;
+                    Debug.Log("loop ended..");
+                }
+
+            }
+            // if looping done
+            loopList.Add(new EdgeLoop(capCentre, edgeLoop.ToArray()) );
+            edgeLoop.Clear();
+
+        }
+    }
+
+    // loop caping function
+    public void CapTheLoops(Plane blade, GeneratedMesh leftMesh, GeneratedMesh rightMesh, List<EdgeLoop> edgeLoops)
+    {
+        for (int n = 0; n < edgeLoops.Count; n++)
+        {
+            EdgeLoop edgeList = edgeLoops[n];
+            Vector3 centrePointSum = edgeList.centrePoint / (edgeList.loopEdges.Length);
+            // go through the edges and make triangles
+            for (int i = 0; i < edgeList.loopEdges.Length; i++)
+            {
+                // triangle making cap
+                Vector3[] triangeVerts = new Vector3[3] { centrePointSum, edgeList.loopEdges[i].Edge[0], edgeList.loopEdges[i].Edge[1] };
+
+                // create and add left side triangle
+                Vector3[] triangleLeftNormal = new Vector3[3] { -blade.normal, -blade.normal, -blade.normal };
+                MeshTriangle triangleLeftSide = new MeshTriangle(triangeVerts, triangleLeftNormal, new Vector2[3]);
+                CorrectTriangle(triangleLeftSide, triangeVerts, -blade.normal);
+                leftMesh.AddTriangle(triangleLeftSide);
+                // create and add left side triangle
+                Vector3[] triangleRightNormal = new Vector3[3] { blade.normal, blade.normal, blade.normal };
+                MeshTriangle triangleRightSide = new MeshTriangle(triangeVerts, triangleRightNormal, new Vector2[3]);
+                CorrectTriangle(triangleRightSide, triangeVerts, blade.normal);
+                rightMesh.AddTriangle(triangleRightSide);
+            }
+
+        }
+    }
+
+    // simple edge cap function
     public void CapTheEdge(Plane blade, GeneratedMesh leftMesh, GeneratedMesh rightMesh, List<CutEdge> edgeList) 
     {
+        Vector3 centrePointSum = Vector3.zero;
         centrePointSum /= edgeList.Count * 2;
         // go through the edges and make triangles
         for (int i = 0; i < edgeList.Count; i++)
@@ -289,7 +390,7 @@ public class CutExperimentClass : MonoBehaviour
         edgeList.Add(chopEdge);
 
         // recording the centre vector
-        centrePointSum += leftVert + rightVert;
+      //  centrePointSum += leftVert + rightVert;
 
         // add the new triangle
 
@@ -465,3 +566,17 @@ public class CutEdge
         uvs[2] = uvB;
     }
 }
+
+public class EdgeLoop
+    {
+    public Vector3 centrePoint;
+    public CutEdge[] loopEdges;
+
+    public EdgeLoop(Vector3 loopCentre, CutEdge[] edgeList) 
+    {
+        centrePoint = loopCentre;
+        loopEdges = edgeList;
+    }
+
+    }
+
