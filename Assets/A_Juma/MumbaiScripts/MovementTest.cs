@@ -6,6 +6,7 @@ public class MovementTest : MonoBehaviour
 {
 
     public int speed;
+    public int godSpeed;
     public int jump;
     Vector3 _EulerAngleVelocity;
     Rigidbody rb;
@@ -17,12 +18,14 @@ public class MovementTest : MonoBehaviour
     }
 
     void Update()
-    {
+    {//TESTING ALL MOVEMENTS PLEASE DO NOT REMOVE ANYTHING.
         if (Input.GetKey(KeyCode.W))
         {
             //transform.position += transform.forward * speed * Time.deltaTime;
             //rb.velocity = transform.forward * speed * Time.deltaTime;
-            rb.MovePosition(transform.position += (transform.forward * speed * Time.deltaTime));
+            //rb.AddForce(transform.forward * Time.deltaTime * speed);
+            rb.MovePosition(transform.position += (transform.forward * speed * Time.deltaTime)); // CURRENTLY THE BEST MOVEMENT WITH IN PAIR WITH THE CAMERA RB/MOVEPOSITION
+
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -41,6 +44,12 @@ public class MovementTest : MonoBehaviour
             //transform.position += transform.right * speed * Time.deltaTime;
             //rb.velocity = transform.right * speed * Time.deltaTime;
             rb.MovePosition(transform.position += (transform.right * speed * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //transform.position += transform.right * speed * Time.deltaTime;
+            //rb.velocity = transform.right * speed * Time.deltaTime;
+            rb.MovePosition(transform.position += (transform.forward * godSpeed * Time.deltaTime));
         }
         if (Input.GetKey(KeyCode.Q))
         {
