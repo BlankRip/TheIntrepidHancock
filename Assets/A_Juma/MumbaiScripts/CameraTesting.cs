@@ -13,13 +13,11 @@ public class CameraTesting : MonoBehaviour
     public float verticalClampMax;
 
     public float smoothTime = 0.3F;
-    private Vector3 velocity = Vector3.zero;
 
     public float minDistance = 1.0f;
     public float maxDistance = 4.0f;
     public float smooth = 10.0f;
     Vector3 dollyDir;
-    public Vector3 dollyDirAdjusted;
     public float distance;
 
     void Awake()
@@ -27,31 +25,31 @@ public class CameraTesting : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //wall collision
-        dollyDir = transform.localPosition.normalized;
-        distance = transform.localPosition.magnitude;
+        dollyDir = transform.localPosition.normalized; // changing dollydir to a normalized value 1
+        distance = transform.localPosition.magnitude; // getting vector length of distance
     }
 
     void Update()
     {
         mouseX += Input.GetAxis("Mouse X") * rotSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotSpeed;
-        mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax);
+        mouseY = Mathf.Clamp(mouseY, verticalClampMin, verticalClampMax); // clamp y values
 
-        transform.LookAt(target);
+        transform.LookAt(target); // looking at target (empty gameobj above player)
 
-        target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+        target.rotation = Quaternion.Euler(mouseY, mouseX, 0); //using eulers to rotate based on the values of mouse y & x
         // 
-        Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
+        Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance); // desired camera pos is the transform parent point dolly dir * max distance which means the desiredpos is the max distance on the dollydirection
         RaycastHit hit;
-        if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit))
+        if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit)) // physics linecast starting from transforms parent pos(which is target) to the desired camera pos, out hit returns the information being hit.
         {
-            distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
+            distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance); // if it hits anything between then the distance will be decreased based on where it is hit and the clamp will decide how far the distance of the camera will go (hit.distancce * 0.9f is getting 90% so u can try keep the cam off the wall)
         }
         else
         {
-            distance = maxDistance;
+            distance = maxDistance;                                                  // else if nothing is between jsut distance will be maximized
         }
-        transform.localPosition = Vector3.Lerp(transform.localPosition, dollyDir * distance, Time.deltaTime * smooth);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, dollyDir * distance, Time.deltaTime * smooth);  // transform local is the position based on the parent and the lerp will be when something is hit in the raycast like a wall the distance will decrease making the camera go towards / lerp towards the player with a smooth time
     }
 }
 
