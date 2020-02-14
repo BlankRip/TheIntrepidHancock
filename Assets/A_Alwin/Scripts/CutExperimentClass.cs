@@ -161,10 +161,10 @@ public class CutExperimentClass : MonoBehaviour
                 bool newHeadFound = false;
                 for (int i = 0; i < cutEdges.Count; i++)
                 {
-                    float distMatch_A = Vector3.Magnitude(cutEdges[i].Edge[0] - headVertex);
-                    float distMatch_B = Vector3.Magnitude(cutEdges[i].Edge[1] - headVertex);
+                    bool distMatch_A = Vector3.SqrMagnitude(cutEdges[i].Edge[0] - headVertex) < 0.00000000001f ? true : false;
+                    bool distMatch_B = Vector3.SqrMagnitude(cutEdges[i].Edge[1] - headVertex) < 0.00000000001f ? true : false;
 
-                    if (distMatch_A < 0.00001f)
+                    if (distMatch_A)
                     {
                         headVertex = cutEdges[i].Edge[1];
                         capCentre += headVertex;
@@ -173,7 +173,7 @@ public class CutExperimentClass : MonoBehaviour
                         newHeadFound = true;
                         break;
                     }
-                    else if (distMatch_B < 0.00001f)
+                    else if (distMatch_B)
                     {
                         headVertex = cutEdges[i].Edge[0];
                         capCentre += headVertex;
