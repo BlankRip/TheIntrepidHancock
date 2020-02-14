@@ -34,7 +34,7 @@ public class CutExperimentClass : MonoBehaviour
 
     public void Reset() 
     {
-
+        Debug.Log("Reset...");
     }
 
     public void CutMesh(GameObject cutObject, Vector3 contactPoint, Vector3 direction)
