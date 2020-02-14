@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damageTaken;
         if (healthBar != null)
             healthBar.value = currentHealth;
+
+        if(currentHealth <= 0)
+        {
+            GameOver();
+        }
     }
 
     //Function that manages the stamina recovary
@@ -69,6 +75,12 @@ public class PlayerStats : MonoBehaviour
         {
             sprint = false;
         }
+    }
+
+    //GameOver function
+    void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
 }
