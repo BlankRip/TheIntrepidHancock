@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
@@ -40,6 +39,6 @@ public class PauseScript : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1;                                         //Setting game time scake to 1 so that time moves normally for the game
-        SceneManager.LoadScene(0);                                  //Loading the menu scene
+        SceneShifter.LoadScene(0);                                  //Loading the menu scene
     }
 }

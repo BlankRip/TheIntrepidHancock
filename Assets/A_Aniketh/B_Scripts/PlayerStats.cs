@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -45,7 +44,7 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            GameOver();
+            SceneShifter.LoadScene("GameOver");
         }
     }
 
@@ -75,12 +74,6 @@ public class PlayerStats : MonoBehaviour
         {
             sprint = false;
         }
-    }
-
-    //GameOver function
-    void GameOver()
-    {
-        SceneManager.LoadScene("GameOver");
     }
 
 }
