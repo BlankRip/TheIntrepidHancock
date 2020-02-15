@@ -462,10 +462,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: pauseScreen
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 764975828846647786, guid: bdc6211ddc5cddc4b9eaee7650f3a140,
         type: 3}
       propertyPath: m_LocalPosition.x
