@@ -32,10 +32,14 @@ public class Weapon : MonoBehaviour
                 {
                     EquipWeapon();
                 }
-                if (equipCheckAccess.GetComponent<WeaponCheck>().equipCheck == true)
-                {
+            }
+        }
 
-                }
+        if (transform.position == weaponPos.position)
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                DropWeapon();
             }
         }
     }
@@ -53,7 +57,8 @@ public class Weapon : MonoBehaviour
     {
         transform.SetParent(null);
         weaponRB.isKinematic = false;
-        weaponRB.AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+        weaponRB.AddForce(transform.forward * 10f, ForceMode.Impulse);
         equipCheckAccess.GetComponent<WeaponCheck>().equipCheck = false;
     }
+
 }
