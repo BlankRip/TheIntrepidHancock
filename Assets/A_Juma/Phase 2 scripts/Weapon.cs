@@ -6,8 +6,11 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] GameObject playerObj;
 
+    [SerializeField] Animator swingAnim;
+    [SerializeField] Collider wepCollider;
+    [SerializeField] KeyCode attackKey;
 
-    [HideInInspector] public bool equipped;
+    public bool equipped;
     Rigidbody weaponRB;
 
     WeaponCheck equipper;
@@ -32,10 +35,28 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        if(equipped)
+        if(equipped == true)
         {
+            if (Input.GetKeyDown(attackKey))
+            {
+                wepCollider.enabled = true;
+                swingAnim.SetTrigger("Attack");
+            }
 
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                equipper.DropWeapon(this.gameObject, weaponRB);
+            }
         }
+    }
+
+    public void DeactivateCollider()
+    {
+        wepCollider.enabled = false;
+    }
+
+}
+
         //if (Vector3.Distance(transform.position, playerObj.transform.position) < 3f)
         //{
         //    Debug.Log("in range of a weapon press r to equip");
@@ -55,8 +76,3 @@ public class Weapon : MonoBehaviour
         //        equipper.DropWeapon();
         //    }
         //}
-    }
-
-
-
-}
