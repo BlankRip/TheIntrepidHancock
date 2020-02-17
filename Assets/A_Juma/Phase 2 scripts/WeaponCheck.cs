@@ -5,37 +5,33 @@ using UnityEngine;
 public class WeaponCheck : MonoBehaviour
 {
 
-    public bool equipCheck;
-    public GameObject weaponType1;
-    public GameObject weaponType2;
-    public GameObject weaponType3;
+    [SerializeField] Transform equipPosition;
+    GameObject currentWeapon;
+    Rigidbody currentWeaponRb;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void EquipWeapon(GameObject weapon, Rigidbody rb)
     {
-        equipCheck = false;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (equipCheck == true)
+        if(currentWeapon != null)
         {
-            Debug.Log("Player currently has something equipped press G to drop OR press r to equip a new weapon and drop the currently held weapon");
-            /*
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                weaponType1.GetComponent<Weapon>().DropWeapon();
-                //transform.DetachChildren();       r these 2 the same?         transform.SetParent(null);
-            }
-            */
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-           //     weaponType1.GetComponent<Weapon>().DropWeapon();
-           //     weaponType2.GetComponent<Weapon>().EquipWeapon();
-            }
+            DropWeapon(currentWeapon, currentWeaponRb);
         }
+
+        weapon.transform.position = equipPosition.position;
+        weapon.transform.rotation = equipPosition.rotation;
+        weapon.transform.SetParent(equipPosition);
+        rb.isKinematic = true;
+        weapon.GetComponent<Weapon>().equipped = true;
+        currentWeapon = weapon;
+        currentWeaponRb = rb;
     }
-    
+
+    void DropWeapon(GameObject weapon, Rigidbody rb)
+    {
+        weapon.transform.SetParent(null);
+        rb.isKinematic = false;
+        rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+        weapon.GetComponent<Weapon>().equipped = false;
+    }
+
 }

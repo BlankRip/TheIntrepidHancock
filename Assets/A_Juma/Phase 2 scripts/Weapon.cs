@@ -4,61 +4,59 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject playerObj;
+    [SerializeField] GameObject playerObj;
 
-    public Transform weaponPos;
 
+    [HideInInspector] public bool equipped;
     Rigidbody weaponRB;
 
-    GameObject equipCheckAccess;
-
+    WeaponCheck equipper;
 
     // Start is called before the first frame update
     void Start()
     {
+        equipped = false;
         weaponRB = GetComponent<Rigidbody>();
-        equipCheckAccess = GameObject.FindGameObjectWithTag("WeaponCheckTag");
+        equipper = FindObjectOfType<WeaponCheck>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, playerObj.transform.position) < 3f)
+        if (Vector3.Distance(transform.position, playerObj.transform.position) < 3f && !equipped)
         {
             Debug.Log("in range of a weapon press r to equip");
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (equipCheckAccess.GetComponent<WeaponCheck>().equipCheck == false)
-                {
-                    EquipWeapon();
-                }
+                equipper.EquipWeapon(this.gameObject, weaponRB);
             }
         }
 
-        if (transform.position == weaponPos.position)
+        if(equipped)
         {
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                DropWeapon();
-            }
+
         }
+        //if (Vector3.Distance(transform.position, playerObj.transform.position) < 3f)
+        //{
+        //    Debug.Log("in range of a weapon press r to equip");
+        //    if (Input.GetKeyDown(KeyCode.R))
+        //    {
+        //        if (equipCheckAccess.GetComponent<WeaponCheck>().equipCheck == false)
+        //        {
+        //           equipper.EquipWeapon();
+        //        }
+        //    }
+        //}
+
+        //if (transform.position == weaponPos.position)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.G))
+        //    {
+        //        equipper.DropWeapon();
+        //    }
+        //}
     }
 
-    public void EquipWeapon()
-    {
-        transform.position = weaponPos.position;
-        transform.rotation = weaponPos.rotation;
-        transform.SetParent(weaponPos);
-        weaponRB.isKinematic = true;
-        equipCheckAccess.GetComponent<WeaponCheck>().equipCheck = true;
-    }
 
-    public void DropWeapon()
-    {
-        transform.SetParent(null);
-        weaponRB.isKinematic = false;
-        weaponRB.AddForce(transform.forward * 10f, ForceMode.Impulse);
-        equipCheckAccess.GetComponent<WeaponCheck>().equipCheck = false;
-    }
 
 }
