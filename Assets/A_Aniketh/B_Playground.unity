@@ -9525,9 +9525,9 @@ MonoBehaviour:
   swingAnim: {fileID: 230591124}
   attackCollider: {fileID: 1745502836}
   attackKey: 323
-  equipKey: 114
+  equipKey: 101
   dropKey: 103
-  equipped: 0
+  myEquipState: 0
 --- !u!65 &1554523817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9854,9 +9854,9 @@ MonoBehaviour:
   swingAnim: {fileID: 230591124}
   attackCollider: {fileID: 1628795079}
   attackKey: 323
-  equipKey: 114
+  equipKey: 101
   dropKey: 103
-  equipped: 0
+  myEquipState: 0
 --- !u!54 &1628342054
 Rigidbody:
   m_ObjectHideFlags: 0
