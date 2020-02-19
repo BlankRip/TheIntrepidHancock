@@ -28,7 +28,7 @@ public class J_Weapon : MonoBehaviour
         //Checking if player is in pick-up range
         if (Vector3.Distance(transform.position, player.transform.position) < 3f && !myEquipState)
         {
-            Debug.Log("in range of a weapon press r to equip");
+            Debug.Log("in range of a weapon press E to equip");
             if (Input.GetKeyDown(equipKey))
             {
                 manageEquipment.EquipWeapon(this.gameObject, weaponRB);      //Giveng the weapon to the equip manager to equip it
