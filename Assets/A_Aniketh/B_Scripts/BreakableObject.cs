@@ -23,8 +23,6 @@ public class BreakableObject : MonoBehaviour
         hitsTaken = 0;
         initialSize = transform.localScale;
         initialPosition = transform.position;
-        movePosition = Random.Range(0, maxMovePosition);
-        addPosition = new Vector3(movePosition, 0, -movePosition);
         score_relic = FindObjectOfType<ScoreScript>();
     }
 
@@ -38,6 +36,8 @@ public class BreakableObject : MonoBehaviour
             {
                 hitsTaken++;
                 transform.localScale = initialSize * increaseSizeBy;
+                movePosition = Random.Range(0, maxMovePosition);
+                addPosition = new Vector3(movePosition, 0, -movePosition);
                 transform.position = initialPosition + addPosition;
                 StartCoroutine(BackToOrigial());
             }
