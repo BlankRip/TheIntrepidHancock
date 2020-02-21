@@ -4552,7 +4552,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1250
+  m_Name: pb_Mesh-15114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7423,7 +7423,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1274
+  m_Name: pb_Mesh-15158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7806,7 +7806,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1276
+  m_Name: pb_Mesh-15160
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10436,6 +10436,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4913189037622607218, guid: 29c56b4c8d389be4a80778141e9ca7f5,
         type: 3}
+    - target: {fileID: 7261181054101506586, guid: 8ae5b1ed074706f46a9fe400242e6243,
+        type: 3}
+      propertyPath: fireFlies
+      value: 
+      objectReference: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae5b1ed074706f46a9fe400242e6243, type: 3}
 --- !u!1 &1288066188
@@ -11026,7 +11032,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1282
+  m_Name: pb_Mesh-15166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12809,7 +12815,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1252
+  m_Name: pb_Mesh-15120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16153,6 +16159,8 @@ MonoBehaviour:
   fractureVersion: {fileID: 5613219335548749624, guid: 9c7f7dfc564ba2e4491a91215841e597,
     type: 3}
   relic: {fileID: 4913189037622607218, guid: 29c56b4c8d389be4a80778141e9ca7f5, type: 3}
+  fireFlies: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+    type: 3}
   scoreToAdd: 5
   hitsBeforeBreak: 2
   increaseSizeBy: 1.141
@@ -16238,7 +16246,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1248
+  m_Name: pb_Mesh-15112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17048,5 +17056,11 @@ PrefabInstance:
       propertyPath: maxMovePosition
       value: 0.258
       objectReference: {fileID: 0}
+    - target: {fileID: 7261181054101506586, guid: 8ae5b1ed074706f46a9fe400242e6243,
+        type: 3}
+      propertyPath: fireFlies
+      value: 
+      objectReference: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae5b1ed074706f46a9fe400242e6243, type: 3}

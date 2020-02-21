@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            SceneShifter.LoadScene("GameOver");
+            SceneShifter.LoadScene("B_GameOver");
         }
     }
 
