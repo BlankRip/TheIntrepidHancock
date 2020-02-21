@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -40,7 +40,7 @@ MonoBehaviour:
     value: 0
   LUTTex:
     overrideState: 1
-    value: {fileID: 2800000, guid: 7b5455f22131eb8498d6411100f51daf, type: 3}
+    value: {fileID: 2800000, guid: 3018172ac5a35154a871aaf7c59f2444, type: 3}
     defaultState: 1
 --- !u!114 &-417648039437037564
 MonoBehaviour:
@@ -85,4 +85,59 @@ MonoBehaviour:
   settings:
   - {fileID: -6413571031995525506}
   - {fileID: -6397343012642461778}
-  - {fileID: -417648039437037564}
+  - {fileID: 1974498538406399924}
+  - {fileID: 5135224798548157601}
+--- !u!114 &1974498538406399924
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
+  m_Name: CustomAO
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.008
+  cutoff:
+    overrideState: 1
+    value: 0.66
+  screenNormal:
+    overrideState: 1
+    value: {fileID: 2800000, guid: d367bc131de20c7408686c65ea40c732, type: 3}
+    defaultState: 1
+--- !u!114 &5135224798548157601
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2c37c093534dd48b8f8209fdb36f9f, type: 3}
+  m_Name: CustomBloom
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.584
+  cutoff:
+    overrideState: 1
+    value: 0.584
+  shift:
+    overrideState: 1
+    value: 0.0056
+  bloomCount:
+    overrideState: 1
+    value: 3
