@@ -15,7 +15,7 @@
 		float random(float2 st) {
 			return frac(sin(dot(st.xy, float2(12.9898, 78.233)))*43758.5453123);
 		}
-
+		/*
 		float3 RandomRay(float2 screenPos)
 		{
 			screenPos *= 200;
@@ -24,12 +24,12 @@
 			screenNormal = mul(unity_MatrixVP, screenNormal);
 			return screenNormal;
 		}
-
+		*/
 		float3 RandomRay(float2 screenPos, float factor)
 		{
 			screenPos *= 200;
 			float3 screenNormal = float3(random(screenPos + float2(0.7, 0.1)), random(screenPos + float2(0.2, 0.5)), random(screenPos + float2(0.1, 0.7)));
-			screenNormal = normalize((screenNormal * 2) - 1) * factor;
+			screenNormal = normalize((screenNormal * 2) - 1) * pow(factor, 2);
 			screenNormal = mul(unity_MatrixVP, screenNormal);
 			return screenNormal;
 		}
@@ -46,8 +46,10 @@
 				// get the screen Vector point
 				float randomPointDepth = tex2D(_CameraDepthTexture, screenPos + (randomDir.xy * _Blend)).r;
 				randomPointDepth = LinearEyeDepth(randomPointDepth);
-				float effect = step(1 - max(randomPointDepth - pointDepth, 0), _BackCutoff);
-				factor += step(pointDepth, randomPointDepth) + effect;
+				float effect = _BackCutoff * max(randomPointDepth - pointDepth, 0);
+
+				factor += step(pointDepth, randomPointDepth);
+				factor += 1 * (1 - step( pointDepth - randomPointDepth, _BackCutoff));
 				// cutoff back distance check
 			//	factor += (1 - step(pointDepth - randomPointDepth, _BackCutoff));
 				//factor
@@ -59,30 +61,9 @@
 
 	float4 Frag(VaryingsDefault i) : SV_Target
 	{
-	//	float depth = tex2D(_CameraDepthTexture, i.texcoord);
-
-
-	//	depth = depth * _ProjectionParams.z;
-		
 		float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
-		/*
-		// depth main
-		float depth = tex2D(_CameraDepthTexture, i.texcoord).r;
-		// depth up
-		float depthU = tex2D(_CameraDepthTexture, i.texcoord + float2(0, _Blend)).r;
-		// depth down
-		float depthD = tex2D(_CameraDepthTexture, i.texcoord + float2(0, -_Blend)).r;
-		// depth right
-		float depthR = tex2D(_CameraDepthTexture, i.texcoord + float2(_Blend, 0)).r;
-		// depth up
-		float depthL = tex2D(_CameraDepthTexture, i.texcoord + float2(-_Blend, 0)).r;
-		
-	//	float darkValue = (step(depthL, depth) + step(depthR, depth) + step(depthU, depth) + step(depthD, depth)) / 4;
-		float darkValue = max(depthU - depth, 0) + max(depthD - depth, 0) + max(depthR - depth, 0) + max(depthL - depth, 0);
-		*/
-//		return color * (1 - darkValue * 300);
 
-		return color * AmbiantFactor(i.texcoord);
+		return saturate(AmbiantFactor(i.texcoord));
 	}
 
 		ENDHLSL

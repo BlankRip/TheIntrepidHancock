@@ -105,10 +105,19 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 0.008
+    value: 0.025
   cutoff:
     overrideState: 1
-    value: 0.66
+    value: 3.3
+  blurCount:
+    overrideState: 1
+    value: 1.11
+  shift:
+    overrideState: 1
+    value: 0.0036
+  strength:
+    overrideState: 1
+    value: 1.67
   screenNormal:
     overrideState: 1
     value: {fileID: 2800000, guid: d367bc131de20c7408686c65ea40c732, type: 3}
