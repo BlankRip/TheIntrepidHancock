@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class WeaponCheck : MonoBehaviour
 {
+    [SerializeField] Transform equipPosition;
+    bool equipStatus;
+    GameObject currentWeapon;
+    Rigidbody currentWeaponRb;
+    Weapon currentWeaponComponent;
 
-    public bool equipCheck;
-    public GameObject weaponType1;
-    public GameObject weaponType2;
-    public GameObject weaponType3;
 
-    // Start is called before the first frame update
-    void Start()
+    public void EquipWeapon(GameObject weapon, Rigidbody rb)
     {
-        equipCheck = false;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (equipCheck == true)
+        if(equipStatus == true)
         {
-            Debug.Log("Player currently has something equipped press G to drop OR press r to equip a new weapon and drop the currently held weapon");
-            /*
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                weaponType1.GetComponent<Weapon>().DropWeapon();
-                //transform.DetachChildren();       r these 2 the same?         transform.SetParent(null);
-            }
-            */
+            Debug.Log("<color=green>equpped status true and will drop wep to switch </color>");
+            DropWeapon(currentWeapon, currentWeaponRb);
+        }
+        Debug.Log("<color=yellow>pick up wep now </color>");
+        weapon.transform.position = equipPosition.position;
+        weapon.transform.rotation = equipPosition.rotation;
+        weapon.transform.SetParent(equipPosition);
+        rb.isKinematic = true;
+        equipStatus = true;
+        currentWeaponComponent = weapon.GetComponent<Weapon>();
+        currentWeaponComponent.equipped = true;
+        currentWeapon = weapon;
+        currentWeaponRb = rb;
+    }
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-           //     weaponType1.GetComponent<Weapon>().DropWeapon();
-           //     weaponType2.GetComponent<Weapon>().EquipWeapon();
-            }
+    public void DropWeapon(GameObject weapon, Rigidbody rb)
+    {
+        Debug.Log("<color=red> droping wep </color>");
+        weapon.transform.SetParent(null);
+        rb.isKinematic = false;
+        rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+        currentWeaponComponent = null;
+        weapon.GetComponent<Weapon>().equipped = false;
+        equipStatus = false;
+    }
+
+    public void DisableColliderEvent()
+    {
+        if (currentWeaponComponent != null)
+        {
+            currentWeaponComponent.DeactivateCollider();
         }
     }
-    
+
 }
