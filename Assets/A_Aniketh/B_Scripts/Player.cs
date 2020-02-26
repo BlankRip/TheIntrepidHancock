@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [Range(0,5)] [SerializeField] float stoppingSpeed;           //The speed just before he stops moving
     [SerializeField] KeyCode crouchKey;                          //The crouch key
     [SerializeField] KeyCode sprintKey;                          //The sprint key
+    [SerializeField] bool useAnimtion;                           //Choose to use animation this is here just to make the designer test the game without animations
+    [SerializeField] Animator animController;                    //The animator for the player
 
     private void Start()
     {
@@ -49,6 +51,28 @@ public class Player : MonoBehaviour
             sprint = true;
         else if (Input.GetKeyUp(sprintKey))
             sprint = false;
+
+        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
+
+        if (useAnimtion)
+        {
+
+            animController.SetFloat("Speed", verticalInput);
+            if (horizontalInput != 0)
+                animController.SetFloat("Direction", horizontalInput);
+            else
+                animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+            Debug.Log("<color=blue>" + Input.GetAxis("Anim Mouse X") + " </color>");
+
+            if(verticalInput == 0 && horizontalInput != 0)
+            {
+                animController.SetFloat("Horizontal", horizontalInput);
+            }
+            else
+                animController.SetFloat("Horizontal", 0);
+        }
+
+        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
 
         //Manageing the consumtion of stamina when sprinting
         if (horizontalInput != 0 || verticalInput != 0)
