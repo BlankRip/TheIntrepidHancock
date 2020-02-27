@@ -17,9 +17,12 @@ public class GameManager : MonoBehaviour
         relicsCollected = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ReadyToExit()
     {
-        
+        if (relicsCollected < 3)
+        {
+            Debug.Log("<color=green> plaay ready to leave clip and unlock exit trigger on door </color>");
+        }
     }
 }

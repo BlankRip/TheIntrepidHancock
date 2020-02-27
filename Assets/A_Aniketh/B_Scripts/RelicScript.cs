@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RelicScript : MonoBehaviour
 {
-    GameManager relicTracker;      //The script that keeps track of how many relics are collected
+    GameManager gM;      //The script that keeps track of how many relics are collected
 
     void Start()
     {
-        relicTracker = FindObjectOfType<GameManager>();
+        gM = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,7 +17,8 @@ public class RelicScript : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("<color=blue> Relic Collected</color>");
-            relicTracker.relicsCollected++;
+            gM.relicsCollected++;
+            gM.ReadyToExit();
             Destroy(gameObject);
         }
     }
