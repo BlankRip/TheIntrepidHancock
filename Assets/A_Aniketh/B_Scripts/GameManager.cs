@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool attacking;
     public bool paused;
     public int relicsCollected;
     Collider exitTriggerCollider;
@@ -12,7 +11,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attacking = false;
         paused = false;
         relicsCollected = 0;
     }

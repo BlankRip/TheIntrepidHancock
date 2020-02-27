@@ -3404,7 +3404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &230591117
 Transform:
   m_ObjectHideFlags: 0
@@ -3477,8 +3477,11 @@ MonoBehaviour:
   stoppingSpeed: 0.47
   crouchKey: 306
   sprintKey: 304
-  useAnimtion: 0
-  animController: {fileID: 0}
+  useAnimtion: 1
+  animController: {fileID: 230591124}
+  attackKey: 323
+  attackCollider: {fileID: 0}
+  weaponEquipped: 0
 --- !u!54 &230591121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5428,6 +5431,9 @@ MonoBehaviour:
   sprintKey: 304
   useAnimtion: 1
   animController: {fileID: 533439819}
+  attackKey: 323
+  attackCollider: {fileID: 0}
+  weaponEquipped: 0
 --- !u!95 &533439819 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 13a16f60da4245c45a865b2136ba272c,
@@ -8287,7 +8293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b363b8ee160f7d4c8b9bc10d0294e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacking: 0
   paused: 0
   relicsCollected: 0
 --- !u!1 &1007645004
@@ -14995,7 +15000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1489747246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15099,13 +15104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ec145eaf455c4580f462b7472cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533439812}
-  swingAnim: {fileID: 533439819}
+  objectThatCanPickUp: {fileID: 533439812}
   attackCollider: {fileID: 314539693}
-  attackKey: 323
+  myEquipStatus: 0
   equipKey: 101
-  dropKey: 103
-  myEquipState: 0
+  dropKey: 102
 --- !u!1 &1501512200
 GameObject:
   m_ObjectHideFlags: 0
@@ -15541,7 +15544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1554523816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15554,13 +15557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ec145eaf455c4580f462b7472cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 230591116}
-  swingAnim: {fileID: 230591124}
+  objectThatCanPickUp: {fileID: 230591116}
   attackCollider: {fileID: 1745502836}
-  attackKey: 323
+  myEquipStatus: 0
   equipKey: 101
-  dropKey: 103
-  myEquipState: 0
+  dropKey: 102
 --- !u!65 &1554523817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15820,7 +15821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1628342049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15908,13 +15909,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ec145eaf455c4580f462b7472cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 230591116}
-  swingAnim: {fileID: 533439819}
+  objectThatCanPickUp: {fileID: 230591116}
   attackCollider: {fileID: 1628795079}
-  attackKey: 323
+  myEquipStatus: 0
   equipKey: 101
-  dropKey: 103
-  myEquipState: 0
+  dropKey: 102
 --- !u!54 &1628342054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16516,7 +16515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
@@ -18091,7 +18090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40da560374405fb40a7fc59255c56f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2066830418}
+  target: {fileID: 622614978}
   mouseSensitivity: 2
   verticalClampMin: -15
   verticalClampMax: 60
@@ -20367,7 +20366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1991198161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20409,13 +20408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ec145eaf455c4580f462b7472cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 533439812}
-  swingAnim: {fileID: 533439819}
+  objectThatCanPickUp: {fileID: 533439812}
   attackCollider: {fileID: 174075268}
-  attackKey: 323
+  myEquipStatus: 0
   equipKey: 101
-  dropKey: 103
-  myEquipState: 0
+  dropKey: 102
 --- !u!23 &1991198164
 MeshRenderer:
   m_ObjectHideFlags: 0

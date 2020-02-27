@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     PlayerMovement movementController;                           //The movement script
     PlayerStats myStats;                                         //The Stats script
-    GameManager gM;                                              //The GameManager Script
 
     float horizontalInput;                                       //Horizontal motion or input values between 1 & 0 (Asises)
     float verticalInput;                                         //Vertical motion or input values between 1 & 0 (Asises)
@@ -20,11 +19,16 @@ public class Player : MonoBehaviour
     [SerializeField] bool useAnimtion;                           //Choose to use animation this is here just to make the designer test the game without animations
     [SerializeField] Animator animController;                    //The animator for the player
 
+    //Things for weapon attach and playing animation
+    [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
+    [HideInInspector] public Collider attackCollider;           //The collider that will activate on the weapon while attacking
+    [HideInInspector] public bool weaponEquipped;               //Status of it the weapon is equipped
+    bool attacking;
+
     private void Start()
     {
         movementController = GetComponent<PlayerMovement>();
         myStats = GetComponent<PlayerStats>();
-        gM = FindObjectOfType<GameManager>();
         InitialSetSpeed = speed;
     }
 
@@ -72,6 +76,17 @@ public class Player : MonoBehaviour
             }
             else
                 animController.SetFloat("Horizontal", 0);
+
+            //Checking if this weapon is equipped
+            if (weaponEquipped)
+            {
+                if (Input.GetKeyDown(attackKey))
+                {
+                    attackCollider.enabled = true;
+                    attacking = true;
+                    animController.SetTrigger("Attack");
+                }
+            }
         }
 
         //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
@@ -86,8 +101,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //Calling movement from the movement script
-        Debug.Log("<color=red>" + gM.attacking + "</color>");
-        if (!gM.attacking)
+        if (!attacking)
             movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 
@@ -100,6 +114,14 @@ public class Player : MonoBehaviour
             myStats.ReduceHealth(20);
         }
     }
+
+    //Function that deactivates the attack collider for the equipped weapon when the attack animation ends
+    public void AttackAnimationEndEvent()
+    {
+        attackCollider.enabled = false;
+        attacking = false;
+    }
+
 
     //Maybe use as ref for animations
     //void RotationAnimation()
