@@ -7,6 +7,7 @@ public class J_Weapon : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Animator swingAnim;                      //Animator used to play the swing weapon animation
     [SerializeField] Collider attackCollider;                 //The collider that is enabled and desabled when the player is attacking
+    GameManager gM;                                           //The game manager Script
     [Header("KeyBindings for actions")]
     [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
     [SerializeField] KeyCode equipKey = KeyCode.E;
@@ -21,6 +22,7 @@ public class J_Weapon : MonoBehaviour
         myEquipState = false;
         weaponRB = GetComponent<Rigidbody>();
         manageEquipment = FindObjectOfType<EquipManager>();
+        gM = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class J_Weapon : MonoBehaviour
             if (Input.GetKeyDown(attackKey))
             {
                 attackCollider.enabled = true;
+                gM.attacking = true;
                 swingAnim.SetTrigger("Attack");
             }
 
@@ -61,8 +64,9 @@ public class J_Weapon : MonoBehaviour
     }
 
     //Function that deactivates the attack collider for this weapon
-    public void DeactivateCollider()
+    public void AnimationEndEvent()
     {
         attackCollider.enabled = false;
+        gM.attacking = false;
     }
 }

@@ -46,7 +46,7 @@ public class EquipManager : MonoBehaviour
     {
         if (currentWeaponComponent != null)
         {
-            currentWeaponComponent.DeactivateCollider();                   //Disables the attack collider for the currently equipped weapon
+            currentWeaponComponent.AnimationEndEvent();                   //Disables the attack collider for the currently equipped weapon
         }
     }
 }

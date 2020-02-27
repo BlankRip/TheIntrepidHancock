@@ -6,7 +6,12 @@ public class PauseScript : MonoBehaviour
 {
     [SerializeField] KeyCode pauseKey;                                    //The key that is pressed to peuse and resume the game
     [SerializeField] GameObject pauseScreen;                              //The pause screen gameobject
-    [HideInInspector] public bool paused = false;                                        //Check if game is paused
+    GameManager gM;                                                       //GameManager Script
+
+    private void Start()
+    {
+        gM = FindObjectOfType<GameManager>();
+    }
 
     void Update()
     {
@@ -18,7 +23,7 @@ public class PauseScript : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;                    //Unloack the cursor to be able to move away from the center of the screen
                 Time.timeScale = 0;                                        //Setting game time sacle to 0 so that time stops for the game
                 pauseScreen.SetActive(true);                               //Displaying the pause screen
-                paused = true;                                             //Set status of game to be paused
+                gM.paused = true;                                             //Set status of game to be paused
             }
             else if (pauseScreen.activeSelf)
                 Resume();
@@ -32,7 +37,7 @@ public class PauseScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;                   //Locking the cursor to the center of the screen so that it does not move out of the window
         pauseScreen.SetActive(false);                               //Removing the pause screen from view
         Time.timeScale = 1;                                         //Setting game time scake to 1 so that time moves normally for the game
-        paused = false;                                             //Set status of game to be not paused
+        gM.paused = false;                                             //Set status of game to be not paused
     }
 
     //Function that will take the player back to the main menu

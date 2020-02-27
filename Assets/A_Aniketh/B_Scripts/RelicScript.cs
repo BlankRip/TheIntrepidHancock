@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RelicScript : MonoBehaviour
 {
-    ScoreScript relicTracker;      //The script that keeps track of how many relics are collected
+    GameManager relicTracker;      //The script that keeps track of how many relics are collected
 
     void Start()
     {
-        relicTracker = FindObjectOfType<ScoreScript>();
+        relicTracker = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)

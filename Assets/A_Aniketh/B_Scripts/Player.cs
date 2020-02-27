@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     PlayerMovement movementController;                           //The movement script
     PlayerStats myStats;                                         //The Stats script
+    GameManager gM;                                              //The GameManager Script
 
     float horizontalInput;                                       //Horizontal motion or input values between 1 & 0 (Asises)
     float verticalInput;                                         //Vertical motion or input values between 1 & 0 (Asises)
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     {
         movementController = GetComponent<PlayerMovement>();
         myStats = GetComponent<PlayerStats>();
+        gM = FindObjectOfType<GameManager>();
         InitialSetSpeed = speed;
     }
 
@@ -84,7 +86,9 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //Calling movement from the movement script
-        movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
+        Debug.Log("<color=red>" + gM.attacking + "</color>");
+        if (!gM.attacking)
+            movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 
 

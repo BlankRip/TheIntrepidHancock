@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class J_CamScript : MonoBehaviour
 {
-    PauseScript pauseCheck;                                  //Check if the game is paused
+    GameManager pauseCheck;                                  //Check if the game is paused
 
     [Header("Things needed to move camera around")]
     [SerializeField] Transform target;                       //The that will be followed and rotated
@@ -38,7 +38,7 @@ public class J_CamScript : MonoBehaviour
 
     private void Start()
     {
-        pauseCheck = FindObjectOfType<PauseScript>();
+        pauseCheck = FindObjectOfType<GameManager>();
     }
 
     void FixedUpdate()
