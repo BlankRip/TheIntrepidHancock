@@ -1,4 +1,7 @@
 // Upgrade NOTE: commented out 'float3 _WorldSpaceCameraPos', a built-in variable
+// Upgrade NOTE: commented out 'float4 unity_ShadowFadeCenterAndType', a built-in variable
+
+// Upgrade NOTE: commented out 'float3 _WorldSpaceCameraPos', a built-in variable
 // Upgrade NOTE: commented out 'float4 unity_DynamicLightmapST', a built-in variable
 // Upgrade NOTE: commented out 'float4 unity_LightmapST', a built-in variable
 // Upgrade NOTE: commented out 'float4 unity_ShadowFadeCenterAndType', a built-in variable
@@ -44,27 +47,27 @@
 
 
 CBUFFER_START(UnityPerCamera)
-    // Time (t = time since current level load) values from Unity
-   // float4 _Time; // (t/20, t, t*2, t*3)
-//    float4 _SinTime; // sin(t/8), sin(t/4), sin(t/2), sin(t)
- //   float4 _CosTime; // cos(t/8), cos(t/4), cos(t/2), cos(t)
- //   float4 unity_DeltaTime; // dt, 1/dt, smoothdt, 1/smoothdt
+   // Time (t = time since current level load) values from Unity
+	 float4 _Time; // (t/20, t, t*2, t*3)
+    float4 _SinTime; // sin(t/8), sin(t/4), sin(t/2), sin(t)
+	  float4 _CosTime; // cos(t/8), cos(t/4), cos(t/2), cos(t)
+    float4 unity_DeltaTime; // dt, 1/dt, smoothdt, 1/smoothdt
 
 #if !defined(USING_STEREO_MATRICES)
-    // float3 _WorldSpaceCameraPos;
+     // float3 _WorldSpaceCameraPos;
 #endif
 
     // x = 1 or -1 (-1 if projection is flipped)
     // y = near plane
     // z = far plane
     // w = 1/far plane
-  //  float4 _ProjectionParams;
+    float4 _ProjectionParams;
 
     // x = width
     // y = height
     // z = 1 + 1.0/width
     // w = 1 + 1.0/height
- //   float4 _ScreenParams;
+    float4 _ScreenParams;
 
     // Values used to linearize the Z buffer (http://www.humus.name/temp/Linearize%20depth.txt)
     // x = 1-far/near
@@ -76,13 +79,13 @@ CBUFFER_START(UnityPerCamera)
     // y = 1
     // z = x/far
     // w = 1/far
- //   float4 _ZBufferParams;
+    float4 _ZBufferParams;
 
     // x = orthographic camera's width
     // y = orthographic camera's height
     // z = unused
     // w = 1.0 if camera is ortho, 0.0 if perspective
-  //  float4 unity_OrthoParams;
+    float4 unity_OrthoParams;
 #if defined(STEREO_CUBEMAP_RENDER_ON)
     //x-component is the half stereo separation value, which a positive for right eye and negative for left eye. The y,z,w components are unused.
     float4 unity_HalfStereoSeparation;
@@ -97,7 +100,7 @@ CBUFFER_START(UnityPerCameraRare)
     // Projection matrices of the camera. Note that this might be different from projection matrix
     // that is set right now, e.g. while rendering shadows the matrices below are still the projection
     // of original camera.
-  //  float4x4 unity_CameraProjection;
+    float4x4 unity_CameraProjection;
     float4x4 unity_CameraInvProjection;
     float4x4 unity_WorldToCamera;
     float4x4 unity_CameraToWorld;
@@ -128,10 +131,10 @@ CBUFFER_START(UnityLighting)
 
 
     float4 unity_LightPosition[8]; // view-space vertex light positions (position,1), or (-direction,0) for directional lights.
-    // x = cos(spotAngle/2) or -1 for non-spot
-    // y = 1/cos(spotAngle/4) or 1 for non-spot
-    // z = quadratic attenuation
-    // w = range*range
+     x = cos(spotAngle/2) or -1 for non-spot
+     y = 1/cos(spotAngle/4) or 1 for non-spot
+     z = quadratic attenuation
+     w = range*range
     half4 unity_LightAtten[8];
     float4 unity_SpotDirection[8]; // view-space spot light directions, or (0,0,1,0) for non-spot
 
@@ -164,7 +167,7 @@ CBUFFER_START(UnityShadows)
     float4 _LightSplitsFar;
     float4x4 unity_WorldToShadow[4];
     half4 _LightShadowData;
-    // float4 unity_ShadowFadeCenterAndType;
+     // float4 unity_ShadowFadeCenterAndType;
 CBUFFER_END
 
 // ----------------------------------------------------------------------------

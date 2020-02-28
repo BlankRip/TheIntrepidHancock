@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6c6cd1836355b4691202f9eaa19ef4, type: 3}
   m_Name: Grayscale
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -31,13 +31,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   blend:
     overrideState: 1
-    value: 0
+    value: 5.3
   LUTTex:
     overrideState: 1
     value: {fileID: 2800000, guid: 3018172ac5a35154a871aaf7c59f2444, type: 3}
@@ -105,23 +105,22 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 0.025
+    value: 0.017
   cutoff:
     overrideState: 1
-    value: 3.3
+    value: 19.7
   blurCount:
     overrideState: 1
-    value: 1.11
+    value: 1.57
   shift:
     overrideState: 1
-    value: 0.0036
+    value: 0.006
   strength:
     overrideState: 1
-    value: 1.67
-  screenNormal:
+    value: 2.13
+  scanDistance:
     overrideState: 1
-    value: {fileID: 2800000, guid: d367bc131de20c7408686c65ea40c732, type: 3}
-    defaultState: 1
+    value: 0.3
 --- !u!114 &5135224798548157601
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -134,19 +133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2c37c093534dd48b8f8209fdb36f9f, type: 3}
   m_Name: CustomBloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   blend:
     overrideState: 1
-    value: 0.584
+    value: 0
   cutoff:
     overrideState: 1
-    value: 0.584
+    value: 0.556
   shift:
     overrideState: 1
-    value: 0.0056
+    value: 0.0038
   bloomCount:
     overrideState: 1
     value: 3

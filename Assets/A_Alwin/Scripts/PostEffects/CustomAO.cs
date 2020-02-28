@@ -16,8 +16,8 @@ public sealed class CustomAO : PostProcessEffectSettings
     public FloatParameter shift = new FloatParameter { value = 0.5f };
     [Range(0f, 5f), Tooltip("Bloom effect intensity.")]
     public FloatParameter strength = new FloatParameter { value = 0.5f };
-
-    public TextureParameter screenNormal = new TextureParameter();
+    [Range(0f, 50f), Tooltip("Bloom effect intensity.")]
+    public FloatParameter scanDistance = new FloatParameter { value = 0.5f };
 
     //  [Range(0f, 1f), Tooltip("Bloom effect cutoff.")]
     //  public FloatParameter cutoff = new FloatParameter { value = 0.5f };
@@ -46,17 +46,20 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
     }
     public override void Render(PostProcessRenderContext context)
     {
-        var aoSheet = context.propertySheets.Get(Shader.Find("Custom/PostEffects/AO"));
+        var aoSheet = context.propertySheets.Get(Shader.Find("Custom/PostEffects/SSAO"));
+        Matrix4x4 camToWorld = Camera.current.cameraToWorldMatrix;
+     //   aoSheet.properties.SetMatrix("_CamToWorld", Camera.current.cameraToWorldMatrix);
         aoSheet.properties.SetFloat("_Blend", settings.blend);
         aoSheet.properties.SetFloat("_BackCutoff", settings.cutoff);
-        aoSheet.properties.SetTexture("_ScreenNoise", settings.screenNormal);
+        aoSheet.properties.SetFloat("_ScanDistance", settings.scanDistance);
+        
         // bluring section
 
         var blurVertical = context.propertySheets.Get(Shader.Find("Custom/PostEffects/BlurVertical"));
         var blurHorizontal = context.propertySheets.Get(Shader.Find("Custom/PostEffects/BlurHorizontal"));
 
         context.command.BlitFullscreenTriangle(context.source, rt1, aoSheet, 0);
-
+        
 
         // blur
         for (int i = 0; i < settings.blurCount; i++)
@@ -73,14 +76,14 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
             context.command.BlitFullscreenTriangle(rt2, rt1, blurHorizontal, 0);
 
         }
-
+        
         // clean it
      //   context.command.BlitFullscreenTriangle(rt1, rt2, blurHorizontal, 0);
-        /*
+        
          // bloom texture extraction
-         var extractor = context.propertySheets.Get(Shader.Find("Custom/PostEffects/Highlight"));
-         extractor.properties.SetFloat("_Cutoff", settings.cutoff);
-         */
+    //     var extractor = context.propertySheets.Get(Shader.Find("Custom/PostEffects/Highlight"));
+     //    extractor.properties.SetFloat("_Cutoff", settings.cutoff);
+         
 
         var mergeSheet = context.propertySheets.Get(Shader.Find("Custom/PostEffects/AOCombine"));
         mergeSheet.properties.SetFloat("_Strength", settings.strength);
