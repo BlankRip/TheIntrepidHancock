@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GameOverScript : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;                                     //Setting cursor to be visible when in this scene
+        Cursor.lockState = CursorLockMode.None;                   //Making the cursor free to move in the scene
+    }
+
     public void TryAgain()
     {
         SceneShifter.LoadScene("B_Playground");       //Load the game scene
@@ -11,6 +17,6 @@ public class GameOverScript : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneShifter.LoadScene(0);       //Loading the menu scene
+        SceneShifter.LoadScene("B_Menu");       //Loading the menu scene
     }
 }

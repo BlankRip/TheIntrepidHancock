@@ -5,16 +5,19 @@ using UnityEngine;
 public class EquipManager : MonoBehaviour
 {
     [SerializeField] Transform equipPosition;                //The position the weapon will equip
-    bool equipStatus;                                        //Status if the player has a weapon equipped
-    GameObject currentWeapon;                                //The weapon which is corrently equipped
+    Player objectToAttachTo;                                        //Status if the player has a weapon equipped
+    J_Weapon currentWeapon;                                //The weapon which is corrently equipped
     Rigidbody currentWeaponRb;                               //The rigidbody component attached to the currently equipped weapon
-    J_Weapon currentWeaponComponent;                         //The Weapon script attached to the currently equipped weapon
 
+    private void Start()
+    {
+        objectToAttachTo = FindObjectOfType<Player>();
+    }
 
-    public void EquipWeapon(GameObject weapon, Rigidbody rb)
+    public void EquipWeapon(J_Weapon weapon, Rigidbody rb, Collider attackCollider)
     {
         //Checks if player already has a weapon if so drops it
-        if (equipStatus == true)
+        if (objectToAttachTo.weaponEquipped == true)
         {
             DropWeapon(currentWeapon, currentWeaponRb);
         }
@@ -23,30 +26,21 @@ public class EquipManager : MonoBehaviour
         weapon.transform.rotation = equipPosition.rotation;
         weapon.transform.SetParent(equipPosition);
         rb.isKinematic = true;
-        equipStatus = true;
-        currentWeaponComponent = weapon.GetComponent<J_Weapon>();
-        currentWeaponComponent.myEquipState = true;                        //Setting the currently equipped weapon to set its satatus to true
+        weapon.myEquipStatus = true;
+        objectToAttachTo.attackCollider = attackCollider;
+        objectToAttachTo.weaponEquipped = true;
         currentWeapon = weapon;
         currentWeaponRb = rb;
     }
 
-    public void DropWeapon(GameObject weapon, Rigidbody rb)
+    public void DropWeapon(J_Weapon weapon, Rigidbody rb)
     {
         //Dropping the weapon
         weapon.transform.SetParent(null);
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
-        StartCoroutine(currentWeaponComponent.EquipableAfter());           //Starting a Couroutine which will set the weapons equip status to false after the frame ends
-        currentWeaponComponent = null;
-        equipStatus = false;
-    }
-
-    //Dessabel the collider for the weapon after the swing done in a animation event so stored as public funtion
-    public void DisableColliderEvent()
-    {
-        if (currentWeaponComponent != null)
-        {
-            currentWeaponComponent.DeactivateCollider();                   //Disables the attack collider for the currently equipped weapon
-        }
+        StartCoroutine(weapon.EquipableAfter());
+        objectToAttachTo.attackCollider = null;
+        objectToAttachTo.weaponEquipped = false;
     }
 }

@@ -16,6 +16,14 @@ public class Player : MonoBehaviour
     [Range(0,5)] [SerializeField] float stoppingSpeed;           //The speed just before he stops moving
     [SerializeField] KeyCode crouchKey;                          //The crouch key
     [SerializeField] KeyCode sprintKey;                          //The sprint key
+    [SerializeField] bool useAnimtion;                           //Choose to use animation this is here just to make the designer test the game without animations
+    [SerializeField] Animator animController;                    //The animator for the player
+
+    //Things for weapon attach and playing animation
+    [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
+    [HideInInspector] public Collider attackCollider;           //The collider that will activate on the weapon while attacking
+    [HideInInspector] public bool weaponEquipped;               //Status of it the weapon is equipped
+    bool attacking;
 
     private void Start()
     {
@@ -50,6 +58,39 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyUp(sprintKey))
             sprint = false;
 
+        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
+
+        if (useAnimtion)
+        {
+
+            animController.SetFloat("Speed", verticalInput);
+            if (horizontalInput != 0)
+                animController.SetFloat("Direction", horizontalInput);
+            else
+                animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+            Debug.Log("<color=blue>" + Input.GetAxis("Anim Mouse X") + " </color>");
+
+            if(verticalInput == 0 && horizontalInput != 0)
+            {
+                animController.SetFloat("Horizontal", horizontalInput);
+            }
+            else
+                animController.SetFloat("Horizontal", 0);
+
+            //Checking if this weapon is equipped
+            if (weaponEquipped)
+            {
+                if (Input.GetKeyDown(attackKey))
+                {
+                    attackCollider.enabled = true;
+                    attacking = true;
+                    animController.SetTrigger("Attack");
+                }
+            }
+        }
+
+        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
+
         //Manageing the consumtion of stamina when sprinting
         if (horizontalInput != 0 || verticalInput != 0)
             myStats.StaminaReducion(ref sprint);
@@ -60,7 +101,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //Calling movement from the movement script
-        movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
+        if (!attacking)
+            movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 
 
@@ -72,6 +114,14 @@ public class Player : MonoBehaviour
             myStats.ReduceHealth(20);
         }
     }
+
+    //Function that deactivates the attack collider for the equipped weapon when the attack animation ends
+    public void AttackAnimationEndEvent()
+    {
+        attackCollider.enabled = false;
+        attacking = false;
+    }
+
 
     //Maybe use as ref for animations
     //void RotationAnimation()

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1795006237189673696}
   - component: {fileID: 1795006237189673699}
   - component: {fileID: 1795006237189673698}
-  - component: {fileID: 594178366065324013}
+  - component: {fileID: 1171156598623076550}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &594178366065324013
+--- !u!114 &1171156598623076550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,9 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1795006237189673693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc5bf8905eced64ca448c1e8f1d5c0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b363b8ee160f7d4c8b9bc10d0294e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseKey: 112
-  pauseScreen: {fileID: 1795006237189673693}
+  attacking: 0
   paused: 0
+  relicsCollected: 0
