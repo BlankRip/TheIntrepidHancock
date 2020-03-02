@@ -4963,7 +4963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenFades: 0.1
-  numberOfFades: 10
+  maxNumberOfFades: 10
   distroyFadeAfter: 0.5
   fadePrefab: {fileID: 6807047045039314300, guid: bd395097d8f94b94b90b106a42388ecd,
     type: 3}
@@ -10011,7 +10011,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.26713243, g: 0.8207547, b: 0.57692116, a: 1}
+      maxColor: {r: 0.8962264, g: 0.89155996, b: 0.2325116, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

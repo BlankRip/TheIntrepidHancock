@@ -6,7 +6,7 @@ public class FadeTrail : MonoBehaviour
 {
     [SerializeField] float timeBetweenFades;             //The amount of time before each fade is spawned
     float currentTime;                                   //Tracks the time sice the last fade (this is timer)
-    [SerializeField] int numberOfFades;                  //The max number of fades that can spawn in 1 trail
+    [SerializeField] int maxNumberOfFades;                  //The max number of fades that can spawn in 1 trail
     [SerializeField] float distroyFadeAfter = 1.5f;
     int currentFadeNumber;                               //Tracks the number of fades spawned in a trail
     [SerializeField] GameObject fadePrefab;
@@ -26,7 +26,7 @@ public class FadeTrail : MonoBehaviour
     {
         if (startFadeEffectOnAwake)
         {
-            if (currentTime < 0 && currentFadeNumber < numberOfFades)
+            if (currentTime < 0 && currentFadeNumber < maxNumberOfFades)
             {
                 instanciatedObject = Instantiate(fadePrefab, transform.position, transform.rotation);
                 instanciatedObject.transform.localScale = transform.localScale;
