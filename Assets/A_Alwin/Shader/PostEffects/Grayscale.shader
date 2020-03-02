@@ -9,6 +9,7 @@
 
 	float4 Frag(VaryingsDefault i) : SV_Target
 	{
+		// test gray scale
 		float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
 		float luminance = dot(color.rgb, float3(0.2126729, 0.7151522, 0.0721750));
 		color.rgb = lerp(color.rgb, luminance.xxx, _Blend.xxx);
