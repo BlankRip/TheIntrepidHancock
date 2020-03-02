@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 170785140}
   - component: {fileID: 170785142}
   - component: {fileID: 170785141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3236,7 +3236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211350751
@@ -3398,13 +3398,13 @@ GameObject:
   - component: {fileID: 230591122}
   - component: {fileID: 230591123}
   - component: {fileID: 230591124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FuckerMain
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &230591117
 Transform:
   m_ObjectHideFlags: 0
@@ -3899,7 +3899,7 @@ GameObject:
   - component: {fileID: 316089539}
   - component: {fileID: 316089538}
   - component: {fileID: 316089544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerMesh
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4001,7 +4001,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1976
+  m_Name: pb_Mesh-17728
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4164,7 +4164,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16610
+  m_Name: pb_Mesh34028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5474,7 +5474,7 @@ GameObject:
   - component: {fileID: 588957432}
   - component: {fileID: 588957431}
   - component: {fileID: 588957430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jar
   m_TagString: Lantern
   m_Icon: {fileID: 0}
@@ -5658,7 +5658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 622614978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5784,7 +5784,7 @@ GameObject:
   - component: {fileID: 656646892}
   - component: {fileID: 656646891}
   - component: {fileID: 656646890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6922,7 +6922,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2668
+  m_Name: pb_Mesh-18420
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7305,7 +7305,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2670
+  m_Name: pb_Mesh-18422
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14119,6 +14119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop1
       objectReference: {fileID: 0}
+    - target: {fileID: 5613219335548749624, guid: 8ae5b1ed074706f46a9fe400242e6243,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7261181054101506586, guid: 8ae5b1ed074706f46a9fe400242e6243,
         type: 3}
       propertyPath: increaseSizeBy
@@ -14686,7 +14691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435933887
@@ -14731,7 +14736,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2680
+  m_Name: pb_Mesh-18432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15000,7 +15005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1489747246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15138,7 +15143,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.28
+  m_Intensity: 0.61
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15256,7 +15261,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17638
+  m_Name: pb_Mesh35058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15538,13 +15543,13 @@ GameObject:
   - component: {fileID: 1554523817}
   - component: {fileID: 1554523821}
   - component: {fileID: 1554523816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1554523816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15687,7 +15692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615937005}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WeaponSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15815,13 +15820,13 @@ GameObject:
   - component: {fileID: 1628342049}
   - component: {fileID: 1628342054}
   - component: {fileID: 1628342053}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1628342049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15940,7 +15945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628795078}
   - component: {fileID: 1628795079}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackCollider2
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -16515,7 +16520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
@@ -17130,7 +17135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1745502837}
   - component: {fileID: 1745502836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackCollider1
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -17331,7 +17336,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16830
+  m_Name: pb_Mesh34248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17494,7 +17499,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1986
+  m_Name: pb_Mesh-17738
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18090,7 +18095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40da560374405fb40a7fc59255c56f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 622614978}
+  target: {fileID: 2066830418}
   mouseSensitivity: 2
   verticalClampMin: -15
   verticalClampMax: 60
@@ -19875,7 +19880,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17206
+  m_Name: pb_Mesh34626
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20366,7 +20371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1991198161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20612,7 +20617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1974
+  m_Name: pb_Mesh-17726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20898,7 +20903,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17610
+  m_Name: pb_Mesh35030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25532,6 +25537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5613219335548749624, guid: 8ae5b1ed074706f46a9fe400242e6243,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7261181054101506586, guid: 8ae5b1ed074706f46a9fe400242e6243,
         type: 3}
       propertyPath: increaseSizeBy
@@ -25626,7 +25636,7 @@ PrefabInstance:
     - target: {fileID: 1773112339913553499, guid: 5454eaa77ec9dc74fa0d404ae41ec243,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.9000244
+      value: -1.9001465
       objectReference: {fileID: 0}
     - target: {fileID: 1773112339913553499, guid: 5454eaa77ec9dc74fa0d404ae41ec243,
         type: 3}

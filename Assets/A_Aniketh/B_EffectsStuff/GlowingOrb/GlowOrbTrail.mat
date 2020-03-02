@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: A_TestTrail
+  m_Name: GlowOrbTrail
   m_Shader: {fileID: 4800000, guid: 7bd310609986de34198398895b89eaeb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -80,7 +80,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RageSpeed: 1
+    - _RageSpeed: 1.99
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
