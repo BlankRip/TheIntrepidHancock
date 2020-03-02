@@ -11,6 +11,7 @@ public class NodePoint : MonoBehaviour
     // go through all the nodes as
     public void FindFriends()
     {
+        thisNode.position = transform.position;
         List<Node> neibourNodes = new List<Node>();
         for (int i = 0; i < allNodes.Length; i++)
         {
@@ -26,6 +27,18 @@ public class NodePoint : MonoBehaviour
         }
         // add in to neibour nodes
         thisNode.neighbours = neibourNodes.ToArray();
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (thisNode.neighbours.Length > 0)
+        {
+            foreach (Node item in thisNode.neighbours)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(transform.position, item.position);
+            }
+        }
     }
 
 }
