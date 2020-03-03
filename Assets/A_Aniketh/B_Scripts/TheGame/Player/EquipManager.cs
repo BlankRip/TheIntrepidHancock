@@ -14,10 +14,10 @@ public class EquipManager : MonoBehaviour
         objectToAttachTo = FindObjectOfType<Player>();
     }
 
-    public void EquipWeapon(J_Weapon weapon, Rigidbody rb, Collider attackCollider)
+    public void EquipWeapon(J_Weapon weapon, Rigidbody rb)
     {
         //Checks if player already has a weapon if so drops it
-        if (objectToAttachTo.weaponEquipped == true)
+        if (objectToAttachTo.equippedWeapon != null)
         {
             DropWeapon(currentWeapon, currentWeaponRb);
         }
@@ -27,8 +27,7 @@ public class EquipManager : MonoBehaviour
         weapon.transform.SetParent(equipPosition);
         rb.isKinematic = true;
         weapon.myEquipStatus = true;
-        objectToAttachTo.attackCollider = attackCollider;
-        objectToAttachTo.weaponEquipped = true;
+        objectToAttachTo.equippedWeapon = weapon;
         currentWeapon = weapon;
         currentWeaponRb = rb;
     }
@@ -37,10 +36,10 @@ public class EquipManager : MonoBehaviour
     {
         //Dropping the weapon
         weapon.transform.SetParent(null);
+        weapon.activateEffects = false;
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
         StartCoroutine(weapon.EquipableAfter());
-        objectToAttachTo.attackCollider = null;
-        objectToAttachTo.weaponEquipped = false;
+        objectToAttachTo.equippedWeapon = null;
     }
 }

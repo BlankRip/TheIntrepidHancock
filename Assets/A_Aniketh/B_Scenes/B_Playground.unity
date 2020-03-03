@@ -3480,8 +3480,7 @@ MonoBehaviour:
   useAnimtion: 1
   animController: {fileID: 230591124}
   attackKey: 323
-  attackCollider: {fileID: 0}
-  weaponEquipped: 0
+  equippedWeapon: {fileID: 0}
 --- !u!54 &230591121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4001,7 +4000,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27650
+  m_Name: pb_Mesh-1388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5432,8 +5431,7 @@ MonoBehaviour:
   useAnimtion: 1
   animController: {fileID: 533439819}
   attackKey: 323
-  attackCollider: {fileID: 0}
-  weaponEquipped: 0
+  equippedWeapon: {fileID: 0}
 --- !u!95 &533439819 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 13a16f60da4245c45a865b2136ba272c,
@@ -6922,7 +6920,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28342
+  m_Name: pb_Mesh-2080
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7305,7 +7303,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28344
+  m_Name: pb_Mesh-2082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14144,7 +14142,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fireFlies
       value: 
-      objectReference: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+      objectReference: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae5b1ed074706f46a9fe400242e6243, type: 3}
@@ -14736,7 +14734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-28354
+  m_Name: pb_Mesh-2092
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15005,7 +15003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1489747246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15110,8 +15108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectThatCanPickUp: {fileID: 533439812}
-  attackCollider: {fileID: 314539693}
   myEquipStatus: 0
+  attackCollider: {fileID: 314539693}
+  activateEffects: 0
   equipKey: 101
   dropKey: 102
 --- !u!1 &1501512200
@@ -15549,7 +15548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1554523816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15563,8 +15562,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectThatCanPickUp: {fileID: 230591116}
-  attackCollider: {fileID: 1745502836}
   myEquipStatus: 0
+  attackCollider: {fileID: 1745502836}
+  activateEffects: 0
   equipKey: 101
   dropKey: 102
 --- !u!65 &1554523817
@@ -15826,7 +15826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1628342049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15915,8 +15915,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectThatCanPickUp: {fileID: 230591116}
-  attackCollider: {fileID: 1628795079}
   myEquipStatus: 0
+  attackCollider: {fileID: 1628795079}
+  activateEffects: 0
   equipKey: 101
   dropKey: 102
 --- !u!54 &1628342054
@@ -15990,21 +15991,41 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
@@ -16510,9 +16531,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 100260, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 100262, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100262, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Name
@@ -16525,6 +16554,10 @@ PrefabInstance:
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100266, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
@@ -16549,6 +16582,10 @@ PrefabInstance:
     - target: {fileID: 100276, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100276, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17499,7 +17536,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27660
+  m_Name: pb_Mesh-1398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20371,7 +20408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1991198161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20414,8 +20451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectThatCanPickUp: {fileID: 533439812}
-  attackCollider: {fileID: 174075268}
   myEquipStatus: 0
+  attackCollider: {fileID: 174075268}
+  activateEffects: 0
   equipKey: 101
   dropKey: 102
 --- !u!23 &1991198164
@@ -20530,7 +20568,7 @@ MonoBehaviour:
   fractureVersion: {fileID: 5613219335548749624, guid: 9c7f7dfc564ba2e4491a91215841e597,
     type: 3}
   relic: {fileID: 4913189037622607218, guid: 29c56b4c8d389be4a80778141e9ca7f5, type: 3}
-  fireFlies: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+  fireFlies: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
     type: 3}
   scoreToAdd: 5
   hitsBeforeBreak: 2
@@ -20617,7 +20655,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27648
+  m_Name: pb_Mesh-1386
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25567,7 +25605,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fireFlies
       value: 
-      objectReference: {fileID: 1368846480662874574, guid: 3d737ccbafb665f49ae07713859dc0b4,
+      objectReference: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae5b1ed074706f46a9fe400242e6243, type: 3}

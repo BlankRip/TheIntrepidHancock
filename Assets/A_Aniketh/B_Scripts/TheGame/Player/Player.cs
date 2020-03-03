@@ -21,8 +21,7 @@ public class Player : MonoBehaviour
 
     //Things for weapon attach and playing animation
     [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
-    [HideInInspector] public Collider attackCollider;           //The collider that will activate on the weapon while attacking
-    [HideInInspector] public bool weaponEquipped;               //Status of it the weapon is equipped
+    [HideInInspector] public J_Weapon equippedWeapon;
     bool attacking;
 
     private void Start()
@@ -34,68 +33,70 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //The horizontal and vertical inputs
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-        //Setting the speed to the standard move speed else reduce it to make it stop soon
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-            speed = InitialSetSpeed;
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
-            speed = InitialSetSpeed;
-        else
-            speed = stoppingSpeed;
-
-        //Checking to crouch
-        if (Input.GetKeyDown(crouchKey))
-            crouch = true;
-        else if (Input.GetKeyUp(crouchKey))
-            crouch = false;
-
-        //Check if sprinting and has stamina
-        if (Input.GetKeyDown(sprintKey))
-            sprint = true;
-        else if (Input.GetKeyUp(sprintKey))
-            sprint = false;
-
-        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
-
-        if (useAnimtion)
+        if (!attacking)
         {
+            //The horizontal and vertical inputs
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
 
-            animController.SetFloat("Speed", verticalInput);
-            if (horizontalInput != 0)
-                animController.SetFloat("Direction", horizontalInput);
+            //Setting the speed to the standard move speed else reduce it to make it stop soon
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                speed = InitialSetSpeed;
+            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+                speed = InitialSetSpeed;
             else
-                animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
-            Debug.Log("<color=blue>" + Input.GetAxis("Anim Mouse X") + " </color>");
+                speed = stoppingSpeed;
 
-            if(verticalInput == 0 && horizontalInput != 0)
-            {
-                animController.SetFloat("Horizontal", horizontalInput);
-            }
-            else
-                animController.SetFloat("Horizontal", 0);
+            //Checking to crouch
+            if (Input.GetKeyDown(crouchKey))
+                crouch = true;
+            else if (Input.GetKeyUp(crouchKey))
+                crouch = false;
 
-            //Checking if this weapon is equipped
-            if (weaponEquipped)
+            //Check if sprinting and has stamina
+            if (Input.GetKeyDown(sprintKey))
+                sprint = true;
+            else if (Input.GetKeyUp(sprintKey))
+                sprint = false;
+
+            //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
+
+            if (useAnimtion)
             {
-                if (Input.GetKeyDown(attackKey))
+                animController.SetFloat("Speed", verticalInput);
+                if (horizontalInput != 0)
+                    animController.SetFloat("Direction", horizontalInput);
+                else
+                    animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+                Debug.Log("<color=blue>" + Input.GetAxis("Anim Mouse X") + " </color>");
+
+                if (verticalInput == 0 && horizontalInput != 0)
                 {
-                    attackCollider.enabled = true;
-                    attacking = true;
-                    animController.SetTrigger("Attack");
+                    animController.SetFloat("Horizontal", horizontalInput);
+                }
+                else
+                    animController.SetFloat("Horizontal", 0);
+
+                //Checking if this weapon is equipped
+                if (equippedWeapon != null)
+                {
+                    if (Input.GetKeyDown(attackKey))
+                    {
+                        attacking = true;
+                        animController.SetTrigger("Attack");
+                        equippedWeapon.activateEffects = true;
+                    }
                 }
             }
+
+            //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
+
+            //Manageing the consumtion of stamina when sprinting
+            if (horizontalInput != 0 || verticalInput != 0)
+                myStats.StaminaReducion(ref sprint);
+            //Managing stamina recovary when not sprinting
+            myStats.StaminaRecovary(sprint);
         }
-
-        //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
-
-        //Manageing the consumtion of stamina when sprinting
-        if (horizontalInput != 0 || verticalInput != 0)
-            myStats.StaminaReducion(ref sprint);
-        //Managing stamina recovary when not sprinting
-        myStats.StaminaRecovary(sprint);
     }
 
     private void FixedUpdate()
@@ -118,8 +119,9 @@ public class Player : MonoBehaviour
     //Function that deactivates the attack collider for the equipped weapon when the attack animation ends
     public void AttackAnimationEndEvent()
     {
-        attackCollider.enabled = false;
         attacking = false;
+        if (equippedWeapon != null)
+            equippedWeapon.activateEffects = false;
     }
 
 
