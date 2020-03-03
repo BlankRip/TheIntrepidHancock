@@ -9,6 +9,7 @@ public class J_Weapon : MonoBehaviour
 
     //Things needed when attacking
     [SerializeField] Collider attackCollider;                 //The collider that is enabled and desabled when the player is attacking
+    [SerializeField] TrailRenderer weaponTrail;               //The trail attached to the weapon
     [HideInInspector] public bool activateEffects;            //Bool to activate things that are needed to be done when attacking
 
     [Header("KeyBindings for actions")]
@@ -19,6 +20,7 @@ public class J_Weapon : MonoBehaviour
 
     void Start()
     {
+        objectThatCanPickUp = GameObject.FindGameObjectWithTag("Player");
         weaponRB = GetComponent<Rigidbody>();
         manageEquipment = FindObjectOfType<EquipManager>();
     }
@@ -55,6 +57,7 @@ public class J_Weapon : MonoBehaviour
     //Function that activates the things needed when attacking
     void ActivateEffects()
     {
+        weaponTrail.emitting = true;
         attackCollider.enabled = true;
     }
 
@@ -62,6 +65,7 @@ public class J_Weapon : MonoBehaviour
     void DeactivateEffects()
     {
         attackCollider.enabled = false;
+        weaponTrail.emitting = false;
     }
 
     /*The IEnumerator that will set the equipment status to false after the frame ends 

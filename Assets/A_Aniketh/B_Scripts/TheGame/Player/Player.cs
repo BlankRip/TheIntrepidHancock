@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
                     if (Input.GetKeyDown(attackKey))
                     {
                         attacking = true;
+                        sprint = false;
+                        crouch = false;
                         animController.SetTrigger("Attack");
                         equippedWeapon.activateEffects = true;
                     }
