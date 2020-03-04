@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     [HideInInspector] public J_Weapon equippedWeapon;
     bool attacking;
 
+    [Header("Things for VFX in Player")]
+    [SerializeField] ParticleSystem footStepParticlesLeft;       //Foot steps dust spwner for left leg
+    [SerializeField] ParticleSystem footStepParticlesRight;      //Foot steps dust spwner for right leg
+
     private void Start()
     {
         movementController = GetComponent<PlayerMovement>();
@@ -124,6 +128,17 @@ public class Player : MonoBehaviour
         attacking = false;
         if (equippedWeapon != null)
             equippedWeapon.activateEffects = false;
+    }
+
+    //Funtions that play the footstep dust as an animation event
+    public void RightFootAnimationEvent()
+    {
+        footStepParticlesRight.Play();
+    }
+
+    public void LeftFootAnimationEvent()
+    {
+        footStepParticlesLeft.Play();
     }
 
 
