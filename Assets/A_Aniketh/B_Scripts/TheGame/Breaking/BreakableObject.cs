@@ -8,6 +8,7 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] GameObject fractureVersion;                            //Fractured version if the prop
     [SerializeField] GameObject relic;                                      //The relic gameObject
     [SerializeField] GameObject fireFlies;                                  //The fire fly prefab
+    [SerializeField] GameObject breakEffect;
     [SerializeField] int scoreToAdd;                                        //The amount of score given when this object is broken
     [SerializeField] int hitsBeforeBreak = 2;                               //Number of its it takes before breaking
     [Range(1, 2)] [SerializeField] float increaseSizeBy = 1.1f;             //For hit effect how much of the size is increased on-hit
@@ -46,6 +47,7 @@ public class BreakableObject : MonoBehaviour
             {
                 score_relic.currentScore += scoreToAdd;
                 Instantiate(fractureVersion, transform.position, transform.rotation);
+                Instantiate(breakEffect, transform.position, transform.rotation);
                 Instantiate(fireFlies, transform.position, Quaternion.identity);                    //Spawn fire fly
                 //If player cross the score thresh hold to spawn the relic then spawn the relic
                 if (score_relic.spawnRelic)
