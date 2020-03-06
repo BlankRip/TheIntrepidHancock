@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    [SerializeField] GameObject menuOptions;
-    [SerializeField] GameObject creditsPannel;
-    [SerializeField] GameObject animaticDisplay;
-    [SerializeField] float animaticLength;
+    [Tooltip("The menu panle or all its options")] [SerializeField] GameObject menuOptions;
+    [Tooltip("The credits panle")] [SerializeField] GameObject creditsPannel;
+    [Tooltip("The animatic display panle")] [SerializeField] GameObject animaticDisplay;
+    [Tooltip("The length of the animatic in seconds")] [SerializeField] float animaticLength;
 
     public void StartGame()
     {

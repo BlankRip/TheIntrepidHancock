@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    [SerializeField] KeyCode pauseKey;                                    //The key that is pressed to peuse and resume the game
-    [SerializeField] GameObject pauseScreen;                              //The pause screen gameobject
+    [Tooltip("The key that is pressed to peuse and resume the game")] 
+    [SerializeField] KeyCode pauseKey;
+    [Tooltip("The pause screen gameobject")] 
+    [SerializeField] GameObject pauseScreen;
     GameManager gM;                                                       //GameManager Script
 
     private void Start()

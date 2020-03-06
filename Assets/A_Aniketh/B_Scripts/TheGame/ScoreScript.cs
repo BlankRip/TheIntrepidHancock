@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ScoreScript : MonoBehaviour
 {
-    int spawnAtScoreMultiplier;                         //The multiplier value used in our equation to find when to spawn next relic
     [HideInInspector] public int currentScore;          //The current score of the player
     [HideInInspector] public int relicsSpawned;       //The number of relics collected so far
     [HideInInspector] public bool spawnRelic;           //If it's time to spawn a relic or not
+
+    int spawnAtScoreMultiplier;                         //The multiplier value used in our equation to find when to spawn next relic
     bool exitStatusUpdate;                              //Checks if have to update the player that he can leave
-    [SerializeField] Collider exitTriggerCollider;      //The is trigger collider on the Exit-Door
+
+    [Tooltip("The is trigger collider on the Exit-Door")] 
+    [SerializeField] Collider exitTriggerCollider;
 
     void Start()
     {

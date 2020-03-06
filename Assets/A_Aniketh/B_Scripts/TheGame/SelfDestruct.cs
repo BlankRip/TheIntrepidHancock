@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
-    [SerializeField] float distructionsCountdown;             //Time before destring itself
+    [Tooltip("Time before destring itself")] 
+    [SerializeField] float distructionsCountdown;
 
     void Start()
     {

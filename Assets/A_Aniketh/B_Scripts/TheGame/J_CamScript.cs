@@ -7,20 +7,30 @@ public class J_CamScript : MonoBehaviour
     GameManager gM;                                  //Check if the game is paused
 
     [Header("Things needed to move camera around")]
-    [SerializeField] Transform target;                       //The that will be followed and rotated
-    [SerializeField] float mouseSensitivity = 2;             //The mouse sensitivity, AKA rotation speed multiplier
-    [SerializeField] float verticalClampMin = -15.0f;        //Minimum vertical movement possible
-    [SerializeField] float verticalClampMax = 60.0f;         //Maximum vertical movement possible
-    [SerializeField] float smoothCamRotation = 10.0f;        //Smoothening done while lerping the object rotation
+    [Tooltip("The that will be followed and rotated")] 
+    [SerializeField] Transform target;
+    [Tooltip("The mouse sensitivity, AKA rotation speed multiplier")] 
+    [SerializeField] float mouseSensitivity = 2;
+    [Tooltip("Minimum vertical movement possible")] 
+    [SerializeField] float verticalClampMin = -15.0f;
+    [Tooltip("Maximum vertical movement possible")] 
+    [SerializeField] float verticalClampMax = 60.0f;
+    [Tooltip("Smoothening done while lerping the object rotation")] 
+    [SerializeField] float smoothCamRotation = 10.0f;
 
     float mouseX;                                            //The current horizontal input value for horizontal rotaion
     float mouseY;                                            //The current vertical input value for the vertical rotation
     
     [Header("Things needed to do wall clipping for the camera")]
-    [SerializeField] float minDistance = 1.0f;               //Minimum distance the object will be from the target
-    [SerializeField] float maxDistance = 8.0f;               //Maximum distance the object can be from the target
-    [SerializeField] float smoothCamMovement = 10.0f;        //Smoothening done while lerping the object to desired position
-    [SerializeField] LayerMask WallClipLayerMask;            //The layers that work for wall clipping
+    [Tooltip("Minimum distance the object will be from the target")] 
+    [SerializeField] float minDistance = 1.0f;
+    [Tooltip("Maximum distance the object can be from the target")] 
+    [SerializeField] float maxDistance = 8.0f;
+    [Tooltip("Smoothening done while lerping the object to desired position")] 
+    [SerializeField] float smoothCamMovement = 10.0f;
+    [Tooltip("The layers that work for wall clipping")] 
+    [SerializeField] LayerMask WallClipLayerMask;
+
     float distance;                                          //The current distance the object will be from the target
     Vector3 camDirection;                 //vector3 that stores the local unit direction the object is from the camera
     Vector3 desiredCameraDir;         //The expected camera direction
