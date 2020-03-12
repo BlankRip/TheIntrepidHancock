@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
-    ScoreScript score_relic;                                                //Script that keeps track of the score and status of relic spawns
-    [SerializeField] GameObject fractureVersion;                            //Fractured version if the prop
-    [SerializeField] GameObject relic;                                      //The relic gameObject
-    [SerializeField] GameObject fireFlies;                                  //The fire fly prefab
+    [Tooltip("Fractured version if the prop")] 
+    [SerializeField] GameObject fractureVersion;
+    [Tooltip("The relic gameObject")] 
+    [SerializeField] GameObject relic;
+    [Tooltip("The fire fly prefab")] 
+    [SerializeField] GameObject fireFlies;
+    [Tooltip("")] 
     [SerializeField] GameObject breakEffect;
-    [SerializeField] int scoreToAdd;                                        //The amount of score given when this object is broken
-    [SerializeField] int hitsBeforeBreak = 2;                               //Number of its it takes before breaking
-    [Range(1, 2)] [SerializeField] float increaseSizeBy = 1.1f;             //For hit effect how much of the size is increased on-hit
-    [Range(0, 0.5f)] [SerializeField] float maxMovePosition = 0.1f;         //For hit effect the max the object can move from its initial postion 
+    [Tooltip("The amount of score given when this object is broken")] 
+    [SerializeField] int scoreToAdd;
+    [Tooltip("Number of its it takes before breaking")] 
+    [SerializeField] int hitsBeforeBreak = 2;
+    [Tooltip("For hit effect how much of the size is increased on-hit")] [Range(1, 2)] 
+    [SerializeField] float increaseSizeBy = 1.1f;
+    [Tooltip("For hit effect the max the object can move from its initial postion")]
+    [Range(0, 0.5f)] [SerializeField] float maxMovePosition = 0.1f;
+
+    ScoreScript score_relic;                 //Script that keeps track of the score and status of relic spawns
     Vector3 initialSize;                    //The initial size to which it should get back to during the hit effect
     Vector3 initialPosition;                //The initial postion to which the object should get back during the hit effect
     Vector3 addPosition;                   //The vector added to initial position to move the obejct

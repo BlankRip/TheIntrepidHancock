@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EquipManager : MonoBehaviour
 {
-    [SerializeField] Transform equipPosition;                //The position the weapon will equip
+    [Tooltip("The position the weapon will equip")] 
+    [SerializeField] Transform equipPosition;
     Player objectToAttachTo;                                        //Status if the player has a weapon equipped
     J_Weapon currentWeapon;                                //The weapon which is corrently equipped
     Rigidbody currentWeaponRb;                               //The rigidbody component attached to the currently equipped weapon

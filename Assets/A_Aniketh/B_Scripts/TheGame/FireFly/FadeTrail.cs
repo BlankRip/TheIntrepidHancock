@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class FadeTrail : MonoBehaviour
 {
-    [SerializeField] float timeBetweenFades;             //The amount of time before each fade is spawned
-    float currentTime;                                   //Tracks the time sice the last fade (this is timer)
-    [SerializeField] int maxNumberOfFades;                  //The max number of fades that can spawn in 1 trail
+    [Tooltip("The amount of time before each fade is spawned")] 
+    [SerializeField] float timeBetweenFades;
+    [Tooltip("The max number of fades that can spawn in 1 trail")] 
+    [SerializeField] int maxNumberOfFades;
+    [Tooltip("The time before the spawned fade is destroyed")] 
     [SerializeField] float distroyFadeAfter = 1.5f;
-    int currentFadeNumber;                               //Tracks the number of fades spawned in a trail
+    [Tooltip("The Prefab That needs to be spawned")] 
     [SerializeField] GameObject fadePrefab;
-    GameObject instanciatedObject;
-    [SerializeField] bool startFadeEffectOnAwake;     //Bool that check if the fade trails should run 
+    [Tooltip("Bool that check if the fade trails should run ")] 
+    [SerializeField] bool startFadeEffectOnAwake;
 
+    int currentFadeNumber;                               //Tracks the number of fades spawned in a trail
+    float currentTime;                                   //Tracks the time sice the last fade (this is timer)
+    GameObject instanciatedObject;
 
     // Start is called before the first frame update
     void Start()

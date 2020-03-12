@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class J_Weapon : MonoBehaviour
 {
+    [Tooltip("The object can pick this weapon up")] 
     [SerializeField] GameObject objectThatCanPickUp;
     [HideInInspector] public bool myEquipStatus;
 
     //Things needed when attacking
-    [SerializeField] Collider attackCollider;                 //The collider that is enabled and desabled when the player is attacking
-    [SerializeField] TrailRenderer weaponTrail;               //The trail attached to the weapon
+    [Tooltip("The collider that is enabled and desabled when the player is attacking")] 
+    [SerializeField] Collider attackCollider;
+    [Tooltip("The trail attached to the weapon")] 
+    [SerializeField] TrailRenderer weaponTrail;
     [HideInInspector] public bool activateEffects;            //Bool to activate things that are needed to be done when attacking
 
     [Header("KeyBindings for actions")]
-    [SerializeField] KeyCode equipKey = KeyCode.E;           //The key pressed to equip weapon
-    [SerializeField] KeyCode dropKey = KeyCode.F;           //The key pressed to drop weapon
+    [Tooltip("The key pressed to equip weapon")] 
+    [SerializeField] KeyCode equipKey = KeyCode.E;
+    [Tooltip("The key pressed to drop weapon")] 
+    [SerializeField] KeyCode dropKey = KeyCode.F;
+
     Rigidbody weaponRB;                                      //The rigidboady of the weapon
     EquipManager manageEquipment;                            //The equipment manager which will manage equipping, dropping and swapping of weapons
 

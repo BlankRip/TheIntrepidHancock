@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] int playerMaxHealth;                         //The maximum health the player can have
-    [SerializeField] float playerMaxStamina;                      //The maximum stamina the player can have
-    [SerializeField] float staminaDrainRate;                      //The amount of stamina drained
-    [SerializeField] float staminaRecoveryRate;                   //The amount of stamina recovered
+    [Tooltip("The maximum health the player can have")]
+    [SerializeField] int playerMaxHealth;
+    [Tooltip("The maximum stamina the player can have")] 
+    [SerializeField] float playerMaxStamina;
+    [Tooltip("The amount of stamina drained")] 
+    [SerializeField] float staminaDrainRate;
+    [Tooltip("The amount of stamina recovered")] 
+    [SerializeField] float staminaRecoveryRate;
+
     int currentHealth;                                            //The current value of the health
     float currentStamina;                                         //The current value of the stamina
 
     [Header("UI Stuff For Stats")]
-    [SerializeField] Slider healthBar;                            //The helath slider UI
-    [SerializeField] Slider staminaBar;                           //The stamina slider UI
+    [Tooltip("The helath slider UI")] 
+    [SerializeField] Slider healthBar;
+    [Tooltip("The stamina slider UI")] 
+    [SerializeField] Slider staminaBar;
 
     void Start()
     {

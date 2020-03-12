@@ -12,21 +12,31 @@ public class Player : MonoBehaviour
     float InitialSetSpeed;                                       //The noraml speed the player for tracking purposes
     bool crouch;                                                 //If the player is crouching
     static bool sprint;                                          //If the player is sprinting
-    [SerializeField] float speed;                                //The normal speed of the player
-    [Range(0,5)] [SerializeField] float stoppingSpeed;           //The speed just before he stops moving
-    [SerializeField] KeyCode crouchKey;                          //The crouch key
-    [SerializeField] KeyCode sprintKey;                          //The sprint key
-    [SerializeField] bool useAnimtion;                           //Choose to use animation this is here just to make the designer test the game without animations
-    [SerializeField] Animator animController;                    //The animator for the player
+
+    [Tooltip("The normal speed of the player")] 
+    [SerializeField] float speed;
+    [Tooltip("The speed just before he stops moving")] 
+    [Range(0,5)] [SerializeField] float stoppingSpeed;
+    [Tooltip("The crouch key")] 
+    [SerializeField] KeyCode crouchKey;
+    [Tooltip("The sprint key")] 
+    [SerializeField] KeyCode sprintKey;
+    [Tooltip("Choose to use animation this is here just to make the designer test the game without animations")] 
+    [SerializeField] bool useAnimtion;
+    [Tooltip("The animator for the player")] 
+    [SerializeField] Animator animController;
 
     //Things for weapon attach and playing animation
+    [Tooltip("The key to launch attack")] 
     [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
     [HideInInspector] public J_Weapon equippedWeapon;
     bool attacking;
 
     [Header("Things for VFX in Player")]
-    [SerializeField] ParticleSystem footStepParticlesLeft;       //Foot steps dust spwner for left leg
-    [SerializeField] ParticleSystem footStepParticlesRight;      //Foot steps dust spwner for right leg
+    [Tooltip("Foot steps dust spwner for left leg")] 
+    [SerializeField] ParticleSystem footStepParticlesLeft;
+    [Tooltip("Foot steps dust spwner for right leg")] 
+    [SerializeField] ParticleSystem footStepParticlesRight;
 
     private void Start()
     {

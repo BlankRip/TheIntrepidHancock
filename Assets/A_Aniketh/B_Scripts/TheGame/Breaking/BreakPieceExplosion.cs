@@ -5,9 +5,12 @@ using UnityEngine;
 public class BreakPieceExplosion : MonoBehaviour
 {
     Rigidbody rb;                                                                    //Rigidbody of the shard or broken piece
-    [SerializeField] float explosionForce = 7;                                       //The amount of explosion force
-    [Range(0.0f, 0.5f)] [SerializeField] float explosionRaious = 0.01f;              //The radious in which the explosion force is applied
-    [SerializeField] float upWardsModifier = 0.00001f;                               //Well, upwards modifier, we do't really need it, depends
+    [Tooltip("The amount of explosion force")] 
+    [SerializeField] float explosionForce = 7;
+    [Tooltip("The radious in which the explosion force is applied")] 
+    [Range(0.0f, 0.5f)] [SerializeField] float explosionRaious = 0.01f;
+    [Tooltip("Well, upwards modifier, we do't really need it, depends")] 
+    [SerializeField] float upWardsModifier = 0.00001f;
 
     void Start()
     {

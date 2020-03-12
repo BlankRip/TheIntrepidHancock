@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FireFly : MonoBehaviour
 {
-    [SerializeField] string targetTag;           //The tag of the object the fierfly shouldFly to
-    [SerializeField] float curveMultiplier;      //The higher this value the more curvy it is
+    [Tooltip("The tag of the object the fierfly shouldFly to")] [SerializeField] string targetTag;
+    [Tooltip("The higher this value the more curvy it is")] [SerializeField] float curveMultiplier;
+
     Transform target;                            //The object that the firefly will go to
     Vector3 startPosition;                       //The the position at which the firefly is spawned
     Vector3 midPoint;                            //The third mid way point required to calculate the bezier curve
