@@ -8,14 +8,23 @@ public class PlayerMovement : MonoBehaviour
     Vector3 referanceVelocity = Vector3.zero;
     Vector3 targetVelocity;
     Quaternion turnAngle;
-    [SerializeField] Collider crouchDisableCollider;                     //The collider that will be disabled when the player is crouching
-    [Range(0,1)] [SerializeField] float crouchSpeedReduction;            //The amount by which the speed should be reduced while crouching
-    [Range(1, 2)] [SerializeField] float sprintSpeedMultiplyer;          //The amount by whcic the speed should be increased
-    [SerializeField] bool useRotate;                                     //If this is ticked true then the player will rotate around a target boject
-    [SerializeField] Transform rotateAround;                             //The object used as ref to rotate
-    [SerializeField] float rotationSpeed;                                //How fast will it rotate
-    [Range(0, 0.5f)] [SerializeField] float smoothMovementBy;            //The time it takes to reach the target velocity
-    [Range(0, 0.5f)] [SerializeField] float moveThreshHold;              //The thresh hold values, the player will move when inputs is greater than this values
+
+    [Tooltip("The collider that will be disabled when the player is crouching")] 
+    [SerializeField] Collider crouchDisableCollider;
+    [Tooltip("The amount by which the speed should be reduced while crouching")] 
+    [Range(0,1)] [SerializeField] float crouchSpeedReduction;
+    [Tooltip("The amount by whcic the speed should be increased")] 
+    [Range(1, 2)] [SerializeField] float sprintSpeedMultiplyer;
+    [Tooltip("If this is ticked true then the player will rotate around a target boject")] 
+    [SerializeField] bool useRotate;
+    [Tooltip("The object used as ref to rotate")] 
+    [SerializeField] Transform rotateAround;
+    [Tooltip("How fast will it rotate")] 
+    [SerializeField] float rotationSpeed;
+    [Tooltip("The time it takes to reach the target velocity")] 
+    [Range(0, 0.5f)] [SerializeField] float smoothMovementBy;
+    [Tooltip("The thresh hold values, the player will move when inputs is greater than this values")] 
+    [Range(0, 0.5f)] [SerializeField] float moveThreshHold;
 
     private void Start()
     {
