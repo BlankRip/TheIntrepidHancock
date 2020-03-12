@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class J_CamScript : MonoBehaviour
 {
-    GameManager gM;                                  //Check if the game is paused
-
     [Header("Things needed to move camera around")]
     [Tooltip("The that will be followed and rotated")] 
     [SerializeField] Transform target;
@@ -46,15 +44,10 @@ public class J_CamScript : MonoBehaviour
         distance = camDirection.magnitude;                          //Getting the local magnitude to the postion with is basically distance from parent to camera
     }
 
-    private void Start()
-    {
-        gM = FindObjectOfType<GameManager>();
-    }
-
     void FixedUpdate()
     {
 
-        if (!gM.paused)
+        if (!GameManager.instance.paused)
         {
             mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;               //Getting horizontal movement input of the mouse
             mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;               //Getting vertical movement input of the mouse
