@@ -96,6 +96,7 @@ public class GraphAStar : MonoBehaviour
             }
             routeList.Add(addNode.position);
 
+            routeList.Reverse();
 
             return routeList.ToArray();
     }

@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - Lantern
   - A*Node
+  - GoalPoints
   layers:
   - Default
   - TransparentFX
