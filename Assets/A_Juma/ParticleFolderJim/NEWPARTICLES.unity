@@ -905,5 +905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 7381761519100403104, guid: 7a14806fa51bd364b9c3d6205da44bba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a14806fa51bd364b9c3d6205da44bba, type: 3}
