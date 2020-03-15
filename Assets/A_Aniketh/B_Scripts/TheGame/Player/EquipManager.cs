@@ -37,7 +37,6 @@ public class EquipManager : MonoBehaviour
     {
         //Dropping the weapon
         weapon.transform.SetParent(null);
-        weapon.activateEffects = false;
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
         StartCoroutine(weapon.EquipableAfter());
