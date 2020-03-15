@@ -40,6 +40,9 @@ public class AudioManger : MonoBehaviour
     }
     //-------------------------------------------------------- Think this shoulb be in abby -------------------------------------------
 
+    //For changeing game background clips
+    float currentVolume;
+
     //For break dialogues & grunts
     int pick;
     int previousBreakDialogue;
@@ -55,6 +58,19 @@ public class AudioManger : MonoBehaviour
             instance = this;
     }
 
+    //---------------------------------------------------------- FOR TESTING ------------------------------------------------
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            SwitchToChase();
+
+        if (Input.GetKeyDown(KeyCode.Y))
+            SwitchToCalm();
+    }
+
+    //---------------------------------------------------------- FOR TESTING ------------------------------------------------
+
     public void PlayTutorialClip(int clipID)
     {
         PlayOneShotOn(playerSoundSource, tutorialClips[clipID]);
@@ -68,6 +84,18 @@ public class AudioManger : MonoBehaviour
     public void PlayBreakDialoguesClip()
     {
         PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+    }
+
+    public void SwitchToChase()
+    {
+        StopCoroutine("SwithTracks");
+        StartCoroutine(SwithTracks(backTrackChaseClip));
+    }
+
+    public void SwitchToCalm()
+    {
+        StopCoroutine("SwithTracks");
+        StartCoroutine(SwithTracks(backTrackNormalClip));
     }
 
     public void PlayGruntClip()
@@ -96,22 +124,51 @@ public class AudioManger : MonoBehaviour
 
     void PlayOneShotOn(AudioSource source, AudioClip clip)
     {
-        source.PlayOneShot(clip);
+        if (instance != null)
+            source.PlayOneShot(clip);
     }
 
     void PlayerRandomPlay(AudioClip[] clips, int prieviousPick)
     {
-        pick = Random.Range(0, clips.Length - 1);
-
-        if (pick == prieviousPick)
+        if (instance != null)
         {
-            if (pick == clips.Length - 1)
-                pick--;
-            else
-                pick++;
+            pick = Random.Range(0, clips.Length - 1);
+
+            if (pick == prieviousPick)
+            {
+                if (pick == clips.Length - 1)
+                    pick--;
+                else
+                    pick++;
+            }
+            prieviousPick = pick;
+            playerSoundSource.PlayOneShot(clips[pick]);
         }
-        prieviousPick = pick;
-        playerSoundSource.PlayOneShot(clips[pick]);
+    }
+
+    IEnumerator SwithTracks(AudioClip ClipToSwitch)
+    {
+        currentVolume = backGroundMusicSource.volume;
+        while (currentVolume > 0)
+        {
+            Debug.Log("<color=red>IN 1</color>");
+            backGroundMusicSource.volume = currentVolume;
+            yield return new WaitForSeconds(0);
+            currentVolume -= 0.002f;
+        }
+
+        Debug.Log("<color=red>Out 1</color>");
+        backGroundMusicSource.clip = ClipToSwitch;
+        backGroundMusicSource.Play();
+
+        while(currentVolume < 0.2f)
+        {
+            Debug.Log("<color=red>IN 2</color>");
+            backGroundMusicSource.volume = currentVolume;
+            yield return new WaitForSeconds(0);
+            currentVolume += 0.002f;
+        }
+        Debug.Log("<color=red>Ended Switch</color>");
     }
 
 }

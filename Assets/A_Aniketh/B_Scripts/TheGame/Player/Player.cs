@@ -88,7 +88,6 @@ public class Player : MonoBehaviour
                     animController.SetFloat("Direction", horizontalInput);
                 else
                     animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
-                Debug.Log("<color=blue>" + Input.GetAxis("Anim Mouse X") + " </color>");
 
                 if (verticalInput == 0 && horizontalInput != 0)
                 {
