@@ -38,6 +38,12 @@ public class Player : MonoBehaviour
     [Tooltip("Foot steps dust spwner for right leg")] 
     [SerializeField] ParticleSystem footStepParticlesRight;
 
+    [Header("Audio FX for player")]
+    [Tooltip("Foot steps sound left leg")]
+    [SerializeField] AudioSource leftFootAudio;
+    [Tooltip("Foot steps sound right leg")]
+    [SerializeField] AudioSource rightFootAudio;
+
     private void Start()
     {
         movementController = GetComponent<PlayerMovement>();
@@ -100,7 +106,7 @@ public class Player : MonoBehaviour
                         sprint = false;
                         crouch = false;
                         animController.SetTrigger("Attack");
-                        equippedWeapon.activateEffects = true;
+                        equippedWeapon.ActivateEffects();
                     }
                 }
             }
@@ -137,17 +143,19 @@ public class Player : MonoBehaviour
     {
         attacking = false;
         if (equippedWeapon != null)
-            equippedWeapon.activateEffects = false;
+            equippedWeapon.DeactivateEffects();
     }
 
     //Funtions that play the footstep dust as an animation event
     public void RightFootAnimationEvent()
     {
+        leftFootAudio.Play();
         footStepParticlesRight.Play();
     }
 
     public void LeftFootAnimationEvent()
     {
+        rightFootAudio.Play();
         footStepParticlesLeft.Play();
     }
 
