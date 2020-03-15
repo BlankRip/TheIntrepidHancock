@@ -20,10 +20,14 @@ public class AudioManger : MonoBehaviour
     [SerializeField] AudioClip[] playerBreakDialogueClips;
     [Tooltip("Audio clips of the playeer grunts")]
     [SerializeField] AudioClip[] playerGrunts;
+    [Tooltip("Audio clips played when each relic is collected")]
+    [SerializeField] AudioClip[] relicCollectedClips;
     [Tooltip("Audio clip of the player when butlers appears")]
     [SerializeField] AudioClip butlerArrivalClip;
     [Tooltip("Audio clip of the player when Mr.Curry appears")]
     [SerializeField] AudioClip curryArrivalClip;
+    [Tooltip("Exit Dungeon clip the player will play when leaving")]
+    [SerializeField] AudioClip ExitClip;
 
     //-------------------------------------------------------- Think this shoulb be in abby -------------------------------------------
     [Tooltip("The Audio Source through which Mr.Abby will play his dialogue")]
@@ -41,6 +45,9 @@ public class AudioManger : MonoBehaviour
     int previousBreakDialogue;
     int previousGrunt;
 
+    //For relic collection
+    int relicClip = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,26 +60,36 @@ public class AudioManger : MonoBehaviour
         PlayOneShotOn(playerSoundSource, tutorialClips[clipID]);
     }
 
-    public void PlayBreakDialogues()
-    {
-        PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
-    }
-
-    public void PlayGrunt()
-    {
-        PlayerRandomPlay(playerGrunts, previousGrunt);
-    }
-
-    public void ButtlerArrival()
+    public void ButtlerArrivalClip()
     {
         PlayOneShotOn(playerSoundSource, butlerArrivalClip);
     }
 
-    public void CurryArrival()
+    public void PlayBreakDialoguesClip()
+    {
+        PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+    }
+
+    public void PlayGruntClip()
+    {
+        PlayerRandomPlay(playerGrunts, previousGrunt);
+    }
+
+    public void RelicCollectedClip()
+    {
+        PlayOneShotOn(playerSoundSource, relicCollectedClips[relicClip]);
+        relicClip++;
+    }
+
+    public void CurryArrivalClip()
     {
         PlayOneShotOn(playerSoundSource, curryArrivalClip);
     }
 
+    public void ExitDungeonClip()
+    {
+        PlayOneShotOn(playerSoundSource, ExitClip);
+    }
 
 
 
