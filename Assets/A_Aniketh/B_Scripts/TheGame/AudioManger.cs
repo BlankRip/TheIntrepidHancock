@@ -47,6 +47,8 @@ public class AudioManger : MonoBehaviour
     int pick;
     int previousBreakDialogue;
     int previousGrunt;
+    [HideInInspector] public int numberOfTutorialClips;
+    [HideInInspector] public bool playBreakAudio = false;
 
     //For relic collection
     int relicClip = 0;
@@ -56,6 +58,7 @@ public class AudioManger : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+        numberOfTutorialClips = tutorialClips.Length - 1;
     }
 
     //---------------------------------------------------------- FOR TESTING ------------------------------------------------
@@ -83,7 +86,13 @@ public class AudioManger : MonoBehaviour
 
     public void PlayBreakDialoguesClip()
     {
-        PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+        if(playBreakAudio)
+        {
+            pick = Random.Range(0, 100);
+            Debug.Log("<color=pink>" + pick + "</color>");
+            if ((pick < 10) || (pick > 35 && pick < 40) || (pick > 59 && pick < 65) || (pick > 87 && pick < 92))
+                PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+        }
     }
 
     public void SwitchToChase()

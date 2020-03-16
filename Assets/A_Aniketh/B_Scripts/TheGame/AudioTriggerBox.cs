@@ -42,6 +42,8 @@ public class AudioTriggerBox : MonoBehaviour
                     AudioManger.instance.PlayTutorialClip(audioClipID);
                     if (!repetable)
                         Destroy(gameObject);
+                    if (audioClipID == AudioManger.instance.numberOfTutorialClips)
+                        AudioManger.instance.playBreakAudio = true;
                 }
                 else
                     checkForKey = true;

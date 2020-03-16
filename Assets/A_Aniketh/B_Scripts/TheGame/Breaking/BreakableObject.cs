@@ -77,6 +77,7 @@ public class BreakableObject : MonoBehaviour
                     score_relic.spawnRelic = false;
                 }
                 Instantiate(fireFlies, transform.position, Quaternion.identity);                    //Spawn fire fly
+                AudioManger.instance.PlayBreakDialoguesClip();
                 Destroy(gameObject);
             }
         }
