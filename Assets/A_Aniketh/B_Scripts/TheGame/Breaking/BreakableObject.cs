@@ -10,8 +10,12 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] GameObject relic;
     [Tooltip("The fire fly prefab")] 
     [SerializeField] GameObject fireFlies;
-    [Tooltip("")] 
+    [Tooltip("The particle effect that should spawn when broken")] 
     [SerializeField] GameObject breakEffect;
+    [Tooltip("The audio source that will play the breaking sound effects")]
+    [SerializeField] AudioSource breakingSource;
+    [Tooltip("The breaking audio clips")]
+    [SerializeField] AudioClip[] breakingClips;
     [Tooltip("The amount of score given when this object is broken")] 
     [SerializeField] int scoreToAdd;
     [Tooltip("Number of its it takes before breaking")] 
@@ -54,6 +58,14 @@ public class BreakableObject : MonoBehaviour
 
             if (hitsTaken > hitsBeforeBreak)
             {
+                //Playing the breaking sound effect
+                breakingSource.transform.SetParent(null);
+                for (int i = 0; i < breakingClips.Length; i++)
+                {
+                    breakingSource.PlayOneShot(breakingClips[i]);
+                }
+                Destroy(breakingSource.gameObject, 7.0f);
+
                 score_relic.currentScore += scoreToAdd;
                 Instantiate(fractureVersion, transform.position, transform.rotation);
                 Instantiate(breakEffect, transform.position, transform.rotation);
@@ -65,6 +77,7 @@ public class BreakableObject : MonoBehaviour
                     score_relic.spawnRelic = false;
                 }
                 Instantiate(fireFlies, transform.position, Quaternion.identity);                    //Spawn fire fly
+                AudioManger.instance.PlayBreakDialoguesClip();
                 Destroy(gameObject);
             }
         }

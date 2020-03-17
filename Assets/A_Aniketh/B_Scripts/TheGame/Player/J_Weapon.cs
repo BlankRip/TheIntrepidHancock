@@ -13,7 +13,10 @@ public class J_Weapon : MonoBehaviour
     [SerializeField] Collider attackCollider;
     [Tooltip("The trail attached to the weapon")] 
     [SerializeField] TrailRenderer weaponTrail;
-    [HideInInspector] public bool activateEffects;            //Bool to activate things that are needed to be done when attacking
+    [Tooltip("The audio source of this weapon")]
+    [SerializeField] AudioSource swingSource;
+    [Tooltip("The audio clips played on swing")]
+    [SerializeField] AudioClip[] swingClips;
 
     [Header("KeyBindings for actions")]
     [Tooltip("The key pressed to equip weapon")] 
@@ -49,26 +52,24 @@ public class J_Weapon : MonoBehaviour
             {
                 manageEquipment.DropWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to drop it
             }
-
-            //Actives effects for the weapon and its attack collider
-            if (activateEffects)
-                ActivateEffects();
-            else
-                DeactivateEffects();
         }
 
 
     }
 
     //Function that activates the things needed when attacking
-    void ActivateEffects()
+    public void ActivateEffects()
     {
+        for (int i = 0; i < swingClips.Length; i++)
+        {
+            swingSource.PlayOneShot(swingClips[i]);
+        }
         weaponTrail.emitting = true;
         attackCollider.enabled = true;
     }
 
     //Function that deactivates the things that need to be gone when not attacking
-    void DeactivateEffects()
+    public void DeactivateEffects()
     {
         attackCollider.enabled = false;
         weaponTrail.emitting = false;

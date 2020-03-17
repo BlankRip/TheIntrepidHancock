@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1795006237189673699}
   - component: {fileID: 1795006237189673698}
   - component: {fileID: 1171156598623076550}
+  - component: {fileID: 4024685229560295535}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -106,6 +107,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b363b8ee160f7d4c8b9bc10d0294e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacking: 0
   paused: 0
   relicsCollected: 0
+--- !u!114 &4024685229560295535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795006237189673693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad66e4f71c24f31489baf1c557e29bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  relicsSpawned: 0
+  spawnRelic: 0
+  exitTriggerCollider: {fileID: 0}

@@ -12,6 +12,7 @@ public class RelicScript : MonoBehaviour
             Debug.Log("<color=blue> Relic Collected</color>");
             GameManager.instance.relicsCollected++;
             GameManager.instance.ReadyToExit();
+            AudioManger.instance.RelicCollectedClip();
             Destroy(gameObject);
         }
     }

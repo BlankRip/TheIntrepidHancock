@@ -5,8 +5,8 @@ using AlwinScript;
 
 public class NodePoint : MonoBehaviour
 {
-    public static GameObject[] allNodes;
-    public Node thisNode;
+    [HideInInspector] public static GameObject[] allNodes;
+    [HideInInspector] public Node thisNode;
     public bool drawGizmo;
     // go through all the nodes as
     public void FindFriends()
@@ -29,6 +29,7 @@ public class NodePoint : MonoBehaviour
         thisNode.neighbours = neibourNodes.ToArray();
     }
 
+    /*
     private void OnDrawGizmos()
     {
         if (drawGizmo && thisNode.neighbours.Length > 0)
@@ -40,5 +41,5 @@ public class NodePoint : MonoBehaviour
             }
         }
     }
-
+    */
 }
