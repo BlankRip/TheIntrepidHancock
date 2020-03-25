@@ -687,8 +687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d496be802d77d646b6b51267f340641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 20
-  maxForce: 1
+  maxVelocity: 10
+  maxForce: 0.7
   slowRadius: 10
   framesAhead: 1
   target: {fileID: 1911671039}

@@ -11,6 +11,22 @@ public class TheAI : MonoBehaviour
 
     TreeNode root;
 
+    [Header("For Player Detection")]
+    [SerializeField] Transform playerTransform;
+    [SerializeField] Transform headTransform;
+    [SerializeField] Transform feetTransform;
+
+    Vector3 playerDir;
+    Vector3 headDir;
+    Vector3 feetDir;
+    RaycastHit hit;
+    RaycastHit hitHead;
+    RaycastHit hitFeet;
+
+    [SerializeField] int raycastToPlayerDistanceLimiter;
+    [SerializeField] float fieldOfViewAngle;
+    float angle;
+    bool playerDetected = false;
 
     [Header("For Steering")]
     [SerializeField] GameObject target;
@@ -93,6 +109,58 @@ public class TheAI : MonoBehaviour
 
     public void playerDetection()
     {
+        headDir = headTransform.position - transform.position;
+        feetDir = feetTransform.position - transform.position;
+        playerDir = playerTransform.position - transform.position;
 
+        angle = Vector3.Angle(playerDir.normalized, transform.forward);
+        if (angle < fieldOfViewAngle * 0.5f)
+        {
+            if (Physics.Raycast(transform.position, playerDir.normalized, out hit, raycastToPlayerDistanceLimiter))//, Mathf.Infinity, layerMask))
+            {
+                Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
+                if (hit.collider.tag == "Player")
+                {
+                    playerDetected = true;
+                    Debug.Log("DETECTED THE PLAYER // raycast hit belly");
+                }
+                else if (hit.collider.tag != "Player")
+                {
+                    Debug.Log("bellycast // player in range but behind something?");
+                }
+            }
+
+            if (Physics.Raycast(transform.position, headDir.normalized, out hitHead, raycastToPlayerDistanceLimiter)) //, layerMask))
+            {
+                Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
+                if (hitHead.collider.tag == "Player")
+                {
+                    playerDetected = true;
+                    Debug.Log("DETECTED THE PLAYER // raycast hit head");
+                }
+                else if (hitHead.collider.tag != "Player")
+                {
+                    Debug.Log("headcast // player in range but behind something?");
+                }
+            }
+
+            if (Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, raycastToPlayerDistanceLimiter)) //, layerMask))
+            {
+                Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
+                if (hitFeet.collider.tag == "Player")
+                {
+                    playerDetected = true;
+                    Debug.Log("DETECTED THE PLAYER // raycast hit feet");
+                }
+                else if (hitFeet.collider.tag != "Player")
+                {
+                    Debug.Log("feetcast // player in range but behind something?");
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("No player in sight undetected...");
+        }
     }
 }
