@@ -9,28 +9,28 @@ public class EnemyDetectionScript : MonoBehaviour
     public Transform rightTransform;
     public Transform headTransform;
     public Transform feetTransform;
+    //
     Vector3 leftDir;
     Vector3 rightDir;
+    //
+    Vector3 playerDir;
     Vector3 headDir;
     Vector3 feetDir;
+    //
+    Vector3 playerDirNormalized;
+    Vector3 playerDirHeadNormalized;
+    Vector3 playerDirFeetNormalized;
+    //
     public int raycastDistance;
     public int raycastToPlayerDistanceLimiter;
     public float fieldOfViewAngle;
     float angle;
-    Vector3 playerDir;
-    Vector3 playerDirNormalized;
-    Vector3 playerDirHeadNormalized;
-    Vector3 playerDirFeetNormalized;
+    //
     RaycastHit hit;
     RaycastHit hitHead;
     RaycastHit hitFeet;
+    //
     bool playerDetected = false;
-
-    void Start()
-    {
-        //playerDir = playerTransform.position.normalized - transform.position.normalized;
-
-    }
 
     void Update()
     {
@@ -45,7 +45,7 @@ public class EnemyDetectionScript : MonoBehaviour
         //Debug.DrawRay(transform.position, playerDirNormalized * 100, Color.blue); // enemy to player raycast
         Debug.DrawRay(transform.position, leftDir.normalized * raycastDistance, Color.gray); // angle left
         Debug.DrawRay(transform.position, rightDir.normalized * raycastDistance, Color.gray); // angle right
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * raycastDistance, Color.white); // angle middle 
+        Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.white); // angle middle 
         angle = Vector3.Angle(playerDirNormalized, transform.forward);
         if (angle < fieldOfViewAngle * 0.5f)
         {
@@ -54,7 +54,7 @@ public class EnemyDetectionScript : MonoBehaviour
                 Debug.DrawRay(transform.position, playerDirNormalized * hit.distance, Color.blue); // enemy to player raycast
                 if (hit.collider.tag == "Player")
                 {
-                    Debug.Log("player hit belly");
+                    Debug.Log("DETECTED THE PLAYER // raycast hit belly");
                 }
                 else if (hit.collider.tag != "Player")
                 {
@@ -67,7 +67,7 @@ public class EnemyDetectionScript : MonoBehaviour
                 Debug.DrawRay(transform.position, playerDirHeadNormalized * hitHead.distance, Color.blue); // enemy to player raycast
                 if (hitHead.collider.tag == "Player")
                 {
-                    Debug.Log("player hit head");
+                    Debug.Log("DETECTED THE PLAYER // raycast hit head");
                 }
                 else if (hitHead.collider.tag != "Player")
                 {
@@ -80,7 +80,7 @@ public class EnemyDetectionScript : MonoBehaviour
                 Debug.DrawRay(transform.position, playerDirFeetNormalized * hitFeet.distance, Color.blue); // enemy to player raycast
                 if (hitFeet.collider.tag == "Player")
                 {
-                    Debug.Log("player hit feet");
+                    Debug.Log("DETECTED THE PLAYER // raycast hit feet");
                 }
                 else if (hitFeet.collider.tag != "Player")
                 {
