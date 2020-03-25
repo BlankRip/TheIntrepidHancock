@@ -20,6 +20,7 @@ public class Seek : MonoBehaviour
     RaycastHit hitLeft, hitFront, hitRight;
     Vector3[] castVectors = new Vector3[3];
     Vector3 avoidanceVector;
+    [SerializeField] LayerMask repelLayers;
 
     void Start()
     {
@@ -35,9 +36,26 @@ public class Seek : MonoBehaviour
     void FixedUpdate()
     {
         CollisionAvoidance();
-        Persuit(target.transform.position, targetRb, slowRadius);
+        RaycastHit hit;
+        Physics.Raycast(transform.position, target.transform.position - transform.position, out hit);
+
+
+            if (hit.collider.CompareTag("Player")){
+                Persuit(target.transform.position, targetRb, slowRadius);
+            }
+
+        else
+        {
+            steering = transform.forward * 0.1f;
+        }
 
         rb.velocity += steering;
+        if (rb.velocity.magnitude > maxForce)
+        {
+            rb.velocity = rb.velocity.normalized * maxForce;
+        }
+        
+        rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * 10);
     }
 
     void SeekPoint(Vector3 targetPos, float slowradious)
@@ -48,10 +66,10 @@ public class Seek : MonoBehaviour
         if (distance < slowradious)
             desigeredVelocity = desigeredVelocity * (distance / slowradious);
 
-        steering = desigeredVelocity - rb.velocity;
+        steering = (desigeredVelocity - rb.velocity) + avoidanceVector;
         if(steering.magnitude > maxForce)
         {
-            steering = steering.normalized * maxForce + avoidanceVector;
+            steering = steering.normalized * maxForce ;
         }
     }
 
@@ -65,11 +83,11 @@ public class Seek : MonoBehaviour
     {
         avoidanceVector = Vector3.zero;
         // casts three rays
-        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[0] * castOffset, transform.rotation * castVectors[0], out hitLeft, rayLength))
+        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[0] * castOffset, transform.rotation * castVectors[0], out hitLeft, rayLength, repelLayers))
             hitLeft.distance = rayLength;
-        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[1] * castOffset, transform.rotation * castVectors[1], out hitFront, rayLength))
+        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[1] * castOffset, transform.rotation * castVectors[1], out hitFront, rayLength, repelLayers))
             hitFront.distance = rayLength;
-        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[2] * castOffset, transform.rotation * castVectors[2], out hitRight, rayLength))
+        if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[2] * castOffset, transform.rotation * castVectors[2], out hitRight, rayLength, repelLayers))
             hitRight.distance = rayLength;
 
         float factor_Left = (1 - (hitLeft.distance / rayLength));
