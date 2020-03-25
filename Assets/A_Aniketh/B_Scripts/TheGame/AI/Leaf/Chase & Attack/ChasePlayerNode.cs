@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheAI : MonoBehaviour
+public class ChasePlayerNode : MonoBehaviour
 {
-    public bool playerFound;
-
-    TreeNode root;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +13,6 @@ public class TheAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        root.Run(this);
+        
     }
 }
