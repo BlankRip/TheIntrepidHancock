@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 20
-  maxForce: 10
+  maxForce: 1
   slowRadius: 10
   framesAhead: 1
   target: {fileID: 1911671039}

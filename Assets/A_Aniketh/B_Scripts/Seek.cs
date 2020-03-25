@@ -14,7 +14,7 @@ public class Seek : MonoBehaviour
 
     Rigidbody rb;
 
-
+    //Things for alwins collision detection
     public Transform castPoint;
     public float repelPow = 1, rayLength = 2, castOffset = 0.5f;
     RaycastHit hitLeft, hitFront, hitRight;
@@ -35,27 +35,16 @@ public class Seek : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        CollisionAvoidance();
-        RaycastHit hit;
-        Physics.Raycast(transform.position, target.transform.position - transform.position, out hit);
-
-
-            if (hit.collider.CompareTag("Player")){
-                Persuit(target.transform.position, targetRb, slowRadius);
-            }
-
-        else
-        {
-            steering = transform.forward * 0.1f;
-        }
+        //CollisionAvoidance();
+        Persuit(target.transform.position, targetRb, slowRadius);
 
         rb.velocity += steering;
-        if (rb.velocity.magnitude > maxForce)
-        {
-            rb.velocity = rb.velocity.normalized * maxForce;
-        }
+        //if (rb.velocity.magnitude > maxForce)
+        //{
+        //    rb.velocity = rb.velocity.normalized * maxForce;
+        //}
+
         
-        rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * 10);
     }
 
     void SeekPoint(Vector3 targetPos, float slowradious)
@@ -79,6 +68,7 @@ public class Seek : MonoBehaviour
         SeekPoint(futurePos, slowRadius);
     }
 
+    //Alwins collision detection
     Vector3 CollisionAvoidance()
     {
         avoidanceVector = Vector3.zero;
