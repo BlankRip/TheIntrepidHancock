@@ -90,7 +90,7 @@ public class AudioManger : MonoBehaviour
         {
             pick = Random.Range(0, 100);
             Debug.Log("<color=pink>" + pick + "</color>");
-            if ((pick < 10) || (pick > 35 && pick < 40) || (pick > 59 && pick < 65) || (pick > 87 && pick < 92))
+            if ((pick < 10) || (pick > 30 && pick < 40) || (pick > 59 && pick < 65) || (pick > 82 && pick < 93))
                 PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
         }
     }
@@ -170,7 +170,7 @@ public class AudioManger : MonoBehaviour
         backGroundMusicSource.clip = ClipToSwitch;
         backGroundMusicSource.Play();
 
-        while(currentVolume < 0.2f)
+        while(currentVolume < 0.74f)
         {
             Debug.Log("<color=red>IN 2</color>");
             backGroundMusicSource.volume = currentVolume;
