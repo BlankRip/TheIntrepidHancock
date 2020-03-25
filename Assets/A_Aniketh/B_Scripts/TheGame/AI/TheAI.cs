@@ -22,4 +22,25 @@ public class TheAI : MonoBehaviour
     {
         root.Run(this);
     }
+
+
+    public void Seek(Vector3 seekPoition, float slowRadios)
+    {
+
+    }
+
+    public void Persuit(Vector3 seekPoition, Rigidbody targetRigidBody, float slowRadios)
+    {
+
+    }
+
+    public void CollisionAvoidance()
+    {
+
+    }
+
+    public void playerDetection()
+    {
+
+    }
 }

@@ -13,6 +13,7 @@ public class TauntNode : TreeNode
             Debug.Log("play taunting audio clip");
             tauntLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
+
         if (tauntLength <= 0)
         {
             status = ReturnResult.Success;
