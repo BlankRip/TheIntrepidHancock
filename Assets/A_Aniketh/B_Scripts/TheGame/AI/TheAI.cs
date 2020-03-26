@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class TheAI : MonoBehaviour
 {
-    public bool playerFound;
+    #region For Tree Nodes
     public Animator myAnimator;
+    TreeNode root;
+
+    [Header("Timers for cooldown & Idle")]
     [Range(0, 1)] public float coolDownSpeed = 1;
     [Range(1, 2)] public float idleTimeSpeed = 1;
 
-    TreeNode root;
+    [Header("For Chase")]
+    public float attackRange;
 
+    [Header("For Searching")]
+    public int maxNumberOfSearches;
+    public int minNumberOfSearches;
+    [HideInInspector] public Vector3 lastSeenPos;
+    #endregion
+
+    #region Player Detection Variables
     [Header("For Player Detection")]
+    public bool playerFound;
+    public bool justEscaped;
     [SerializeField] Transform playerTransform;
     [SerializeField] Transform headTransform;
     [SerializeField] Transform feetTransform;
+    [SerializeField] int raycastToPlayerDistanceLimiter;
+    [SerializeField] float fieldOfViewAngle;
+    
+    float rayCastLength;
+    float angle;
 
     Vector3 playerDir;
     Vector3 headDir;
@@ -23,46 +41,47 @@ public class TheAI : MonoBehaviour
     RaycastHit hitHead;
     RaycastHit hitFeet;
 
-    [SerializeField] int raycastToPlayerDistanceLimiter;
-    [SerializeField] float fieldOfViewAngle;
-    float angle;
-    bool playerDetected = false;
+    #endregion
 
+    #region Steering Behavior Variables
     [Header("For Steering")]
-    [SerializeField] GameObject target;
     [SerializeField] float maxVelocity;
     [SerializeField] float maxForce;
     [SerializeField] int framesAhead;
+    public float slowCircleRadios;
+    public GameObject target;
+    [HideInInspector] public Rigidbody rb;
+    [HideInInspector] public Rigidbody targerRb;
+    #endregion
 
-    Vector3 steering;
-    Rigidbody targerRb;
-    Rigidbody rb;
-
+    #region Collision Avoidance Variables
     [Header("For Collision Avoidance")]
-
     [SerializeField] Transform castPoint;
     [SerializeField] LayerMask repelLayers;
     [SerializeField] float repelPow = 1, rayLength = 2, castOffset = 0.5f;
 
     RaycastHit hitLeft, hitFront, hitRight;
     Vector3[] castVectors = new Vector3[3];
-    Vector3 avoidanceVector;
+    #endregion
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         targerRb = target.GetComponent<Rigidbody>();
+        rayCastLength = raycastToPlayerDistanceLimiter;
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerDetection();
         root.Run(this);
     }
 
 
-    public void Seek(Vector3 seekPoition, float slowRadios)
+    public Vector3 Seek(Vector3 seekPoition, float slowRadios)
     {
         Vector3 desigeredVelocity = (seekPoition - transform.position).normalized * maxVelocity;
 
@@ -70,22 +89,24 @@ public class TheAI : MonoBehaviour
         if (distance < slowRadios)
             desigeredVelocity = desigeredVelocity * (distance / slowRadios);
 
-        steering = (desigeredVelocity - rb.velocity) + avoidanceVector;
+        Vector3 steering = (desigeredVelocity - rb.velocity);
         if (steering.magnitude > maxForce)
         {
             steering = steering.normalized * maxForce;
         }
+        return steering;
     }
 
-    public void Pursuit(Vector3 seekPoition, Rigidbody targetRigidBody, float slowRadios)
+    public Vector3 Pursuit(Vector3 seekPoition, Rigidbody targetRigidBody, float slowRadios)
     {
         Vector3 futurePos = seekPoition + targetRigidBody.velocity * framesAhead;
-        Seek(futurePos, slowRadios);
+        Vector3 steering = Seek(futurePos, slowRadios);
+        return steering;
     }
 
     public Vector3 CollisionAvoidance()
     {
-        avoidanceVector = Vector3.zero;
+        Vector3 avoidanceVector = Vector3.zero;
         // casts three rays
         if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[0] * castOffset, transform.rotation * castVectors[0], out hitLeft, rayLength, repelLayers))
             hitLeft.distance = rayLength;
@@ -116,51 +137,31 @@ public class TheAI : MonoBehaviour
         angle = Vector3.Angle(playerDir.normalized, transform.forward);
         if (angle < fieldOfViewAngle * 0.5f)
         {
-            if (Physics.Raycast(transform.position, playerDir.normalized, out hit, raycastToPlayerDistanceLimiter))//, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(transform.position, playerDir.normalized, out hit, rayCastLength) ||
+                Physics.Raycast(transform.position, headDir.normalized, out hitHead, rayCastLength) ||
+                Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, rayCastLength))//, Mathf.Infinity, layerMask))
             {
                 Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
-                if (hit.collider.tag == "Player")
+                Debug.DrawRay(transform.position, playerDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
+                Debug.DrawRay(transform.position, playerDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
+                if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
                 {
-                    playerDetected = true;
+                    playerFound = true;
+                    rayCastLength = Mathf.Infinity;
                     Debug.Log("DETECTED THE PLAYER // raycast hit belly");
                 }
-                else if (hit.collider.tag != "Player")
+                else
                 {
+                    if(playerFound)
+                    {
+                        rayCastLength = raycastToPlayerDistanceLimiter;
+                        playerFound = false;
+                        justEscaped = true;
+                        lastSeenPos = feetTransform.position;
+                    }
                     Debug.Log("bellycast // player in range but behind something?");
                 }
             }
-
-            if (Physics.Raycast(transform.position, headDir.normalized, out hitHead, raycastToPlayerDistanceLimiter)) //, layerMask))
-            {
-                Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
-                if (hitHead.collider.tag == "Player")
-                {
-                    playerDetected = true;
-                    Debug.Log("DETECTED THE PLAYER // raycast hit head");
-                }
-                else if (hitHead.collider.tag != "Player")
-                {
-                    Debug.Log("headcast // player in range but behind something?");
-                }
-            }
-
-            if (Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, raycastToPlayerDistanceLimiter)) //, layerMask))
-            {
-                Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
-                if (hitFeet.collider.tag == "Player")
-                {
-                    playerDetected = true;
-                    Debug.Log("DETECTED THE PLAYER // raycast hit feet");
-                }
-                else if (hitFeet.collider.tag != "Player")
-                {
-                    Debug.Log("feetcast // player in range but behind something?");
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No player in sight undetected...");
         }
     }
 }

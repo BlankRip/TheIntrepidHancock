@@ -67,7 +67,7 @@ public class TestAI : MonoBehaviour
 
     public void CollectWayPoints()
     {
-        waypoints = SampleEnemyCtrl.instance.GetMeRoute(transform);
+        waypoints = PathFindingController.instance.GetRandomGoalRout(transform);
         currentPointIndex = 0;
         nextPos = waypoints[currentPointIndex];
     }
