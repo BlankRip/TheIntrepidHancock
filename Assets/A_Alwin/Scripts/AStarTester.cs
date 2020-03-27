@@ -49,6 +49,15 @@ public class AStarTester : MonoBehaviour
                 Gizmos.DrawLine(routeNodes[i - 1], routeNodes[i]);
             }
         }
+        if(GraphAStar.startNode != null)
+        {
+            foreach (Node item in GraphAStar.startNode.neighbours)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(GraphAStar.startNode.position, item.position);
+                
+            }
+        }
     }
 
 }
