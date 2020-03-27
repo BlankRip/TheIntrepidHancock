@@ -10,6 +10,7 @@ public class ChasePlayerNode : TreeNode
 
     public override void Run(TheAI ai)
     {
+        Debug.Log("<color=red> IN CHASE PLAYER  </color>");
         if (Vector3.Distance(ai.transform.position, ai.target.transform.position) < ai.attackRange)
         {
                 status = ReturnResult.Success;

@@ -11,14 +11,15 @@ public class PatroleNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        if(pathNodes.Length == 0)
+        Debug.Log("<color=blue> IN PATROL NODE  </color>");
+        if (pathNodes == null)
         {
             pathNodes = PathFindingController.instance.GetRandomGoalRout(ai.transform);
             currentNodeIndex = 0;
         }
         else
         {
-            if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 0.5)
+            if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
             {
                 if (currentNodeIndex == pathNodes.Length - 1)
                 {

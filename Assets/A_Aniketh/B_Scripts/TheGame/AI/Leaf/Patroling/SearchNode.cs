@@ -17,6 +17,7 @@ public class SearchNode : TreeNode
 
     public override void Run(TheAI ai)
     {
+        Debug.Log("<color=green> IN SEARCH NODE </color>");
         if (ai.justEscaped)
         {
             if (setSearchCount)
@@ -32,7 +33,7 @@ public class SearchNode : TreeNode
 
                 if (goToPlayerPos)
                 {
-                    if (pathNodes.Length == 0)
+                    if (pathNodes == null)
                     {
                         pathNodes = PathFindingController.instance.GetRandomGoalRout(ai.transform, ai.lastSeenPos);
                         currentNodeIndex = 0;
@@ -52,7 +53,7 @@ public class SearchNode : TreeNode
                 }
                 else
                 {
-                    if (pathNodes.Length == 0)
+                    if (pathNodes == null)
                     {
                         pathNodes = PathFindingController.instance.GetRandomGoalRout(ai.transform);
                         currentNodeIndex = 0;

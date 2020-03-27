@@ -8,6 +8,7 @@ public class AttackNode : TreeNode
 
     public override void Run(TheAI ai)
     {
+        Debug.Log("<color=red> IN ATTACK </color>");
         if (status != ReturnResult.Running)
         {
             Debug.Log("<color=red>Enemy attack anim triggered</color>");

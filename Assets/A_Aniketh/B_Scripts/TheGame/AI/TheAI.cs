@@ -41,6 +41,13 @@ public class TheAI : MonoBehaviour
     RaycastHit hitHead;
     RaycastHit hitFeet;
 
+    //For Debugging
+    [Header("For Detection Debugging")]
+    public Transform leftTransform;
+    public Transform rightTransform;
+    Vector3 leftDir;
+    Vector3 rightDir;
+    public int raycastDistance;
     #endregion
 
     #region Steering Behavior Variables
@@ -71,6 +78,38 @@ public class TheAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         targerRb = target.GetComponent<Rigidbody>();
         rayCastLength = raycastToPlayerDistanceLimiter;
+
+        #region Creating Tree
+        //Creating branch nodes into variables for easy use
+        TreeNode patrolSequence = new SequenceNode();
+        TreeNode patrolSelector = new SelectorNode();
+        TreeNode patrolRandomSelect = new RandomSelectorNode();
+
+        TreeNode chaseSequence = new SelectorNode();
+        TreeNode chaseRandomSelect = new RandomSelectorNode();
+
+        //Making the tree
+        root = new SelectorNode();
+
+        root.refToChildren.Add(patrolSequence);
+        patrolSequence.refToChildren.Add(new PlayerFoundCheckNode());
+        patrolSequence.refToChildren.Add(patrolSelector);
+
+        patrolSelector.refToChildren.Add(new SearchNode());
+        patrolSelector.refToChildren.Add(patrolRandomSelect);
+
+        patrolRandomSelect.refToChildren.Add(new PatroleNode());
+        patrolRandomSelect.refToChildren.Add(new IdleNode());
+
+
+        root.refToChildren.Add(chaseSequence);
+        chaseSequence.refToChildren.Add(new ChasePlayerNode());
+        chaseSequence.refToChildren.Add(new AttackNode());
+        chaseSequence.refToChildren.Add(chaseRandomSelect);
+
+        chaseRandomSelect.refToChildren.Add(new TauntNode());
+        chaseRandomSelect.refToChildren.Add(new CoolDownNode());
+        #endregion
     }
 
     // Update is called once per frame
@@ -133,6 +172,14 @@ public class TheAI : MonoBehaviour
         headDir = headTransform.position - transform.position;
         feetDir = feetTransform.position - transform.position;
         playerDir = playerTransform.position - transform.position;
+
+        //========remove V V V if you dont want debug========
+        leftDir = leftTransform.position - transform.position;
+        rightDir = rightTransform.position - transform.position;
+        Debug.DrawRay(transform.position, leftDir.normalized * raycastDistance, Color.gray); // angle left
+        Debug.DrawRay(transform.position, rightDir.normalized * raycastDistance, Color.gray); // angle right
+        Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.white); // angle middle 
+        //========remove ^ ^ ^ if you dont want debug========
 
         angle = Vector3.Angle(playerDir.normalized, transform.forward);
         if (angle < fieldOfViewAngle * 0.5f)
