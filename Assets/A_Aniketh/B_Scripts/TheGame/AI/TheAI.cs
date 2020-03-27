@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TheAI : MonoBehaviour
 {
-    #region For Tree Nodes
     public Animator myAnimator;
+    public AudioSource mySoundSource;
+
+    #region For Tree Nodes
     TreeNode root;
 
     [Header("Timers for cooldown & Idle")]
@@ -93,7 +95,7 @@ public class TheAI : MonoBehaviour
         TreeNode patrolSelector = new SelectorNode();
         TreeNode patrolRandomSelect = new RandomSelectorNode();
 
-        TreeNode chaseSequence = new SelectorNode();
+        TreeNode chaseSequence = new SequenceNode();
         TreeNode chaseRandomSelect = new RandomSelectorNode();
 
         //Making the tree
@@ -153,9 +155,6 @@ public class TheAI : MonoBehaviour
 
     public Vector3 CollisionAvoidance()
     {
-    //    Debug.DrawRay(transform.position + Vector3.up, transform.position + transform.rotation * castVectors[0] * rayLength, Color.green);
-   //     Debug.DrawLine(transform.position + Vector3.up, transform.position + transform.forward * 5, Color.green);
-
         Vector3 avoidanceVector = Vector3.zero;
         // casts three rays
         if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[0] * castOffset, transform.rotation * castVectors[0], out hitLeft, rayLength, repelLayers))
@@ -173,7 +172,6 @@ public class TheAI : MonoBehaviour
         avoidanceVector += repelPow * transform.right * factor_Left;
         avoidanceVector += repelPow * -transform.forward * factor_Front;
         avoidanceVector += repelPow * -transform.right * factor_Right;
-        Debug.Log("<color=red>"+ avoidanceVector + "</color>");
             Debug.DrawLine(castPoint.position + transform.rotation * castVectors[0] * castOffset, castPoint.position + castPoint.rotation * castVectors[0] * rayLength, Color.red);
             Debug.DrawLine(castPoint.position + transform.rotation * castVectors[1] * castOffset, castPoint.position + castPoint.rotation * castVectors[1] * rayLength, Color.red);
             Debug.DrawLine(castPoint.position + transform.rotation * castVectors[2] * castOffset, castPoint.position + castPoint.rotation * castVectors[2] * rayLength, Color.red);

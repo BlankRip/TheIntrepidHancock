@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackNode : TreeNode
 {
-    float clipLength;
+    float clipLength = 5f;
 
     public override void Run(TheAI ai)
     {
@@ -13,11 +13,12 @@ public class AttackNode : TreeNode
         {
             Debug.Log("<color=red>Enemy attack anim triggered</color>");
             Debug.Log("<color=red>Enemy attack sound</color>");
-            clipLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+            //clipLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
 
         if(clipLength <=0)
         {
+            Debug.Log("<color=red> ATTACK Success </color>");
             status = ReturnResult.Success;
             return;
         }

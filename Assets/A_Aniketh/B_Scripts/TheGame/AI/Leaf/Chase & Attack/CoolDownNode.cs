@@ -12,6 +12,7 @@ public class CoolDownNode : TreeNode
         Debug.Log("<color=yellow> IN COOLDOWN </color>");
         if (coolDownTracker <= 0)
         {
+            Debug.Log("<color=yellow> FINISH COOLDOWN </color>");
             coolDownTracker = coolDownTimer;
             status = ReturnResult.Success;
             return;

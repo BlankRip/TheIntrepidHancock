@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TauntNode : TreeNode
 {
-    float tauntLength;
+    float tauntLength = 5f;
     public override void Run(TheAI ai)
     {
         Debug.Log("<color=yellow> IN TAUNT </color>");
@@ -12,11 +12,12 @@ public class TauntNode : TreeNode
         {
             Debug.Log("play taunting animation");
             Debug.Log("play taunting audio clip");
-            tauntLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+            //tauntLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
 
         if (tauntLength <= 0)
         {
+            Debug.Log("<color=yellow> Finish TAUNT </color>");
             status = ReturnResult.Success;
             return;
         }

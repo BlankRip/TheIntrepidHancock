@@ -69,7 +69,7 @@ public class SearchNode : TreeNode
                             currentNodeIndex = 0;
                             pathNodes = null;
                         }
-                        else
+                        else if(currentNodeIndex < pathNodes.Length)
                         {
                             Debug.Log("<color=green> searching  </color>");
                             currentNodeIndex++;
@@ -80,7 +80,6 @@ public class SearchNode : TreeNode
 
                 if(pathNodes != null)
                 {
-                    Debug.Log("Search node Index" + currentNodeIndex);
                     collisionAvoidense = ai.CollisionAvoidance();
                     steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
                     ai.rb.velocity += (steering + collisionAvoidense);

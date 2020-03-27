@@ -10,15 +10,17 @@ public class ChasePlayerNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        Debug.Log("<color=red> IN CHASE PLAYER  </color>");
         if (Vector3.Distance(ai.transform.position, ai.target.transform.position) < ai.attackRange)
         {
-                status = ReturnResult.Success;
-                return;
+            Debug.Log("<color=red> Chase Success  </color>");
+            status = ReturnResult.Success;
+            return;
         }
 
+        Debug.Log("<color=red> IN CHASE PLAYER  </color>");
         status = ReturnResult.Running;
         collisionAvoidance = ai.CollisionAvoidance();
         steering = ai.Pursuit(ai.target.transform.position, ai.targerRb, slowRadios);
+        ai.rb.velocity += (steering + collisionAvoidance);
     }
 }
