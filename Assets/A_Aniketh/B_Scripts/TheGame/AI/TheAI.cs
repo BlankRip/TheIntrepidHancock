@@ -162,7 +162,7 @@ public class TheAI : MonoBehaviour
         avoidanceVector += repelPow * transform.right * factor_Left;
         avoidanceVector += repelPow * -transform.forward * factor_Front;
         avoidanceVector += repelPow * -transform.right * factor_Right;
-
+        Debug.Log("<color=red>Avoiding</color>");
         rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * 10);
         return avoidanceVector;
     }
@@ -184,30 +184,31 @@ public class TheAI : MonoBehaviour
         angle = Vector3.Angle(playerDir.normalized, transform.forward);
         if (angle < fieldOfViewAngle * 0.5f)
         {
-            if (Physics.Raycast(transform.position, playerDir.normalized, out hit, rayCastLength) ||
-                Physics.Raycast(transform.position, headDir.normalized, out hitHead, rayCastLength) ||
-                Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, rayCastLength))//, Mathf.Infinity, layerMask))
+            Physics.Raycast(transform.position, playerDir.normalized, out hit, rayCastLength);
+            Physics.Raycast(transform.position, headDir.normalized, out hitHead, rayCastLength);
+            Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, rayCastLength);
+
+            Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
+            Debug.DrawRay(transform.position, playerDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
+            Debug.DrawRay(transform.position, playerDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
+            if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
             {
-                Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
-                Debug.DrawRay(transform.position, playerDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
-                Debug.DrawRay(transform.position, playerDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
-                if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
-                {
-                    playerFound = true;
-                    rayCastLength = Mathf.Infinity;
-                    Debug.Log("DETECTED THE PLAYER // raycast hit belly");
-                }
-                else
-                {
-                    if(playerFound)
-                    {
-                        rayCastLength = raycastToPlayerDistanceLimiter;
-                        playerFound = false;
-                        justEscaped = true;
-                        lastSeenPos = feetTransform.position;
-                    }
-                    Debug.Log("bellycast // player in range but behind something?");
-                }
+                playerFound = true;
+                rayCastLength = Mathf.Infinity;
+                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+            }
+            else
+                Debug.Log("<color=pink> player in range but behind something? </color>");
+        }
+        else
+        {
+            Debug.Log("<color=yellow>" + playerFound + "</color>");
+            if (playerFound)
+            {
+                rayCastLength = raycastToPlayerDistanceLimiter;
+                playerFound = false;
+                justEscaped = true;
+                lastSeenPos = feetTransform.position;
             }
         }
     }

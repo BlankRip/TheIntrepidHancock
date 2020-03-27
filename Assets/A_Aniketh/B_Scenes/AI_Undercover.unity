@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 88658869}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2098,7 +2098,7 @@ MonoBehaviour:
   myAnimator: {fileID: 0}
   coolDownSpeed: 1
   idleTimeSpeed: 1
-  attackRange: 5
+  attackRange: 2
   maxNumberOfSearches: 5
   minNumberOfSearches: 3
   lastSeenPos: {x: 0, y: 0, z: 0}
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   playerTransform: {fileID: 422636359}
   headTransform: {fileID: 2110713768}
   feetTransform: {fileID: 1238790759}
-  raycastToPlayerDistanceLimiter: 1
+  raycastToPlayerDistanceLimiter: 20
   fieldOfViewAngle: 60
   leftTransform: {fileID: 1415919283}
   rightTransform: {fileID: 488028929}
@@ -2124,7 +2124,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 279
   repelPow: 1
-  rayLength: 2
+  rayLength: 1
   castOffset: 0.5
 --- !u!54 &293261975
 Rigidbody:
@@ -2626,7 +2626,7 @@ GameObject:
   - component: {fileID: 359412226}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2703,7 +2703,7 @@ GameObject:
   - component: {fileID: 422636359}
   m_Layer: 0
   m_Name: BellyTarget
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7637,7 +7637,7 @@ GameObject:
   - component: {fileID: 1147758950}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8086,7 +8086,7 @@ GameObject:
   - component: {fileID: 1238790759}
   m_Layer: 0
   m_Name: FeetTarget
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10215,7 +10215,7 @@ GameObject:
   - component: {fileID: 1517660649}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13026,7 +13026,7 @@ GameObject:
   - component: {fileID: 1843043359}
   m_Layer: 0
   m_Name: Capsule (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13583,7 +13583,7 @@ GameObject:
   - component: {fileID: 1966365209}
   m_Layer: 0
   m_Name: Capsule (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14819,7 +14819,7 @@ GameObject:
   - component: {fileID: 2110713768}
   m_Layer: 0
   m_Name: HeadTarget
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,13 +12,13 @@ public class IdleNode : TreeNode
         Debug.Log("<color=blue> IN IDLE NODE  </color>");
         if (idleTimeTracker <= 0)
         {
-            Debug.Log("Enemy Idleing anim bool to false");
+            Debug.Log("<color=blue>Enemy Idleing anim bool to false</color>");
             idleTimeTracker = idleEndTime;
             status = ReturnResult.Success;
             return;
         }
 
-        Debug.Log("Enemy Idleing anim bool to true");
+        Debug.Log("<color=blue>Enemy Idleing anim bool to true</color>");
         idleTimeTracker -= Time.deltaTime;
         status = ReturnResult.Running;
     }

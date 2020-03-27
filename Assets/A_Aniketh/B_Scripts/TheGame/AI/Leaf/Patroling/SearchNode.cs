@@ -39,7 +39,7 @@ public class SearchNode : TreeNode
                         currentNodeIndex = 0;
                     }
 
-                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 0.5)
+                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
                     {
                         if (currentNodeIndex == pathNodes.Length - 1)
                         {
@@ -74,12 +74,19 @@ public class SearchNode : TreeNode
 
                 }
 
-                collisionAvoidense = ai.CollisionAvoidance();
-                steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
-                ai.rb.velocity += (steering + collisionAvoidense);
-
+                if(pathNodes != null)
+                {
+                    collisionAvoidense = ai.CollisionAvoidance();
+                    steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
+                    ai.rb.velocity += (steering + collisionAvoidense);
+                }
             }
-            status = ReturnResult.Success;
+            else
+            {
+                setSearchCount = true;
+                ai.justEscaped = false;
+                status = ReturnResult.Success;
+            }
         }
         else
             status = ReturnResult.Fail;
