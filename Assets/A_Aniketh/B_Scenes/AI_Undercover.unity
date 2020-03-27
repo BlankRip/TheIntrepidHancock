@@ -2124,7 +2124,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 279
   repelPow: 1
-  rayLength: 1
+  rayLength: 3
   castOffset: 0.5
 --- !u!54 &293261975
 Rigidbody:
