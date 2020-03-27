@@ -112,7 +112,6 @@ public class GraphAStar : MonoBehaviour
                 brekProof--;
                 routeList.Add(addNode.position);
                 addNode = nodeList[objectParentID[addNode.nodeIndex]];
-                Debug.Log("Parent Index = " + (objectParentID[addNode.nodeIndex] - 1));
             }
             routeList.Add(addNode.position);
             routeList.Reverse();

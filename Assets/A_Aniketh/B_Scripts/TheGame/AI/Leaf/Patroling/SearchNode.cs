@@ -20,6 +20,7 @@ public class SearchNode : TreeNode
         Debug.Log("<color=green> IN SEARCH NODE </color>");
         if (ai.justEscaped)
         {
+            Debug.Log("<color=green> IN  </color>");
             if (setSearchCount)
             {
                 numberOfSearches = Random.Range(ai.minNumberOfSearches, ai.maxNumberOfSearches + 1);
@@ -59,7 +60,7 @@ public class SearchNode : TreeNode
                         currentNodeIndex = 0;
                     }
 
-                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 0.5)
+                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
                     {
                         if (Vector3.Distance(ai.transform.position, ai.lastSeenPos) > searchRadios)
                         {
@@ -69,7 +70,10 @@ public class SearchNode : TreeNode
                             pathNodes = null;
                         }
                         else
+                        {
+                            Debug.Log("<color=green> searching  </color>");
                             currentNodeIndex++;
+                        }
                     }
 
                 }

@@ -162,7 +162,7 @@ public class TheAI : MonoBehaviour
         avoidanceVector += repelPow * transform.right * factor_Left;
         avoidanceVector += repelPow * -transform.forward * factor_Front;
         avoidanceVector += repelPow * -transform.right * factor_Right;
-        Debug.Log("<color=red>Avoiding</color>");
+        Debug.Log("<color=red>"+ avoidanceVector + "</color>");
         rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * 10);
         return avoidanceVector;
     }
@@ -191,22 +191,13 @@ public class TheAI : MonoBehaviour
             Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
-          /*
+          
             if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
             {
                 playerFound = true;
                 rayCastLength = Mathf.Infinity;
                 Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
-            */
-    /*        
-             if (bellyHitCheck )
-            {
-                playerFound = true;
-                rayCastLength = Mathf.Infinity;
-                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
-            }
-*/
             else
                 Debug.Log("<color=pink> player in range but behind something? </color>");
         }
