@@ -184,19 +184,29 @@ public class TheAI : MonoBehaviour
         angle = Vector3.Angle(playerDir.normalized, transform.forward);
         if (angle < fieldOfViewAngle * 0.5f)
         {
-            Physics.Raycast(transform.position, playerDir.normalized, out hit, rayCastLength);
-            Physics.Raycast(transform.position, headDir.normalized, out hitHead, rayCastLength);
-            Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, rayCastLength);
+            bool bellyHitCheck = Physics.Raycast(transform.position, playerDir.normalized, out hit, playerDir.magnitude);
+            bool headHitCheck = Physics.Raycast(transform.position, headDir.normalized, out hitHead, headDir.magnitude);
+            bool footHitCheck = Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, feetDir.magnitude);
 
             Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
-            Debug.DrawRay(transform.position, playerDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
-            Debug.DrawRay(transform.position, playerDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
+            Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
+            Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
+          
             if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
             {
                 playerFound = true;
                 rayCastLength = Mathf.Infinity;
                 Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
+            
+    /*        
+             if (bellyHitCheck )
+            {
+                playerFound = true;
+                rayCastLength = Mathf.Infinity;
+                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+            }
+*/
             else
                 Debug.Log("<color=pink> player in range but behind something? </color>");
         }
