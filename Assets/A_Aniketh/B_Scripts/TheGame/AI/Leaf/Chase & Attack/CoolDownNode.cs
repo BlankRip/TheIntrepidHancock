@@ -9,7 +9,8 @@ public class CoolDownNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        if(coolDownTracker <= 0)
+        Debug.Log("<color=yellow> IN COOLDOWN </color>");
+        if (coolDownTracker <= 0)
         {
             coolDownTracker = coolDownTimer;
             status = ReturnResult.Success;

@@ -8,11 +8,15 @@ public class JustMove : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     [SerializeField] float speed = 5;
+    PlayerMovement move;
+    bool sprint;
+    bool crouch;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        move = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,10 @@ public class JustMove : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * speed;
+    }
+
+    private void FixedUpdate()
+    {
+        move.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 }

@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChasePlayerNode : MonoBehaviour
+public class ChasePlayerNode : TreeNode
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Vector3 steering;
+    Vector3 collisionAvoidance;
+    float slowRadios = 10;
 
-    // Update is called once per frame
-    void Update()
+    public override void Run(TheAI ai)
     {
-        
+        Debug.Log("<color=red> IN CHASE PLAYER  </color>");
+        if (Vector3.Distance(ai.transform.position, ai.target.transform.position) < ai.attackRange)
+        {
+                status = ReturnResult.Success;
+                return;
+        }
+
+        status = ReturnResult.Running;
+        collisionAvoidance = ai.CollisionAvoidance();
+        steering = ai.Pursuit(ai.target.transform.position, ai.targerRb, slowRadios);
     }
 }

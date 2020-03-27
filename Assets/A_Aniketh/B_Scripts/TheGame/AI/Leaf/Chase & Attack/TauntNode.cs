@@ -7,6 +7,7 @@ public class TauntNode : TreeNode
     float tauntLength;
     public override void Run(TheAI ai)
     {
+        Debug.Log("<color=yellow> IN TAUNT </color>");
         if (status != ReturnResult.Running)
         {
             Debug.Log("play taunting animation");
