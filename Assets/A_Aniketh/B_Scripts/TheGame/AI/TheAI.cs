@@ -191,14 +191,14 @@ public class TheAI : MonoBehaviour
             Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
-          
+          /*
             if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
             {
                 playerFound = true;
                 rayCastLength = Mathf.Infinity;
                 Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
-            
+            */
     /*        
              if (bellyHitCheck )
             {
