@@ -40,7 +40,7 @@ public class SearchNode : TreeNode
                         currentNodeIndex = 0;
                     }
 
-                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
+                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < ai.reachRegisterDistance)
                     {
                         if (currentNodeIndex == pathNodes.Length - 1)
                         {
@@ -60,7 +60,7 @@ public class SearchNode : TreeNode
                         currentNodeIndex = 0;
                     }
 
-                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
+                    if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < ai.reachRegisterDistance)
                     {
                         if (Vector3.Distance(ai.transform.position, ai.lastSeenPos) > searchRadios)
                         {
@@ -80,6 +80,7 @@ public class SearchNode : TreeNode
 
                 if(pathNodes != null)
                 {
+                    Debug.Log("Search node Index" + currentNodeIndex);
                     collisionAvoidense = ai.CollisionAvoidance();
                     steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
                     ai.rb.velocity += (steering + collisionAvoidense);

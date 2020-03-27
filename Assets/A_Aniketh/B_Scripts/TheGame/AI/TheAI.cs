@@ -65,10 +65,13 @@ public class TheAI : MonoBehaviour
     [Header("For Collision Avoidance")]
     [SerializeField] Transform castPoint;
     [SerializeField] LayerMask repelLayers;
-    [SerializeField] float repelPow = 1, rayLength = 2, castOffset = 0.5f;
+    [SerializeField] float repelPow = 1, rayLength = 2, castOffset = 0.5f, turnStrength;
 
     RaycastHit hitLeft, hitFront, hitRight;
     Vector3[] castVectors = new Vector3[3];
+
+     [Header("Internal (For Programmers Only)")]
+     public float reachRegisterDistance = 2;
     #endregion
 
 
@@ -78,6 +81,11 @@ public class TheAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         targerRb = target.GetComponent<Rigidbody>();
         rayCastLength = raycastToPlayerDistanceLimiter;
+
+        // Innitializing the avoidance vector
+        castVectors[0] = (Vector3.forward - Vector3.right).normalized;
+        castVectors[1] = Vector3.forward * 0.5f;
+        castVectors[2] = (Vector3.forward + Vector3.right).normalized;
 
         #region Creating Tree
         //Creating branch nodes into variables for easy use
@@ -145,6 +153,9 @@ public class TheAI : MonoBehaviour
 
     public Vector3 CollisionAvoidance()
     {
+    //    Debug.DrawRay(transform.position + Vector3.up, transform.position + transform.rotation * castVectors[0] * rayLength, Color.green);
+   //     Debug.DrawLine(transform.position + Vector3.up, transform.position + transform.forward * 5, Color.green);
+
         Vector3 avoidanceVector = Vector3.zero;
         // casts three rays
         if (!Physics.Raycast(castPoint.position + transform.rotation * castVectors[0] * castOffset, transform.rotation * castVectors[0], out hitLeft, rayLength, repelLayers))
@@ -163,7 +174,10 @@ public class TheAI : MonoBehaviour
         avoidanceVector += repelPow * -transform.forward * factor_Front;
         avoidanceVector += repelPow * -transform.right * factor_Right;
         Debug.Log("<color=red>"+ avoidanceVector + "</color>");
-        rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * 10);
+            Debug.DrawLine(castPoint.position + transform.rotation * castVectors[0] * castOffset, castPoint.position + castPoint.rotation * castVectors[0] * rayLength, Color.red);
+            Debug.DrawLine(castPoint.position + transform.rotation * castVectors[1] * castOffset, castPoint.position + castPoint.rotation * castVectors[1] * rayLength, Color.red);
+            Debug.DrawLine(castPoint.position + transform.rotation * castVectors[2] * castOffset, castPoint.position + castPoint.rotation * castVectors[2] * rayLength, Color.red);
+        rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(rb.velocity.normalized, Vector3.up), Time.fixedDeltaTime * turnStrength);
         return avoidanceVector;
     }
 
@@ -198,8 +212,7 @@ public class TheAI : MonoBehaviour
                 rayCastLength = Mathf.Infinity;
                 Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
-            else
-                Debug.Log("<color=pink> player in range but behind something? </color>");
+            else Debug.Log("<color=pink> player in range but behind something? </color>");
         }
         else
         {
@@ -209,7 +222,7 @@ public class TheAI : MonoBehaviour
                 rayCastLength = raycastToPlayerDistanceLimiter;
                 playerFound = false;
                 justEscaped = true;
-                lastSeenPos = feetTransform.position;
+                lastSeenPos = playerTransform.position;
             }
         }
     }

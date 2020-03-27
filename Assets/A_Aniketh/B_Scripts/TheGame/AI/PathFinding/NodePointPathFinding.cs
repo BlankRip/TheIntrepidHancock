@@ -13,6 +13,7 @@ public class NodePointPathFinding : MonoBehaviour
     {
         thisNode.position = transform.position;
         List<Node> neibourNodes = new List<Node>();
+        
         for (int i = 0; i < allNodes.Length; i++)
         {
             // every other node

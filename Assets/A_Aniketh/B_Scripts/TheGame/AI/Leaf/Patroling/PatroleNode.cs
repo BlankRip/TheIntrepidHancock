@@ -19,7 +19,7 @@ public class PatroleNode : TreeNode
         }
         else
         {
-            if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < 1)
+            if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < ai.reachRegisterDistance)
             {
                 if (currentNodeIndex == pathNodes.Length - 1)
                 {

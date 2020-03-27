@@ -41,9 +41,23 @@ public class PathFindingController : MonoBehaviour
 
     public Vector3[] GetRandomGoalRout(Transform startPoint)
     {
-        Transform endPoint = targetSpots[Random.Range(0, targetSpots.Length)].transform;
+        bool pickFarGoal = false;
+        Transform endPoint = null;
+
+        while(!pickFarGoal)
+        {
+            endPoint = targetSpots[Random.Range(0, targetSpots.Length)].transform;
+            Vector3 dir = endPoint.position - startPoint.position;
+            if(Physics.Raycast(startPoint.position,dir.normalized, dir.magnitude))
+            {
+                pickFarGoal = true;
+            }
+        }
+
         return GraphAStar.GenerateRoute(allNodes, startPoint.position, endPoint.position);
     }
+
+
 
     public Vector3[] GetRandomGoalRout(Transform startPoint, Vector3 goal)
     {
