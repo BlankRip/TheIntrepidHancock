@@ -20,6 +20,14 @@ public class SearchNode : TreeNode
         Debug.Log("<color=green> IN SEARCH NODE </color>");
         if (ai.justEscaped)
         {
+            if(ai.pathPointeReset)
+            {
+                pathNodes = null;
+                Debug.Log("<color=cyan> RESETING </color>");
+                countTracker = 0;
+                ai.pathPointeReset = false;
+            }
+
             ai.myAnimator.SetBool("Run", true);
             ai.myAnimator.SetBool("Walk", false);
 
@@ -95,8 +103,9 @@ public class SearchNode : TreeNode
                 setSearchCount = true;
                 ai.justEscaped = false;
                 ai.myAnimator.SetBool("Run", false);
-                 ai.pathPointeReset = true;
+                ai.pathPointeReset = true;
                 status = ReturnResult.Success;
+                Debug.Log("<color=green> search SUCCESS  </color>");
             }
         }
         else
