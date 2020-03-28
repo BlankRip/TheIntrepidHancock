@@ -20,6 +20,9 @@ public class SearchNode : TreeNode
         Debug.Log("<color=green> IN SEARCH NODE </color>");
         if (ai.justEscaped)
         {
+            ai.myAnimator.SetBool("Run", true);
+            ai.myAnimator.SetBool("Walk", false);
+
             Debug.Log("<color=green> IN  </color>");
             if (setSearchCount)
             {
@@ -89,10 +92,14 @@ public class SearchNode : TreeNode
             {
                 setSearchCount = true;
                 ai.justEscaped = false;
+                ai.myAnimator.SetBool("Run", false);
                 status = ReturnResult.Success;
             }
         }
         else
+        {
+            setSearchCount = true;
             status = ReturnResult.Fail;
+        }
     }
 }

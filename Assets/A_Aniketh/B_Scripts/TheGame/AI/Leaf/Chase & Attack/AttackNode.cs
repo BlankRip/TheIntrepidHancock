@@ -8,22 +8,28 @@ public class AttackNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        Debug.Log("<color=red> IN ATTACK </color>");
-        if (status != ReturnResult.Running)
+        if (!ai.recentlyAttcked)
         {
-            Debug.Log("<color=red>Enemy attack anim triggered</color>");
-            Debug.Log("<color=red>Enemy attack sound</color>");
-            //clipLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
-        }
+            Debug.Log("<color=red> IN ATTACK </color>");
+            if (status != ReturnResult.Running)
+            {
+                ai.myAnimator.SetTrigger("Attack");
+                Debug.Log("<color=red>Enemy attack sound</color>");
+                clipLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+            }
 
-        if(clipLength <=0)
-        {
-            Debug.Log("<color=red> ATTACK Success </color>");
+            if (clipLength <= 0)
+            {
+                Debug.Log("<color=red> ATTACK Success </color>");
+                ai.recentlyAttcked = true;
+                status = ReturnResult.Success;
+                return;
+            }
+
+            clipLength -= Time.deltaTime;
+            status = ReturnResult.Running;
+        }
+        else
             status = ReturnResult.Success;
-            return;
-        }
-
-        clipLength -= Time.deltaTime;
-        status = ReturnResult.Running;
     }
 }

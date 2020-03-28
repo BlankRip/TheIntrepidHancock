@@ -10,9 +10,9 @@ public class TauntNode : TreeNode
         Debug.Log("<color=yellow> IN TAUNT </color>");
         if (status != ReturnResult.Running)
         {
-            Debug.Log("play taunting animation");
+            ai.myAnimator.SetTrigger("Taunt");
             Debug.Log("play taunting audio clip");
-            //tauntLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+            tauntLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         }
 
         if (tauntLength <= 0)

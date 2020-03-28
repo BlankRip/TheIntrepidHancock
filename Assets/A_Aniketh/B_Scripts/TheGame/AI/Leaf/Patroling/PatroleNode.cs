@@ -12,6 +12,10 @@ public class PatroleNode : TreeNode
     public override void Run(TheAI ai)
     {
         Debug.Log("<color=blue> IN PATROL NODE  </color>");
+        //if(status != ReturnResult.Running)
+        //{
+        //}
+
         if (pathNodes == null)
         {
             pathNodes = PathFindingController.instance.GetRandomGoalRout(ai.transform);
@@ -23,6 +27,7 @@ public class PatroleNode : TreeNode
             {
                 if (currentNodeIndex == pathNodes.Length - 1)
                 {
+                    ai.myAnimator.SetBool("Walk", false);
                     status = ReturnResult.Success;
                     currentNodeIndex = 0;
                     pathNodes = null;
@@ -33,6 +38,8 @@ public class PatroleNode : TreeNode
             }
 
             status = ReturnResult.Running;
+            ai.myAnimator.SetBool("Walk", true);
+            ai.myAnimator.SetBool("Run", false);
             collisionAvoidense = ai.CollisionAvoidance();
             steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
             ai.rb.velocity += (steering + collisionAvoidense);

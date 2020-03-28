@@ -14,6 +14,7 @@ public class CoolDownNode : TreeNode
         {
             Debug.Log("<color=yellow> FINISH COOLDOWN </color>");
             coolDownTracker = coolDownTimer;
+            ai.recentlyAttcked = false;
             status = ReturnResult.Success;
             return;
         }
