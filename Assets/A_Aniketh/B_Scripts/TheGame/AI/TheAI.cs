@@ -16,11 +16,13 @@ public class TheAI : MonoBehaviour
 
     [Header("For Chase")]
     public float attackRange;
+    [HideInInspector] public bool recentlyAttcked;
 
     [Header("For Searching")]
     public int maxNumberOfSearches;
     public int minNumberOfSearches;
     [HideInInspector] public Vector3 lastSeenPos;
+
     #endregion
 
     #region Player Detection Variables
