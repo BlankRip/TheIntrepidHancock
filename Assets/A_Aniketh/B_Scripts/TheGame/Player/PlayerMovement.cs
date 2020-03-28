@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             speed = speed * sprintSpeedMultiplyer;
 
         //The velocity at which the object needs to be
-        targetVelocity = new Vector3(horizontalMove * speed, rb.velocity.y, verticalMove * speed);
+        targetVelocity = new Vector3(horizontalMove, rb.velocity.y, verticalMove).normalized * speed;
         targetVelocity = transform.rotation * targetVelocity;                //To apply verlocity in the direction the player is rotated
 
         //If the input values are over a perticualr thresh hold then the object will move with a desired velocity

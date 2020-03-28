@@ -58,7 +58,15 @@ public class GraphAStar : MonoBehaviour
 
 
      //       objectParentID[closestNode.nodeIndex] = -1;
-            closestNode.hCost = Vector3.SqrMagnitude(closestNode.position - endNode.position);
+            try
+            {
+                closestNode.hCost = Vector3.SqrMagnitude(closestNode.position - endNode.position);
+            }
+            catch(System.Exception e)
+            {
+                Debug.LogError(e);
+            }
+            
             checkList.Add(closestNode);
 
             Node lowestFNode = null;
