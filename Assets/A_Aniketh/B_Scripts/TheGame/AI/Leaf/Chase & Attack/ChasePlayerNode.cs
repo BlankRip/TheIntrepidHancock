@@ -27,9 +27,12 @@ public class ChasePlayerNode : TreeNode
         ai.myAnimator.SetBool("Run", true);
         ai.myAnimator.SetBool("Walk", false);
         status = ReturnResult.Running;
+        ai.pathPointeReset = true;
         runAnim = true;
         collisionAvoidance = ai.CollisionAvoidance();
         steering = ai.Pursuit(ai.target.transform.position, ai.targerRb, slowRadios);
         ai.rb.velocity += (steering + collisionAvoidance);
+
+        ai.targetPoint = ai.target.transform.position;
     }
 }

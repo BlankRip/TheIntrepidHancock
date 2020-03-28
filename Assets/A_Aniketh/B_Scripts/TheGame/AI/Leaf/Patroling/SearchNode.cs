@@ -34,6 +34,7 @@ public class SearchNode : TreeNode
             if (countTracker < numberOfSearches)
             {
                 status = ReturnResult.Running;
+                
 
                 if (goToPlayerPos)
                 {
@@ -87,12 +88,14 @@ public class SearchNode : TreeNode
                     steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
                     ai.rb.velocity += (steering + collisionAvoidense);
                 }
+                if(pathNodes != null)ai.targetPoint = pathNodes[currentNodeIndex];
             }
             else
             {
                 setSearchCount = true;
                 ai.justEscaped = false;
                 ai.myAnimator.SetBool("Run", false);
+                 ai.pathPointeReset = true;
                 status = ReturnResult.Success;
             }
         }

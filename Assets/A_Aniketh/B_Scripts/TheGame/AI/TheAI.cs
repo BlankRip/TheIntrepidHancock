@@ -22,6 +22,7 @@ public class TheAI : MonoBehaviour
     public int maxNumberOfSearches;
     public int minNumberOfSearches;
     [HideInInspector] public Vector3 lastSeenPos;
+    public bool pathPointeReset = false;
 
     #endregion
 
@@ -76,7 +77,10 @@ public class TheAI : MonoBehaviour
 
      [Header("Internal (For Programmers Only)")]
      public float reachRegisterDistance = 2;
+     public Vector3 targetPoint;
+     
     #endregion
+
 
 
     // Start is called before the first frame update
@@ -225,5 +229,12 @@ public class TheAI : MonoBehaviour
                 lastSeenPos = playerTransform.position;
             }
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(targetPoint, Vector3.one * 2);
+
     }
 }

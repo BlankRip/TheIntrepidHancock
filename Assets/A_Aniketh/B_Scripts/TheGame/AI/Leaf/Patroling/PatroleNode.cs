@@ -9,12 +9,21 @@ public class PatroleNode : TreeNode
     Vector3 collisionAvoidense;
     int currentNodeIndex;
 
+    Vector3 targetPoint;
+
     public override void Run(TheAI ai)
     {
         Debug.Log("<color=blue> IN PATROL NODE  </color>");
         //if(status != ReturnResult.Running)
         //{
         //}
+
+        if(ai.pathPointeReset)
+        {
+            pathNodes = null;
+            ai.pathPointeReset = false;
+        }
+
 
         if (pathNodes == null)
         {
@@ -43,6 +52,10 @@ public class PatroleNode : TreeNode
             collisionAvoidense = ai.CollisionAvoidance();
             steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
             ai.rb.velocity += (steering + collisionAvoidense);
+            ai.targetPoint = pathNodes[currentNodeIndex];
         }
     }
+
+
+
 }
