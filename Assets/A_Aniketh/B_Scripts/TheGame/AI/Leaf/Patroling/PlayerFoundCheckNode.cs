@@ -13,7 +13,7 @@ public class PlayerFoundCheckNode : TreeNode
         }
         else
         {
-            Debug.Log("<color=blue> PLAYER NOT FOUND  </color>");
+            Debug.Log("<color=yellow> PLAYER NOT FOUND  </color>");
             status = ReturnResult.Success;
         }
     }

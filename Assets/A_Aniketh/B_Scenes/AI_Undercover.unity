@@ -2105,12 +2105,13 @@ MonoBehaviour:
   maxNumberOfSearches: 5
   minNumberOfSearches: 3
   lastSeenPos: {x: 0, y: 0, z: 0}
+  pathPointeReset: 0
   playerFound: 0
   justEscaped: 0
   playerTransform: {fileID: 422636359}
   headTransform: {fileID: 2110713768}
   feetTransform: {fileID: 1238790759}
-  raycastToPlayerDistanceLimiter: 20
+  raycastToPlayerDistanceLimiter: 1
   fieldOfViewAngle: 60
   leftTransform: {fileID: 1415919283}
   rightTransform: {fileID: 488028929}

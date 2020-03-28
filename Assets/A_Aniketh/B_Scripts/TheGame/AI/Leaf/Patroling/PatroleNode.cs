@@ -26,6 +26,7 @@ public class PatroleNode : TreeNode
         if (pathNodes == null)
         {
             pathNodes = PathFindingController.instance.GetRandomGoalRout(ai.transform);
+            status = ReturnResult.Running;
             currentNodeIndex = 0;
         }
         else

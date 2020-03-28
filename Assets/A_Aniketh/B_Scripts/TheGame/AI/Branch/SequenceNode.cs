@@ -9,7 +9,6 @@ public class SequenceNode : TreeNode
         for (int i = 0; i < refToChildren.Count; i++)
         {
             refToChildren[i].Run(ai);
-
             if(refToChildren[i].status == ReturnResult.Running || refToChildren[i].status == ReturnResult.Fail)
             {
                 status = refToChildren[i].status;
