@@ -30,7 +30,10 @@ public class EnemyDetectionScript : MonoBehaviour
     RaycastHit hit;
     RaycastHit hitHead;
     RaycastHit hitFeet;
-    //
+    //NEW VARIABLES FOR RADIUS CHECK (REQ BY ALWIN)////////////////////////////////
+    RaycastHit hitRadius;
+    [SerializeField] int radiusRange;
+    //NEW VARIABLES FOR RADIUS CHECK //////////////////////////////////////////////
     bool playerDetected = false;
     //================================================
 
@@ -97,6 +100,23 @@ public class EnemyDetectionScript : MonoBehaviour
         {
             Debug.Log("No player in sight undetected...");
         }
+        ///alwin requested a radius around the enemy copy this and put it in wherever youd like to use it
+        if (Vector3.Distance(transform.position, playerTransform.position) <= radiusRange) //default value 10
+        {
+            if (Physics.Raycast(transform.position, playerDirNormalized, out hitRadius, raycastToPlayerDistanceLimiter))//, Mathf.Infinity, layerMask))
+            {
+                Debug.DrawRay(transform.position, playerDirNormalized * hitRadius.distance, Color.blue); // enemy to player raycast
+                if (hitRadius.collider.tag == "Player")
+                {
+                    Debug.Log("DETECTED THE PLAYER // raycast hit belly");
+                }
+                else if (hitRadius.collider.tag != "Player")
+                {
+                    Debug.Log("player in radius range but could be behind something?");
+                }
+            }
+        }
+        ///alwin requested a radius around the enemy copy this and put it in wherever youd like to use it
     }
 
     void detecttheplayer()
