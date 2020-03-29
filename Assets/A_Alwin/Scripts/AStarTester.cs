@@ -14,12 +14,12 @@ public class AStarTester : MonoBehaviour
     void Start()
     {
         GameObject[] allNodes = GameObject.FindGameObjectsWithTag("A*Node");
-        NodePoint.allNodes = allNodes;
+        NodePointPathFinding.allNodes = allNodes;
         List<Node> nodeList = new List<Node>();
         int index = 0;
         foreach (GameObject item in allNodes)
         {
-            NodePoint pickNodeObject = item.GetComponent<NodePoint>();
+            NodePointPathFinding pickNodeObject = item.GetComponent<NodePointPathFinding>();
             pickNodeObject.thisNode.name = item.name;
             pickNodeObject.thisNode.nodeIndex = index;
             nodeList.Add(pickNodeObject.thisNode);
@@ -47,6 +47,15 @@ public class AStarTester : MonoBehaviour
             for (int i = 1; i < routeNodes.Length; i++)
             {
                 Gizmos.DrawLine(routeNodes[i - 1], routeNodes[i]);
+            }
+        }
+        if(GraphAStar.startNode != null)
+        {
+            foreach (Node item in GraphAStar.startNode.neighbours)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(GraphAStar.startNode.position, item.position);
+                
             }
         }
     }

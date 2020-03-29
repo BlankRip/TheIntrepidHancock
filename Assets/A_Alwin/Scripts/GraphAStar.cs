@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,14 +20,23 @@ namespace AlwinScript {
             get { return gCost + hCost; }
         }
 
+        public Node (Vector3 pos, string nodeName, int index)
+        {
+            position = pos;
+            name = nodeName;
+            nodeIndex = index;
+        }
     }
 public class GraphAStar : MonoBehaviour
 {
    
+   public static Node startNode;
+
     public static Vector3[] GenerateRoute(Node[] nodeList, Vector3 userPosition, Vector3 endPosition)
     {
             // node parent recorder
-            int[] objectParentID = new int[nodeList.Length];
+            // start node
+            int[] objectParentID = new int[nodeList.Length + 1];
 
 
             // check list
@@ -37,21 +46,38 @@ public class GraphAStar : MonoBehaviour
 
             // find the closest node to where you are standig
 
+            // set the start node to point of the player
             Node closestNode = FindClosest(nodeList, userPosition);
-
+       //     startNode = new Node(userPosition + Vector3.up, "startPoint", 0);
+      //      startNode.nodeIndex = 0;
+            //new Node(userPosition + Vector3.up, "startPoint", 0);
+    //        SetupStartNode(nodeList, startNode);
+    //        closestNode = startNode;
             // find the end node
             Node endNode = FindClosest(nodeList, endPosition);
 
 
-            objectParentID[closestNode.nodeIndex] = -1;
-            closestNode.hCost = Vector3.SqrMagnitude(closestNode.position - endNode.position);
+     //       objectParentID[closestNode.nodeIndex] = -1;
+            try
+            {
+                closestNode.hCost = Vector3.SqrMagnitude(closestNode.position - endNode.position);
+            }
+            catch(System.Exception e)
+            {
+                Debug.LogError(e);
+            }
+            
             checkList.Add(closestNode);
 
             Node lowestFNode = null;
 
+            int brekProof = 50;
+
             // run till find the end node
-            while (lowestFNode != endNode)
+            while (brekProof == 0 || lowestFNode != endNode)
             {
+                brekProof--;
+
                 float lowestFYet = Mathf.Infinity;
                 // find the node with the lowest f cost
                 for (int i = 0; i < checkList.Count; i++)
@@ -68,34 +94,34 @@ public class GraphAStar : MonoBehaviour
 
                 for (int n = 0; n < lowestFNode.neighbours.Length; n++)
                     {
-
-
-                    // add neibour node to the next check list if its not already checked
-                    if (!doneList.Contains(lowestFNode.neighbours[n]))
-                    {
-                        lowestFNode.neighbours[n].gCost = Vector3.SqrMagnitude(lowestFNode.position - lowestFNode.neighbours[n].position);
-                        lowestFNode.neighbours[n].hCost = Vector3.SqrMagnitude(endNode.position - lowestFNode.neighbours[n].position);
-                        objectParentID[lowestFNode.neighbours[n].nodeIndex] = lowestFNode.nodeIndex;
-                        checkList.Add(lowestFNode.neighbours[n]);
+                        // add neibour node to the next check list if its not already checked
+                        if (!doneList.Contains(lowestFNode.neighbours[n]))
+                        {
+                            lowestFNode.neighbours[n].gCost = Vector3.SqrMagnitude(lowestFNode.position - lowestFNode.neighbours[n].position);
+                            lowestFNode.neighbours[n].hCost = Vector3.SqrMagnitude(endNode.position - lowestFNode.neighbours[n].position);
+                            objectParentID[lowestFNode.neighbours[n].nodeIndex] = lowestFNode.nodeIndex;
+                            checkList.Add(lowestFNode.neighbours[n]);
+                        }
                     }
-
-                    }
-
                     // add and remove the selected node
                     doneList.Add(lowestFNode);
                     checkList.Remove(lowestFNode);
             }
-            
+            Debug.Log("Last node found");
+
             List<Vector3> routeList = new List<Vector3>();
             Node addNode = lowestFNode;
 
-            while (addNode != closestNode) 
+            brekProof = 50;
+            routeList.Add(endPosition);
+
+            while (brekProof == 0 ||addNode != closestNode) 
             {
+                brekProof--;
                 routeList.Add(addNode.position);
                 addNode = nodeList[objectParentID[addNode.nodeIndex]];
             }
             routeList.Add(addNode.position);
-
             routeList.Reverse();
 
             return routeList.ToArray();
@@ -117,6 +143,22 @@ public class GraphAStar : MonoBehaviour
                 }
             }
             return closestNode;
+        }
+
+         static void SetupStartNode(Node[] nodeList, Node node)
+        {
+            List<Node> friendNodes = new List<Node>();
+
+            for (int i = 0; i < nodeList.Length; i++)
+            {
+                Vector3 dir = (nodeList[i].position - node.position);
+                float lineDistance = dir.magnitude;
+                if (!Physics.Raycast(node.position, dir, lineDistance))
+                {
+                    friendNodes.Add(nodeList[i]);
+                }
+            }
+            node.neighbours = friendNodes.ToArray();
         }
 
     }

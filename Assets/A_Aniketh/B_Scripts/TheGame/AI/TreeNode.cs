@@ -6,7 +6,7 @@ public abstract class TreeNode
 {
     public enum ReturnResult {Fail = 0, Success = 1, Running = 2 }
 
-    public List<TreeNode> refToChildren;
+    public List<TreeNode> refToChildren = new List<TreeNode>();
     public ReturnResult status;
 
     public abstract void Run(TheAI ai);
