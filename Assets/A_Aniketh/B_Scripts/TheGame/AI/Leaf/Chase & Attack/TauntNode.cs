@@ -18,6 +18,7 @@ public class TauntNode : TreeNode
         if (tauntLength <= 0)
         {
             Debug.Log("<color=yellow> Finish TAUNT </color>");
+            ai.recentlyAttcked = false;
             status = ReturnResult.Success;
             return;
         }

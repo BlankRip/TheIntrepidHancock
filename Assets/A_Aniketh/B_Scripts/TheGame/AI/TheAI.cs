@@ -6,6 +6,7 @@ public class TheAI : MonoBehaviour
 {
     public Animator myAnimator;
     public AudioSource mySoundSource;
+    [SerializeField] Collider mAttackCollier;
 
     #region For Tree Nodes
     TreeNode root;
@@ -231,10 +232,21 @@ public class TheAI : MonoBehaviour
         }
     }
 
+    public void OnAttackStartAnimation()
+    {
+        Debug.Log("<color=black> RUNNING S </color>");
+        mAttackCollier.enabled = true;
+    }
+
+    public void OnAttackEndAnimation()
+    {
+        Debug.Log("<color=black> RUNNING E </color>");
+        mAttackCollier.enabled = false;
+    }
+
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawCube(targetPoint, Vector3.one * 2);
-
     }
 }

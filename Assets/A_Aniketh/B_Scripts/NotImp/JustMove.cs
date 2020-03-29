@@ -9,6 +9,7 @@ public class JustMove : MonoBehaviour
     float verticalInput;
     [SerializeField] float speed = 5;
     PlayerMovement move;
+    PlayerStats myStats;
     bool sprint;
     bool crouch;
 
@@ -17,6 +18,7 @@ public class JustMove : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         move = GetComponent<PlayerMovement>();
+        myStats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -30,5 +32,13 @@ public class JustMove : MonoBehaviour
     private void FixedUpdate()
     {
         move.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            myStats.ReduceHealth(20);
+        }
     }
 }

@@ -81,7 +81,7 @@ public class SearchNode : TreeNode
                             currentNodeIndex = 0;
                             pathNodes = null;
                         }
-                        else if(currentNodeIndex < pathNodes.Length)
+                        else if(currentNodeIndex < pathNodes.Length - 1)
                         {
                             Debug.Log("<color=green> searching  </color>");
                             currentNodeIndex++;
@@ -95,8 +95,8 @@ public class SearchNode : TreeNode
                     collisionAvoidense = ai.CollisionAvoidance();
                     steering = ai.Seek(pathNodes[currentNodeIndex], 0.8f);
                     ai.rb.velocity += (steering + collisionAvoidense);
+                    ai.targetPoint = pathNodes[currentNodeIndex];
                 }
-                if(pathNodes != null)ai.targetPoint = pathNodes[currentNodeIndex];
             }
             else
             {
