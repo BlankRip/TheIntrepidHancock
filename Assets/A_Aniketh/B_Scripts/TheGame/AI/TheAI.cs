@@ -5,8 +5,12 @@ using UnityEngine;
 public class TheAI : MonoBehaviour
 {
     public Animator myAnimator;
-    public AudioSource mySoundSource;
     [SerializeField] Collider mAttackCollier;
+
+    [Header("For Enemy Sounds")]
+    public AudioSource AttackSoundSource;
+    [SerializeField] AudioSource leftFootSource;
+    [SerializeField] AudioSource rightFootSource;
 
     #region For Tree Nodes
     TreeNode root;
@@ -235,6 +239,7 @@ public class TheAI : MonoBehaviour
     public void OnAttackStartAnimation()
     {
         Debug.Log("<color=black> RUNNING S </color>");
+        AttackSoundSource.Play();
         mAttackCollier.enabled = true;
     }
 
@@ -242,6 +247,17 @@ public class TheAI : MonoBehaviour
     {
         Debug.Log("<color=black> RUNNING E </color>");
         mAttackCollier.enabled = false;
+    }
+
+    //Funtions that play the footstep dust as an animation event
+    public void RightFootAnimationEvent()
+    {
+        leftFootSource.Play();
+    }
+
+    public void LeftFootAnimationEvent()
+    {
+        rightFootSource.Play();
     }
 
     public void OnDrawGizmos()
