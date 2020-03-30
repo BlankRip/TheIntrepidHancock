@@ -6,7 +6,10 @@ public class J_Weapon : MonoBehaviour
 {
     [Tooltip("The object can pick this weapon up")] 
     [SerializeField] GameObject objectThatCanPickUp;
+    [SerializeField] GameObject pickUpCanvas;
     [HideInInspector] public bool myEquipStatus;
+    [Tooltip("The distance the object should be from the weapon to pick it up")]
+    [SerializeField] float pickUpRange = 3;
 
     //Things needed when attacking
     [Tooltip("The collider that is enabled and desabled when the player is attacking")] 
@@ -37,14 +40,21 @@ public class J_Weapon : MonoBehaviour
     void Update()
     {
         //Checking if player is in pick-up range
-        if (Vector3.Distance(transform.position, objectThatCanPickUp.transform.position) < 3f && !myEquipStatus)
+        if (Vector3.Distance(transform.position, objectThatCanPickUp.transform.position) < pickUpRange && !myEquipStatus)
         {
-            Debug.Log("in range of a weapon press E to equip");
+            if (pickUpCanvas != null)
+                pickUpCanvas.SetActive(true);
             if (Input.GetKeyDown(equipKey))
             {
                 manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
             }
         }
+        else
+        {
+            if (pickUpCanvas != null)
+                pickUpCanvas.SetActive(false);
+        }
+
         //If equipped can drop the weapon
         if (myEquipStatus)
         {
