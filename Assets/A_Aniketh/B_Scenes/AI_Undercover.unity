@@ -2125,6 +2125,7 @@ MonoBehaviour:
   feetTransform: {fileID: 1238790759}
   raycastToPlayerDistanceLimiter: 1
   fieldOfViewAngle: 60
+  radiusRange: 15
   leftTransform: {fileID: 1415919283}
   rightTransform: {fileID: 488028929}
   raycastDistance: 20

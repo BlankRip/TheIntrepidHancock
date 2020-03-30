@@ -40,7 +40,8 @@ public class TheAI : MonoBehaviour
     [SerializeField] Transform feetTransform;
     [SerializeField] int raycastToPlayerDistanceLimiter;
     [SerializeField] float fieldOfViewAngle;
-    
+    [SerializeField] int radiusRange;
+
     float rayCastLength;
     float angle;
 
@@ -50,6 +51,10 @@ public class TheAI : MonoBehaviour
     RaycastHit hit;
     RaycastHit hitHead;
     RaycastHit hitFeet;
+    RaycastHit hitRadius;
+
+    bool inCircleRange;
+    bool inFieldOfVisionRange;
 
     //For Debugging
     [Header("For Detection Debugging")]
@@ -205,6 +210,26 @@ public class TheAI : MonoBehaviour
         //========remove ^ ^ ^ if you dont want debug========
 
         angle = Vector3.Angle(playerDir.normalized, transform.forward);
+
+        if (Vector3.Distance(transform.position, playerTransform.position) <= radiusRange) //default value 10
+        {
+            if (Physics.Raycast(transform.position, playerDir.normalized, out hitRadius, radiusRange))//, Mathf.Infinity, layerMask))
+            {
+                Debug.DrawRay(transform.position, playerDir.normalized * hitRadius.distance, Color.yellow); // enemy to player raycast
+                if (hitRadius.collider.tag == "Player")
+                {
+                    playerFound = true;
+                    inCircleRange = true;
+                    rayCastLength = Mathf.Infinity;
+                    Debug.Log("<color=pink> DETECTED THE PLAYER Cirlce // raycast hit </color>");
+                }
+                else
+                    Debug.Log("<color=pink> player in range Circle but behind something? </color>");
+            }
+        }
+        else
+            inCircleRange = false;
+
         if (angle < fieldOfViewAngle * 0.5f)
         {
             bool bellyHitCheck = Physics.Raycast(transform.position, playerDir.normalized, out hit, playerDir.magnitude);
@@ -214,16 +239,21 @@ public class TheAI : MonoBehaviour
             Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
-          
+
             if (hit.collider.tag == "Player" || hitHead.collider.tag == "Player" || hitFeet.collider.tag == "Player")
             {
                 playerFound = true;
+                inFieldOfVisionRange = true;
                 rayCastLength = Mathf.Infinity;
                 Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
-            else Debug.Log("<color=pink> player in range but behind something? </color>");
+            else
+                Debug.Log("<color=pink> player in range but behind something? </color>");
         }
         else
+            inFieldOfVisionRange = false;
+
+        if (!inFieldOfVisionRange && !inCircleRange)
         {
             Debug.Log("<color=yellow>" + playerFound + "</color>");
             if (playerFound)
