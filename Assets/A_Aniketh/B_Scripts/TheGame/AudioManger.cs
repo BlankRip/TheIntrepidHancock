@@ -29,7 +29,7 @@ public class AudioManger : MonoBehaviour
     [Tooltip("Exit Dungeon clip the player will play when leaving")]
     [SerializeField] AudioClip ExitClip;
 
-    //-------------------------------------------------------- Think this shoulb be in abby -------------------------------------------
+    //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
     [Tooltip("The Audio Source through which Mr.Abby will play his dialogue")]
     [SerializeField] AudioSource abbySoundSource;
     [Tooltip("Audio clip abby will play on arrival")]
@@ -38,7 +38,7 @@ public class AudioManger : MonoBehaviour
     {
         PlayOneShotOn(abbySoundSource, abbyArrivalClip);
     }
-    //-------------------------------------------------------- Think this shoulb be in abby -------------------------------------------
+    //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
 
     //For changeing game background clips
     float currentVolume;
