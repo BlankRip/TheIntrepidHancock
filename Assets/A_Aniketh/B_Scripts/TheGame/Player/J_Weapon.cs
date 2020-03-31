@@ -6,7 +6,9 @@ public class J_Weapon : MonoBehaviour
 {
     [Tooltip("The object can pick this weapon up")] 
     [SerializeField] GameObject objectThatCanPickUp;
+    public Collider rangeTrigger;
     [HideInInspector] public bool myEquipStatus;
+    bool readyToPick;
 
     //Things needed when attacking
     [Tooltip("The collider that is enabled and desabled when the player is attacking")] 
@@ -36,15 +38,11 @@ public class J_Weapon : MonoBehaviour
 
     void Update()
     {
-        //Checking if player is in pick-up range
-        if (Vector3.Distance(transform.position, objectThatCanPickUp.transform.position) < 3f && !myEquipStatus)
+        if (Input.GetKeyDown(equipKey) && readyToPick)
         {
-            Debug.Log("in range of a weapon press E to equip");
-            if (Input.GetKeyDown(equipKey))
-            {
-                manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
-            }
+            manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
         }
+
         //If equipped can drop the weapon
         if (myEquipStatus)
         {
@@ -53,8 +51,24 @@ public class J_Weapon : MonoBehaviour
                 manageEquipment.DropWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to drop it
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player" && !myEquipStatus)
+        {
+            readyToPick = true;
+            manageEquipment.ShowUI(this);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            readyToPick = false;
+            manageEquipment.NoUI();
+        }
     }
 
     //Function that activates the things needed when attacking
