@@ -6,10 +6,9 @@ public class J_Weapon : MonoBehaviour
 {
     [Tooltip("The object can pick this weapon up")] 
     [SerializeField] GameObject objectThatCanPickUp;
-    [SerializeField] GameObject pickUpCanvas;
+    public Collider rangeTrigger;
     [HideInInspector] public bool myEquipStatus;
-    [Tooltip("The distance the object should be from the weapon to pick it up")]
-    [SerializeField] float pickUpRange = 3;
+    bool readyToPick;
 
     //Things needed when attacking
     [Tooltip("The collider that is enabled and desabled when the player is attacking")] 
@@ -39,20 +38,9 @@ public class J_Weapon : MonoBehaviour
 
     void Update()
     {
-        //Checking if player is in pick-up range
-        if (Vector3.Distance(transform.position, objectThatCanPickUp.transform.position) < pickUpRange && !myEquipStatus)
+        if (Input.GetKeyDown(equipKey) && readyToPick)
         {
-            if (pickUpCanvas != null)
-                pickUpCanvas.SetActive(true);
-            if (Input.GetKeyDown(equipKey))
-            {
-                manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
-            }
-        }
-        else
-        {
-            if (pickUpCanvas != null)
-                pickUpCanvas.SetActive(false);
+            manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
         }
 
         //If equipped can drop the weapon
@@ -63,8 +51,24 @@ public class J_Weapon : MonoBehaviour
                 manageEquipment.DropWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to drop it
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player" && !myEquipStatus)
+        {
+            readyToPick = true;
+            manageEquipment.ShowUI(this);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            readyToPick = false;
+            manageEquipment.NoUI();
+        }
     }
 
     //Function that activates the things needed when attacking
