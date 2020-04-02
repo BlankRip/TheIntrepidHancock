@@ -21,7 +21,11 @@ public class TheAI : MonoBehaviour
 
     [Header("For Chase")]
     public float attackRange;
+    public float attackDuration = 2f;
+    public float tauntDuration = 5f;
     [HideInInspector] public bool recentlyAttcked;
+    [HideInInspector] public bool attacking;
+
 
     [Header("For Searching")]
     public int maxNumberOfSearches;
