@@ -2110,6 +2110,7 @@ MonoBehaviour:
   AttackSoundSource: {fileID: 1306197455}
   leftFootSource: {fileID: 1293256815}
   rightFootSource: {fileID: 345210283}
+  randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
   attackRange: 2

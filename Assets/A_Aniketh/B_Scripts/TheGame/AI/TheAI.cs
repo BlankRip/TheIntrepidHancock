@@ -14,6 +14,7 @@ public class TheAI : MonoBehaviour
 
     #region For Tree Nodes
     TreeNode root;
+    [Range(1, 2.5f)] public float randomWeightageAdjuster = 1.8f;
 
     [Header("Timers for cooldown & Idle")]
     [Range(0, 1)] public float coolDownSpeed = 1;
