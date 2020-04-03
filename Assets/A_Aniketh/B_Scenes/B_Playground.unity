@@ -10164,6 +10164,7 @@ MonoBehaviour:
   animController: {fileID: 230591124}
   attackKey: 323
   equippedWeapon: {fileID: 0}
+  gapBetweenAttacks: 0
   footStepParticlesLeft: {fileID: 0}
   footStepParticlesRight: {fileID: 0}
   leftFootAudio: {fileID: 0}
@@ -17532,6 +17533,7 @@ MonoBehaviour:
   animController: {fileID: 533439819}
   attackKey: 323
   equippedWeapon: {fileID: 0}
+  gapBetweenAttacks: 2
   footStepParticlesLeft: {fileID: 836630524}
   footStepParticlesRight: {fileID: 6836957}
   leftFootAudio: {fileID: 1934337080}
