@@ -111,14 +111,24 @@ public class Player : MonoBehaviour
                             sprint = false;
                             crouch = false;
 
-                            pickAttackAnim = Random.Range(1, 4);
-                            if(pickAttackAnim == previouAttackAnim)
-                            {
-                                if (pickAttackAnim == 3)
-                                    pickAttackAnim = 1;
-                                else
-                                    pickAttackAnim++;
-                            }
+                            if (Time.time < attackGapTracker + 1)
+                                pickAttackAnim++;
+                            else
+                                pickAttackAnim = 1;
+
+                            if (pickAttackAnim >= 4)
+                                pickAttackAnim = 1;
+
+                            //pickAttackAnim = Random.Range(1, 4);
+                            //if(pickAttackAnim == previouAttackAnim)
+                            //{
+                            //    if (pickAttackAnim == 3)
+                            //        pickAttackAnim = 1;
+                            //    else
+                            //        pickAttackAnim++;
+                            //}
+
+                            Debug.Log("<color=blue>" + pickAttackAnim + "</color>");
 
                             if (pickAttackAnim == 1)
                                 animController.SetTrigger("Attack1");
