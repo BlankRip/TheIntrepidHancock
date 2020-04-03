@@ -9,7 +9,9 @@ public class WeaponCheck : MonoBehaviour
     GameObject currentWeapon;
     Rigidbody currentWeaponRb;
     Weapon currentWeaponComponent;
-
+    //
+    bool bottleEquip;
+    [SerializeField] int throwingBottleForce = 30f;
 
     public void EquipWeapon(GameObject weapon, Rigidbody rb)
     {
@@ -28,6 +30,12 @@ public class WeaponCheck : MonoBehaviour
         currentWeaponComponent.equipped = true;
         currentWeapon = weapon;
         currentWeaponRb = rb;
+        if (currentWeapon.tag == "Bottle")
+        {
+            bottleEquip = true;
+            currentWeaponComponent.holdingBottle = true;
+            Debug.Log("check if tag is bottle if it is this will ocme up and bottle = true");
+        }
     }
 
     public void DropWeapon(GameObject weapon, Rigidbody rb)
@@ -39,6 +47,20 @@ public class WeaponCheck : MonoBehaviour
         currentWeaponComponent = null;
         weapon.GetComponent<Weapon>().equipped = false;
         equipStatus = false;
+        bottleEquip = false;
+    }
+
+    public void ThrowBottle(GameObject weapon, Rigidbody rb)
+    {
+        Debug.Log("<color=red> Throwing Bottle </color>");
+        weapon.transform.SetParent(null);
+        rb.isKinematic = false;
+        rb.AddForce(transform.forward * throwingBottleForce, ForceMode.Impulse);
+        currentWeaponComponent.holdingBottle = false;
+        currentWeaponComponent = null;
+        weapon.GetComponent<Weapon>().equipped = false;
+        equipStatus = false;
+        bottleEquip = false;
     }
 
     public void DisableColliderEvent()

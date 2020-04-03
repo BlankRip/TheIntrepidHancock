@@ -9,6 +9,8 @@ TagManager:
   - Lantern
   - A*Node
   - GoalPoints
+  - WeaponCheckTag
+  - Bottle
   layers:
   - Default
   - TransparentFX
