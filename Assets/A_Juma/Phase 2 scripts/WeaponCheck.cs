@@ -10,8 +10,8 @@ public class WeaponCheck : MonoBehaviour
     Rigidbody currentWeaponRb;
     Weapon currentWeaponComponent;
     //
-    bool bottleEquip;
-    [SerializeField] int throwingBottleForce = 30f;
+    [SerializeField] int throwingBottleForce = 30;
+    BottleImpact bottleState;
 
     public void EquipWeapon(GameObject weapon, Rigidbody rb)
     {
@@ -32,8 +32,8 @@ public class WeaponCheck : MonoBehaviour
         currentWeaponRb = rb;
         if (currentWeapon.tag == "Bottle")
         {
-            bottleEquip = true;
             currentWeaponComponent.holdingBottle = true;
+            bottleState = weapon.GetComponent<BottleImpact>();
             Debug.Log("check if tag is bottle if it is this will ocme up and bottle = true");
         }
     }
@@ -44,10 +44,17 @@ public class WeaponCheck : MonoBehaviour
         weapon.transform.SetParent(null);
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+        //
+        if (currentWeapon.tag == "Bottle")
+        {
+            currentWeaponComponent.holdingBottle = false;
+            bottleState = null;
+            Debug.Log("check if tag is bottle if it is this will ocme up and bottle = true");
+        }
+        //
         currentWeaponComponent = null;
         weapon.GetComponent<Weapon>().equipped = false;
         equipStatus = false;
-        bottleEquip = false;
     }
 
     public void ThrowBottle(GameObject weapon, Rigidbody rb)
@@ -56,11 +63,11 @@ public class WeaponCheck : MonoBehaviour
         weapon.transform.SetParent(null);
         rb.isKinematic = false;
         rb.AddForce(transform.forward * throwingBottleForce, ForceMode.Impulse);
+        bottleState.thrownMode = true;
         currentWeaponComponent.holdingBottle = false;
         currentWeaponComponent = null;
         weapon.GetComponent<Weapon>().equipped = false;
         equipStatus = false;
-        bottleEquip = false;
     }
 
     public void DisableColliderEvent()

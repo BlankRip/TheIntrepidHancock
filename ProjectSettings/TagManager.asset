@@ -11,6 +11,7 @@ TagManager:
   - GoalPoints
   - WeaponCheckTag
   - Bottle
+  - Floor
   layers:
   - Default
   - TransparentFX
