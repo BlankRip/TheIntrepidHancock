@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -105,22 +105,22 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 0.859
+    value: 0.275
   cutoff:
     overrideState: 1
-    value: 3.6
+    value: 5.8
   blurCount:
     overrideState: 1
-    value: 0.65
+    value: 3.12
   shift:
     overrideState: 1
-    value: 0.0205
+    value: 0.0068
   strength:
     overrideState: 1
-    value: 4.8
+    value: 0.27
   scanDistance:
     overrideState: 1
-    value: 44.8
+    value: 100
 --- !u!114 &5135224798548157601
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2c37c093534dd48b8f8209fdb36f9f, type: 3}
   m_Name: CustomBloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -148,4 +148,4 @@ MonoBehaviour:
     value: 0.0098
   bloomCount:
     overrideState: 1
-    value: 5
+    value: 2

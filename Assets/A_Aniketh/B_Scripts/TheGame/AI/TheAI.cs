@@ -14,6 +14,7 @@ public class TheAI : MonoBehaviour
 
     #region For Tree Nodes
     TreeNode root;
+    [Range(1, 2.5f)] public float randomWeightageAdjuster = 1.8f;
 
     [Header("Timers for cooldown & Idle")]
     [Range(0, 1)] public float coolDownSpeed = 1;
@@ -21,7 +22,11 @@ public class TheAI : MonoBehaviour
 
     [Header("For Chase")]
     public float attackRange;
+    public float attackDuration = 2f;
+    public float tauntDuration = 5f;
     [HideInInspector] public bool recentlyAttcked;
+    [HideInInspector] public bool attacking;
+
 
     [Header("For Searching")]
     public int maxNumberOfSearches;

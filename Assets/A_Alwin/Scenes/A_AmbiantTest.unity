@@ -48,8 +48,8 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 1.5
-    m_AlbedoBoost: 1
+    m_IndirectOutputScale: 0.54
+    m_AlbedoBoost: 1.55
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
@@ -74,10 +74,10 @@ LightmapSettings:
     m_MixedBakeMode: 2
     m_BakeBackend: 1
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 8
-    m_PVRSampleCount: 128
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
     m_PVRBounces: 4
-    m_PVREnvironmentSampleCount: 32
+    m_PVREnvironmentSampleCount: 64
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 1
     m_PVRDenoiserTypeDirect: 1
@@ -2240,7 +2240,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -2258,8 +2258,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881051390}
-  m_LocalRotation: {x: -0.050802093, y: -0.451419, z: 0.025783049, w: -0.8904916}
-  m_LocalPosition: {x: -6.8792677, y: 4.025587, z: -0.39338827}
+  m_LocalRotation: {x: 0.16502854, y: 0.38140553, z: -0.06940496, w: 0.9069059}
+  m_LocalPosition: {x: -6.033602, y: 5.5130944, z: -1.377574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1041080387}
@@ -4203,7 +4203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698683494}
   m_LocalRotation: {x: 0.5000001, y: -0.49999994, z: -0.49999994, w: 0.5000001}
-  m_LocalPosition: {x: 1.094, y: 4.31, z: 0.099}
+  m_LocalPosition: {x: 0.891, y: 4.31, z: 0.099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

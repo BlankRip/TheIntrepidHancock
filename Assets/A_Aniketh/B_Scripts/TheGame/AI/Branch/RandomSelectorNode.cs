@@ -9,7 +9,7 @@ public class RandomSelectorNode : TreeNode
     public override void Run(TheAI ai)
     {
         if (pickedNode)
-            chooser = Random.Range(0, refToChildren.Count);
+            chooser = PickRandomChild(ai.randomWeightageAdjuster);
 
         refToChildren[chooser].Run(ai);
         status = refToChildren[chooser].status;
@@ -18,5 +18,16 @@ public class RandomSelectorNode : TreeNode
             pickedNode = false;
         else
             pickedNode = true;
+    }
+
+    int PickRandomChild(float weightageAdjuster)
+    {
+        float pickWithWeight = Random.Range(0, 100);
+        pickWithWeight = pickWithWeight / 100;
+        pickWithWeight = Mathf.Pow(pickWithWeight, weightageAdjuster) * refToChildren.Count;
+
+        int pick = (int)pickWithWeight;
+
+        return pick;
     }
 }

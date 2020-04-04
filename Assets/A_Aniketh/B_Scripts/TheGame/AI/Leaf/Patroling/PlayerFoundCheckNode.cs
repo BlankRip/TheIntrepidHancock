@@ -6,7 +6,7 @@ public class PlayerFoundCheckNode : TreeNode
 {
     public override void Run(TheAI ai)
     {
-        if (ai.playerFound)
+        if (ai.playerFound || ai.attacking || ai.recentlyAttcked)
         {
             Debug.Log("<color=blue> PLAYER FOUND  </color>");
             status = ReturnResult.Fail;

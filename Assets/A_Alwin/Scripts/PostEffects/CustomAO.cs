@@ -16,7 +16,7 @@ public sealed class CustomAO : PostProcessEffectSettings
     public FloatParameter shift = new FloatParameter { value = 0.5f };
     [Range(0f, 5f), Tooltip("Bloom effect intensity.")]
     public FloatParameter strength = new FloatParameter { value = 0.5f };
-    [Range(0f, 50f), Tooltip("Bloom effect intensity.")]
+    [Range(0f, 100f), Tooltip("Bloom effect intensity.")]
     public FloatParameter scanDistance = new FloatParameter { value = 0.5f };
 
     //  [Range(0f, 1f), Tooltip("Bloom effect cutoff.")]
@@ -60,7 +60,7 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
 
         context.command.BlitFullscreenTriangle(context.source, rt1, aoSheet, 0);
         
-
+        
         // blur
         for (int i = 0; i < settings.blurCount; i++)
         {
