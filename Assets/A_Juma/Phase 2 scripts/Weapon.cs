@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
     Rigidbody weaponRB;
 
     WeaponCheck equipper;
+    //
+    public bool holdingBottle;
 
     // Start is called before the first frame update
     void Start()
@@ -37,15 +39,26 @@ public class Weapon : MonoBehaviour
 
         if(equipped == true)
         {
-            if (Input.GetKeyDown(attackKey))
-            {
-                wepCollider.enabled = true;
-                swingAnim.SetTrigger("Attack");
-            }
-
             if(Input.GetKeyDown(KeyCode.G))
             {
                 equipper.DropWeapon(this.gameObject, weaponRB);
+            }
+
+            if (holdingBottle == false)
+            {
+                if (Input.GetKeyDown(attackKey))
+                {
+                    wepCollider.enabled = true;
+                    swingAnim.SetTrigger("Attack");
+                }
+            }
+
+            if (holdingBottle == true)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    equipper.ThrowBottle(this.gameObject, weaponRB);
+                }
             }
         }
     }
@@ -54,7 +67,6 @@ public class Weapon : MonoBehaviour
     {
         wepCollider.enabled = false;
     }
-
 }
 
         //if (Vector3.Distance(transform.position, playerObj.transform.position) < 3f)

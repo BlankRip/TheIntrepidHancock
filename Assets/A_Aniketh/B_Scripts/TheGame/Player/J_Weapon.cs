@@ -38,10 +38,7 @@ public class J_Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(equipKey) && readyToPick)
-        {
-            manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
-        }
+
 
         //If equipped can drop the weapon
         if (myEquipStatus)
@@ -49,6 +46,13 @@ public class J_Weapon : MonoBehaviour
             if (Input.GetKeyDown(dropKey))
             {
                 manageEquipment.DropWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to drop it
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(equipKey) && readyToPick)
+            {
+                manageEquipment.EquipWeapon(this, weaponRB);      //Giveng the weapon to the equip manager to equip it
             }
         }
     }
