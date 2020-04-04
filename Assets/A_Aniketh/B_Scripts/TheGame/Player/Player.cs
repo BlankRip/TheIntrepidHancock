@@ -32,6 +32,12 @@ public class Player : MonoBehaviour
     [HideInInspector] public J_Weapon equippedWeapon;
     bool attacking;
 
+    [Header("Things for attack animation")]
+    [SerializeField] float gapBetweenAttacks;
+    float attackGapTracker = 0;
+    int pickAttackAnim;
+    int previouAttackAnim;
+
     [Header("Things for VFX in Player")]
     [Tooltip("Foot steps dust spwner for left leg")] 
     [SerializeField] ParticleSystem footStepParticlesLeft;
@@ -90,22 +96,51 @@ public class Player : MonoBehaviour
                     animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
 
                 if (verticalInput == 0 && horizontalInput != 0)
-                {
                     animController.SetFloat("Horizontal", horizontalInput);
-                }
                 else
                     animController.SetFloat("Horizontal", 0);
 
                 //Checking if this weapon is equipped
                 if (equippedWeapon != null)
                 {
-                    if (Input.GetKeyDown(attackKey))
+                    if (Time.time > attackGapTracker)
                     {
-                        attacking = true;
-                        sprint = false;
-                        crouch = false;
-                        animController.SetTrigger("Attack");
-                        equippedWeapon.ActivateEffects();
+                        if (Input.GetKeyDown(attackKey))
+                        {
+                            attacking = true;
+                            sprint = false;
+                            crouch = false;
+
+                            if (Time.time < attackGapTracker + 1)
+                                pickAttackAnim++;
+                            else
+                                pickAttackAnim = 1;
+
+                            if (pickAttackAnim >= 4)
+                                pickAttackAnim = 1;
+
+                            //pickAttackAnim = Random.Range(1, 4);
+                            //if(pickAttackAnim == previouAttackAnim)
+                            //{
+                            //    if (pickAttackAnim == 3)
+                            //        pickAttackAnim = 1;
+                            //    else
+                            //        pickAttackAnim++;
+                            //}
+
+                            Debug.Log("<color=blue>" + pickAttackAnim + "</color>");
+
+                            if (pickAttackAnim == 1)
+                                animController.SetTrigger("Attack1");
+                            else if (pickAttackAnim == 2)
+                                animController.SetTrigger("Attack2");
+                            else if (pickAttackAnim == 3)
+                                animController.SetTrigger("Attack3");
+
+                            previouAttackAnim = pickAttackAnim;
+                            equippedWeapon.ActivateEffects();
+                            attackGapTracker = Time.time + gapBetweenAttacks;
+                        }
                     }
                 }
             }
