@@ -38,6 +38,16 @@ public class Player : MonoBehaviour
     int pickAttackAnim;
     int previouAttackAnim;
 
+    [Header("For Raycast to stop near the wall")]
+    [SerializeField] Transform headPos;
+    [SerializeField] LayerMask wallLayers;
+    [SerializeField] float castDistance;
+    RaycastHit hitInfo;
+    Vector3 camForward;
+    Quaternion rayRotationAngle;
+    bool virticleIdleAtWall;
+    bool horizontalIdleAtWall;
+
     [Header("Things for VFX in Player")]
     [Tooltip("Foot steps dust spwner for left leg")] 
     [SerializeField] ParticleSystem footStepParticlesLeft;
@@ -89,16 +99,31 @@ public class Player : MonoBehaviour
 
             if (useAnimtion)
             {
-                animController.SetFloat("Speed", verticalInput);
-                if (horizontalInput != 0)
-                    animController.SetFloat("Direction", horizontalInput);
+                if (!virticleIdleAtWall)
+                    animController.SetFloat("Speed", verticalInput);
                 else
-                    animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+                {
+                    animController.SetFloat("Speed", 0);
+                    animController.SetFloat("Direction", 0);
+                }
 
-                if (verticalInput == 0 && horizontalInput != 0)
-                    animController.SetFloat("Horizontal", horizontalInput);
+                if (!horizontalIdleAtWall)
+                {
+                    if (horizontalInput != 0)
+                        animController.SetFloat("Direction", horizontalInput);
+                    else
+                        animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+
+                    if (verticalInput == 0 && horizontalInput != 0)
+                        animController.SetFloat("Horizontal", horizontalInput);
+                    else
+                        animController.SetFloat("Horizontal", 0);
+                }
                 else
+                {
                     animController.SetFloat("Horizontal", 0);
+                    animController.SetFloat("Direction", 0);
+                }
 
                 //Checking if this weapon is equipped
                 if (equippedWeapon != null)
@@ -157,11 +182,62 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        HittingWall();
         //Calling movement from the movement script
         if (!attacking)
             movementController.Movement(horizontalInput, verticalInput, speed, sprint, crouch);
     }
 
+    // When close to wall it will stop motion in that direction and idle in spot until input in a diffrent direction
+    void HittingWall()
+    {
+        camForward = Camera.main.transform.forward;
+        camForward.y = 0;
+
+        rayRotationAngle = Quaternion.LookRotation(camForward.normalized, Vector3.up);
+
+        Debug.DrawRay(headPos.position, rayRotationAngle * Vector3.forward * castDistance, Color.green);
+        Debug.DrawRay(headPos.position, rayRotationAngle * -Vector3.forward * castDistance, Color.red);
+        Debug.DrawRay(headPos.position, rayRotationAngle * Vector3.right * castDistance, Color.yellow);
+        Debug.DrawRay(headPos.position, rayRotationAngle * -Vector3.right * castDistance, Color.blue);
+        if (Physics.Raycast(headPos.position, rayRotationAngle * Vector3.forward, out hitInfo, castDistance, wallLayers))
+        {
+            if (verticalInput > 0)
+            {
+                verticalInput = 0;
+                virticleIdleAtWall = true;
+            }
+        }
+        else if (Physics.Raycast(headPos.position, rayRotationAngle * -Vector3.forward, out hitInfo, castDistance, wallLayers))
+        {
+            if (verticalInput < 0)
+            {
+                verticalInput = 0;
+                virticleIdleAtWall = true;
+            }
+        }
+        else
+            virticleIdleAtWall = false;
+
+        if (Physics.Raycast(headPos.position, rayRotationAngle * Vector3.right, out hitInfo, castDistance, wallLayers))
+        {
+            if (horizontalInput > 0)
+            {
+                horizontalInput = 0;
+                horizontalIdleAtWall = true;
+            }
+        }
+        if (Physics.Raycast(headPos.position, rayRotationAngle * -Vector3.right, out hitInfo, castDistance, wallLayers))
+        {
+            if (horizontalInput < 0)
+            {
+                horizontalInput = 0;
+                horizontalIdleAtWall = true;
+            }
+        }
+        else
+            horizontalIdleAtWall = false;
+    }
 
 
     private void OnCollisionEnter(Collision collision)
@@ -200,7 +276,6 @@ public class Player : MonoBehaviour
     //If less than thresh hold speed then it will just rotate in that direction
     //if (verticalMove > 0 && verticalMove < moveThreshHold)
     //{
-
     //}
     //else if (verticalMove < 0 && verticalMove > -moveThreshHold)
     //{
