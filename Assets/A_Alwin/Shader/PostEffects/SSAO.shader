@@ -30,20 +30,21 @@
 		{
 			screenPos *= 2000.73;
 			float3 screenNormal = float3(random(screenPos + float2(0.7, 0.1)), random(screenPos + float2(0.2, 0.5)), random(screenPos + float2(0.1, 0.7)));
-			screenNormal = normalize((screenNormal * 2) - 1) * factor;
+			screenNormal = normalize((screenNormal * 2) - 1) * factor ;
 			screenNormal = mul(unity_MatrixVP, screenNormal);
 			return screenNormal;
 		}
 
 		float AmbiantFactor(float2 screenPos) 
 		{
-			float pointDepth = tex2D(_CameraDepthTexture, screenPos).r;
-			pointDepth = LinearEyeDepth(pointDepth);
+			float screenDepth = tex2D(_CameraDepthTexture, screenPos).r;
+			float pointDepth = LinearEyeDepth(screenDepth);
 			float factor = 0;
 			for (float i = 1; i < 64; i++)
 			{
 				// make a random direction vector
-				half3 randomDir = normalize(RandomRay(screenPos + float2(0.01 * i, 0), _ScanDistance * (i/64)));
+			//	half3 randomDir = normalize(RandomRay(screenPos + float2(0.01 * i, 0), _ScanDistance * (i/64)));
+				half3 randomDir = RandomRay(screenPos + float2(0.01 * i, 0), _ScanDistance * (i / 64) * screenDepth);
 				// get the screen Vector point
 				float randomPointDepth = tex2D(_CameraDepthTexture, screenPos + (randomDir.xy * _Blend)).r;
 				randomPointDepth = LinearEyeDepth(randomPointDepth);
@@ -64,7 +65,11 @@
 	{
 		float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
 
-		return 1 - saturate(AmbiantFactor(i.texcoord));
+		return (1 - saturate(AmbiantFactor(i.texcoord)));
+		//float pointDepth = tex2D(_CameraDepthTexture, i.texcoord).r;
+	//	return LinearEyeDepth(pointDepth);
+	//	return color;
+	//	return (saturate(AmbiantFactor(i.texcoord)));
 	}
 
 		ENDHLSL
