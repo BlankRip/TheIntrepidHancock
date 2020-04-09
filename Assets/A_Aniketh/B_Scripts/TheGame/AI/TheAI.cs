@@ -112,34 +112,46 @@ public class TheAI : MonoBehaviour
 
         #region Creating Tree
         //Creating branch nodes into variables for easy use
-        TreeNode patrolSequence = new SequenceNode();
-        TreeNode patrolSelector = new SelectorNode();
-        TreeNode patrolRandomSelect = new RandomSelectorNode();
+        TreeNode attackSequence = new SequenceNode();
+    //    TreeNode patrolSelector = new SelectorNode();
+        TreeNode fallbackRandomSelect = new RandomSelectorNode();
 
-        TreeNode chaseSequence = new SequenceNode();
-        TreeNode chaseRandomSelect = new RandomSelectorNode();
+  //      TreeNode chaseSequence = new SequenceNode();
+        TreeNode postAttackRandomSelect = new RandomSelectorNode();
 
         //Making the tree
         root = new SelectorNode();
 
-        root.refToChildren.Add(patrolSequence);
-        patrolSequence.refToChildren.Add(new PlayerFoundCheckNode());
-        patrolSequence.refToChildren.Add(patrolSelector);
+        root.refToChildren.Add(attackSequence);
+        attackSequence.refToChildren.Add(new PlayerFoundCheckNode());
+        attackSequence.refToChildren.Add(new ChasePlayerNode());
+        attackSequence.refToChildren.Add(new AttackNode());
+        // cooldown or taunt after attack
+        attackSequence.refToChildren.Add(postAttackRandomSelect);
 
-        patrolSelector.refToChildren.Add(new SearchNode());
-        patrolSelector.refToChildren.Add(patrolRandomSelect);
+        postAttackRandomSelect.refToChildren.Add(new TauntNode());
+        postAttackRandomSelect.refToChildren.Add(new CoolDownNode());
 
-        patrolRandomSelect.refToChildren.Add(new PatroleNode());
-        patrolRandomSelect.refToChildren.Add(new IdleNode());
+        // search for player
+        root.refToChildren.Add(new SearchNode());
+
+        // patrole section
+        root.refToChildren.Add(fallbackRandomSelect);
+        fallbackRandomSelect.refToChildren.Add(new PatroleNode());
+        fallbackRandomSelect.refToChildren.Add(new IdleNode());
+        //patrolSelector.refToChildren.Add(new SearchNode());
+        //patrolSelector.refToChildren.Add(patrolRandomSelect);
+
+//        patrolRandomSelect.refToChildren.Add(new PatroleNode());
+//        patrolRandomSelect.refToChildren.Add(new IdleNode());
 
 
-        root.refToChildren.Add(chaseSequence);
-        chaseSequence.refToChildren.Add(new ChasePlayerNode());
-        chaseSequence.refToChildren.Add(new AttackNode());
-        chaseSequence.refToChildren.Add(chaseRandomSelect);
+    //    root.refToChildren.Add(chaseSequence);
+     //   chaseSequence.refToChildren.Add(new ChasePlayerNode());
+     //   chaseSequence.refToChildren.Add(new AttackNode());
+    //    chaseSequence.refToChildren.Add(postAttackRandomSelect);
 
-        chaseRandomSelect.refToChildren.Add(new TauntNode());
-        chaseRandomSelect.refToChildren.Add(new CoolDownNode());
+
         #endregion
     }
 
