@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -105,7 +105,11 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
+<<<<<<< HEAD
     value: 0.508
+=======
+    value: 1
+>>>>>>> fa4b46cafa0f0d183062a5eed43153c8de474a55
   cutoff:
     overrideState: 1
     value: 5.53
@@ -117,7 +121,11 @@ MonoBehaviour:
     value: 0.0027
   strength:
     overrideState: 1
+<<<<<<< HEAD
     value: 0.21
+=======
+    value: 1.7
+>>>>>>> fa4b46cafa0f0d183062a5eed43153c8de474a55
   scanDistance:
     overrideState: 1
     value: 44.6
