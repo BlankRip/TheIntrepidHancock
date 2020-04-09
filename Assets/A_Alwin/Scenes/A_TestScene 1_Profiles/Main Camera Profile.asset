@@ -105,22 +105,30 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
+<<<<<<< HEAD
+    value: 0.508
+=======
     value: 1
+>>>>>>> fa4b46cafa0f0d183062a5eed43153c8de474a55
   cutoff:
     overrideState: 1
-    value: 5.8
+    value: 5.53
   blurCount:
     overrideState: 1
     value: 3.12
   shift:
     overrideState: 1
-    value: 0.0068
+    value: 0.0027
   strength:
     overrideState: 1
+<<<<<<< HEAD
+    value: 0.21
+=======
     value: 1.7
+>>>>>>> fa4b46cafa0f0d183062a5eed43153c8de474a55
   scanDistance:
     overrideState: 1
-    value: 100
+    value: 44.6
 --- !u!114 &5135224798548157601
 MonoBehaviour:
   m_ObjectHideFlags: 3
