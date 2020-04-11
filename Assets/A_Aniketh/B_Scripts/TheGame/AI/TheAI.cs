@@ -31,6 +31,7 @@ public class TheAI : MonoBehaviour
     [Header("For Searching")]
     public int maxNumberOfSearches;
     public int minNumberOfSearches;
+    [HideInInspector] public bool setSearchCount = true;
     [HideInInspector] public Vector3 lastSeenPos;
     public bool pathPointeReset = false;
 
@@ -113,11 +114,12 @@ public class TheAI : MonoBehaviour
         #region Creating Tree
         //Creating branch nodes into variables for easy use
         TreeNode attackSequence = new SequenceNode();
-    //    TreeNode patrolSelector = new SelectorNode();
-        TreeNode fallbackRandomSelect = new RandomSelectorNode();
-
   //      TreeNode chaseSequence = new SequenceNode();
         TreeNode postAttackRandomSelect = new RandomSelectorNode();
+
+        TreeNode searchSequence = new SequenceNode();
+    //    TreeNode patrolSelector = new SelectorNode();
+        TreeNode fallbackRandomSelect = new RandomSelectorNode();
 
         //Making the tree
         root = new SelectorNode();
@@ -133,7 +135,9 @@ public class TheAI : MonoBehaviour
         postAttackRandomSelect.refToChildren.Add(new CoolDownNode());
 
         // search for player
-        root.refToChildren.Add(new SearchNode());
+        root.refToChildren.Add(searchSequence);
+        searchSequence.refToChildren.Add(new PlayerEscapeCheck());
+        searchSequence.refToChildren.Add(new SearchNode());
 
         // patrole section
         root.refToChildren.Add(fallbackRandomSelect);
