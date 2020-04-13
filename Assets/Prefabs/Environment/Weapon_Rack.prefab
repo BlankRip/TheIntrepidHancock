@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 5300133060217262273}
   - component: {fileID: 3807472774537210615}
   - component: {fileID: 7487891044605433358}
-  m_Layer: 0
+  - component: {fileID: 1999505611970288827}
+  - component: {fileID: 7060051263794275750}
+  - component: {fileID: 1802407841220676879}
+  m_Layer: 8
   m_Name: Weapon_Rack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +82,42 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1999505611970288827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211694360936784594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3789978, y: 4.235648, z: 3.672287}
+  m_Center: {x: -0.01883173, y: -1.2130337, z: 1.8156171}
+--- !u!65 &7060051263794275750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211694360936784594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4067786, y: 0.46385574, z: 0.71748877}
+  m_Center: {x: -0.00000011920918, y: 0.48241103, z: 0.33821797}
+--- !u!65 &1802407841220676879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211694360936784594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4067786, y: 0.39490414, z: 0.71748877}
+  m_Center: {x: -0.00000011921016, y: -2.8953474, z: 0.33821797}

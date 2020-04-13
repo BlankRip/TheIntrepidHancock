@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4483064435340782363}
   - component: {fileID: 4858273375549886765}
   - component: {fileID: 1175585249768795604}
-  m_Layer: 0
+  - component: {fileID: 155664825473474775}
+  m_Layer: 8
   m_Name: corner_pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &155664825473474775
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606950772017092872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.8372517
+  m_Height: 9.035982
+  m_Direction: 2
+  m_Center: {x: -3.7488957e-14, y: -1.2995206e-14, z: 3.64}

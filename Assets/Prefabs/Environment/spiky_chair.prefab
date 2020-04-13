@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4098867371601086371}
   - component: {fileID: 5024078296178490773}
   - component: {fileID: 1622868151303405932}
-  m_Layer: 0
+  - component: {fileID: 4721897000159649082}
+  m_Layer: 8
   m_Name: spiky_chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4721897000159649082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060953887679067568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7215729, y: 3.72618, z: 2.6807823}
+  m_Center: {x: 0.018547058, y: -0.65671086, z: 1.4537444}

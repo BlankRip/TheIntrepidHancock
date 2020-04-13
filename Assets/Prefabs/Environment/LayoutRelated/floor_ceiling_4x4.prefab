@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4918436346691830223}
   - component: {fileID: 4114827104571423737}
   - component: {fileID: 7648875887087781632}
-  m_Layer: 0
+  - component: {fileID: 7393119482297579490}
+  m_Layer: 8
   m_Name: floor_ceiling_4x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7393119482297579490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222044687292773340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9040442, y: 3.9040494, z: 1.0000017}
+  m_Center: {x: -0.005553007, y: 0.04797573, z: 0}

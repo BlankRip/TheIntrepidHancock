@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6979552820405640842}
   - component: {fileID: 2127771536991823036}
   - component: {fileID: 5673363020745431109}
+  - component: {fileID: 4026119598484759298}
   m_Layer: 0
   m_Name: candleStand_A (6)
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4026119598484759298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234956158219349145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39999962, y: 0.27342215, z: 1.3017101}
+  m_Center: {x: -0.0034432411, y: 0.014656052, z: 0.6506738}
