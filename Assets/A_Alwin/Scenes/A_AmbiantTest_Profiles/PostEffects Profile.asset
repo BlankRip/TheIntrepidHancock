@@ -17,20 +17,20 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   blend:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.875
   cutoff:
     overrideState: 1
-    value: 7.5
+    value: 1
   blurCount:
     overrideState: 1
-    value: 2.94
+    value: 0
   shift:
     overrideState: 1
-    value: 0.0042
+    value: 0.0233
   strength:
     overrideState: 1
-    value: 0.35
+    value: 1.01
   scanDistance:
     overrideState: 1
     value: 100
