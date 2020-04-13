@@ -12,7 +12,7 @@ public class VictoryScript : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneShifter.LoadScene("B_Menu");       //Loading the menu scene
+        SceneShifter.LoadScene(0);       //Loading the menu scene
     }
 
     public void QuitGame()

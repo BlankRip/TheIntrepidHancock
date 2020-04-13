@@ -36,6 +36,6 @@ public class MenuScript : MonoBehaviour
     IEnumerator AfterAnimatic()
     {
         yield return new WaitForSecondsRealtime(animaticLength);
-        SceneShifter.LoadScene("B_Playground");
+        SceneShifter.LoadScene(1);
     }
 }
