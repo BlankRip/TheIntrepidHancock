@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class J_Weapon : MonoBehaviour
 {
-    [Tooltip("The object can pick this weapon up")] 
-    [SerializeField] GameObject objectThatCanPickUp;
+    GameObject objectThatCanPickUp;
     public Collider rangeTrigger;
     [HideInInspector] public bool myEquipStatus;
     bool readyToPick;

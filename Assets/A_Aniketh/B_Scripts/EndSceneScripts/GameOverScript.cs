@@ -12,11 +12,11 @@ public class GameOverScript : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneShifter.LoadScene("B_Playground");       //Load the game scene
+        SceneShifter.LoadScene(1);       //Load the game scene
     }
 
     public void ReturnToMenu()
     {
-        SceneShifter.LoadScene("B_Menu");       //Loading the menu scene
+        SceneShifter.LoadScene(0);       //Loading the menu scene
     }
 }

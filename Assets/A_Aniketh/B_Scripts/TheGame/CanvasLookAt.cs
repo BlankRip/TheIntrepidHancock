@@ -5,7 +5,7 @@ using UnityEngine;
 public class CanvasLookAt : MonoBehaviour
 {
     EquipManager equiper;
-    [SerializeField] GameObject target;
+    GameObject target;
     [SerializeField] float bounceHight;
     public float bounceTracker = 0;
     float initialY;
