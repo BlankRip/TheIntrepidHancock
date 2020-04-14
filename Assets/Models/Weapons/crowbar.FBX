@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2020
 		Month: 4
-		Day: 13
-		Hour: 5
-		Minute: 16
-		Second: 24
-		Millisecond: 77
+		Day: 14
+		Hour: 0
+		Minute: 37
+		Second: 41
+		Millisecond: 551
 	}
 	Creator: "FBX SDK/FBX Plugins version 2019.2"
 }
@@ -95,7 +95,7 @@ Objects:  {
 			Property: "ScalingMaxX", "bool", "",0
 			Property: "ScalingMaxY", "bool", "",0
 			Property: "ScalingMaxZ", "bool", "",0
-			Property: "GeometricTranslation", "Vector3D", "",0,-1.36548692353244e-06,-8.38129901885986
+			Property: "GeometricTranslation", "Vector3D", "",-17.3180484771729,65.3753967285156,-73.4486846923828
 			Property: "GeometricRotation", "Vector3D", "",0,0,0
 			Property: "GeometricScaling", "Vector3D", "",1.67625975608826,1.67625975608826,1.67625975608826
 			Property: "MinDampRangeX", "double", "",0
@@ -120,8 +120,8 @@ Objects:  {
 			Property: "DefaultAttributeIndex", "int", "",0
 			Property: "Freeze", "bool", "",0
 			Property: "LODBox", "bool", "",0
-			Property: "Lcl Translation", "Lcl Translation", "A",837.515747070313,139.453643798828,263.925903320313
-			Property: "Lcl Rotation", "Lcl Rotation", "A",90.0000157948125,-1.54746489388827e-06,-35.000025973902
+			Property: "Lcl Translation", "Lcl Translation", "A",904.745666503906,156.749923706055,328.515991210938
+			Property: "Lcl Rotation", "Lcl Rotation", "A",41.9594229795729,-87.9561463514702,-135.878482526493
 			Property: "Lcl Scaling", "Lcl Scaling", "A",1,1,1
 			Property: "Visibility", "Visibility", "A",1
 			Property: "mr displacement use global settings", "Bool", "AU",1
@@ -563,13 +563,13 @@ Objects:  {
 			Property: "Original|ApplicationVendor", "KString", "", "Autodesk"
 			Property: "Original|ApplicationName", "KString", "", "3ds Max"
 			Property: "Original|ApplicationVersion", "KString", "", "2020"
-			Property: "Original|DateTime_GMT", "DateTime", "", "13/04/2020 01:16:24.074"
+			Property: "Original|DateTime_GMT", "DateTime", "", "13/04/2020 20:37:41.549"
 			Property: "Original|FileName", "KString", "", "D:\studioani210\week 10\Props FBX Files\crowbar.FBX"
 			Property: "LastSaved", "Compound", ""
 			Property: "LastSaved|ApplicationVendor", "KString", "", "Autodesk"
 			Property: "LastSaved|ApplicationName", "KString", "", "3ds Max"
 			Property: "LastSaved|ApplicationVersion", "KString", "", "2020"
-			Property: "LastSaved|DateTime_GMT", "DateTime", "", "13/04/2020 01:16:24.074"
+			Property: "LastSaved|DateTime_GMT", "DateTime", "", "13/04/2020 20:37:41.549"
 			Property: "Original|ApplicationActiveProject", "KString", "", "C:\Users\Irtaza\Documents\3ds Max 2020"
 			Property: "Original|ApplicationNativeFile", "KString", "", "D:\studioani210\week 10\Props Max Files\crowba.max"
 		}
