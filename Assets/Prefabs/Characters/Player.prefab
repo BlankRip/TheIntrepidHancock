@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &2161852688800424471
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3266833799130002948}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6586389, y: 0.33391923, z: 1.2307279}
-  m_Center: {x: -0.2876207, y: -0.001691746, z: 0.21616167}
 --- !u!1 &2161852688883118809
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,20 +127,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &2161852689198844094
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5031834942321833064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3488186
-  m_Height: 1.4926629
-  m_Direction: 2
-  m_Center: {x: 0, y: -5.8669805e-15, z: -0.49336657}
 --- !u!1 &2161852689221943890
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +411,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2161852688800424471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266833799130002948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6586389, y: 0.33391923, z: 1.2307279}
+  m_Center: {x: -0.2876207, y: -0.001691746, z: 0.21616167}
+--- !u!136 &2161852689198844094
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031834942321833064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3488186
+  m_Height: 1.4926629
+  m_Direction: 2
+  m_Center: {x: 0, y: -5.8669805e-15, z: -0.49336657}
 --- !u!1 &5143440189466991142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1029,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -4477547900768710685, guid: 03b0db260b9110a4ba94810c3eaebc71,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb432ff73862077499c3839410f9cd61, type: 2}
+    - target: {fileID: -4420377313994547507, guid: 03b0db260b9110a4ba94810c3eaebc71,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb432ff73862077499c3839410f9cd61, type: 2}
     - target: {fileID: -4418183245077710065, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_Layer
@@ -1447,7 +1457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb432ff73862077499c3839410f9cd61, type: 2}
+      objectReference: {fileID: 2100000, guid: a19d2f0d4bb573543b6c53d33b090c71, type: 2}
     - target: {fileID: 3020378915615644850, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1507,7 +1517,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb432ff73862077499c3839410f9cd61, type: 2}
+      objectReference: {fileID: 2100000, guid: a19d2f0d4bb573543b6c53d33b090c71, type: 2}
     - target: {fileID: 4064963337063655237, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_Layer
