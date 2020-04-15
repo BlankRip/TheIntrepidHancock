@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4418806771815612774}
   - component: {fileID: 4614439091590019920}
   - component: {fileID: 1384098825956607913}
-  m_Layer: 0
+  - component: {fileID: 3789702362669459563}
+  m_Layer: 8
   m_Name: round_table (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795334485582279541}
-  m_LocalRotation: {x: -0.6830128, y: 0.18301253, z: 0.18301255, w: 0.6830128}
+  m_LocalRotation: {x: -0.6830127, y: 0.18301274, z: 0.18301274, w: 0.6830127}
   m_LocalPosition: {x: -4.68, y: -4.76, z: 9.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3789702362669459563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795334485582279541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4080672, y: 2.253122, z: 1.4878359}
+  m_Center: {x: 0.01601702, y: -0.00079536444, z: 0.72236973}
