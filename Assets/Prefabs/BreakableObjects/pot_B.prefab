@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f65597dc7d02d438b8a9e076f6c6c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractureVersion: {fileID: 5772458161547390978, guid: b0b701f9093247349a588cfd0da6a1d2,
+  fractureVersion: {fileID: 8107125092702991526, guid: b0b701f9093247349a588cfd0da6a1d2,
     type: 3}
   relic: {fileID: 4913189037622607218, guid: 29c56b4c8d389be4a80778141e9ca7f5, type: 3}
   fireFlies: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
