@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EyeBrowsHancock
+  m_Name: LampRingMat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5e86d3cd771b8ac468afc76c222d38f3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c5ab2fdd0e78b04f928a8e474ff875a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 06db89079d1d85b469c3b957b4b4bfb8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40bfc91d0ca83194bb5a1b518f5aa2e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 6fdfc5466544a414d9567027e1dadebd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4a3136f5cb407ce419d4b89533dd61dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -60,7 +60,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.351
+    - _GlossMapScale: 0.7
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
