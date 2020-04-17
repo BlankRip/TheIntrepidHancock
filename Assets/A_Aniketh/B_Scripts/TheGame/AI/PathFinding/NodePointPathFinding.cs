@@ -29,4 +29,20 @@ public class NodePointPathFinding : MonoBehaviour
         // add in to neibour nodes
         thisNode.neighbours = neibourNodes.ToArray();
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, 1);
+    }
+
+     void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        for (int i = 0; i < thisNode.neighbours.Length; i++)
+        {
+            Gizmos.DrawLine(transform.position, thisNode.neighbours[i].position);
+        }
+    }
+
 }
