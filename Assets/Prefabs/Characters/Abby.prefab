@@ -398,7 +398,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341461633053115827}
-  - component: {fileID: 1595913828682479534}
   - component: {fileID: 1595913828682479535}
   m_Layer: 0
   m_Name: AbbyModel
@@ -425,19 +424,6 @@ Transform:
   m_Father: {fileID: 8783970526901011612}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1595913828682479534
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595913828682479520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.82541275, y: 1.3146634, z: 0.60790527}
-  m_Center: {x: 0.006872177, y: 1.9226675, z: 0.010007322}
 --- !u!136 &1595913828682479535
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -448,10 +434,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.33490324
-  m_Height: 1.3360134
+  m_Radius: 0.30273288
+  m_Height: 2.712264
   m_Direction: 1
-  m_Center: {x: -0, y: 0.6451517, z: 0}
+  m_Center: {x: 0, y: 1.3332766, z: 0}
 --- !u!1 &1759971977628150033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,9 +3253,9 @@ MonoBehaviour:
   castPoint: {fileID: 8783970526901011612}
   repelLayers:
     serializedVersion: 2
-    m_Bits: 279
+    m_Bits: 257
   repelPow: 3
-  rayLength: 3
+  rayLength: 1
   castOffset: 0.5
   turnStrength: 3
   reachRegisterDistance: 2
