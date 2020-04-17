@@ -1062,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2918866995526396903
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
-  attackRange: 2
+  attackRange: 2.5
   attackDuration: 2
   tauntDuration: 5
   recentlyAttcked: 0
@@ -1132,9 +1132,9 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   headTransform: {fileID: 0}
   feetTransform: {fileID: 0}
-  raycastToPlayerDistanceLimiter: 1
-  fieldOfViewAngle: 60
-  radiusRange: 15
+  raycastToPlayerDistanceLimiter: 33
+  fieldOfViewAngle: 45
+  radiusRange: 10
   leftTransform: {fileID: 2918866995694869557}
   rightTransform: {fileID: 2918866996109459243}
   raycastDistance: 20

@@ -12,7 +12,7 @@ public class SearchNode : TreeNode
     Vector3 steering;
     Vector3 collisionAvoidense;
     int currentNodeIndex;
-    float searchRadios = 20;
+    float searchRadios = 30;
 
     public override void Run(TheAI ai)
     {

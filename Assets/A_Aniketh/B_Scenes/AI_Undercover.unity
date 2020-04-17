@@ -9050,7 +9050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315805005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.1, y: 2, z: 44.43}
+  m_LocalPosition: {x: -23.2, y: 2, z: 48.4}
   m_LocalScale: {x: 6, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1684090972}
@@ -14909,7 +14909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985236823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.76, y: 2, z: 44.43}
+  m_LocalPosition: {x: -56.1, y: 2, z: 44.43}
   m_LocalScale: {x: 6, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1684090972}
@@ -16237,11 +16237,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mr.Curry
       objectReference: {fileID: 0}
-    - target: {fileID: 684673009657371122, guid: 28ba346dc6cb2014796b3b394da07cf5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 684673009657371132, guid: 28ba346dc6cb2014796b3b394da07cf5,
         type: 3}
       propertyPath: playerTransform
@@ -16262,11 +16257,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1106172834}
-    - target: {fileID: 684673009657371133, guid: 28ba346dc6cb2014796b3b394da07cf5,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
     - target: {fileID: 684673009657371134, guid: 28ba346dc6cb2014796b3b394da07cf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16321,11 +16311,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8176414613599633391, guid: 28ba346dc6cb2014796b3b394da07cf5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28ba346dc6cb2014796b3b394da07cf5, type: 3}
@@ -16416,16 +16401,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bob
       objectReference: {fileID: 0}
-    - target: {fileID: 2918866995526396907, guid: 4a38af50e65d5b94bb7affbbd64aa8e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4114585135670219048, guid: 4a38af50e65d5b94bb7affbbd64aa8e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a38af50e65d5b94bb7affbbd64aa8e1, type: 3}
 --- !u!1001 &7537319557799638748
@@ -16508,11 +16483,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Abby
-      objectReference: {fileID: 0}
-    - target: {fileID: 8783970526901011600, guid: 7bfd6215de093de4ca987ea1ecd42f26,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783970526901011612, guid: 7bfd6215de093de4ca987ea1ecd42f26,
         type: 3}

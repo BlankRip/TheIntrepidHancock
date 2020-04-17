@@ -253,9 +253,9 @@ public class TheAI : MonoBehaviour
 
         if (angle < fieldOfViewAngle * 0.5f)
         {
-            bool bellyHitCheck = Physics.Raycast(transform.position, playerDir.normalized, out hit, playerDir.magnitude);
-            bool headHitCheck = Physics.Raycast(transform.position, headDir.normalized, out hitHead, headDir.magnitude);
-            bool footHitCheck = Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, feetDir.magnitude);
+            bool bellyHitCheck = Physics.Raycast(transform.position, playerDir.normalized, out hit, rayCastLength);
+            bool headHitCheck = Physics.Raycast(transform.position, headDir.normalized, out hitHead, rayCastLength);
+            bool footHitCheck = Physics.Raycast(transform.position, feetDir.normalized, out hitFeet, rayCastLength);
 
             Debug.DrawRay(transform.position, playerDir.normalized * hit.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
