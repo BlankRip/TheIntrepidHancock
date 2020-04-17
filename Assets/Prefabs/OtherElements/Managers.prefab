@@ -64,7 +64,6 @@ MonoBehaviour:
   currentScore: 0
   relicsSpawned: 0
   spawnRelic: 0
-  exitTriggerCollider: {fileID: 0}
 --- !u!114 &4227988093957955117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   relicsCollected: 0
+  exitTriggerCollider: {fileID: 0}
 --- !u!114 &4227988093957955116
 MonoBehaviour:
   m_ObjectHideFlags: 0

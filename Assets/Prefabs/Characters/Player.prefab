@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2161852690535438934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.205, z: 0}
+  m_LocalPosition: {x: 0.117, y: 2.156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5143440189466756614}
@@ -469,7 +469,7 @@ Transform:
   m_GameObject: {fileID: 5143440189466991142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.14, y: 0.49, z: -66.76}
-  m_LocalScale: {x: 1.9023, y: 1.9023, z: 1.9023}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children:
   - {fileID: 5143440189466756634}
   - {fileID: 2161852690535438933}
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230bd089090a30f459c17fe240e4a16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHealth: 100
+  playerMaxHealth: 59
   playerMaxStamina: 100
   staminaDrainRate: 0.5
   staminaRecoveryRate: 1
@@ -621,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143440189466991162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.821, z: 0}
+  m_LocalPosition: {x: 0, y: 1.271, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5143440189466756614}
@@ -1117,17 +1117,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4161226957896466693, guid: 03b0db260b9110a4ba94810c3eaebc71,
         type: 3}
@@ -1768,6 +1768,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp_Lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862690882588465633, guid: 0f14eed55fb88d742b0888146e68460b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862690882588465633, guid: 0f14eed55fb88d742b0888146e68460b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862690882588465633, guid: 0f14eed55fb88d742b0888146e68460b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.385
       objectReference: {fileID: 0}
     - target: {fileID: 8901856230487157697, guid: 0f14eed55fb88d742b0888146e68460b,
         type: 3}

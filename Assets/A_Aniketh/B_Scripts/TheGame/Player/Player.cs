@@ -171,12 +171,6 @@ public class Player : MonoBehaviour
             }
 
             //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
-
-            //Manageing the consumtion of stamina when sprinting
-            if (horizontalInput != 0 || verticalInput != 0)
-                myStats.StaminaReducion(ref sprint);
-            //Managing stamina recovary when not sprinting
-            myStats.StaminaRecovary(sprint);
         }
     }
 

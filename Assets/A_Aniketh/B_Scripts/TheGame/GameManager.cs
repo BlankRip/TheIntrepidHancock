@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool paused;
-    public int relicsCollected;
-    Collider exitTriggerCollider;
+    [HideInInspector] public bool paused;
+    [HideInInspector] public int relicsCollected;
+    [SerializeField] Collider exitTriggerCollider;
 
     // Start is called before the first frame update
     void Start()

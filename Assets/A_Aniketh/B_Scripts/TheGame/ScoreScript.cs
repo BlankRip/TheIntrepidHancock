@@ -11,9 +11,6 @@ public class ScoreScript : MonoBehaviour
     int spawnAtScoreMultiplier;                         //The multiplier value used in our equation to find when to spawn next relic
     bool exitStatusUpdate;                              //Checks if have to update the player that he can leave
 
-    [Tooltip("The is trigger collider on the Exit-Door")] 
-    [SerializeField] Collider exitTriggerCollider;
-
     void Start()
     {
         currentScore = 0;
