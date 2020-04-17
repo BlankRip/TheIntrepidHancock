@@ -415,7 +415,7 @@ Transform:
   m_GameObject: {fileID: 1595913828682479520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.991, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 124278184334689709}
   - {fileID: 8487283198464011108}
@@ -431,13 +431,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595913828682479520}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: dc2214fbaed5cce4694d8d81b444a0ed, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.30273288
-  m_Height: 2.712264
+  m_Height: 2.6705785
   m_Direction: 1
-  m_Center: {x: 0, y: 1.3332766, z: 0}
+  m_Center: {x: 0, y: 1.35412, z: 0}
 --- !u!1 &1759971977628150033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,8 +3254,8 @@ MonoBehaviour:
   repelLayers:
     serializedVersion: 2
     m_Bits: 257
-  repelPow: 3
-  rayLength: 1
+  repelPow: 2
+  rayLength: 2
   castOffset: 0.5
   turnStrength: 3
   reachRegisterDistance: 2
