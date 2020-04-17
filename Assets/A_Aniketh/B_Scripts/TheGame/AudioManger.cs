@@ -30,13 +30,11 @@ public class AudioManger : MonoBehaviour
     [SerializeField] AudioClip ExitClip;
 
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
-    [Tooltip("The Audio Source through which Mr.Abby will play his dialogue")]
-    [SerializeField] AudioSource abbySoundSource;
     [Tooltip("Audio clip abby will play on arrival")]
     [SerializeField] AudioClip abbyArrivalClip;
     public void AbbyArrival()
     {
-        PlayOneShotOn(abbySoundSource, abbyArrivalClip);
+        PlayOneShotOn(backGroundMusicSource, abbyArrivalClip);
     }
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
 
@@ -134,6 +132,10 @@ public class AudioManger : MonoBehaviour
     void PlayOneShotOn(AudioSource source, AudioClip clip)
     {
         if (instance != null)
+        {
+            source.clip = clip;
+            source.Play();
+        }
             source.PlayOneShot(clip);
     }
 
@@ -151,7 +153,8 @@ public class AudioManger : MonoBehaviour
                     pick++;
             }
             prieviousPick = pick;
-            playerSoundSource.PlayOneShot(clips[pick]);
+            playerSoundSource.clip = clips[pick];
+            playerSoundSource.Play();
         }
     }
 
