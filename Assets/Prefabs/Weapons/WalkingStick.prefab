@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2027069560943202769}
   - component: {fileID: 2027069560943202768}
   - component: {fileID: 2027069560943202771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WalkingStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2027069560943202770}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 13.47, y: 2.6185, z: -66.576}
-  m_LocalScale: {x: 0.46967134, y: 0.48321995, z: 1.9369657}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4998190289734827248}
   - {fileID: 9194074860375020190}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998190289734827248}
   - component: {fileID: 4998190289734827251}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BA_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ BoxCollider:
   m_GameObject: {fileID: 9194074860375020184}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.07700862, y: 0.104309924, z: 0.49510944}
   m_Center: {x: 0, y: 0, z: 0}
@@ -350,7 +350,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9194074862087565344
 GameObject:
