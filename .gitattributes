@@ -1,2 +1,0 @@
-LightingData.asset filter=lfs diff=lfs merge=lfs -text
-Assets/Scenes/TheLevel/LightingData.asset filter=lfs diff=lfs merge=lfs -text
