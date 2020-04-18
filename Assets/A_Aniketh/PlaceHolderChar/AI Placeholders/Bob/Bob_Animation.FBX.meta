@@ -8,7 +8,7 @@ ModelImporter:
     second: Bob_Walk
   - first:
       74: 1827226128182048838
-    second: Take 001
+    second: Bob_Walk
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -27,9 +27,7 @@ ModelImporter:
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Chest' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Sphere002' has scale
-      animation that will be discarded.\n\t'Sphere003' has scale animation that will
-      be discarded.\n"
+      and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -43,7 +41,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Bob_Walk
       takeName: Take 001
       internalID: 0
       firstFrame: 0
@@ -66,7 +64,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.214581
+        functionName: LeftFootAnimationEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.67048055
+        functionName: RightFootAnimationEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1175,44 +1187,44 @@ ModelImporter:
       scale: {x: 0.99999934, y: 1.0000007, z: 1.0000014}
     - name: Plane009
       parentName: Head
-      position: {x: -0.36618176, y: 0.0449174, z: 0.09492113}
-      rotation: {x: -0.12640016, y: -0.5689693, z: -0.24766883, w: 0.77392316}
-      scale: {x: -0.2987664, y: -0.06832937, z: -0.8981418}
+      position: {x: -0.3661817, y: 0.0449174, z: 0.09492113}
+      rotation: {x: 0.84208214, y: -0.19235659, z: 0.50214356, w: 0.04181422}
+      scale: {x: -0.310944, y: -0.068329, z: -0.893999}
     - name: Plane014
       parentName: Head
-      position: {x: -0.36647582, y: 0.054268472, z: 0.029214878}
-      rotation: {x: 0.7078161, y: 0.4239542, z: 0.4554924, w: -0.3343441}
-      scale: {x: -0.300569, y: -0.07801409, z: -0.9047999}
+      position: {x: -0.3664759, y: 0.054268464, z: 0.029214859}
+      rotation: {x: 0.73766136, y: -0.23041722, z: 0.61280197, w: 0.1650379}
+      scale: {x: -0.312389, y: -0.078064, z: -0.900783}
     - name: Plane012
       parentName: Head
-      position: {x: -0.36120993, y: 0.0578529, z: -0.034622993}
-      rotation: {x: 0.72449076, y: 0.38502294, z: 0.4760018, w: -0.31669036}
-      scale: {x: -0.300569, y: -0.078014106, z: -0.9047999}
+      position: {x: -0.36120993, y: 0.057852887, z: -0.03462303}
+      rotation: {x: 0.72842205, y: -0.24635272, z: 0.6134374, w: 0.18001725}
+      scale: {x: -0.312389, y: -0.078064, z: -0.900783}
     - name: Plane010
       parentName: Head
-      position: {x: -0.3606006, y: -0.04937981, z: -0.040906943}
-      rotation: {x: -0.20944066, y: 0.53150725, z: 0.28222492, w: 0.7707034}
-      scale: {x: 0.300569, y: 0.078014076, z: 0.9048}
+      position: {x: -0.3606005, y: -0.049379807, z: -0.04090698}
+      rotation: {x: -0.64081514, y: -0.092316166, z: 0.7554201, w: -0.100867055}
+      scale: {x: 0.312389, y: 0.078064, z: 0.900783}
     - name: Plane015
       parentName: Head
-      position: {x: -0.3640527, y: -0.053887967, z: 0.02335903}
-      rotation: {x: -0.053241648, y: 0.60933405, z: 0.07672302, w: 0.78739506}
-      scale: {x: 0.30056897, y: 0.07801407, z: 0.9048002}
+      position: {x: -0.3640528, y: -0.053887956, z: 0.023358993}
+      rotation: {x: -0.66136926, y: -0.17684631, z: 0.70404035, w: -0.18879461}
+      scale: {x: 0.312389, y: 0.078064, z: 0.900783}
     - name: Plane008
       parentName: Head
-      position: {x: -0.36324942, y: -0.051991865, z: 0.085207574}
-      rotation: {x: -0.43011153, y: -0.07370562, z: 0.8705926, w: -0.22724454}
-      scale: {x: 0.29876643, y: 0.06832937, z: 0.8981418}
+      position: {x: -0.36324942, y: -0.05199186, z: 0.08520756}
+      rotation: {x: -0.51575285, y: -0.073267005, z: 0.8378151, w: -0.16339162}
+      scale: {x: 0.310944, y: 0.068329, z: 0.893999}
     - name: Sphere002
       parentName: Head
       position: {x: -0.14216712, y: -0.08593039, z: 0.106577165}
-      rotation: {x: -0.25897518, y: -0.023148233, z: 0.9656038, w: -0.0023127631}
-      scale: {x: 0.33094028, y: 0.30460942, z: 0.30249012}
+      rotation: {x: -0.21185863, y: -0.024885802, z: 0.976973, w: -0.0045215706}
+      scale: {x: 0.36574253, y: 0.30460927, z: 0.25933427}
     - name: Sphere003
       parentName: Head
       position: {x: -0.14418952, y: 0.08223089, z: 0.11466442}
-      rotation: {x: -0.25902498, y: -0.022642404, z: 0.96560353, w: -0.001793279}
-      scale: {x: 0.33094043, y: 0.3046095, z: 0.30249038}
+      rotation: {x: -0.21191181, y: -0.024477134, z: 0.9769736, w: -0.0041009905}
+      scale: {x: 0.36574337, y: 0.3046091, z: 0.259334}
     - name: jaw_bone
       parentName: Head
       position: {x: -0.00631546, y: -0.00035179852, z: 0.08492163}
