@@ -2113,6 +2113,8 @@ MonoBehaviour:
   randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
+  maxWalkVel: 8
+  maxChaseVel: 10
   attackRange: 2
   attackDuration: 2
   tauntDuration: 5
@@ -16406,11 +16408,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bob
       objectReference: {fileID: 0}
-    - target: {fileID: 2918866995526396907, guid: 4a38af50e65d5b94bb7affbbd64aa8e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a38af50e65d5b94bb7affbbd64aa8e1, type: 3}
 --- !u!1001 &7537319557799638748
@@ -16497,7 +16494,7 @@ PrefabInstance:
     - target: {fileID: 8783970526901011600, guid: 7bfd6215de093de4ca987ea1ecd42f26,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8783970526901011612, guid: 7bfd6215de093de4ca987ea1ecd42f26,
         type: 3}

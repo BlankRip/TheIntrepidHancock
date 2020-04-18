@@ -29,6 +29,7 @@ public class ChasePlayerNode : TreeNode
             ai.pathPointeReset = true;
             runAnim = true;
             collisionAvoidance = ai.CollisionAvoidance();
+            ai.maxVelocity = ai.maxChaseVel;
             steering = ai.Pursuit(ai.target.transform.position, ai.targerRb, slowRadios);
             ai.rb.velocity += (steering + collisionAvoidance);
 

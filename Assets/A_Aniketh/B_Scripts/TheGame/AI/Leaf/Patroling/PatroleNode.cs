@@ -19,6 +19,7 @@ public class PatroleNode : TreeNode
         {
             Debug.Log("<color=cyan> resetting </color>");
             pathNodes = null;
+            ai.maxVelocity = ai.maxWalkVel;
             ai.pathPointeReset = false;
         }
 
