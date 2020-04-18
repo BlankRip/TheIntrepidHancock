@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 6723080558266020384}
   m_Layer: 9
   m_Name: BellyPos
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
