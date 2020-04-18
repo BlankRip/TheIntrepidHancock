@@ -1117,6 +1117,8 @@ MonoBehaviour:
   randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
+  maxWalkVel: 2
+  maxChaseVel: 10
   attackRange: 2.5
   attackDuration: 2
   tauntDuration: 5
@@ -1138,7 +1140,7 @@ MonoBehaviour:
   leftTransform: {fileID: 2918866995694869557}
   rightTransform: {fileID: 2918866996109459243}
   raycastDistance: 20
-  maxVelocity: 10
+  maxVelocity: 2
   maxForce: 1
   framesAhead: 1
   slowCircleRadios: 10
@@ -1165,7 +1167,7 @@ Animator:
   m_GameObject: {fileID: 2918866995526396907}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 453604bdd25d52d4aa5b364224f02745, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7086c44e5b60530489f30aa464848ec5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 550e020c4dcddf74ebabf8c3aaa5bfc4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

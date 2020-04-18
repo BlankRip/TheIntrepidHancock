@@ -21,6 +21,8 @@ public class TheAI : MonoBehaviour
     [Range(1, 2)] public float idleTimeSpeed = 1;
 
     [Header("For Chase")]
+    public float maxWalkVel = 8;
+    public float maxChaseVel = 10;
     public float attackRange;
     public float attackDuration = 2f;
     public float tauntDuration = 5f;
@@ -73,7 +75,7 @@ public class TheAI : MonoBehaviour
 
     #region Steering Behavior Variables
     [Header("For Steering")]
-    [SerializeField] float maxVelocity;
+    [HideInInspector] public float maxVelocity;
     [SerializeField] float maxForce;
     [SerializeField] int framesAhead;
     public float slowCircleRadios;
@@ -261,15 +263,18 @@ public class TheAI : MonoBehaviour
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
 
-            if (hit.collider.CompareTag("Player") || hitHead.collider.CompareTag("Player") || hitFeet.collider.CompareTag("Player"))
+            if (hit.collider != null || hitHead.collider != null || hitFeet.collider != null)
             {
-                playerFound = true;
-                inFieldOfVisionRange = true;
-                rayCastLength = Mathf.Infinity;
-                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+                if (hit.collider.CompareTag("Player") || hitHead.collider.CompareTag("Player") || hitFeet.collider.CompareTag("Player"))
+                {
+                    playerFound = true;
+                    inFieldOfVisionRange = true;
+                    rayCastLength = Mathf.Infinity;
+                    Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+                }
+                else
+                    Debug.Log("<color=pink> player in range but behind something? </color>");
             }
-            else
-                Debug.Log("<color=pink> player in range but behind something? </color>");
         }
         else
             inFieldOfVisionRange = false;
