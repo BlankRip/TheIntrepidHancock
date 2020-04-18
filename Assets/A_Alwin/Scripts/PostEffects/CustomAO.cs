@@ -6,7 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 [PostProcess(typeof(AORenderer), PostProcessEvent.AfterStack, "Custom/CustomAO")]
 public sealed class CustomAO : PostProcessEffectSettings
 {
-    [Range(0f, 1f), Tooltip("Bloom effect intensity.")]
+    [Range(0f, 2f), Tooltip("Bloom effect intensity.")]
     public FloatParameter blend = new FloatParameter { value = 0.5f };
     [Range(0f, 20f), Tooltip("Bloom effect intensity.")]
     public FloatParameter sampleShift = new FloatParameter { value = 0.5f };
@@ -18,6 +18,10 @@ public sealed class CustomAO : PostProcessEffectSettings
     public FloatParameter maxRange = new FloatParameter { value = 0.5f };
     [Range(0f, 100f), Tooltip("Bloom effect intensity.")]
     public FloatParameter scanDistance = new FloatParameter { value = 0.5f };
+     [Range(0f, 100f), Tooltip("Bloom effect intensity.")]
+    public FloatParameter strength = new FloatParameter { value = 0.5f };
+     [Range(0f, 1f), Tooltip("Bloom effect intensity.")]
+    public FloatParameter effect = new FloatParameter { value = 0.5f };
 
     //  [Range(0f, 1f), Tooltip("Bloom effect cutoff.")]
     //  public FloatParameter cutoff = new FloatParameter { value = 0.5f };
@@ -53,14 +57,14 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         aoSheet.properties.SetFloat("_SampleShift", settings.sampleShift);
         aoSheet.properties.SetFloat("_ScanDistance", settings.scanDistance);
         aoSheet.properties.SetFloat("_MaxRange", settings.maxRange);
-        
+      
         // bluring section
 
         var blurVertical = context.propertySheets.Get(Shader.Find("Custom/PostEffects/BlurVertical"));
         var blurHorizontal = context.propertySheets.Get(Shader.Find("Custom/PostEffects/BlurHorizontal"));
 
         context.command.BlitFullscreenTriangle(context.source, rt1, aoSheet, 0);
-    /*    
+        
         
         // blur
         for (int i = 0; i < settings.blurCount; i++)
@@ -89,8 +93,9 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         var mergeSheet = context.propertySheets.Get(Shader.Find("Custom/PostEffects/AOCombine"));
         mergeSheet.properties.SetFloat("_Strength", settings.strength);
         mergeSheet.properties.SetTexture("_AOTexture", rt1); 
+        mergeSheet.properties.SetFloat("_Effect", settings.effect);
         context.command.BlitFullscreenTriangle(context.source, context.destination, mergeSheet, 0);
-        */
-        context.command.BlitFullscreenTriangle(rt1, context.destination);
+        
+    //   context.command.BlitFullscreenTriangle(rt1, context.destination);
     }
 }

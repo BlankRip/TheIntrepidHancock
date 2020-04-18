@@ -30,7 +30,7 @@
 	
 		float BiasCtrl(float value)
 		{
-			return saturate(1 - pow(value * _MaxRange, 5));
+			return saturate(1 - pow(value * _MaxRange, 2));
 		}
 
 
@@ -52,7 +52,8 @@
 				factor += max(diffValue, 0) * (i/SampleCount) * BiasCtrl(diffValue);
 				
 			}
-			return 1 - pow(factor/SampleCount, _Blend) * 5;
+
+			return pow(factor/SampleCount, _Blend);
 
 		}
 		
@@ -64,7 +65,7 @@
 
 	//	return (1 - saturate(AmbiantFactor(i.texcoord)));
 	//	return float4(RandomRay(i.texcoord, 1), 1);
-	return color * saturate(AmbiantFactor(i.texcoord));
+		return saturate(AmbiantFactor(i.texcoord));
 		//float pointDepth = tex2D(_CameraDepthTexture, i.texcoord).r;
 	//	return LinearEyeDepth(pointDepth);
 	//	return color;
