@@ -75,7 +75,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 714b4da6d38d28c44aff6f2a6bb12027,
+  m_Motion: {fileID: 1827226128182048838, guid: b906a8bf51159384999387d5e3bf8fab,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -428,7 +428,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mutant_Idle
+  m_Name: Bob_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -443,7 +443,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 9aa8846a416299444b320da3dd76a85c,
+  m_Motion: {fileID: 1827226128182048838, guid: 8db440bac468d58428c1c67508e4339f,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

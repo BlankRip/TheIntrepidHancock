@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684673009561305606}
   m_LocalRotation: {x: -0.33212885, y: 0.28387958, z: -0.5985109, w: 0.67148167}
-  m_LocalPosition: {x: -0.472, y: 0.207, z: -0.235}
+  m_LocalPosition: {x: -0.446, y: -0.001, z: -0.232}
   m_LocalScale: {x: 1.9022993, y: 1.9023002, z: 1.9022999}
   m_Children: []
   m_Father: {fileID: 2990728684353744998}
@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fc92a653b7a34b44ba0803cacfb7dde5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d6d2a1c05e910dc47ab22334fe46a23a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
   randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
-  maxWalkVel: 8
+  maxWalkVel: 4
   maxChaseVel: 10
   attackRange: 2.5
   attackDuration: 2
@@ -374,7 +374,7 @@ Animator:
   m_GameObject: {fileID: 684673009657371122}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7086c44e5b60530489f30aa464848ec5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9e84ebbf19f5cd34195b852d8bd2a94c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -424,7 +424,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 63fe4a5c29b82f947887c4541d46abd9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72e1197d607163e4d820c8ba7621178d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -565,7 +565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684673010200289724}
   m_LocalRotation: {x: -0.44078434, y: 0.36982808, z: 0.5617961, w: -0.5944086}
-  m_LocalPosition: {x: -0.655, y: -0.192, z: -0.16}
+  m_LocalPosition: {x: -0.67, y: -0.01, z: -0.15}
   m_LocalScale: {x: -1.9023, y: -1.9022995, z: -1.9023006}
   m_Children: []
   m_Father: {fileID: 6655110027982110979}
@@ -581,7 +581,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ea5b237d2b77174f83b728a49e9a4dd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 444b37f1fd44be84fa5b54cad65848f7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -755,7 +755,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: dbb59b58ec021ef479d1f977594e0005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -834,7 +834,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: dbb59b58ec021ef479d1f977594e0005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2434,7 +2434,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: 41a0524d5a5ca8e47977cbe870924b81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2834,7 +2834,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: 41a0524d5a5ca8e47977cbe870924b81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2975,7 +2975,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: abaaf0fcde6f0e84fa0a9cce19f85225, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3423,7 +3423,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: 41a0524d5a5ca8e47977cbe870924b81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3742,7 +3742,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 14ed6a6b52b26c344a7f5a51f6ca025a, type: 3}
+  - {fileID: 2100000, guid: 3ed58c4b71457b14ea8cb2b5a075c8aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
