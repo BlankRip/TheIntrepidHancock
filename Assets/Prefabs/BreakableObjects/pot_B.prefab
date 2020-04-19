@@ -230,7 +230,8 @@ MonoBehaviour:
   breakEffect: {fileID: 5958596095551506707, guid: 52ce717a846e15e4cb190277f032fa5e,
     type: 3}
   breakingSource: {fileID: 8317490578255514954}
-  breakingClips: []
+  breakingClips:
+  - {fileID: 8300000, guid: ce15772902ea89c4bace595aa5466aa6, type: 3}
   scoreToAdd: 5
   hitsBeforeBreak: 1
   increaseSizeBy: 1.1

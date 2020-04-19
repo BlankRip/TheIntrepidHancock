@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
   m_Name: CustomAO
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1

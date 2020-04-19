@@ -16239,11 +16239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mr.Curry
       objectReference: {fileID: 0}
-    - target: {fileID: 684673009657371122, guid: 28ba346dc6cb2014796b3b394da07cf5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 684673009657371132, guid: 28ba346dc6cb2014796b3b394da07cf5,
         type: 3}
       propertyPath: playerTransform
@@ -16407,6 +16402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bob
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918866995526396907, guid: 4a38af50e65d5b94bb7affbbd64aa8e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a38af50e65d5b94bb7affbbd64aa8e1, type: 3}
