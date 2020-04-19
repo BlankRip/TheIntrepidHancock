@@ -12,8 +12,6 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] GameObject fireFlies;
     [Tooltip("The particle effect that should spawn when broken")] 
     [SerializeField] GameObject breakEffect;
-    [Tooltip("The audio source that will play the breaking sound effects")]
-    [SerializeField] AudioSource breakingSource;
     [Tooltip("The breaking audio clips")]
     [SerializeField] AudioClip[] breakingClips;
     [Tooltip("The amount of score given when this object is broken")] 
@@ -25,6 +23,7 @@ public class BreakableObject : MonoBehaviour
     [Tooltip("For hit effect the max the object can move from its initial postion")]
     [Range(0, 0.5f)] [SerializeField] float maxMovePosition = 0.1f;
 
+    AudioSource breakingSource;
     ScoreScript score_relic;                 //Script that keeps track of the score and status of relic spawns
     Vector3 initialSize;                    //The initial size to which it should get back to during the hit effect
     Vector3 initialPosition;                //The initial postion to which the object should get back during the hit effect
@@ -59,12 +58,13 @@ public class BreakableObject : MonoBehaviour
             if (hitsTaken > hitsBeforeBreak)
             {
                 //Playing the breaking sound effect
-                breakingSource.transform.SetParent(null);
+                //breakingSource.transform.SetParent(null);
+                breakingSource = ObjectPool.instance.SpawnPoolObj("BreakAudioSource", transform.position, Quaternion.identity).GetComponent<AudioSource>();
                 for (int i = 0; i < breakingClips.Length; i++)
                 {
                     breakingSource.PlayOneShot(breakingClips[i]);
                 }
-                Destroy(breakingSource.gameObject, 7.0f);
+                //Destroy(breakingSource.gameObject, 7.0f);
 
                 score_relic.currentScore += scoreToAdd;
                 Instantiate(fractureVersion, transform.position, transform.rotation);

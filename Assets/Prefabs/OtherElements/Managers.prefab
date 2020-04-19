@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4227988093957955117}
   - component: {fileID: 4227988093957955116}
   - component: {fileID: 6581316240991104334}
+  - component: {fileID: 1603822886}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -122,7 +123,6 @@ MonoBehaviour:
   butlerArrivalClip: {fileID: 8300000, guid: 24ce1b3bcb652ee4b8c9bb299327fb6c, type: 3}
   curryArrivalClip: {fileID: 8300000, guid: 5c3f0fc0387063a42922b623d9ce40f3, type: 3}
   ExitClip: {fileID: 8300000, guid: f1da9ce60a29f894080094a7f458e02e, type: 3}
-  abbySoundSource: {fileID: 0}
   abbyArrivalClip: {fileID: 0}
   numberOfTutorialClips: 0
   playBreakAudio: 0
@@ -141,3 +141,20 @@ MonoBehaviour:
   targetSpots: []
   allNodes: []
   routeNodes: []
+--- !u!114 &1603822886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227988093957955105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc763f03ce8af54aaee12e8493d89d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objPools:
+  - tag: BreakAudioSource
+    prefab: {fileID: 8982841181939137799, guid: 2ff2141e60ff94d4c8cd8847a4854282,
+      type: 3}
+    maxSize: 10
