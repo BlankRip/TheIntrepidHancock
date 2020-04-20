@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6143726479704305336}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4948,7 +4948,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Lantern
-  curveMultiplier: 3
+  curveMultiplier: 6
+  dustParticle: {fileID: 4479062721613803715}
+  glowParticle: {fileID: 8962663692444358196}
+  centerParticle: {fileID: 8962663691824273281}
 --- !u!1 &8962663691824273281
 GameObject:
   m_ObjectHideFlags: 0

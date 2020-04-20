@@ -8,8 +8,6 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] GameObject fractureVersion;
     [Tooltip("The relic gameObject")] 
     [SerializeField] GameObject relic;
-    [Tooltip("The fire fly prefab")] 
-    [SerializeField] GameObject fireFlies;
     [Tooltip("The breaking audio clips")]
     [SerializeField] AudioClip[] breakingClips;
     [Tooltip("The amount of score given when this object is broken")] 
@@ -36,8 +34,12 @@ public class BreakableObject : MonoBehaviour
         hitsTaken = 0;
         initialSize = transform.localScale;
         initialPosition = transform.position;
-        breakEffectPos = gameObject.GetComponent<MeshRenderer>().bounds.center;
+        if (gameObject.GetComponent<MeshRenderer>() != null)
+            breakEffectPos = gameObject.GetComponent<MeshRenderer>().bounds.center;
+        else
+            breakEffectPos = transform.position;
         score_relic = FindObjectOfType<ScoreScript>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,21 +72,18 @@ public class BreakableObject : MonoBehaviour
                 score_relic.currentScore += scoreToAdd;
                 Instantiate(fractureVersion, transform.position, transform.rotation);
 
-                if (breakEffectPos == null)
-                    breakVFX = ObjectPool.instance.SpawnPoolObj("PotBreakParticles", transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
-                else
-                    breakVFX = ObjectPool.instance.SpawnPoolObj("PotBreakParticles", breakEffectPos, Quaternion.identity).GetComponent<ParticleSystem>();
+                breakVFX = ObjectPool.instance.SpawnPoolObj("PotBreakParticles", breakEffectPos, Quaternion.identity).GetComponent<ParticleSystem>();
                 breakVFX.Stop();
                 breakVFX.Play();
 
-                Instantiate(fireFlies, transform.position, Quaternion.identity);                    //Spawn fire fly
+                ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);
                 //If player cross the score thresh hold to spawn the relic then spawn the relic
                 if (score_relic.spawnRelic)
                 {
                     Instantiate(relic, transform.position, transform.rotation);
                     score_relic.spawnRelic = false;
                 }
-                Instantiate(fireFlies, transform.position, Quaternion.identity);                    //Spawn fire fly
+                ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);
                 AudioManger.instance.PlayBreakDialoguesClip();
                 Destroy(gameObject);
             }
