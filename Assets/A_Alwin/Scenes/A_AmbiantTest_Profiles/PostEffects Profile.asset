@@ -12,31 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
   m_Name: CustomAO
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   blend:
     overrideState: 1
-    value: 0.85
+    value: 1.16
   sampleShift:
     overrideState: 1
     value: 1.3
   blurCount:
     overrideState: 1
-    value: 0.97
+    value: 1.13
   shift:
     overrideState: 1
-    value: 0.0021
+    value: 0.0015
   maxRange:
     overrideState: 1
-    value: 0.5
+    value: 0.63
   scanDistance:
     overrideState: 1
     value: 2.4
   strength:
     overrideState: 1
-    value: 9.9
+    value: 7.4
   effect:
     overrideState: 1
     value: 0.038
