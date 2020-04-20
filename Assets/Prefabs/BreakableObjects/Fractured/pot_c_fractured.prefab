@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9173748635570179241}
   - component: {fileID: 420379731547405658}
   - component: {fileID: 8933848787078689841}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 5220623784147015442}
   - component: {fileID: 5805987921240319455}
   - component: {fileID: 7823233839573917309}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7780889547161517870}
   - component: {fileID: 943431648879204368}
   - component: {fileID: 4335349769000811713}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 7788733427852368276}
   - component: {fileID: 5237397237938214225}
   - component: {fileID: 3438261568858345909}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226742086026673746}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_c_fractured
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 2164700981680133403}
   - component: {fileID: 1095087093300611515}
   - component: {fileID: 3618356391347447}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 2302467614801501546}
   - component: {fileID: 3022232554366266508}
   - component: {fileID: 6396332638703545882}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 1900482128623522532}
   - component: {fileID: 2578314538374257883}
   - component: {fileID: 7443841469328632351}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_C002_Part_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

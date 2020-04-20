@@ -158,3 +158,11 @@ MonoBehaviour:
     prefab: {fileID: 8982841181939137799, guid: 2ff2141e60ff94d4c8cd8847a4854282,
       type: 3}
     maxSize: 10
+  - tag: PotBreakParticles
+    prefab: {fileID: 5958596095551506707, guid: 52ce717a846e15e4cb190277f032fa5e,
+      type: 3}
+    maxSize: 10
+  - tag: FireFlies
+    prefab: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
+      type: 3}
+    maxSize: 25

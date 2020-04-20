@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8291339622899528789}
   - component: {fileID: 8915377153021663059}
   - component: {fileID: 77471317770311979}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8229609328289277134}
   - component: {fileID: 8374882937733440069}
   - component: {fileID: 3668332397477052518}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 2039756971717130391}
   - component: {fileID: 5948078656668610542}
   - component: {fileID: 5410626836059465285}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 419341315023241345}
   - component: {fileID: 4594277261447524157}
   - component: {fileID: 7134874863873470731}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 671595800149058570}
   - component: {fileID: 1607552332584921953}
   - component: {fileID: 5450192748241122087}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 4225236605547598939}
   - component: {fileID: 4622523922168854164}
   - component: {fileID: 4101964487785744189}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 4869172200023436818}
   - component: {fileID: 2069156750244095428}
   - component: {fileID: 3392147883645506889}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 6652068607090338711}
   - component: {fileID: 2969225840318063087}
   - component: {fileID: 6175302428033578213}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B001_Part_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5105132034026718901}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_B_fractured
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3303357554299078113}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pots_A_fractured
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 5924725623231845075}
   - component: {fileID: 8771234952953097387}
   - component: {fileID: 2898855712396883767}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 6852656051296745192}
   - component: {fileID: 3471835068414436905}
   - component: {fileID: 3507854934802483697}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 1700359053375936991}
   - component: {fileID: 4263225685591238150}
   - component: {fileID: 4226817739162518461}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 7910656937348810197}
   - component: {fileID: 5132067936075407675}
   - component: {fileID: 8930932640923836461}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 3902930203614493200}
   - component: {fileID: 200491109500970086}
   - component: {fileID: 7768563374351583593}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 4211569163831947785}
   - component: {fileID: 5333637335294810099}
   - component: {fileID: 7108726967359931044}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 6086589092160598422}
   - component: {fileID: 384000610731790231}
   - component: {fileID: 4029427844971774828}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 3694165952164951112}
   - component: {fileID: 3490764228767560858}
   - component: {fileID: 3099537833555682336}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 8579922989043259088}
   - component: {fileID: 1884521170531612009}
   - component: {fileID: 8853076642479598801}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pot_A001_Part_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}

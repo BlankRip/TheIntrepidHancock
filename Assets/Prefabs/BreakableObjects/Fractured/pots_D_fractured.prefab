@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5210997531137432354}
   - component: {fileID: 5802438935486167495}
   - component: {fileID: 6731008929771303729}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7430472804838989497}
   - component: {fileID: 4079024791992697598}
   - component: {fileID: 6416019453579108157}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 6388993345020037802}
   - component: {fileID: 7367994828137653813}
   - component: {fileID: 5490833453135760537}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 4941864936440595472}
   - component: {fileID: 4303388086007230974}
   - component: {fileID: 1863806833110394335}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 8348051329521402612}
   - component: {fileID: 1757253656467757746}
   - component: {fileID: 4944921169742612383}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 8552545576123853241}
   - component: {fileID: 6165298230835808872}
   - component: {fileID: 1505583018698287683}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5140449435868444331}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pots_D_fractured
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 8658712794357414734}
   - component: {fileID: 3216904593233516362}
   - component: {fileID: 3743740364571392765}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pot_D002_Part_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
