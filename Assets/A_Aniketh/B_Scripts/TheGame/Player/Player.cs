@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     PlayerMovement movementController;                           //The movement script
-    PlayerStats myStats;                                         //The Stats script
+    PlayerHealth myStats;                                        //The Stats script
 
     float horizontalInput;                                       //Horizontal motion or input values between 1 & 0 (Asises)
     float verticalInput;                                         //Vertical motion or input values between 1 & 0 (Asises)
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         movementController = GetComponent<PlayerMovement>();
-        myStats = GetComponent<PlayerStats>();
+        myStats = GetComponent<PlayerHealth>();
         InitialSetSpeed = speed;
     }
 
@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            myStats.ReduceHealth(20);
+            myStats.ReduceHealth();
         }
     }
 

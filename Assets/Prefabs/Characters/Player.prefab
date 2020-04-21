@@ -450,9 +450,9 @@ GameObject:
   - component: {fileID: 5143440189459572974}
   - component: {fileID: 5143440189466991137}
   - component: {fileID: 5143440189466991138}
-  - component: {fileID: 5143440189466991139}
   - component: {fileID: 5143440189466991140}
   - component: {fileID: 5143440189466991141}
+  - component: {fileID: 2161852689025331745}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -531,24 +531,6 @@ MonoBehaviour:
   pickUpUI: {fileID: 0}
   UIHight: 0.5
   resetUI: 0
---- !u!114 &5143440189466991139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143440189466991142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 230bd089090a30f459c17fe240e4a16e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaxHealth: 59
-  playerMaxStamina: 100
-  staminaDrainRate: 0.5
-  staminaRecoveryRate: 1
-  healthBar: {fileID: 0}
-  staminaBar: {fileID: 0}
 --- !u!114 &5143440189466991140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +581,21 @@ MonoBehaviour:
   footStepParticlesRight: {fileID: 5080529961641614088}
   leftFootAudio: {fileID: 2161852689221943888}
   rightFootAudio: {fileID: 2161852688883118807}
+--- !u!114 &2161852689025331745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143440189466991142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6befab9a797061340bc85aa5e86e1e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threeBars: {fileID: 0}
+  twoBars: {fileID: 0}
+  oneBar: {fileID: 0}
 --- !u!1 &5143440189466991162
 GameObject:
   m_ObjectHideFlags: 0
