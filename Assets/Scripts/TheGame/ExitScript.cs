@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ExitScript : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
+    [SerializeField] GameObject lockMovement;
 
     private void OnTriggerEnter(Collider other)
     {
         AudioManger.instance.ExitDungeonClip();
-        SceneShifter.LoadScene("VictoryScene");
+        lockMovement.SetActive(true);
+        StartCoroutine(Exit());
+    }
+
+    IEnumerator Exit()
+    {
+        yield return new WaitForSeconds(4.7f);
+        SceneShifter.LoadScene("Victory");
     }
 }

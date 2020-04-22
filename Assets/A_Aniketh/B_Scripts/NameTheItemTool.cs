@@ -5,19 +5,24 @@ using UnityEditor;
 using UnityEditor.PackageManager.UI;
 using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine.UI;
+#if UNITY_2019_1 || UNITY_2019_2
+using UnityEngine.Experimental.PlayerLoop;
+#else
 using UnityEngine.PlayerLoop;
+#endif
+using System.Runtime.CompilerServices;
 
 public class NameTheItemTool : EditorWindow
 {
-    bool useTool = true;
+    bool useTool = false;
 
     GameObject objCloseToCursor;
     Vector3 textPos;
     string mouseOnObject;
-    string previousObject = "Nothing";
+    string previousObject = "Tool is OFF";
 
     string mouseOnWindow;
-    string windowOnPreviousUpdate = "Nothing";
+    string windowOnPreviousUpdate = "Tool is OFF";
 
     //Style settings
     GUIStyle planeStyle;
@@ -28,6 +33,7 @@ public class NameTheItemTool : EditorWindow
     Color colorBeforeUpdate;
     bool updateSettings;
     bool showTextOnScene = true;
+    bool showTextPast = true;
 
     [MenuItem("Window/Selection Identity")]
     public static void ShowWindow()
@@ -39,6 +45,7 @@ public class NameTheItemTool : EditorWindow
     {
         if(planeStyle == null)
         {
+            
             planeStyle = new GUIStyle(EditorStyles.label);
             planeStyle.normal.textColor = Color.white;
             planeStyle.fontSize = 18;
@@ -47,6 +54,30 @@ public class NameTheItemTool : EditorWindow
 
         if(style == null)
         {
+            //Retreaving text size if changed
+            if (!PlayerPrefs.HasKey("Size"))
+                PlayerPrefs.SetInt("Size", 18);
+            textFontSize = PlayerPrefs.GetInt("Size");
+
+            //Retrieveing text color if changed
+            if (!PlayerPrefs.HasKey("R"))
+                PlayerPrefs.SetFloat("R", colorText.r);
+            if (!PlayerPrefs.HasKey("G"))
+                PlayerPrefs.SetFloat("G", colorText.g);
+            if (!PlayerPrefs.HasKey("B"))
+                PlayerPrefs.SetFloat("B", colorText.b);
+            if (!PlayerPrefs.HasKey("A"))
+                PlayerPrefs.SetFloat("A", colorText.a);
+            colorText = new Color(PlayerPrefs.GetFloat("R"), PlayerPrefs.GetFloat("G"), PlayerPrefs.GetFloat("B"), PlayerPrefs.GetFloat("A"));
+
+            //Retrieveing data if should show text on screne in case changed
+            if (!PlayerPrefs.HasKey("ShowText"))
+                PlayerPrefs.SetInt("ShowText", 1);
+            if (PlayerPrefs.GetInt("ShowText") == 1)
+                showTextOnScene = true;
+            else
+                showTextOnScene = false;
+
             style = new GUIStyle();
             style.fontStyle = FontStyle.BoldAndItalic;
         }
@@ -99,10 +130,8 @@ public class NameTheItemTool : EditorWindow
                 previousObject = mouseOnObject;
             }
 
-            if(textFontSize != sizeBeforUpdate || colorText != colorBeforeUpdate)
-            {
+            if (textFontSize != sizeBeforUpdate || colorText != colorBeforeUpdate || showTextOnScene != showTextPast)
                 updateSettings = true;
-            }
         }
     }
 
@@ -133,13 +162,25 @@ public class NameTheItemTool : EditorWindow
                     mouseOnObject = objCloseToCursor.name;
                 }
 
-                if(updateSettings)
+                if (updateSettings)
                 {
                     style.fontSize = textFontSize;
                     sizeBeforUpdate = textFontSize;
+                    PlayerPrefs.SetInt("Size", textFontSize);
 
                     style.normal.textColor = colorText;
                     colorBeforeUpdate = colorText;
+                    PlayerPrefs.SetFloat("R", colorText.r);
+                    PlayerPrefs.SetFloat("G", colorText.g);
+                    PlayerPrefs.SetFloat("B", colorText.b);
+                    PlayerPrefs.SetFloat("A", colorText.a);
+
+                    showTextPast = showTextOnScene;
+                    if(!showTextOnScene)
+                        PlayerPrefs.SetInt("ShowText", 0);
+                    else
+                        PlayerPrefs.SetInt("ShowText", 1);
+
                     updateSettings = false;
                 }
             }
@@ -151,7 +192,7 @@ public class NameTheItemTool : EditorWindow
                     Handles.Label(textPos, mouseOnObject, style);
                 Handles.EndGUI();
             }
-            else if(mouseOnObject != "Null...")
+            else if (mouseOnObject != "Null...")
                 mouseOnObject = "Null...";
 
 

@@ -80,7 +80,7 @@ public class BreakableObject : MonoBehaviour
                 //If player cross the score thresh hold to spawn the relic then spawn the relic
                 if (score_relic.spawnRelic)
                 {
-                    Instantiate(relic, transform.position, transform.rotation);
+                    Instantiate(relic, new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z), transform.rotation);
                     score_relic.spawnRelic = false;
                 }
                 ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);
