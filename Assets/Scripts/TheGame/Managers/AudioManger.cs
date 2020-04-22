@@ -34,7 +34,7 @@ public class AudioManger : MonoBehaviour
     [SerializeField] AudioClip abbyArrivalClip;
     public void AbbyArrival()
     {
-        PlayOneShotOn(backGroundMusicSource, abbyArrivalClip);
+        PlayClipOn(backGroundMusicSource, abbyArrivalClip);
     }
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
 
@@ -74,12 +74,12 @@ public class AudioManger : MonoBehaviour
 
     public void PlayTutorialClip(int clipID)
     {
-        PlayOneShotOn(playerSoundSource, tutorialClips[clipID]);
+        PlayClipOn(playerSoundSource, tutorialClips[clipID]);
     }
 
     public void ButtlerArrivalClip()
     {
-        PlayOneShotOn(playerSoundSource, butlerArrivalClip);
+        PlayClipOn(playerSoundSource, butlerArrivalClip);
     }
 
     public void PlayBreakDialoguesClip()
@@ -112,31 +112,31 @@ public class AudioManger : MonoBehaviour
 
     public void RelicCollectedClip()
     {
-        PlayOneShotOn(playerSoundSource, relicCollectedClips[relicClip]);
+        PlayClipOn(playerSoundSource, relicCollectedClips[relicClip]);
         relicClip++;
     }
 
     public void CurryArrivalClip()
     {
-        PlayOneShotOn(playerSoundSource, curryArrivalClip);
+        PlayClipOn(playerSoundSource, curryArrivalClip);
     }
 
     public void ExitDungeonClip()
     {
-        PlayOneShotOn(playerSoundSource, ExitClip);
+        PlayClipOn(playerSoundSource, ExitClip);
     }
 
 
 
 
-    void PlayOneShotOn(AudioSource source, AudioClip clip)
+    void PlayClipOn(AudioSource source, AudioClip clip)
     {
         if (instance != null)
         {
+            source.Stop();
             source.clip = clip;
             source.Play();
         }
-            source.PlayOneShot(clip);
     }
 
     void PlayerRandomPlay(AudioClip[] clips, int prieviousPick)
@@ -153,6 +153,7 @@ public class AudioManger : MonoBehaviour
                     pick++;
             }
             prieviousPick = pick;
+            playerSoundSource.Stop();
             playerSoundSource.clip = clips[pick];
             playerSoundSource.Play();
         }
