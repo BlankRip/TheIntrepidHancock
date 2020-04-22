@@ -10,7 +10,6 @@ public class RelicScript : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("<color=blue> Relic Collected</color>");
-            GameManager.instance.relicsCollected++;
             GameManager.instance.ReadyToExit();
             AudioManger.instance.RelicCollectedClip();
             Destroy(gameObject);
