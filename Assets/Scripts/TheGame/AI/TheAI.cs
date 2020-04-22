@@ -11,6 +11,7 @@ public class TheAI : MonoBehaviour
     public AudioSource AttackSoundSource;
     [SerializeField] AudioSource leftFootSource;
     [SerializeField] AudioSource rightFootSource;
+    [HideInInspector] public bool playingChase;
 
     #region For Tree Nodes
     TreeNode root;

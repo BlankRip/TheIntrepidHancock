@@ -96,13 +96,13 @@ public class AudioManger : MonoBehaviour
     public void SwitchToChase()
     {
         StopCoroutine("SwithTracks");
-        StartCoroutine(SwithTracks(backTrackChaseClip));
+        StartCoroutine(SwithTracks(backTrackChaseClip, 0.009f, 0.22f));
     }
 
     public void SwitchToCalm()
     {
         StopCoroutine("SwithTracks");
-        StartCoroutine(SwithTracks(backTrackNormalClip));
+        StartCoroutine(SwithTracks(backTrackNormalClip, 0.005f, 0.27f));
     }
 
     public void PlayGruntClip()
@@ -159,7 +159,7 @@ public class AudioManger : MonoBehaviour
         }
     }
 
-    IEnumerator SwithTracks(AudioClip ClipToSwitch)
+    IEnumerator SwithTracks(AudioClip ClipToSwitch, float increaseVolumeBy, float maxVolume)
     {
         currentVolume = backGroundMusicSource.volume;
         while (currentVolume > 0)
@@ -167,19 +167,19 @@ public class AudioManger : MonoBehaviour
             Debug.Log("<color=red>IN 1</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
-            currentVolume -= 0.002f;
+            currentVolume -= increaseVolumeBy;
         }
 
         Debug.Log("<color=red>Out 1</color>");
         backGroundMusicSource.clip = ClipToSwitch;
         backGroundMusicSource.Play();
 
-        while(currentVolume < 0.74f)
+        while(currentVolume < maxVolume)
         {
             Debug.Log("<color=red>IN 2</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
-            currentVolume += 0.002f;
+            currentVolume += increaseVolumeBy;
         }
         Debug.Log("<color=red>Ended Switch</color>");
     }

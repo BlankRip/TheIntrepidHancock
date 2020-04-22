@@ -11,6 +11,12 @@ public class IdleNode : TreeNode
     {
         Debug.Log("<color=blue> IN IDLE NODE  </color>");
 
+        if(ai.playingChase)
+        {
+            AudioManger.instance.SwitchToCalm();
+            ai.playingChase = false;
+        }
+
         if (idleTimeTracker <= 0)
         {
             idleTimeTracker = idleEndTime;
