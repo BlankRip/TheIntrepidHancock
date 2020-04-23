@@ -185,7 +185,8 @@ public class Player : MonoBehaviour
     // When close to wall it will stop motion in that direction and idle in spot until input in a diffrent direction
     void HittingWall()
     {
-        camForward = Camera.main.transform.forward;
+        if (Camera.main != null)
+            camForward = Camera.main.transform.forward;
         camForward.y = 0;
 
         rayRotationAngle = Quaternion.LookRotation(camForward.normalized, Vector3.up);
