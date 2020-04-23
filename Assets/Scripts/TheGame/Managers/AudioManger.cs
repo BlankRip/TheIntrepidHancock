@@ -96,7 +96,7 @@ public class AudioManger : MonoBehaviour
     public void SwitchToChase()
     {
         StopCoroutine("SwithTracks");
-        StartCoroutine(SwithTracks(backTrackChaseClip, 0.009f, 0.22f));
+        StartCoroutine(SwithTracks(backTrackChaseClip, 0.009f, 0.2f));
     }
 
     public void SwitchToCalm()

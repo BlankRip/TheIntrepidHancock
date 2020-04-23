@@ -99,7 +99,7 @@ MonoBehaviour:
   relic: {fileID: 4265007263347374622, guid: 83cc1ba62765e674886837a5051b6ada, type: 3}
   breakingClips:
   - {fileID: 8300000, guid: ce15772902ea89c4bace595aa5466aa6, type: 3}
-  scoreToAdd: 5
+  scoreToAdd: 3
   hitsBeforeBreak: 0
   increaseSizeBy: 1.1
   maxMovePosition: 0.1
