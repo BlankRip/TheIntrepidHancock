@@ -37,13 +37,19 @@ public class GameManager : MonoBehaviour
         {
             if (eventObject != null)
             {
-                eventObject.SetActive(true);
-                Camera.main.gameObject.SetActive(false);
+                StartCoroutine(StartTheEvent());
             }
         }
-        else if (relicsSpawned == 2)
+        else if (relicsSpawned == 3)
         {
-            //Spawn The Second Enmy
+            //Spawn The Curry
         }
+    }
+
+    IEnumerator StartTheEvent()
+    {
+        yield return new WaitForSeconds(4);
+        eventObject.SetActive(true);
+        Camera.main.gameObject.SetActive(false);
     }
 }

@@ -16,6 +16,7 @@ public class ScriptedEvent : MonoBehaviour
     void Start()
     {
         AudioManger.instance.AbbyArrival(eventSource);
+        AudioManger.instance.playBreakAudio = false;
         StartCoroutine(TheEvent());
     }
 
