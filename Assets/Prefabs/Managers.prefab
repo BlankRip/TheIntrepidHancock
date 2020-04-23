@@ -190,7 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
-  relicsCollected: 0
+  relicsSpawned: 0
+  eventObject: {fileID: 0}
   exitTriggerCollider: {fileID: 0}
 --- !u!114 &4227988093957955116
 MonoBehaviour:
@@ -235,7 +236,7 @@ MonoBehaviour:
   butlerArrivalClip: {fileID: 8300000, guid: 24ce1b3bcb652ee4b8c9bb299327fb6c, type: 3}
   curryArrivalClip: {fileID: 8300000, guid: 5c3f0fc0387063a42922b623d9ce40f3, type: 3}
   ExitClip: {fileID: 8300000, guid: f1da9ce60a29f894080094a7f458e02e, type: 3}
-  abbyArrivalClip: {fileID: 0}
+  abbyArrivalClip: {fileID: 8300000, guid: a2e8bd98a34c651468fde733ea046431, type: 3}
   numberOfTutorialClips: 0
   playBreakAudio: 0
 --- !u!114 &6581316240991104334

@@ -50293,7 +50293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_Name
-      value: FuckerMain2
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 100264, guid: 13a16f60da4245c45a865b2136ba272c, type: 3}
       propertyPath: m_IsActive
@@ -78018,15 +78018,30 @@ PrefabInstance:
       propertyPath: oneBar
       value: 
       objectReference: {fileID: 449134369}
+    - target: {fileID: 4873409113436866654, guid: 375a73602087ebf429e5c6bba699b837,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08229376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873409113436866654, guid: 375a73602087ebf429e5c6bba699b837,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0304964
+      objectReference: {fileID: 0}
     - target: {fileID: 5143440189459572974, guid: 375a73602087ebf429e5c6bba699b837,
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: f03c2ab7998585d4ca963d8a2befffe5, type: 3}
+      objectReference: {fileID: 9000000, guid: 03b0db260b9110a4ba94810c3eaebc71, type: 3}
+    - target: {fileID: 5143440189459572974, guid: 375a73602087ebf429e5c6bba699b837,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 88e2fc51b207e7a4db2f017064c734af, type: 2}
     - target: {fileID: 5143440189466756614, guid: 375a73602087ebf429e5c6bba699b837,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.35
+      value: -15.12
       objectReference: {fileID: 0}
     - target: {fileID: 5143440189466756614, guid: 375a73602087ebf429e5c6bba699b837,
         type: 3}
