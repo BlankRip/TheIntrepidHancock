@@ -31,8 +31,8 @@ public class EquipManager : MonoBehaviour
         weapon.rangeTrigger.enabled = false;
         NoUI();
         weapon.transform.position = equipPosition.position;
-        weapon.transform.rotation = equipPosition.rotation;
         weapon.transform.SetParent(equipPosition);
+        weapon.transform.localRotation = Quaternion.identity;
         rb.isKinematic = true;
         weapon.myEquipStatus = true;
         objectToAttachTo.equippedWeapon = weapon;
