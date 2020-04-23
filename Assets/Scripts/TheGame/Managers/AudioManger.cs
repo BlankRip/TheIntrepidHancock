@@ -32,9 +32,9 @@ public class AudioManger : MonoBehaviour
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
     [Tooltip("Audio clip abby will play on arrival")]
     [SerializeField] AudioClip abbyArrivalClip;
-    public void AbbyArrival()
+    public void AbbyArrival(AudioSource source)
     {
-        PlayClipOn(backGroundMusicSource, abbyArrivalClip);
+        PlayClipOn(source, abbyArrivalClip);
     }
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
 
