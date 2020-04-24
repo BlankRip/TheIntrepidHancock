@@ -11,6 +11,7 @@ public class TheAI : MonoBehaviour
     public AudioSource AttackSoundSource;
     [SerializeField] AudioSource leftFootSource;
     [SerializeField] AudioSource rightFootSource;
+    [HideInInspector] public bool playingChase;
 
     #region For Tree Nodes
     TreeNode root;
@@ -63,6 +64,7 @@ public class TheAI : MonoBehaviour
 
     bool inCircleRange;
     bool inFieldOfVisionRange;
+    bool done;
 
     //For Debugging
     [Header("For Detection Debugging")]
@@ -263,21 +265,30 @@ public class TheAI : MonoBehaviour
             Debug.DrawRay(transform.position, headDir.normalized * hitHead.distance, Color.blue); // enemy to player raycast
             Debug.DrawRay(transform.position, feetDir.normalized * hitFeet.distance, Color.blue); // enemy to player raycast
 
-            if (hit.collider != null || hitHead.collider != null || hitFeet.collider != null)
+            if (hit.collider != null && hit.collider.CompareTag("Player"))
             {
-                if (hit.collider.CompareTag("Player") || hitHead.collider.CompareTag("Player") || hitFeet.collider.CompareTag("Player"))
-                {
-                    playerFound = true;
-                    inFieldOfVisionRange = true;
-                    rayCastLength = Mathf.Infinity;
-                    Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
-                }
-                else
-                    Debug.Log("<color=pink> player in range but behind something? </color>");
+                playerFound = true;
+                inFieldOfVisionRange = true;
+                rayCastLength = Mathf.Infinity;
+                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
             }
+            else if (hitHead.collider != null && hitHead.collider.CompareTag("Player"))
+            {
+                playerFound = true;
+                inFieldOfVisionRange = true;
+                rayCastLength = Mathf.Infinity;
+                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+            }
+            else if (hitFeet.collider != null && hitFeet.collider.CompareTag("Player"))
+            {
+                playerFound = true;
+                inFieldOfVisionRange = true;
+                rayCastLength = Mathf.Infinity;
+                Debug.Log("<color=pink> DETECTED THE PLAYER // raycast hit </color>");
+            }
+            else
+                inFieldOfVisionRange = false;
         }
-        else
-            inFieldOfVisionRange = false;
 
         if (!inFieldOfVisionRange && !inCircleRange)
         {

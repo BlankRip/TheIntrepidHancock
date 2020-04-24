@@ -13,6 +13,12 @@ public class ChasePlayerNode : TreeNode
     {
         if (!ai.attacking && !ai.recentlyAttcked)
         {
+            if(!ai.playingChase)
+            {
+                AudioManger.instance.SwitchToChase();
+                ai.playingChase = true;
+            }
+
             if (Vector3.Distance(ai.transform.position, ai.target.transform.position) < ai.attackRange)
             {
                 Debug.Log("<color=red> Chase Success  </color>");

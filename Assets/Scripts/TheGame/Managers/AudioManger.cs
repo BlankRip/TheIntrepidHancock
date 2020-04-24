@@ -32,9 +32,9 @@ public class AudioManger : MonoBehaviour
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
     [Tooltip("Audio clip abby will play on arrival")]
     [SerializeField] AudioClip abbyArrivalClip;
-    public void AbbyArrival()
+    public void AbbyArrival(AudioSource source)
     {
-        PlayClipOn(backGroundMusicSource, abbyArrivalClip);
+        PlayClipOn(source, abbyArrivalClip);
     }
     //-------------------------------------------------------- The cenematic camera will hold this -------------------------------------------
 
@@ -88,26 +88,26 @@ public class AudioManger : MonoBehaviour
         {
             pick = Random.Range(0, 100);
             Debug.Log("<color=pink>" + pick + "</color>");
-            if ((pick < 10) || (pick > 30 && pick < 40) || (pick > 59 && pick < 65) || (pick > 82 && pick < 93))
-                PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+            if ((pick < 6) || (pick > 34 && pick < 38) || (pick > 59 && pick < 63) || (pick > 85 && pick < 91))
+                PlayerRandomPlay(playerBreakDialogueClips, ref previousBreakDialogue);
         }
     }
 
     public void SwitchToChase()
     {
         StopCoroutine("SwithTracks");
-        StartCoroutine(SwithTracks(backTrackChaseClip));
+        StartCoroutine(SwithTracks(backTrackChaseClip, 0.009f, 0.2f));
     }
 
     public void SwitchToCalm()
     {
         StopCoroutine("SwithTracks");
-        StartCoroutine(SwithTracks(backTrackNormalClip));
+        StartCoroutine(SwithTracks(backTrackNormalClip, 0.005f, 0.27f));
     }
 
     public void PlayGruntClip()
     {
-        PlayerRandomPlay(playerGrunts, previousGrunt);
+        PlayerRandomPlay(playerGrunts, ref previousGrunt);
     }
 
     public void RelicCollectedClip()
@@ -139,7 +139,7 @@ public class AudioManger : MonoBehaviour
         }
     }
 
-    void PlayerRandomPlay(AudioClip[] clips, int prieviousPick)
+    void PlayerRandomPlay(AudioClip[] clips, ref int prieviousPick)
     {
         if (instance != null)
         {
@@ -152,6 +152,7 @@ public class AudioManger : MonoBehaviour
                 else
                     pick++;
             }
+            Debug.Log("<color=red> Previous Pick:" + prieviousPick + "</color>\n <color=green> CurrentPick:" + pick + "</color>");
             prieviousPick = pick;
             playerSoundSource.Stop();
             playerSoundSource.clip = clips[pick];
@@ -159,7 +160,7 @@ public class AudioManger : MonoBehaviour
         }
     }
 
-    IEnumerator SwithTracks(AudioClip ClipToSwitch)
+    IEnumerator SwithTracks(AudioClip ClipToSwitch, float increaseVolumeBy, float maxVolume)
     {
         currentVolume = backGroundMusicSource.volume;
         while (currentVolume > 0)
@@ -167,19 +168,19 @@ public class AudioManger : MonoBehaviour
             Debug.Log("<color=red>IN 1</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
-            currentVolume -= 0.002f;
+            currentVolume -= increaseVolumeBy;
         }
 
         Debug.Log("<color=red>Out 1</color>");
         backGroundMusicSource.clip = ClipToSwitch;
         backGroundMusicSource.Play();
 
-        while(currentVolume < 0.74f)
+        while(currentVolume < maxVolume)
         {
             Debug.Log("<color=red>IN 2</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
-            currentVolume += 0.002f;
+            currentVolume += increaseVolumeBy;
         }
         Debug.Log("<color=red>Ended Switch</color>");
     }

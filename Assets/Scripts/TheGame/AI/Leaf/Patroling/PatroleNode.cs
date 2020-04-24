@@ -15,6 +15,12 @@ public class PatroleNode : TreeNode
     {
         Debug.Log("<color=blue> IN PATROL NODE  </color>");
 
+        if (ai.playingChase)
+        {
+            AudioManger.instance.SwitchToCalm();
+            ai.playingChase = false;
+        }
+
         if (ai.pathPointeReset)
         {
             Debug.Log("<color=cyan> resetting </color>");
@@ -22,7 +28,6 @@ public class PatroleNode : TreeNode
             ai.maxVelocity = ai.maxWalkVel;
             ai.pathPointeReset = false;
         }
-
 
         if (pathNodes == null)
         {

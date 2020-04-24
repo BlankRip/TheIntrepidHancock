@@ -96,14 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureVersion: {fileID: 3854752944651422785, guid: 4907379770b75584599f1f93c8cf0c17,
     type: 3}
-  relic: {fileID: 4913189037622607218, guid: 29c56b4c8d389be4a80778141e9ca7f5, type: 3}
-  fireFlies: {fileID: 8962663691706828158, guid: a471e972f74cc3d448027ac888778d95,
-    type: 3}
-  breakEffect: {fileID: 5958596095551506707, guid: 52ce717a846e15e4cb190277f032fa5e,
-    type: 3}
+  relic: {fileID: 4265007263347374622, guid: 83cc1ba62765e674886837a5051b6ada, type: 3}
   breakingClips:
   - {fileID: 8300000, guid: ce15772902ea89c4bace595aa5466aa6, type: 3}
-  scoreToAdd: 5
+  scoreToAdd: 3
   hitsBeforeBreak: 0
   increaseSizeBy: 1.1
   maxMovePosition: 0.1

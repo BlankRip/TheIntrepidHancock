@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [HideInInspector] public bool paused;
-    [HideInInspector] public int relicsCollected;
+    [HideInInspector] public int relicsSpawned;
+    [SerializeField] GameObject eventObject;
     [SerializeField] Collider exitTriggerCollider;
 
     // Start is called before the first frame update
@@ -17,16 +18,38 @@ public class GameManager : MonoBehaviour
             instance = this;
 
         paused = false;
-        relicsCollected = 0;
+        relicsSpawned = 0;
     }
 
 
     public void ReadyToExit()
     {
-        if (relicsCollected < 3)
+        if (relicsSpawned >= 3)
         {
             Debug.Log("<color=green> plaay ready to leave clip and unlock exit trigger on door </color>");
             exitTriggerCollider.enabled = true;
         }
+    }
+
+    public void SpawnEnemy()
+    {
+        if (relicsSpawned == 1)
+        {
+            if (eventObject != null)
+            {
+                StartCoroutine(StartTheEvent());
+            }
+        }
+        else if (relicsSpawned == 3)
+        {
+            //Spawn The Curry
+        }
+    }
+
+    IEnumerator StartTheEvent()
+    {
+        yield return new WaitForSeconds(4);
+        eventObject.SetActive(true);
+        Camera.main.gameObject.SetActive(false);
     }
 }

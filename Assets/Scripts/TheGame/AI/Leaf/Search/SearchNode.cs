@@ -71,7 +71,7 @@ public class SearchNode : TreeNode
 
                 if (Vector3.Distance(ai.transform.position, pathNodes[currentNodeIndex]) < ai.reachRegisterDistance)
                 {
-                    if (Vector3.Distance(ai.transform.position, ai.lastSeenPos) > searchRadios)
+                    if (Vector3.Distance(ai.transform.position, ai.lastSeenPos) > searchRadios || currentNodeIndex == pathNodes.Length - 1)
                     {
                         countTracker++;
                         goToPlayerPos = true;
