@@ -5,9 +5,9 @@ using AlwinScript;
 
 public class NodePointPathFinding : MonoBehaviour
 {
-    [HideInInspector] public static GameObject[] allNodes;
+    [HideInInspector] public static Node[] allNodes;
     [HideInInspector] public Node thisNode;
-
+/*
     // go through all the nodes as
     public void FindFriends()
     {
@@ -29,7 +29,7 @@ public class NodePointPathFinding : MonoBehaviour
         // add in to neibour nodes
         thisNode.neighbours = neibourNodes.ToArray();
     }
-
+*/
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

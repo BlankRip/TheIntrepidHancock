@@ -21,7 +21,10 @@ public class PathFindingController : MonoBehaviour
     void Start()
     {
         targetSpots = GameObject.FindGameObjectsWithTag("GoalPoints");
-        GameObject[] allNodes = GameObject.FindGameObjectsWithTag("A*Node");
+        GameObject[] gameNodes = GameObject.FindGameObjectsWithTag("A*Node");
+
+        allNodes = new Node[gameNodes.Length];
+
         NodePointPathFinding.allNodes = allNodes;
         List<Node> nodeList = new List<Node>();
         int index = 0;
