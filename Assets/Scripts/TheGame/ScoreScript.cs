@@ -20,7 +20,7 @@ public class ScoreScript : MonoBehaviour
         relicsSpawned = 0;
         x = 7;
         y = 0;
-        spawnAtScoreMultiplier = 69 * x + y;
+        spawnAtScoreMultiplier =  x + y;
         spawnRelic = false;
         exitStatusUpdate = false;
     }
