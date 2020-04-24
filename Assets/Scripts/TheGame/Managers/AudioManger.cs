@@ -88,7 +88,7 @@ public class AudioManger : MonoBehaviour
         {
             pick = Random.Range(0, 100);
             Debug.Log("<color=pink>" + pick + "</color>");
-            if ((pick < 6) || (pick > 34 && pick < 3) || (pick > 59 && pick < 63) || (pick > 85 && pick < 91))
+            if ((pick < 6) || (pick > 34 && pick < 38) || (pick > 59 && pick < 63) || (pick > 85 && pick < 91))
                 PlayerRandomPlay(playerBreakDialogueClips, ref previousBreakDialogue);
         }
     }
