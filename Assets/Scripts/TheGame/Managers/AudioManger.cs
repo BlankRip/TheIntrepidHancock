@@ -88,8 +88,8 @@ public class AudioManger : MonoBehaviour
         {
             pick = Random.Range(0, 100);
             Debug.Log("<color=pink>" + pick + "</color>");
-            if ((pick < 10) || (pick > 30 && pick < 40) || (pick > 59 && pick < 65) || (pick > 82 && pick < 93))
-                PlayerRandomPlay(playerBreakDialogueClips, previousBreakDialogue);
+            if ((pick < 6) || (pick > 34 && pick < 3) || (pick > 59 && pick < 63) || (pick > 85 && pick < 91))
+                PlayerRandomPlay(playerBreakDialogueClips, ref previousBreakDialogue);
         }
     }
 
@@ -107,7 +107,7 @@ public class AudioManger : MonoBehaviour
 
     public void PlayGruntClip()
     {
-        PlayerRandomPlay(playerGrunts, previousGrunt);
+        PlayerRandomPlay(playerGrunts, ref previousGrunt);
     }
 
     public void RelicCollectedClip()
@@ -139,7 +139,7 @@ public class AudioManger : MonoBehaviour
         }
     }
 
-    void PlayerRandomPlay(AudioClip[] clips, int prieviousPick)
+    void PlayerRandomPlay(AudioClip[] clips, ref int prieviousPick)
     {
         if (instance != null)
         {
@@ -152,6 +152,7 @@ public class AudioManger : MonoBehaviour
                 else
                     pick++;
             }
+            Debug.Log("<color=red> Previous Pick:" + prieviousPick + "</color>\n <color=green> CurrentPick:" + pick + "</color>");
             prieviousPick = pick;
             playerSoundSource.Stop();
             playerSoundSource.clip = clips[pick];
