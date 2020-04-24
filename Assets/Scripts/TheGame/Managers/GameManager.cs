@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        
         if (relicsSpawned == 1)
         {
             if (eventObject != null)
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             //Spawn The Curry
         }
+        
     }
 
     IEnumerator StartTheEvent()

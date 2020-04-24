@@ -11,11 +11,11 @@ public class PlayerEscapeCheck : TreeNode
 
         if(!ai.justEscaped)
         {
-            Debug.Log("<color=green> Escape check Failed</color>");
+        //    Debug.Log("<color=green> Escape check Failed</color>");
             ai.setSearchCount = true;
             status = ReturnResult.Fail;
         }
-        else
-            Debug.Log("<color=green> Escape check Success</color>");
+     //   else
+       //     Debug.Log("<color=green> Escape check Success</color>");
     }
 }

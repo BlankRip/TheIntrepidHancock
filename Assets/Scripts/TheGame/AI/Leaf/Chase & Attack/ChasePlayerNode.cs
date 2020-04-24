@@ -21,14 +21,14 @@ public class ChasePlayerNode : TreeNode
 
             if (Vector3.Distance(ai.transform.position, ai.target.transform.position) < ai.attackRange)
             {
-                Debug.Log("<color=red> Chase Success  </color>");
+       //         Debug.Log("<color=red> Chase Success  </color>");
                 ai.myAnimator.SetBool("Run", false);
                 ai.attacking = true;
                 status = ReturnResult.Success;
                 return;
             }
 
-            Debug.Log("<color=red> IN CHASE PLAYER  </color>");
+     //       Debug.Log("<color=red> IN CHASE PLAYER  </color>");
             ai.myAnimator.SetBool("Run", true);
             ai.myAnimator.SetBool("Walk", false);
             status = ReturnResult.Running;

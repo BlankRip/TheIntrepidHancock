@@ -10,18 +10,18 @@ public class AttackNode : TreeNode
     {
         if (!ai.recentlyAttcked)
         {
-            Debug.Log("<color=red> IN ATTACK </color>");
+        //    Debug.Log("<color=red> IN ATTACK </color>");
             if (status != ReturnResult.Running)
             {
                 ai.myAnimator.SetTrigger("Attack");
-                Debug.Log("<color=red>Enemy attack sound</color>");
+      //          Debug.Log("<color=red>Enemy attack sound</color>");
                 //clipLength = ai.myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
                 clipLength = ai.attackDuration;
             }
 
             if (clipLength <= 0)
             {
-                Debug.Log("<color=red> ATTACK Success </color>");
+       //         Debug.Log("<color=red> ATTACK Success </color>");
                 ai.recentlyAttcked = true;
                 ai.attacking = false;
                 status = ReturnResult.Success;

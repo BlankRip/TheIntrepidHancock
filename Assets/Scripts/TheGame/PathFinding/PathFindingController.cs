@@ -13,6 +13,8 @@ public class PathFindingController : MonoBehaviour
 
     public Vector3[] routeNodes;
 
+    public LayerMask rayMask;
+
     private void Awake()
     {
         instance = this;
@@ -20,15 +22,34 @@ public class PathFindingController : MonoBehaviour
 
     void Start()
     {
+        GraphAStar.rayMask = rayMask;
         targetSpots = GameObject.FindGameObjectsWithTag("GoalPoints");
         GameObject[] gameNodes = GameObject.FindGameObjectsWithTag("A*Node");
 
         allNodes = new Node[gameNodes.Length];
 
-        NodePointPathFinding.allNodes = allNodes;
-        List<Node> nodeList = new List<Node>();
-        int index = 0;
+     //   NodePointPathFinding.allNodes = allNodes;
 
+        for (int i = 0; i < gameNodes.Length; i++)
+        {
+            allNodes[i] = new Node(gameNodes[i].transform.position, gameNodes[i].name,  i);
+            List<int> neibourIndex =  new List<int>();
+            for (int n = 0; n < gameNodes.Length; n++)
+            {
+                if(i!=n)
+                {
+                    Vector3 dir = gameNodes[n].transform.position - allNodes[i].position;
+                    if(!Physics.Raycast(allNodes[i].position, dir.normalized, dir.magnitude, rayMask))
+                    {
+                        neibourIndex.Add(n);
+                    }
+                }
+            }
+            allNodes[i].neighbours = neibourIndex.ToArray();
+        }
+
+
+/*
         foreach (GameObject item in allNodes)
         {
             NodePointPathFinding pickNodeObject = item.GetComponent<NodePointPathFinding>();
@@ -38,8 +59,8 @@ public class PathFindingController : MonoBehaviour
             pickNodeObject.FindFriends();
             index++;
         }
-
-        this.allNodes = nodeList.ToArray();
+*/
+    //    this.allNodes = nodeList.ToArray();
     }
 
     public Vector3[] GetRandomGoalRout(Transform startPoint)

@@ -30,6 +30,7 @@ public class NodePointPathFinding : MonoBehaviour
         thisNode.neighbours = neibourNodes.ToArray();
     }
 */
+/*
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -44,5 +45,5 @@ public class NodePointPathFinding : MonoBehaviour
             Gizmos.DrawLine(transform.position, thisNode.neighbours[i].position);
         }
     }
-
+*/
 }

@@ -9,10 +9,10 @@ public class CoolDownNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        Debug.Log("<color=yellow> IN COOLDOWN </color>");
+  //      Debug.Log("<color=yellow> IN COOLDOWN </color>");
         if (coolDownTracker <= 0)
         {
-            Debug.Log("<color=yellow> FINISH COOLDOWN </color>");
+   //         Debug.Log("<color=yellow> FINISH COOLDOWN </color>");
             coolDownTracker = coolDownTimer;
             ai.recentlyAttcked = false;
             status = ReturnResult.Success;

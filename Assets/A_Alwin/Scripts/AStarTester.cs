@@ -5,29 +5,48 @@ using AlwinScript;
 
 public class AStarTester : MonoBehaviour
 {
+    
+    public GameObject[] targetSpots;
+
     public Node[] allNodes;
 
     public Vector3[] routeNodes;
 
     public Transform startPoint, endPoint;
 
+    public LayerMask rayMask;
+
+
     void Start()
     {
-        GameObject[] allNodes = GameObject.FindGameObjectsWithTag("A*Node");
-        NodePointPathFinding.allNodes = allNodes;
-        List<Node> nodeList = new List<Node>();
-        int index = 0;
-        foreach (GameObject item in allNodes)
+
+        GraphAStar.rayMask = rayMask;
+
+        targetSpots = GameObject.FindGameObjectsWithTag("GoalPoints");
+        GameObject[] gameNodes = GameObject.FindGameObjectsWithTag("A*Node");
+
+        allNodes = new Node[gameNodes.Length];
+
+     //   NodePointPathFinding.allNodes = allNodes;
+
+        for (int i = 0; i < gameNodes.Length; i++)
         {
-            NodePointPathFinding pickNodeObject = item.GetComponent<NodePointPathFinding>();
-            pickNodeObject.thisNode.name = item.name;
-            pickNodeObject.thisNode.nodeIndex = index;
-            nodeList.Add(pickNodeObject.thisNode);
-            pickNodeObject.FindFriends();
-            index++;
+            allNodes[i] = new Node(gameNodes[i].transform.position, gameNodes[i].name,  i);
+            List<int> neibourIndex =  new List<int>();
+            for (int n = 0; n < gameNodes.Length; n++)
+            {
+                if(i!=n)
+                {
+                    Vector3 dir = gameNodes[n].transform.position - allNodes[i].position;
+                    if(!Physics.Raycast(allNodes[i].position, dir.normalized, dir.magnitude, rayMask))
+                    {
+                        neibourIndex.Add(n);
+                    }
+                }
+            }
+            allNodes[i].neighbours = neibourIndex.ToArray();
         }
 
-        this.allNodes = nodeList.ToArray();
     }
 
     void Update()
@@ -49,6 +68,7 @@ public class AStarTester : MonoBehaviour
                 Gizmos.DrawLine(routeNodes[i - 1], routeNodes[i]);
             }
         }
+        /*
         if(GraphAStar.startNode != null)
         {
             foreach (Node item in GraphAStar.startNode.neighbours)
@@ -58,6 +78,7 @@ public class AStarTester : MonoBehaviour
                 
             }
         }
+        */
     }
 
 }

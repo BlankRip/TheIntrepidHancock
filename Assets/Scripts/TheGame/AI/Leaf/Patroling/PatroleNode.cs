@@ -13,7 +13,7 @@ public class PatroleNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-        Debug.Log("<color=blue> IN PATROL NODE  </color>");
+   //     Debug.Log("<color=blue> IN PATROL NODE  </color>");
 
         if (ai.playingChase)
         {
@@ -23,7 +23,7 @@ public class PatroleNode : TreeNode
 
         if (ai.pathPointeReset)
         {
-            Debug.Log("<color=cyan> resetting </color>");
+//Debug.Log("<color=cyan> resetting </color>");
             pathNodes = null;
             ai.maxVelocity = ai.maxWalkVel;
             ai.pathPointeReset = false;
