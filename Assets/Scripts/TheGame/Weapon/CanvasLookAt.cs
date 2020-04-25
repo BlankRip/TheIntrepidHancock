@@ -7,7 +7,7 @@ public class CanvasLookAt : MonoBehaviour
     EquipManager equiper;
     GameObject target;
     [SerializeField] float bounceHight;
-    public float bounceTracker = 0;
+    float bounceTracker = 0;
     float initialY;
     bool up = true;
     Vector3 targetPos;
