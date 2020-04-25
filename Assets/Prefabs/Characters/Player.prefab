@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipPosition: {fileID: 886771239018928411}
   pickUpUI: {fileID: 0}
-  UIHight: 0.5
+  UIHight: 0.9
   resetUI: 0
 --- !u!114 &5143440189466991140
 MonoBehaviour:
