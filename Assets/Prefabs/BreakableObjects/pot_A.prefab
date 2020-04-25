@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractureVersion: {fileID: 1985168147204765682, guid: 18d48c86bc915d9439a8324db95e0b79,
     type: 3}
-  relic: {fileID: 4265007263347374622, guid: 83cc1ba62765e674886837a5051b6ada, type: 3}
+  relic: {fileID: 4265007263347374622, guid: 52204593f087151439561247b58e1f1b, type: 3}
   breakingClips:
   - {fileID: 8300000, guid: ce15772902ea89c4bace595aa5466aa6, type: 3}
   scoreToAdd: 6
