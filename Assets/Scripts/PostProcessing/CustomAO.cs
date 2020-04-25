@@ -73,7 +73,7 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         var blurHorizontal = context.propertySheets.Get(Shader.Find("Custom/PostEffects/BlurHorizontal"));
 
         context.command.BlitFullscreenTriangle(context.source, rt1, aoSheet, 0);
-        /*
+        
         
         // blur
         for (int i = 0; i < settings.blurCount; i++)
@@ -104,7 +104,7 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         mergeSheet.properties.SetTexture("_AOTexture", rt1); 
         mergeSheet.properties.SetFloat("_Effect", settings.effect);
         context.command.BlitFullscreenTriangle(context.source, context.destination, mergeSheet, 0);
-        */
-       context.command.BlitFullscreenTriangle(rt1, context.destination);
+        
+   //    context.command.BlitFullscreenTriangle(rt1, context.destination);
     }
 }

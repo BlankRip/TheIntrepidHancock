@@ -80,7 +80,7 @@
 
 	//	return (1 - saturate(AmbiantFactor(i.texcoord)));
 	//	return float4(RandomRay(i.texcoord, 1), 1);
-		return color * saturate(AmbiantFactor(i.texcoord));
+		return 1-saturate(AmbiantFactor(i.texcoord));
 		//float pointDepth = tex2D(_CameraDepthTexture, i.texcoord).r;
 	//	return LinearEyeDepth(pointDepth);
 	//	return color;
