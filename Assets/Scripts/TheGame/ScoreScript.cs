@@ -20,7 +20,8 @@ public class ScoreScript : MonoBehaviour
         relicsSpawned = 0;
         x = 7;
         y = 0;
-        spawnAtScoreMultiplier =  x + y;
+        spawnAtScoreMultiplier = x + y;
+        //spawnAtScoreMultiplier = 0;
         spawnRelic = false;
         exitStatusUpdate = false;
     }
@@ -38,6 +39,7 @@ public class ScoreScript : MonoBehaviour
                 x = x + y;
                 y = Random.Range(22, 27);
                 spawnAtScoreMultiplier = 69 * (x + y);
+                //spawnAtScoreMultiplier++;
                 relicsSpawned++;
             }
         }
