@@ -55,6 +55,7 @@ public class GraphAStar : MonoBehaviour
 
             // set the start node to point of the player
             Node closestNode = FindClosest(nodeList, userPosition);
+            if(closestNode == null) return null;
             closestName = closestNode.name;
        //     startNode = new Node(userPosition + Vector3.up, "startPoint", 0);
       //      startNode.nodeIndex = 0;
@@ -63,6 +64,7 @@ public class GraphAStar : MonoBehaviour
     //        closestNode = startNode;
             // find the end node
             Node endNode = FindClosest(nodeList, endPosition);
+            if(endNode == null) return null;
             furthestName = endNode.name;
 
 
@@ -144,7 +146,7 @@ public class GraphAStar : MonoBehaviour
         }
         catch(System.Exception e)
         {
-            Debug.LogError("Msg from A Star : " + e + " - " + closestName + " - " + furthestName);
+            Debug.LogError("Msg from A Star : "+ " | " + closestName + " | " + furthestName + " | " + userPosition + " | " + endPosition + e );
             Debug.Break();
             return null;
         }
