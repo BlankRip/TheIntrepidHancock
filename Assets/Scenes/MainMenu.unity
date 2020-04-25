@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.43777782}
   m_AnchorMax: {x: 0, y: 0.43777782}
-  m_AnchoredPosition: {x: 84, y: -61}
-  m_SizeDelta: {x: 610, y: 195}
+  m_AnchoredPosition: {x: 70.6, y: -82}
+  m_SizeDelta: {x: 411.6825, y: 131.60342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120755344
 MonoBehaviour:
@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 183367539}
   - component: {fileID: 183367538}
   - component: {fileID: 183367541}
+  - component: {fileID: 183367542}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -309,7 +310,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 3
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -402,6 +403,18 @@ MonoBehaviour:
       PublicKeyToken=null
   - assemblyQualifiedName: CustomBloom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &183367542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183367537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b65a2e10e97e2e4d96255b5668cf25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269849674
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.75333345}
   m_AnchorMax: {x: 0, y: 0.75333345}
-  m_AnchoredPosition: {x: 169.7, y: 9.3}
+  m_AnchoredPosition: {x: 169.70001, y: 9.299988}
   m_SizeDelta: {x: 1122.7677, y: 322.7633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330846998
@@ -614,8 +627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.43777782}
   m_AnchorMax: {x: 0, y: 0.43777782}
-  m_AnchoredPosition: {x: 112, y: -96.592}
-  m_SizeDelta: {x: 1047, y: 197}
+  m_AnchoredPosition: {x: 89.5, y: -106}
+  m_SizeDelta: {x: 706.60913, y: 132.95322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545669736
 MonoBehaviour:
@@ -1012,7 +1025,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1207,8 +1220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.43777782}
   m_AnchorMax: {x: 0, y: 0.43777782}
-  m_AnchoredPosition: {x: 80.619995, y: -131}
-  m_SizeDelta: {x: 609, y: 194}
+  m_AnchoredPosition: {x: 68.30002, y: -129.29999}
+  m_SizeDelta: {x: 411.00763, y: 130.92853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907124333
 MonoBehaviour:
@@ -1776,7 +1789,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -6664,8 +6677,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -34}
-  m_SizeDelta: {x: 156, y: 119}
+  m_AnchoredPosition: {x: -34.099976, y: -25.599976}
+  m_SizeDelta: {x: 78.62662, y: 59.977997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504906789
 MonoBehaviour:
@@ -7017,51 +7030,41 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.53
-  m_Text: 'CREDITS
+  m_Text: '<size=30><color=#AB965A><b>CREDITS</b></color></size>
 
 
-    Lead Designer: Zinedine Khairul Azman
+    <size=15><color=#F0D58A>Lead
+    Designer: </color></size> Zinedine Khairul Azman
 
-    Designers:
-
-    Aniketh
-    Gondesi, Brad Mesina
-
-
-    Lead Programmers: Alwin Joshy, Aniketh Gondesi
-
-    Programmers:
-
-    Juma
-    Abdulla
+    <size=15><color=#F0D58A>Designers:
+    </color></size>Aniketh Gondesi, Brad Mesina
 
 
-    Lead Animator: Brad Mesina
+    <size=15><color=#F0D58A>Lead
+    Programmers: </color></size>Alwin Joshy, Aniketh Gondesi
 
-    Animatores:
-
-    Bahar Mohammadi,
-    Syed Irtaza, Justin Lemuel Yuan
-
-
-    Artists:
-
-    Alwin Joshy, Bahar Mohammadi,
-    Brad Mesina, Syed Irtaza, Justin Lemuel Yuan
+    <size=15><color=#F0D58A
+    >Programmers: </color></size>Juma Abdulla
 
 
-    Audio:
+    <size=15><color=#F0D58A>Lead
+    Animator: </color></size>Brad Mesina
 
-    Voice Actor: Zinedine
-    Khairul Azman
-
-    Alwin Joshi, Aniketh Gondesi, YouTube Royalty Free Music
+    <size=15><color=#F0D58A>Animatores:
+    </color></size> Bahar Mohammadi, Syed Irtaza, Justin Lemuel Yuan
 
 
-    Special
-    Thanks:
+    <size=15><color=#F0D58A>Artists:
+    </color></size>Alwin Joshy, Bahar Mohammadi, Brad Mesina, Syed Irtaza, Justin
+    Lemuel Yuan
 
-    Ahmed Abo Bakar, Ahmed Gamal, Muhammad Hamza'
+
+    <size=15><color=#F0D58A>Audio: </color></size>Voice Actor:
+    Zinedine Khairul Azman, Alwin Joshi, Aniketh Gondesi, YouTube Royalty Free Music
+
+
+    <size=15><color=#F0D58A>Special
+    Thanks: </color></size>Ahmed Abo Bakar, Ahmed Gamal, Muhammad Hamza'
 --- !u!222 &1756985649
 CanvasRenderer:
   m_ObjectHideFlags: 0
