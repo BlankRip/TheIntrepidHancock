@@ -101,8 +101,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ce15772902ea89c4bace595aa5466aa6, type: 3}
   scoreToAdd: 6
   hitsBeforeBreak: 0
-  increaseSizeBy: 1.1
-  maxMovePosition: 0.1
+  increaseSizeBy: 1.2
+  maxMovePosition: 0.3
 --- !u!136 &1682147722852545954
 CapsuleCollider:
   m_ObjectHideFlags: 0

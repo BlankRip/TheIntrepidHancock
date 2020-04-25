@@ -12,34 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
   m_Name: CustomAO
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   blend:
     overrideState: 1
-    value: 0.17
+    value: 0.96
   sampleShift:
     overrideState: 1
     value: 0.1
   blurCount:
     overrideState: 1
-    value: 0.44
+    value: 3.18
   shift:
     overrideState: 1
-    value: 0
+    value: 0.0185
   maxRange:
     overrideState: 1
-    value: 0.69
+    value: 0.66
   scanDistance:
     overrideState: 1
-    value: 3
+    value: 0.9
   strength:
     overrideState: 1
-    value: 3.5
+    value: 5.2
   effect:
     overrideState: 1
-    value: 0.099
+    value: 0.649
+  heightShift:
+    overrideState: 1
+    value: 0.54
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1

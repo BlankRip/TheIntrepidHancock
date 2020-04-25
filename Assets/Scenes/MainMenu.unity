@@ -309,7 +309,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 2
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -540,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.75333345}
   m_AnchorMax: {x: 0, y: 0.75333345}
-  m_AnchoredPosition: {x: 192.1, y: 2.899994}
-  m_SizeDelta: {x: 1301, y: 374}
+  m_AnchoredPosition: {x: 169.7, y: 9.3}
+  m_SizeDelta: {x: 1122.7677, y: 322.7633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330846998
 MonoBehaviour:

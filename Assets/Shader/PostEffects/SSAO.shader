@@ -13,6 +13,7 @@
 		float _SampleShift;
 		float _ScanDistance;
 		float _MaxRange;
+		float _HeightFactor;
 
 		float random(float2 st) {
 			return frac(sin(dot(st.xy , float2(121.9891, 785.237)))*4132517.5453123);
@@ -57,14 +58,17 @@
 
 				float depthMag = length(screenRay.xy)/ (0.1 * linear01);
 				
-	//			float diffValue = pointDepth - shiftPointDepth;
-		///		factor += max(diffValue, 0) * (i/SampleCount) * BiasCtrl(diffValue);
-				factor += step(pointDepth - (random(screenPos + float2(sin(i *  3.15), cos(i * 8.7)) * 2) - 1) * linear01 * 0.5, shiftPointDepth) ;
+				float diffValue = pointDepth - shiftPointDepth;
+		//		factor += max(diffValue, 0) * (i/SampleCount) * BiasCtrl(diffValue);
+		//		factor += step(pointDepth + (random(screenPos + float2(sin(i *  3.15), cos(i * 8.7)) * 2) - 1) * 0.01, shiftPointDepth) ;
 		//		factor += step(pointDepth - depthMag * 0.2, shiftPointDepth) ;
 	//	factor += step(pointDepth + random(screenPos + float2(sin(i *  3.15), cos(i * 8.7))) * 0.5, shiftPointDepth) ;
+				float dir = sign(random(screenPos + float2(sin(i *  3.15), cos(i * 8.7)) * 2) - 1);
+				factor += step(pointDepth + (dir *  (1 - (length(screenRay.xy) /_HeightFactor))), shiftPointDepth) * BiasCtrl(max(diffValue, 0));
+		
 			}
 
-			return pow(factor/SampleCount, _Blend);
+				return pow(factor/SampleCount, _Blend);
 
 		}
 		
@@ -76,7 +80,7 @@
 
 	//	return (1 - saturate(AmbiantFactor(i.texcoord)));
 	//	return float4(RandomRay(i.texcoord, 1), 1);
-		return saturate(AmbiantFactor(i.texcoord));
+		return color * saturate(AmbiantFactor(i.texcoord));
 		//float pointDepth = tex2D(_CameraDepthTexture, i.texcoord).r;
 	//	return LinearEyeDepth(pointDepth);
 	//	return color;

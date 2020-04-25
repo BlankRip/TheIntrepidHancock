@@ -22,6 +22,8 @@ public sealed class CustomAO : PostProcessEffectSettings
     public FloatParameter strength = new FloatParameter { value = 0.5f };
      [Range(0f, 1f), Tooltip("Bloom effect intensity.")]
     public FloatParameter effect = new FloatParameter { value = 0.5f };
+     [Range(0f, 5f), Tooltip("Height Shift.")]
+    public FloatParameter heightShift = new FloatParameter { value = 0.5f };
 
     //  [Range(0f, 1f), Tooltip("Bloom effect cutoff.")]
     //  public FloatParameter cutoff = new FloatParameter { value = 0.5f };
@@ -57,6 +59,7 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         aoSheet.properties.SetFloat("_SampleShift", settings.sampleShift);
         aoSheet.properties.SetFloat("_ScanDistance", settings.scanDistance);
         aoSheet.properties.SetFloat("_MaxRange", settings.maxRange);
+        aoSheet.properties.SetFloat("_HeightFactor", settings.heightShift);
         aoSheet.properties.SetMatrix("_InverseProjectionMatrix",
                            GL.GetGPUProjectionMatrix(context.camera.projectionMatrix, false)
                                .inverse);

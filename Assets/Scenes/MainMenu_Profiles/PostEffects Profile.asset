@@ -15,6 +15,50 @@ MonoBehaviour:
   settings:
   - {fileID: 6079841079282098520}
   - {fileID: 4846481734679065036}
+  - {fileID: 4492834527020793362}
+--- !u!114 &4492834527020793362
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
+  m_Name: CustomAO
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.62
+  sampleShift:
+    overrideState: 1
+    value: 0.1
+  blurCount:
+    overrideState: 1
+    value: 0.5
+  shift:
+    overrideState: 1
+    value: 0.1
+  maxRange:
+    overrideState: 1
+    value: 0.5
+  scanDistance:
+    overrideState: 1
+    value: 0.5
+  strength:
+    overrideState: 1
+    value: 0.5
+  effect:
+    overrideState: 1
+    value: 0.5
+  heightShift:
+    overrideState: 1
+    value: 0.68
 --- !u!114 &4846481734679065036
 MonoBehaviour:
   m_ObjectHideFlags: 3
