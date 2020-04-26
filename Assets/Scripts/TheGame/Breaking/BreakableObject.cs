@@ -47,7 +47,6 @@ public class BreakableObject : MonoBehaviour
         //If colliding with weapon then display hit effect or break it if final blow
         if (other.tag == "Weapon")
         {
-            Debug.Log("<color=red>Hitting</color>");
             if (hitsTaken <= hitsBeforeBreak)
             {
                 hitsTaken++;
@@ -61,13 +60,11 @@ public class BreakableObject : MonoBehaviour
             if (hitsTaken > hitsBeforeBreak)
             {
                 //Playing the breaking sound effect
-                //breakingSource.transform.SetParent(null);
                 breakingSource = ObjectPool.instance.SpawnPoolObj("BreakAudioSource", transform.position, Quaternion.identity).GetComponent<AudioSource>();
                 for (int i = 0; i < breakingClips.Length; i++)
                 {
                     breakingSource.PlayOneShot(breakingClips[i]);
                 }
-                //Destroy(breakingSource.gameObject, 7.0f);
 
                 score_relic.currentScore += scoreToAdd;
                 Instantiate(fractureVersion, transform.position, transform.rotation);

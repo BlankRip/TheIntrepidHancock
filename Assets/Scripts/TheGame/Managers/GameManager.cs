@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     {
         if (relicsSpawned >= 3)
         {
-            Debug.Log("<color=green> plaay ready to leave clip and unlock exit trigger on door </color>");
             exitLight.SetActive(true);
             exitTriggerCollider.enabled = true;
         }

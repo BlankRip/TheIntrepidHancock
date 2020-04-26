@@ -47,20 +47,6 @@ public class PathFindingController : MonoBehaviour
             }
             allNodes[i].neighbours = neibourIndex.ToArray();
         }
-
-
-/*
-        foreach (GameObject item in allNodes)
-        {
-            NodePointPathFinding pickNodeObject = item.GetComponent<NodePointPathFinding>();
-            pickNodeObject.thisNode.name = item.name;
-            pickNodeObject.thisNode.nodeIndex = index;
-            nodeList.Add(pickNodeObject.thisNode);
-            pickNodeObject.FindFriends();
-            index++;
-        }
-*/
-    //    this.allNodes = nodeList.ToArray();
     }
 
     public Vector3[] GetRandomGoalRout(Transform startPoint)

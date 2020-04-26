@@ -57,18 +57,12 @@ public class GraphAStar : MonoBehaviour
             Node closestNode = FindClosest(nodeList, userPosition);
             if(closestNode == null) return null;
             closestName = closestNode.name;
-       //     startNode = new Node(userPosition + Vector3.up, "startPoint", 0);
-      //      startNode.nodeIndex = 0;
-            //new Node(userPosition + Vector3.up, "startPoint", 0);
-    //        SetupStartNode(nodeList, startNode);
-    //        closestNode = startNode;
             // find the end node
             Node endNode = FindClosest(nodeList, endPosition);
             if(endNode == null) return null;
             furthestName = endNode.name;
 
 
-     //       objectParentID[closestNode.nodeIndex] = -1;
             try
             {
                 closestNode.hCost = Vector3.SqrMagnitude(closestNode.position - endNode.position);
@@ -129,13 +123,6 @@ public class GraphAStar : MonoBehaviour
             while (brekProof != 0 && addNode != closestNode) 
             {
                 brekProof--;
-                /*
-                try{routeList.Add(addNode.position);}
-                catch(System.Exception e)
-                {
-                    Debug.LogError(e + "-" + addNode.name);
-                }
-                */
                 routeList.Add(addNode.position);
                 addNode = nodeList[objectParentID[addNode.nodeIndex]];
             }
@@ -169,22 +156,5 @@ public class GraphAStar : MonoBehaviour
             }
             return closestNode;
         }
-/*
-         static void SetupStartNode(Node[] nodeList, Node node)
-        {
-            List<int> friendNodes = new List<int>();
-
-            for (int i = 0; i < nodeList.Length; i++)
-            {
-                Vector3 dir = (nodeList[i].position - node.position);
-                float lineDistance = dir.magnitude;
-                if (!Physics.Raycast(node.position, dir, lineDistance))
-                {
-                    friendNodes.Add(i);
-                }
-            }
-            node.neighbours = friendNodes.ToArray();
-        }
-*/
     }
 }

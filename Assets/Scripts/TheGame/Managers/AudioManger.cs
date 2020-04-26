@@ -152,7 +152,6 @@ public class AudioManger : MonoBehaviour
                 else
                     pick++;
             }
-            Debug.Log("<color=red> Previous Pick:" + prieviousPick + "</color>\n <color=green> CurrentPick:" + pick + "</color>");
             prieviousPick = pick;
             playerSoundSource.Stop();
             playerSoundSource.clip = clips[pick];
@@ -165,24 +164,20 @@ public class AudioManger : MonoBehaviour
         currentVolume = backGroundMusicSource.volume;
         while (currentVolume > 0)
         {
-            Debug.Log("<color=red>IN 1</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
             currentVolume -= increaseVolumeBy;
         }
 
-        Debug.Log("<color=red>Out 1</color>");
         backGroundMusicSource.clip = ClipToSwitch;
         backGroundMusicSource.Play();
 
         while(currentVolume < maxVolume)
         {
-            Debug.Log("<color=red>IN 2</color>");
             backGroundMusicSource.volume = currentVolume;
             yield return new WaitForSeconds(0);
             currentVolume += increaseVolumeBy;
         }
-        Debug.Log("<color=red>Ended Switch</color>");
     }
 
 }

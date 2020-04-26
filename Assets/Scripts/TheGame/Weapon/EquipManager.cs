@@ -24,9 +24,7 @@ public class EquipManager : MonoBehaviour
     {
         //Checks if player already has a weapon if so drops it
         if (objectToAttachTo.equippedWeapon != null)
-        {
             DropWeapon(currentWeapon, currentWeaponRb);
-        }
         //Equipping the weapon
         weapon.rangeTrigger.enabled = false;
         NoUI();

@@ -16,11 +16,9 @@ public class SearchNode : TreeNode
 
     public override void Run(TheAI ai)
     {
-//Debug.Log("<color=green> IN SEARCH NODE </color>");
         if (ai.pathPointeReset)
         {
             pathNodes = null;
-    //        Debug.Log("<color=cyan> RESETING </color>");
             countTracker = 0;
             ai.pathPointeReset = false;
         }
@@ -28,7 +26,6 @@ public class SearchNode : TreeNode
         ai.myAnimator.SetBool("Run", true);
         ai.myAnimator.SetBool("Walk", false);
 
-    //    Debug.Log("<color=green> IN  </color>");
         if (ai.setSearchCount)
         {
             numberOfSearches = Random.Range(ai.minNumberOfSearches, ai.maxNumberOfSearches + 1);
@@ -79,10 +76,7 @@ public class SearchNode : TreeNode
                         pathNodes = null;
                     }
                     else if (currentNodeIndex < pathNodes.Length - 1)
-                    {
-               //         Debug.Log("<color=green> searching  </color>");
                         currentNodeIndex++;
-                    }
                 }
 
             }
@@ -102,8 +96,6 @@ public class SearchNode : TreeNode
             ai.myAnimator.SetBool("Run", false);
             ai.pathPointeReset = true;
             status = ReturnResult.Success;
-       //     Debug.Log("<color=green> search SUCCESS  </color>");
         }
-
     }
 }

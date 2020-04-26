@@ -191,10 +191,6 @@ public class Player : MonoBehaviour
 
         rayRotationAngle = Quaternion.LookRotation(camForward.normalized, Vector3.up);
 
-        Debug.DrawRay(headPos.position, rayRotationAngle * Vector3.forward * castDistance, Color.green);
-        Debug.DrawRay(headPos.position, rayRotationAngle * -Vector3.forward * castDistance, Color.red);
-        Debug.DrawRay(headPos.position, rayRotationAngle * Vector3.right * castDistance, Color.yellow);
-        Debug.DrawRay(headPos.position, rayRotationAngle * -Vector3.right * castDistance, Color.blue);
         if (Physics.Raycast(headPos.position, rayRotationAngle * Vector3.forward, out hitInfo, castDistance, wallLayers))
         {
             if (verticalInput > 0)
@@ -263,29 +259,4 @@ public class Player : MonoBehaviour
         rightFootAudio.Play();
         footStepParticlesLeft.Play();
     }
-
-
-    //Maybe use as ref for animations
-    //void RotationAnimation()
-    //{
-    //If less than thresh hold speed then it will just rotate in that direction
-    //if (verticalMove > 0 && verticalMove < moveThreshHold)
-    //{
-    //}
-    //else if (verticalMove < 0 && verticalMove > -moveThreshHold)
-    //{
-    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 180, 0);
-    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-    //}
-    //else if (horizontalMove > 0 && horizontalMove < moveThreshHold)
-    //{
-    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y + 90, 0);
-    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-    //}
-    //else if (horizontalMove < 0 && horizontalMove > -moveThreshHold)
-    //{
-    //    turnAngle = Quaternion.Euler(0, rotateAround.eulerAngles.y - 90, 0);
-    //    rb.rotation = Quaternion.Slerp(transform.rotation, turnAngle, rotationSpeed);
-    //}
-    //}
 }

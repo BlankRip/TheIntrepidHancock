@@ -9,8 +9,6 @@ public class IdleNode : TreeNode
 
     public override void Run(TheAI ai)
     {
- //       Debug.Log("<color=blue> IN IDLE NODE  </color>");
-
         if(ai.playingChase)
         {
             AudioManger.instance.SwitchToCalm();
