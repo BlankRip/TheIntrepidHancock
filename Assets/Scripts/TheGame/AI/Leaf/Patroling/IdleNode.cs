@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IdleNode : TreeNode
 {
-    float idleEndTime = 7;
-    float idleTimeTracker = 7;
+    float idleEndTime = 7.3f;
+    float idleTimeTracker = 7.3f;
 
     public override void Run(TheAI ai)
     {

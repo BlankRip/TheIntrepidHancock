@@ -421,9 +421,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4792384893187797406}
+  - component: {fileID: 4577842148776313745}
   m_Layer: 12
   m_Name: Palm_Bone_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,6 +449,19 @@ Transform:
   m_Father: {fileID: 3180589811306067570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4577842148776313745
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133376562322728056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1155555241962970871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1178,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3320058083180286819}
-  m_LocalRotation: {x: -0.6407801, y: 0.29073593, z: 0.38334703, w: 0.5982629}
+  m_LocalRotation: {x: -0.64078015, y: 0.29073596, z: 0.38334706, w: 0.59826297}
   m_LocalPosition: {x: -0.073678665, y: -0.0077885436, z: 0.03509593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1308,7 +1322,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779357115488911794}
-  - component: {fileID: 1648850342776636870}
   m_Layer: 12
   m_Name: Palm_Bone_L
   m_TagString: Untagged
@@ -1336,19 +1349,6 @@ Transform:
   m_Father: {fileID: 7206333658020795309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1648850342776636870
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3620763593354142895}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3769009851434565243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,7 +2995,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.45
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3180,7 +3180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8783970526901011612
 Transform:
   m_ObjectHideFlags: 0
@@ -3229,7 +3229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimator: {fileID: 8783970526901011615}
-  mAttackCollier: {fileID: 1648850342776636870}
+  mAttackCollier: {fileID: 4577842148776313745}
   AttackSoundSource: {fileID: 8783970526716079140}
   leftFootSource: {fileID: 8783970526821375842}
   rightFootSource: {fileID: 8783970527259294941}
@@ -3239,8 +3239,8 @@ MonoBehaviour:
   idleTimeSpeed: 1
   maxWalkVel: 8
   maxChaseVel: 10
-  attackRange: 2.5
-  attackDuration: 2
+  attackRange: 1.5
+  attackDuration: 1.7
   tauntDuration: 5
   recentlyAttcked: 0
   attacking: 0
@@ -3257,9 +3257,6 @@ MonoBehaviour:
   raycastToPlayerDistanceLimiter: 33
   fieldOfViewAngle: 45
   radiusRange: 10
-  leftTransform: {fileID: 8783970526584959822}
-  rightTransform: {fileID: 8783970526980657232}
-  raycastDistance: 20
   maxVelocity: 10
   maxForce: 1
   framesAhead: 1
@@ -3272,7 +3269,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 257
   repelPow: 2
-  rayLength: 2
+  rayLength: 3
   castOffset: 0.5
   turnStrength: 3
   reachRegisterDistance: 2
@@ -3287,7 +3284,7 @@ Animator:
   m_GameObject: {fileID: 8783970526901011600}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a49cbb2734aa1ee449399bc85d9fbd08, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7086c44e5b60530489f30aa464848ec5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0b482fc97f04205439e7af2b28f38c91, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

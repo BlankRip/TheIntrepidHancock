@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 78747606}
   - component: {fileID: 78747608}
   - component: {fileID: 78747607}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (5)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -1320,8 +1320,7 @@ GameObject:
   - component: {fileID: 156870528}
   - component: {fileID: 156870531}
   - component: {fileID: 156870530}
-  - component: {fileID: 156870529}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (19)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -1342,25 +1341,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156870529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156870527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &156870530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1870,8 +1850,7 @@ GameObject:
   - component: {fileID: 241574780}
   - component: {fileID: 241574783}
   - component: {fileID: 241574782}
-  - component: {fileID: 241574781}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (18)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -1892,25 +1871,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &241574781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241574779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &241574782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2134,9 +2094,6 @@ MonoBehaviour:
   raycastToPlayerDistanceLimiter: 1
   fieldOfViewAngle: 60
   radiusRange: 15
-  leftTransform: {fileID: 1415919283}
-  rightTransform: {fileID: 488028929}
-  raycastDistance: 20
   maxVelocity: 10
   maxForce: 1
   framesAhead: 1
@@ -2359,8 +2316,7 @@ GameObject:
   - component: {fileID: 309677685}
   - component: {fileID: 309677688}
   - component: {fileID: 309677687}
-  - component: {fileID: 309677686}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (4)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -2381,25 +2337,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &309677686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309677684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &309677687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3190,8 +3127,7 @@ GameObject:
   - component: {fileID: 517515495}
   - component: {fileID: 517515498}
   - component: {fileID: 517515497}
-  - component: {fileID: 517515496}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (17)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -3212,25 +3148,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &517515496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517515494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &517515497
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3754,8 +3671,7 @@ GameObject:
   - component: {fileID: 588188114}
   - component: {fileID: 588188117}
   - component: {fileID: 588188116}
-  - component: {fileID: 588188115}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (3)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -3776,25 +3692,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &588188115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588188113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &588188116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4039,7 +3936,7 @@ GameObject:
   - component: {fileID: 609466456}
   - component: {fileID: 609466458}
   - component: {fileID: 609466457}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (4)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -4187,8 +4084,7 @@ GameObject:
   - component: {fileID: 620940026}
   - component: {fileID: 620940029}
   - component: {fileID: 620940028}
-  - component: {fileID: 620940027}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (25)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -4209,25 +4105,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &620940027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620940025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &620940028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5436,8 +5313,7 @@ GameObject:
   - component: {fileID: 794909564}
   - component: {fileID: 794909567}
   - component: {fileID: 794909566}
-  - component: {fileID: 794909565}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (9)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -5458,25 +5334,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &794909565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794909563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &794909566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5628,8 +5485,7 @@ GameObject:
   - component: {fileID: 856511293}
   - component: {fileID: 856511296}
   - component: {fileID: 856511295}
-  - component: {fileID: 856511294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (1)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -5650,25 +5506,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &856511294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856511292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &856511295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5913,8 +5750,7 @@ GameObject:
   - component: {fileID: 903072571}
   - component: {fileID: 903072574}
   - component: {fileID: 903072573}
-  - component: {fileID: 903072572}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (7)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -5935,25 +5771,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &903072572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903072570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &903072573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6012,8 +5829,7 @@ GameObject:
   - component: {fileID: 903396751}
   - component: {fileID: 903396754}
   - component: {fileID: 903396753}
-  - component: {fileID: 903396752}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (6)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -6034,25 +5850,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &903396752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903396750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &903396753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6576,8 +6373,7 @@ GameObject:
   - component: {fileID: 996063364}
   - component: {fileID: 996063367}
   - component: {fileID: 996063366}
-  - component: {fileID: 996063365}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (2)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -6598,25 +6394,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &996063365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996063363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &996063366
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7068,7 +6845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058603885
 GameObject:
@@ -7537,8 +7314,7 @@ GameObject:
   - component: {fileID: 1072012010}
   - component: {fileID: 1072012013}
   - component: {fileID: 1072012012}
-  - component: {fileID: 1072012011}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (10)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -7559,25 +7335,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1072012011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072012009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1072012012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7819,7 +7576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106172834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0, z: -38.9}
+  m_LocalPosition: {x: 3.21, y: 0, z: -39.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1517660648}
@@ -8006,8 +7763,7 @@ GameObject:
   - component: {fileID: 1131812122}
   - component: {fileID: 1131812125}
   - component: {fileID: 1131812124}
-  - component: {fileID: 1131812123}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (26)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -8028,25 +7784,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1131812123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131812121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1131812124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8291,8 +8028,7 @@ GameObject:
   - component: {fileID: 1139734276}
   - component: {fileID: 1139734279}
   - component: {fileID: 1139734278}
-  - component: {fileID: 1139734277}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (11)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -8313,25 +8049,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1139734277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139734275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1139734278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8935,8 +8652,7 @@ GameObject:
   - component: {fileID: 1239786580}
   - component: {fileID: 1239786583}
   - component: {fileID: 1239786582}
-  - component: {fileID: 1239786581}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (12)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -8957,25 +8673,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1239786581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239786579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1239786582
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9640,8 +9337,7 @@ GameObject:
   - component: {fileID: 1318444407}
   - component: {fileID: 1318444410}
   - component: {fileID: 1318444409}
-  - component: {fileID: 1318444408}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (16)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -9662,25 +9358,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1318444408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318444406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1318444409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9832,7 +9509,7 @@ GameObject:
   - component: {fileID: 1344732226}
   - component: {fileID: 1344732228}
   - component: {fileID: 1344732227}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (2)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -9911,8 +9588,7 @@ GameObject:
   - component: {fileID: 1346515258}
   - component: {fileID: 1346515261}
   - component: {fileID: 1346515260}
-  - component: {fileID: 1346515259}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (22)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -9933,25 +9609,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1346515259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346515257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1346515260
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10751,8 +10408,7 @@ GameObject:
   - component: {fileID: 1431177196}
   - component: {fileID: 1431177199}
   - component: {fileID: 1431177198}
-  - component: {fileID: 1431177197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (23)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -10773,25 +10429,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1431177197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431177195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1431177198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11129,7 +10766,7 @@ GameObject:
   - component: {fileID: 1459783182}
   - component: {fileID: 1459783184}
   - component: {fileID: 1459783183}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (7)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -11587,8 +11224,7 @@ GameObject:
   - component: {fileID: 1558622107}
   - component: {fileID: 1558622110}
   - component: {fileID: 1558622109}
-  - component: {fileID: 1558622108}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (21)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -11609,25 +11245,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558622108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558622106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1558622109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12289,7 +11906,7 @@ GameObject:
   - component: {fileID: 1643527643}
   - component: {fileID: 1643527645}
   - component: {fileID: 1643527644}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (1)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -13321,7 +12938,7 @@ GameObject:
   - component: {fileID: 1766813044}
   - component: {fileID: 1766813046}
   - component: {fileID: 1766813045}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (3)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -13400,8 +13017,7 @@ GameObject:
   - component: {fileID: 1771017065}
   - component: {fileID: 1771017068}
   - component: {fileID: 1771017067}
-  - component: {fileID: 1771017066}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (8)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -13422,25 +13038,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1771017066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771017064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1771017067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13592,8 +13189,7 @@ GameObject:
   - component: {fileID: 1772254934}
   - component: {fileID: 1772254937}
   - component: {fileID: 1772254936}
-  - component: {fileID: 1772254935}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (24)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -13614,25 +13210,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1772254935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772254933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1772254936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14228,8 +13805,7 @@ GameObject:
   - component: {fileID: 1825719879}
   - component: {fileID: 1825719882}
   - component: {fileID: 1825719881}
-  - component: {fileID: 1825719880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (13)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -14250,25 +13826,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825719880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825719878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1825719881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14327,8 +13884,7 @@ GameObject:
   - component: {fileID: 1833995997}
   - component: {fileID: 1833996000}
   - component: {fileID: 1833995999}
-  - component: {fileID: 1833995998}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (14)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -14349,25 +13905,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1833995998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833995996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1833995999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14873,8 +14410,7 @@ GameObject:
   - component: {fileID: 1918637911}
   - component: {fileID: 1918637914}
   - component: {fileID: 1918637913}
-  - component: {fileID: 1918637912}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (15)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -14895,25 +14431,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918637912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918637910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1918637913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14972,8 +14489,7 @@ GameObject:
   - component: {fileID: 1948102442}
   - component: {fileID: 1948102445}
   - component: {fileID: 1948102444}
-  - component: {fileID: 1948102443}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (5)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -14994,25 +14510,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1948102443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948102441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1948102444
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15258,8 +14755,7 @@ GameObject:
   - component: {fileID: 1974391277}
   - component: {fileID: 1974391280}
   - component: {fileID: 1974391279}
-  - component: {fileID: 1974391278}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PathFindNode (20)
   m_TagString: A*Node
   m_Icon: {fileID: 0}
@@ -15280,25 +14776,6 @@ Transform:
   m_Father: {fileID: 2134732330}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1974391278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974391276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbd7c3a771d1ab458e420c0aef7b83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisNode:
-    position: {x: 0, y: 0, z: 0}
-    nodeIndex: -1
-    neighbours: []
-    gCost: 0
-    hCost: 0
-    name: 
 --- !u!23 &1974391279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16261,7 +15738,7 @@ GameObject:
   - component: {fileID: 2101544894}
   - component: {fileID: 2101544896}
   - component: {fileID: 2101544895}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoalPonit (6)
   m_TagString: GoalPoints
   m_Icon: {fileID: 0}
@@ -16391,6 +15868,9 @@ MonoBehaviour:
   targetSpots: []
   allNodes: []
   routeNodes: []
+  rayMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &2134732330
 Transform:
   m_ObjectHideFlags: 0
@@ -16697,7 +16177,9 @@ MonoBehaviour:
   paused: 0
   relicsSpawned: 0
   eventObject: {fileID: 0}
+  exitLight: {fileID: 0}
   exitTriggerCollider: {fileID: 0}
+  relicPieces: []
 --- !u!114 &414005927126962123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17204,6 +16686,9 @@ MonoBehaviour:
   targetSpots: []
   allNodes: []
   routeNodes: []
+  rayMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &7537319557799638748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17285,15 +16770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Abby
       objectReference: {fileID: 0}
-    - target: {fileID: 8783970526901011600, guid: 7bfd6215de093de4ca987ea1ecd42f26,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8783970526901011612, guid: 7bfd6215de093de4ca987ea1ecd42f26,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -76.3
+      value: -36.68
       objectReference: {fileID: 0}
     - target: {fileID: 8783970526901011612, guid: 7bfd6215de093de4ca987ea1ecd42f26,
         type: 3}

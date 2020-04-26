@@ -235,6 +235,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
+            AudioManger.instance.PlayGruntClip();
             myStats.ReduceHealth();
         }
     }
