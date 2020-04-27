@@ -18,13 +18,13 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 1.34
+    value: 1.51
   sampleShift:
     overrideState: 1
     value: 0.1
   blurCount:
     overrideState: 1
-    value: 0.16
+    value: 0.29
   shift:
     overrideState: 1
     value: 0.0005
@@ -39,10 +39,10 @@ MonoBehaviour:
     value: 2.2
   effect:
     overrideState: 1
-    value: 0.022
+    value: 0.028
   heightShift:
     overrideState: 1
-    value: 0.54
+    value: 0.57
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

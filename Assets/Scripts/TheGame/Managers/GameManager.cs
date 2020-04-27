@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class SendObjectRefrence : UnityEvent<GameObject>{}
+
     public static GameManager instance;
 
     [HideInInspector] public bool paused;
@@ -12,6 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject exitLight;
     [SerializeField] Collider exitTriggerCollider;
     [SerializeField] GameObject[] relicPieces;
+    [SerializeField] AudioSource relciCollectionSound;
+    public SendObjectRefrence OnCollectRelic;
+
+
     int relicPieceTracker;
 
     // Start is called before the first frame update
@@ -56,6 +64,8 @@ public class GameManager : MonoBehaviour
         if (relicPieceTracker < relicPieces.Length)
         {
             relicPieces[relicPieceTracker].SetActive(true);
+            OnCollectRelic.Invoke(relicPieces[relicPieceTracker]);
+            relciCollectionSound.Play();
             relicPieceTracker++;
         }
     }
