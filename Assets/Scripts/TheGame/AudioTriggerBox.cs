@@ -41,7 +41,10 @@ public class AudioTriggerBox : MonoBehaviour
                 {
                     AudioManger.instance.PlayTutorialClip(audioClipID);
                     if (audioClipID == AudioManger.instance.numberOfTutorialClips)
+                    {
                         StartCoroutine(FinalTClip());
+                        gameObject.GetComponent<Collider>().enabled = false;
+                    }
                     else if (!repetable)
                         Destroy(gameObject);
                 }
