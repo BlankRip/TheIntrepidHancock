@@ -37,8 +37,6 @@ public class J_Weapon : MonoBehaviour
 
     void Update()
     {
-
-
         //If equipped can drop the weapon
         if (myEquipStatus)
         {

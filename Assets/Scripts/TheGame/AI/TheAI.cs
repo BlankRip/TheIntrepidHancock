@@ -177,7 +177,7 @@ public class TheAI : MonoBehaviour
             currentFramesAhead = framesAhead;
 
         Vector3 futurePos = seekPoition + targetRigidBody.velocity * currentFramesAhead;
-        Vector3 steering = Seek(futurePos, slowRadios/3);
+        Vector3 steering = Seek(futurePos, slowRadios/4);
         return steering;
     }
 

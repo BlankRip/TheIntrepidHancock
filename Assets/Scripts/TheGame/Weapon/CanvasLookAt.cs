@@ -23,10 +23,10 @@ public class CanvasLookAt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(equiper.resetUI)
+        if(GameManager.instance.eResetUI)
         {
             initialY = transform.position.y;
-            equiper.resetUI = false;
+            GameManager.instance.eResetUI = false;
         }
 
         if (up)

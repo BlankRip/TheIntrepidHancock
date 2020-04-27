@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
-  relicsSpawned: 0
   spawnRelic: 0
 --- !u!114 &4227988093957955117
 MonoBehaviour:
@@ -192,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   relicsSpawned: 0
+  eResetUI: 0
+  eUIobj: {fileID: 0}
   eventObject: {fileID: 0}
   exitLight: {fileID: 0}
   exitTriggerCollider: {fileID: 0}

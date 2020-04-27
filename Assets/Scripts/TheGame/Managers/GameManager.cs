@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public bool paused;
     [HideInInspector] public int relicsSpawned;
+    [HideInInspector] public bool eResetUI;
+    [Tooltip("The UI text object")]
+    public GameObject eUIobj;
     [SerializeField] GameObject eventObject;
     [SerializeField] GameObject exitLight;
     [SerializeField] Collider exitTriggerCollider;
