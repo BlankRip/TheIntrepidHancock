@@ -24,6 +24,8 @@ public sealed class CustomAO : PostProcessEffectSettings
     public FloatParameter effect = new FloatParameter { value = 0.5f };
      [Range(0f, 5f), Tooltip("Height Shift.")]
     public FloatParameter heightShift = new FloatParameter { value = 0.5f };
+     [Range(0f, 5f), Tooltip("Height Shift.")]
+    public BoolParameter debug = new BoolParameter { value = false };
 
     //  [Range(0f, 1f), Tooltip("Bloom effect cutoff.")]
     //  public FloatParameter cutoff = new FloatParameter { value = 0.5f };
@@ -74,6 +76,7 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
 
         context.command.BlitFullscreenTriangle(context.source, rt1, aoSheet, 0);
         
+        if(!settings.debug){
         
         // blur
         for (int i = 0; i < settings.blurCount; i++)
@@ -104,7 +107,8 @@ public sealed class AORenderer : PostProcessEffectRenderer<CustomAO>
         mergeSheet.properties.SetTexture("_AOTexture", rt1); 
         mergeSheet.properties.SetFloat("_Effect", settings.effect);
         context.command.BlitFullscreenTriangle(context.source, context.destination, mergeSheet, 0);
-        
-   //    context.command.BlitFullscreenTriangle(rt1, context.destination);
+        }
+
+        else context.command.BlitFullscreenTriangle(rt1, context.destination);
     }
 }

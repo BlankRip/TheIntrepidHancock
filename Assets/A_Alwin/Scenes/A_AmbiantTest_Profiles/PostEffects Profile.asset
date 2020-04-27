@@ -18,31 +18,34 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 1.51
+    value: 1.489
   sampleShift:
     overrideState: 1
     value: 0.1
   blurCount:
     overrideState: 1
-    value: 0.29
+    value: 0.17
   shift:
     overrideState: 1
-    value: 0.0005
+    value: 0
   maxRange:
     overrideState: 1
-    value: 0.66
+    value: 1.26
   scanDistance:
     overrideState: 1
     value: 0.9
   strength:
     overrideState: 1
-    value: 2.2
+    value: 1.7
   effect:
     overrideState: 1
-    value: 0.028
+    value: 0.043
   heightShift:
     overrideState: 1
-    value: 0.57
+    value: 0.68
+  debug:
+    overrideState: 1
+    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,10 +80,10 @@ MonoBehaviour:
     value: 1
   blend:
     overrideState: 1
-    value: 0.543
+    value: 0.747
   cutoff:
     overrideState: 1
-    value: 0.33
+    value: 0.272
   shift:
     overrideState: 1
     value: 0.0068
@@ -108,5 +111,5 @@ MonoBehaviour:
     value: 0
   LUTTex:
     overrideState: 1
-    value: {fileID: 2800000, guid: 3018172ac5a35154a871aaf7c59f2444, type: 3}
+    value: {fileID: 2800000, guid: 2d856ad881d71474da8c44a3be994ec8, type: 3}
     defaultState: 1

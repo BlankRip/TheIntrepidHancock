@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1040,27 +1040,27 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.40957612
-          inSlope: 1.7292215
-          outSlope: 1.7292215
+          value: 0.36066505
+          inSlope: 2.0041509
+          outSlope: 2.0041509
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.32117212
-          value: 0.96495384
-          inSlope: 0.30997556
-          outSlope: 0.30997556
-          tangentMode: 34
+          time: 0.31900537
+          value: 1
+          inSlope: 0.016410468
+          outSlope: 0.016410468
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.21673056
         - serializedVersion: 3
           time: 1
-          value: 0.21195024
-          inSlope: -1.1092703
-          outSlope: -1.1092703
+          value: 0.54347795
+          inSlope: -0.6703754
+          outSlope: -0.6703754
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1371,7 +1371,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.9, b: 0, a: 0}
-        key1: {r: 0, g: 1, b: 0.9286413, a: 1}
+        key1: {r: 0, g: 0.508975, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4803,13 +4803,13 @@ ParticleSystemRenderer:
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
-  m_VelocityScale: 0.3
+  m_VelocityScale: -9.25
   m_LengthScale: 1
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: -3.15, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -5106,7 +5106,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2

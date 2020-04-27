@@ -57,7 +57,7 @@ public class GoldenTablet : MonoBehaviour
         meshRenderer.sharedMaterial = glowMaterial;
         glowMaterial.SetColor("_EmissionColor", glowColor);
         relicUIScaleTime = 0;
-        emissionFadeValue = 1;
+        emissionFadeValue = 2;
         glowFade = true;
         relicUIAction = true;
     }
