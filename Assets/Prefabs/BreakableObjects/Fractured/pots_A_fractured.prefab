@@ -147,7 +147,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7713139660994176024, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &3081467523131291231
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3109080609589619219, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -290,9 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &3816751400943575756
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2152358581401466149, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &5125988774766215892
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8812547183180557939, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -544,9 +544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &5847803849338630762
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +655,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6791542879646153749, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -671,9 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &8043314516946767289
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 477515569340940720, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &8229484553873932243
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +909,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3855921891509322494, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -925,9 +925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &8956080694416955858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5570147379476792351, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -1052,9 +1052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &9005735789958939526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5517364087426931088, guid: 1da397b3ce7d68e45984d3aeca90cf27, type: 3}
@@ -1179,6 +1179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7

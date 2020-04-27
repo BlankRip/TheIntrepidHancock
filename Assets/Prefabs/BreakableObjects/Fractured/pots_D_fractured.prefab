@@ -108,7 +108,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1497431040542386526, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &1035967153320961686
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2929989846907655623, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -251,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &3708255712304954583
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2278593449859055074, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -378,9 +378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &5136183950770891992
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 646196370029812382, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -505,9 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &5221697804749684538
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2676148426361718880, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -632,9 +632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &6480499357361869750
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4181644092818127587, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -759,9 +759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7
 --- !u!1 &8146398603181376696
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +907,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4133425322005076926, guid: 1473bf3b5dcb34d419f97dd0c64d4e13, type: 3}
@@ -923,6 +923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197ae03b7ccb6d8439b131f8b36e1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 7
-  explosionRaious: 0.01
-  upWardsModifier: 0.00001
+  explosionForce: 9
+  explosionRaious: 0.1
+  upWardsModifier: 7

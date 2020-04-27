@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement(float horizontalMove, float verticalMove, float speed, bool sprint, bool crouch)
     {
+        float yVelocity = rb.velocity.y;
         //Checking if Crouching, if so then disabeling the extra part of the collider
         if(crouch)
         {
@@ -64,5 +65,8 @@ public class PlayerMovement : MonoBehaviour
             }
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref referanceVelocity, Time.deltaTime * smoothMovementBy);
         }
+        Vector3 resevelocity = rb.velocity;
+        resevelocity.y = yVelocity;
+        rb.velocity = resevelocity;
     }
 }

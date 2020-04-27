@@ -83,6 +83,7 @@ public class BreakableObject : MonoBehaviour
                 }
                 ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);
                 AudioManger.instance.PlayBreakDialoguesClip();
+                CameraShake.instance.ShakeCamera(0.075f, 0.3f);
                 Destroy(gameObject);
             }
         }

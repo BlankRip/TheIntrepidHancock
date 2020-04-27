@@ -27,7 +27,7 @@ MonoBehaviour:
     value: 0.17
   shift:
     overrideState: 1
-    value: 0
+    value: 0.0005
   maxRange:
     overrideState: 1
     value: 1.26
@@ -89,7 +89,7 @@ MonoBehaviour:
     value: 0.0068
   bloomCount:
     overrideState: 1
-    value: 3
+    value: 5
 --- !u!114 &4377295997363605729
 MonoBehaviour:
   m_ObjectHideFlags: 3
