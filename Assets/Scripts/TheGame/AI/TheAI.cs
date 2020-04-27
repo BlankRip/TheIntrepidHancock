@@ -166,10 +166,18 @@ public class TheAI : MonoBehaviour
         return steering;
     }
 
-    public Vector3 Pursuit(Vector3 seekPoition, Rigidbody targetRigidBody, float slowRadios)
+    public Vector3 Pursuit(Vector3 seekPoition, Rigidbody targetRigidBody, float slowRadios, float persuitRadius)
     {
-        Vector3 futurePos = seekPoition + targetRigidBody.velocity * framesAhead;
-        Vector3 steering = Seek(futurePos, slowRadios);
+        float distance = Vector3.Distance(transform.position, seekPoition);
+
+        float currentFramesAhead;
+        if (distance < persuitRadius)
+            currentFramesAhead = distance / persuitRadius;
+        else
+            currentFramesAhead = framesAhead;
+
+        Vector3 futurePos = seekPoition + targetRigidBody.velocity * currentFramesAhead;
+        Vector3 steering = Seek(futurePos, slowRadios/3);
         return steering;
     }
 
