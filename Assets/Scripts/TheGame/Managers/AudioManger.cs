@@ -87,7 +87,6 @@ public class AudioManger : MonoBehaviour
         if(playBreakAudio)
         {
             pick = Random.Range(0, 100);
-            Debug.Log("<color=pink>" + pick + "</color>");
             if ((pick < 6) || (pick > 34 && pick < 38) || (pick > 59 && pick < 63) || (pick > 85 && pick < 91))
                 PlayerRandomPlay(playerBreakDialogueClips, ref previousBreakDialogue);
         }

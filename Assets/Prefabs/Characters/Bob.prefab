@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 2918866995526396900}
   m_Layer: 12
   m_Name: Bob
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   idleTimeSpeed: 1.25
   maxWalkVel: 3
   maxChaseVel: 9
-  attackRange: 1.3
+  attackRange: 1.6
   attackDuration: 2
   tauntDuration: 1.7
   recentlyAttcked: 0
@@ -1345,7 +1345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 279
   repelPow: 3
-  rayLength: 2
+  rayLength: 3
   castOffset: 0.5
   turnStrength: 3
   reachRegisterDistance: 2
@@ -3054,7 +3054,7 @@ GameObject:
   - component: {fileID: 8480547881898058963}
   m_Layer: 12
   m_Name: Palm_Bone_Left
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
