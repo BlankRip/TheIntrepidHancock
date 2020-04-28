@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     [Tooltip("The speed just before he stops moving")] 
     [Range(0,5)] [SerializeField] float stoppingSpeed;
-    [Tooltip("The crouch key")] 
-    [SerializeField] KeyCode crouchKey;
     [Tooltip("The sprint key")] 
     [SerializeField] KeyCode sprintKey;
     [Tooltip("Choose to use animation this is here just to make the designer test the game without animations")] 
@@ -83,17 +81,18 @@ public class Player : MonoBehaviour
             else
                 speed = stoppingSpeed;
 
-            //Checking to crouch
-            if (Input.GetKeyDown(crouchKey))
-                crouch = true;
-            else if (Input.GetKeyUp(crouchKey))
-                crouch = false;
-
             //Check if sprinting and has stamina
             if (Input.GetKeyDown(sprintKey))
                 sprint = true;
             else if (Input.GetKeyUp(sprintKey))
                 sprint = false;
+
+            if ((verticalInput < 0) || ( horizontalInput > 0.1f && verticalInput < 0.1f && verticalInput > -0.1) ||(horizontalInput < -0.1f && verticalInput > -0.1f && verticalInput < 0.1f))
+                sprint = false;
+            if (verticalInput > 0.1f || verticalInput < -0.1f) 
+                horizontalInput =  Mathf.Clamp(horizontalInput, -0.2f, 0.2f);
+            if (!sprint)
+                verticalInput = Mathf.Clamp(verticalInput, -0.6f, 0.6f);
 
             //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
 
@@ -102,28 +101,17 @@ public class Player : MonoBehaviour
                 if (!virticleIdleAtWall)
                     animController.SetFloat("Speed", verticalInput);
                 else
-                {
                     animController.SetFloat("Speed", 0);
-                    animController.SetFloat("Direction", 0);
-                }
 
                 if (!horizontalIdleAtWall)
                 {
-                    if (horizontalInput != 0)
-                        animController.SetFloat("Direction", horizontalInput);
-                    else
-                        animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
-
                     if (verticalInput == 0 && horizontalInput != 0)
                         animController.SetFloat("Horizontal", horizontalInput);
                     else
                         animController.SetFloat("Horizontal", 0);
                 }
                 else
-                {
                     animController.SetFloat("Horizontal", 0);
-                    animController.SetFloat("Direction", 0);
-                }
 
                 //Checking if this weapon is equipped
                 if (equippedWeapon != null)
@@ -136,22 +124,22 @@ public class Player : MonoBehaviour
                             sprint = false;
                             crouch = false;
 
-                            if (Time.time < attackGapTracker + 1)
-                                pickAttackAnim++;
-                            else
-                                pickAttackAnim = 1;
+                            //if (Time.time < attackGapTracker + 1)
+                            //    pickAttackAnim++;
+                            //else
+                            //    pickAttackAnim = 1;
 
-                            if (pickAttackAnim >= 4)
-                                pickAttackAnim = 1;
+                            //if (pickAttackAnim >= 4)
+                            //    pickAttackAnim = 1;
 
-                            //pickAttackAnim = Random.Range(1, 4);
-                            //if(pickAttackAnim == previouAttackAnim)
-                            //{
-                            //    if (pickAttackAnim == 3)
-                            //        pickAttackAnim = 1;
-                            //    else
-                            //        pickAttackAnim++;
-                            //}
+                            pickAttackAnim = Random.Range(1, 4);
+                            if (pickAttackAnim == previouAttackAnim)
+                            {
+                                if (pickAttackAnim == 3)
+                                    pickAttackAnim = 1;
+                                else
+                                    pickAttackAnim++;
+                            }
 
                             Debug.Log("<color=blue>" + pickAttackAnim + "</color>");
 
@@ -236,6 +224,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             AudioManger.instance.PlayGruntClip();
+            animController.SetTrigger("Damaged");
             myStats.ReduceHealth();
         }
     }

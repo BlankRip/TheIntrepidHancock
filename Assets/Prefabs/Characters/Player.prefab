@@ -2194,8 +2194,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143440189466991142}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 03b0db260b9110a4ba94810c3eaebc71, type: 3}
-  m_Controller: {fileID: 9100000, guid: 89314516be05ed0478028206c9a25584, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 82748dc1e39c60b4b8add289b1331032, type: 3}
+  m_Controller: {fileID: 9100000, guid: d577ca8059b3af546b5c46d60f53240e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouchDisableCollider: {fileID: 0}
   crouchSpeedReduction: 0.504
-  sprintSpeedMultiplyer: 1.422
+  sprintSpeedMultiplyer: 1.51
   useRotate: 1
   rotateAround: {fileID: 0}
   rotationSpeed: 0.1
@@ -2266,15 +2266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546630076ce57d34cadb270e568b9d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
   stoppingSpeed: 0.47
-  crouchKey: 306
   sprintKey: 304
   useAnimtion: 1
   animController: {fileID: 5143440189459572974}
   attackKey: 323
   equippedWeapon: {fileID: 0}
-  gapBetweenAttacks: 2
+  gapBetweenAttacks: 0.6
   headPos: {fileID: 5143440189466756634}
   wallLayers:
     serializedVersion: 2
