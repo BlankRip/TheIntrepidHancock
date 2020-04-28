@@ -89,8 +89,8 @@ public class Player : MonoBehaviour
 
             if ((verticalInput < 0) || ( horizontalInput > 0.1f && verticalInput < 0.1f && verticalInput > -0.1) ||(horizontalInput < -0.1f && verticalInput > -0.1f && verticalInput < 0.1f))
                 sprint = false;
-            if (verticalInput > 0.1f || verticalInput < -0.1f) 
-                horizontalInput =  Mathf.Clamp(horizontalInput, -0.2f, 0.2f);
+            //if (verticalInput > 0.1f || verticalInput < -0.1f) 
+            //    horizontalInput =  Mathf.Clamp(horizontalInput, -0.2f, 0.2f);
             if (!sprint)
                 verticalInput = Mathf.Clamp(verticalInput, -0.6f, 0.6f);
 

@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mutant_Run
+  m_Name: Abby_Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 1171a1f2f0b6a7e4ab6af7f3d24b2ea3,
+  m_Motion: {fileID: 1827226128182048838, guid: 86c820b435f10044bbf6c29566cb2214,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
