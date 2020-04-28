@@ -61,6 +61,7 @@ public class BreakableObject : MonoBehaviour
             {
                 //Playing the breaking sound effect
                 breakingSource = ObjectPool.instance.SpawnPoolObj("BreakAudioSource", transform.position, Quaternion.identity).GetComponent<AudioSource>();
+                CameraShake.instance.ShakeCamera(0.043f, 0.14f, false);
                 for (int i = 0; i < breakingClips.Length; i++)
                 {
                     breakingSource.PlayOneShot(breakingClips[i]);
@@ -78,12 +79,12 @@ public class BreakableObject : MonoBehaviour
                 if (score_relic.spawnRelic)
                 {
                     Instantiate(relic, new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z), transform.rotation);
+                    CameraShake.instance.ShakeCamera(0.7f, 0.7f, true);
                     GameManager.instance.relicsSpawned++;
                     score_relic.spawnRelic = false;
                 }
                 ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);
                 AudioManger.instance.PlayBreakDialoguesClip();
-                CameraShake.instance.ShakeCamera(0.075f, 0.3f);
                 Destroy(gameObject);
             }
         }

@@ -13,6 +13,7 @@ public class CameraShake : MonoBehaviour
     float shakeFactor;
     Vector3 shakeVector;
     bool isShaking;
+    bool impactfulShake;
 
     void Start()
     {
@@ -30,6 +31,8 @@ public class CameraShake : MonoBehaviour
             if(shakeFactor < 0)
             {
                 isShaking = false;
+                if (impactfulShake)
+                    impactfulShake = false;
                 transform.position = shakeParent.position;
             }
         }
@@ -42,11 +45,17 @@ public class CameraShake : MonoBehaviour
         shakeFactor += value;
     }
 
-    public void ShakeCamera(float value, float limit)
+    public void ShakeCamera(float value, float limit, bool impactful)
     {
         isShaking = true;
-        shakeFactor += value;
-        if(shakeFactor > limit)shakeFactor = limit;
+        if (!impactfulShake)
+        {
+            shakeFactor += value;
+            if (shakeFactor > limit) shakeFactor = limit;
+        }
+        
+        if (impactful)
+            impactfulShake = true;
     }
 
 }
