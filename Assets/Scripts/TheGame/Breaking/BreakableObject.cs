@@ -61,7 +61,7 @@ public class BreakableObject : MonoBehaviour
             {
                 //Playing the breaking sound effect
                 breakingSource = ObjectPool.instance.SpawnPoolObj("BreakAudioSource", transform.position, Quaternion.identity).GetComponent<AudioSource>();
-                CameraShake.instance.ShakeCamera(0.043f, 0.14f, false);
+                CameraShake.instance.ShakeCamera(0.1f, 0.25f, false);
                 for (int i = 0; i < breakingClips.Length; i++)
                 {
                     breakingSource.PlayOneShot(breakingClips[i]);
