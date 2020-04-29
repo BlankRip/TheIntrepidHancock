@@ -77770,6 +77770,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2114299978}
+    - target: {fileID: 3250638527274537626, guid: cc6ce7e5c11362046b5be6c75be9ebec,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3250638527274537627, guid: cc6ce7e5c11362046b5be6c75be9ebec,
         type: 3}
       propertyPath: m_LocalPosition.x

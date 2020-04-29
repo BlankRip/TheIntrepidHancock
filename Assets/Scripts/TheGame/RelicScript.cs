@@ -17,7 +17,6 @@ public class RelicScript : MonoBehaviour
     {
         if(canPickup && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("<color=blue> Relic Collected</color>");
             pickUpUI.SetActive(false);
             GameManager.instance.ReadyToExit();
             GameManager.instance.RelicUiUpdate();

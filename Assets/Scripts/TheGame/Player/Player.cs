@@ -101,17 +101,28 @@ public class Player : MonoBehaviour
                 if (!virticleIdleAtWall)
                     animController.SetFloat("Speed", verticalInput);
                 else
+                {
                     animController.SetFloat("Speed", 0);
+                    animController.SetFloat("Direction", 0);
+                }
 
                 if (!horizontalIdleAtWall)
                 {
+                    if (horizontalInput != 0)
+                        animController.SetFloat("Direction", horizontalInput);
+                    else
+                        animController.SetFloat("Direction", Input.GetAxis("Anim Mouse X"));
+
                     if (verticalInput == 0 && horizontalInput != 0)
                         animController.SetFloat("Horizontal", horizontalInput);
                     else
                         animController.SetFloat("Horizontal", 0);
                 }
                 else
+                {
                     animController.SetFloat("Horizontal", 0);
+                    animController.SetFloat("Direction", 0);
+                }
 
                 //Checking if this weapon is equipped
                 if (equippedWeapon != null)
@@ -140,8 +151,6 @@ public class Player : MonoBehaviour
                                 else
                                     pickAttackAnim++;
                             }
-
-                            Debug.Log("<color=blue>" + pickAttackAnim + "</color>");
 
                             if (pickAttackAnim == 1)
                                 animController.SetTrigger("Attack1");
