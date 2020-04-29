@@ -132,13 +132,13 @@ MonoBehaviour:
     value: 1
   pulseSpeed:
     overrideState: 1
-    value: 7.82
+    value: 7
   painValue:
     overrideState: 1
     value: 0
   painDarkness:
     overrideState: 1
-    value: 0.754
+    value: 0.707
   curve:
     overrideState: 1
     value:
@@ -146,7 +146,7 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
+          time: -0.020832062
           value: 0
           inSlope: 0
           outSlope: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.0566219
-          value: 0.87787324
+          time: 0.08578908
+          value: 0.8654488
           inSlope: -0.027068786
           outSlope: -0.027068786
           tangentMode: 0
@@ -164,8 +164,8 @@ MonoBehaviour:
           inWeight: 0.51086956
           outWeight: 1
         - serializedVersion: 3
-          time: 0.18011421
-          value: 0.006825939
+          time: 0.20927884
+          value: 0.052388117
           inSlope: -0.2074207
           outSlope: -0.2074207
           tangentMode: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 1
         - serializedVersion: 3
-          time: 0.27784798
-          value: 0.62231016
+          time: 0.32785103
+          value: 0.6036792
           inSlope: 0.0006561752
           outSlope: 0.0006561752
           tangentMode: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
           inWeight: 0.33333334
           outWeight: 1
         - serializedVersion: 3
-          time: 0.47850293
+          time: 0.5410029
           value: 0.10788081
           inSlope: -0.2939573
           outSlope: -0.2939573

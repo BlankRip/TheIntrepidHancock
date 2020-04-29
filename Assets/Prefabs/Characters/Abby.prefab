@@ -2875,9 +2875,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.30273288
-  m_Height: 2.6705785
+  m_Height: 2.710784
   m_Direction: 1
-  m_Center: {x: 0, y: 1.35412, z: 0}
+  m_Center: {x: -0, y: 1.3340173, z: 0}
 --- !u!1 &8783970526584959823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,7 +3264,7 @@ MonoBehaviour:
   randomWeightageAdjuster: 1.8
   coolDownSpeed: 1
   idleTimeSpeed: 1
-  maxWalkVel: 8
+  maxWalkVel: 3.5
   maxChaseVel: 10
   attackRange: 1.5
   attackDuration: 1.7

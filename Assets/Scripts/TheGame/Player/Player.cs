@@ -224,6 +224,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             AudioManger.instance.PlayGruntClip();
+            PainManager.instance.AddPain(1);
             animController.SetTrigger("Damaged");
             myStats.ReduceHealth();
         }
