@@ -25,8 +25,8 @@ public sealed class BloomRenderer : PostProcessEffectRenderer<CustomBloom>
     public override void Init()
     {
         base.Init();
-        rt1 = RenderTexture.GetTemporary(Screen.width / 2, Screen.height / 2);
-        rt2 = RenderTexture.GetTemporary(Screen.width / 2, Screen.height / 2);
+        rt1 = RenderTexture.GetTemporary(Screen.width / 4, Screen.height / 4);
+        rt2 = RenderTexture.GetTemporary(Screen.width / 4, Screen.height / 4);
 
 
     }
