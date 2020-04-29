@@ -3268,7 +3268,7 @@ MonoBehaviour:
   maxChaseVel: 10
   attackRange: 1.5
   attackDuration: 1.7
-  tauntDuration: 5
+  tauntDuration: 1.9
   recentlyAttcked: 0
   attacking: 0
   maxNumberOfSearches: 5

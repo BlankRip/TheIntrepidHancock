@@ -5,17 +5,18 @@ using UnityEngine;
 public class J_Weapon : MonoBehaviour
 {
     GameObject objectThatCanPickUp;
-    public Collider rangeTrigger;
+    public GameObject rangeTrigger;
     [HideInInspector] public bool myEquipStatus;
     bool readyToPick;
 
     //Things needed when attacking
     [Tooltip("The collider that is enabled and desabled when the player is attacking")] 
     [SerializeField] Collider attackCollider;
-    [Tooltip("The trail attached to the weapon")] 
-    [SerializeField] TrailRenderer weaponTrail;
+    //[Tooltip("The trail attached to the weapon")] 
+    //[SerializeField] TrailRenderer weaponTrail;
     [Tooltip("The audio source of this weapon")]
     [SerializeField] AudioSource swingSource;
+    [SerializeField] bool useRandomSEPick;
     [Tooltip("The audio clips played on swing")]
     [SerializeField] AudioClip[] swingClips;
 
@@ -25,6 +26,8 @@ public class J_Weapon : MonoBehaviour
     [Tooltip("The key pressed to drop weapon")] 
     [SerializeField] KeyCode dropKey = KeyCode.F;
 
+    int pick;
+    int previousPick;
     Rigidbody weaponRB;                                      //The rigidboady of the weapon
     EquipManager manageEquipment;                            //The equipment manager which will manage equipping, dropping and swapping of weapons
 
@@ -75,11 +78,30 @@ public class J_Weapon : MonoBehaviour
     //Function that activates the things needed when attacking
     public void ActivateEffects()
     {
-        for (int i = 0; i < swingClips.Length; i++)
+        if(useRandomSEPick)
         {
-            swingSource.PlayOneShot(swingClips[i]);
+            pick = Random.Range(0, swingClips.Length);
+
+            if(pick == previousPick)
+            {
+                if (pick == swingClips.Length - 1)
+                    pick--;
+                else
+                    pick++;
+            }
+
+            previousPick = pick;
+            swingSource.PlayOneShot(swingClips[pick]);
         }
-        weaponTrail.emitting = true;
+        else
+        {
+            for (int i = 0; i < swingClips.Length; i++)
+            {
+                swingSource.PlayOneShot(swingClips[i]);
+            }
+        }
+        
+        //weaponTrail.emitting = true;
         attackCollider.enabled = true;
     }
 
@@ -87,7 +109,7 @@ public class J_Weapon : MonoBehaviour
     public void DeactivateEffects()
     {
         attackCollider.enabled = false;
-        weaponTrail.emitting = false;
+        //weaponTrail.emitting = false;
     }
 
     /*The IEnumerator that will set the equipment status to false after the frame ends 

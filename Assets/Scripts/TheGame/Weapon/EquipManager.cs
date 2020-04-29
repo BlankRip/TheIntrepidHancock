@@ -25,7 +25,7 @@ public class EquipManager : MonoBehaviour
         if (objectToAttachTo.equippedWeapon != null)
             DropWeapon(currentWeapon, currentWeaponRb);
         //Equipping the weapon
-        weapon.rangeTrigger.enabled = false;
+        weapon.rangeTrigger.SetActive(false);
         NoUI();
         weapon.transform.position = equipPosition.position;
         weapon.transform.SetParent(equipPosition);
@@ -45,7 +45,7 @@ public class EquipManager : MonoBehaviour
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
         StartCoroutine(weapon.EquipableAfter());
-        weapon.rangeTrigger.enabled = true;
+        weapon.rangeTrigger.SetActive(true); ;
         objectToAttachTo.equippedWeapon = null;
     }
 

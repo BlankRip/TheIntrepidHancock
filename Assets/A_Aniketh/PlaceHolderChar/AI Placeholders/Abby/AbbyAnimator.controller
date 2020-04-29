@@ -192,7 +192,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mutant_Taunt
+  m_Name: Abby_Taunt
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -206,7 +206,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: caa5cd097f936bd46a8b7530efc3e871,
+  m_Motion: {fileID: 1827226128182048838, guid: 631b3fc078713bd4c93d01867013d76d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

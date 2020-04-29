@@ -15938,7 +15938,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
-  relicsSpawned: 0
   spawnRelic: 0
 --- !u!114 &414005927126962122
 MonoBehaviour:
@@ -15954,10 +15953,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   relicsSpawned: 0
+  eResetUI: 0
+  eUIobj: {fileID: 0}
   eventObject: {fileID: 0}
   exitLight: {fileID: 0}
   exitTriggerCollider: {fileID: 0}
   relicPieces: []
+  relciCollectionSound: {fileID: 0}
+  OnCollectRelic:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &414005927126962123
 MonoBehaviour:
   m_ObjectHideFlags: 0

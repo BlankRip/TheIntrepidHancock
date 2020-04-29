@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CoolDownNode : TreeNode
 {
-    float coolDownTimer = 3;
-    float coolDownTracker = 3;
+    float coolDownTimer = 2;
+    float coolDownTracker = 2;
 
     public override void Run(TheAI ai)
     {

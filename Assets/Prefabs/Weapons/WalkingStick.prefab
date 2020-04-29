@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1328483557927973406
+--- !u!1 &1890695212751863716
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,126 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1328483557927973407}
-  - component: {fileID: 1328483557927973404}
-  m_Layer: 10
-  m_Name: BA_Trail
-  m_TagString: Untagged
+  - component: {fileID: 3773685051356272347}
+  - component: {fileID: 454597704050698054}
+  m_Layer: 0
+  m_Name: BA_TrowBreakCollider
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1328483557927973407
+--- !u!4 &3773685051356272347
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328483557927973406}
-  m_LocalRotation: {x: -0.50000006, y: -0.49999997, z: -0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -0.08, y: 2.58, z: 0.027}
-  m_LocalScale: {x: 0.26768544, y: 3.1937237, z: 3.1041772}
+  m_GameObject: {fileID: 1890695212751863716}
+  m_LocalRotation: {x: 5.3290692e-15, y: 0.00000005960463, z: -0.000000021855696,
+    w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9027566100654402862}
+  m_Father: {fileID: 2928871413789048262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!96 &1328483557927973404
-TrailRenderer:
-  serializedVersion: 2
+--- !u!135 &454597704050698054
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328483557927973406}
+  m_GameObject: {fileID: 1890695212751863716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 13c80f4eaf32474419de9e5fffe1295f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 0.1
-  m_Parameters:
-    serializedVersion: 3
-    widthMultiplier: 1
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 0.050980397, g: 0.03137255, b: 0.3372549, a: 0}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 1, g: 1, b: 1, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 65535
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 4819
-      atime2: 65535
-      atime3: 65535
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 3
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 1
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
-  m_MinVertexDistance: 0.03
-  m_Autodestruct: 0
-  m_Emitting: 0
+  serializedVersion: 2
+  m_Radius: 0.68
+  m_Center: {x: 0, y: -0.06, z: -0.03}
 --- !u!1 &2928871412524227703
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2928871412524227697}
   - component: {fileID: 2928871412524227702}
+  - component: {fileID: 4543623544505194175}
   m_Layer: 10
   m_Name: BA_AttackCollider
   m_TagString: Weapon
@@ -157,7 +75,7 @@ Transform:
   m_LocalScale: {x: 0.77440715, y: 3.1937237, z: 3.1041772}
   m_Children: []
   m_Father: {fileID: 9027566100654402862}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2928871412524227702
 BoxCollider:
@@ -170,8 +88,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.07700862, y: 0.104309924, z: 0.49510944}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.07700862, y: 0.21639821, z: 0.55277044}
+  m_Center: {x: 0.000000032350208, y: 0.048037946, z: 0.0041186274}
+--- !u!65 &4543623544505194175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928871412524227703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07700862, y: 0.1252001, z: 0.22683911}
+  m_Center: {x: 0.000000013619515, y: 0.002438884, z: -0.40082762}
 --- !u!1 &2928871413230010063
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +132,7 @@ Transform:
   m_LocalScale: {x: 0.774407, y: 3.1041777, z: 3.1937237}
   m_Children: []
   m_Father: {fileID: 9027566100654402862}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2928871413230010062
 AudioSource:
@@ -311,7 +242,7 @@ GameObject:
   - component: {fileID: 2928871413789048263}
   m_Layer: 0
   m_Name: BA_CheckSphere
-  m_TagString: Weapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,9 +257,10 @@ Transform:
   m_LocalRotation: {x: -0.000000015454313, y: -0.70710677, z: 0.00000001545431, w: 0.7071069}
   m_LocalPosition: {x: -0.05, y: 1.5, z: -0}
   m_LocalScale: {x: 0.42592388, y: 1.7072976, z: 1.7565479}
-  m_Children: []
+  m_Children:
+  - {fileID: 3773685051356272347}
   m_Father: {fileID: 9027566100654402862}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2928871413789048263
 SphereCollider:
@@ -341,7 +273,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5409670125262200637
 GameObject:
@@ -373,7 +305,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.25000012, z: 4}
   m_Children:
-  - {fileID: 1328483557927973407}
   - {fileID: 2928871412524227697}
   - {fileID: 2928871413230010057}
   - {fileID: 2928871413789048262}
@@ -485,13 +416,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ec145eaf455c4580f462b7472cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeTrigger: {fileID: 2928871413789048263}
+  rangeTrigger: {fileID: 2928871413789048260}
   myEquipStatus: 0
   attackCollider: {fileID: 2928871412524227702}
-  weaponTrail: {fileID: 1328483557927973404}
   swingSource: {fileID: 2928871413230010062}
+  useRandomSEPick: 1
   swingClips:
-  - {fileID: 8300000, guid: e6e71e88e35ac704eaf8e4bba82c34d6, type: 3}
+  - {fileID: 8300000, guid: 77d0b3b36b1318b47af8df2cfa7e7c3c, type: 3}
+  - {fileID: 8300000, guid: e94d11580a23b754aa4e274bfee66b13, type: 3}
+  - {fileID: 8300000, guid: acc6bf0f86502ab4da903d0825bf2a98, type: 3}
+  - {fileID: 8300000, guid: ee8a2519e1ea98145b2257f8e3093ab5, type: 3}
+  - {fileID: 8300000, guid: 6544e1b743d60f049a589cd9bec53094, type: 3}
   equipKey: 101
   dropKey: 102
 --- !u!54 &6283255230591507261
