@@ -27,12 +27,6 @@ public class PainManager : MonoBehaviour
                 painValue = 0;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            AddPain(0.3f);
-        }
-
     }
 
     public void AddPain(float value) {

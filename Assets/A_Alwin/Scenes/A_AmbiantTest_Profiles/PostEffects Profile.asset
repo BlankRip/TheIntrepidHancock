@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
   m_Name: CustomAO
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2c37c093534dd48b8f8209fdb36f9f, type: 3}
   m_Name: CustomBloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
   m_Name: ColorLUT
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
     value: 0
   LUTTex:
     overrideState: 1
-    value: {fileID: 2800000, guid: 2d856ad881d71474da8c44a3be994ec8, type: 3}
+    value: {fileID: 2800000, guid: 603ce175d316f26489b538fc836942db, type: 3}
     defaultState: 1
 --- !u!114 &4449802528040506722
 MonoBehaviour:
@@ -138,7 +138,7 @@ MonoBehaviour:
     value: 0
   painDarkness:
     overrideState: 1
-    value: 0.707
+    value: 0.828
   curve:
     overrideState: 1
     value:
