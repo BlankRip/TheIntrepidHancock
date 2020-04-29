@@ -8,7 +8,6 @@ public class ScriptedEvent : MonoBehaviour
     [SerializeField] GameObject eventCamera;
     [SerializeField] GameObject mainCamera;
     [SerializeField] GameObject enemy;
-    [SerializeField] GameObject enemy2;
     [SerializeField] AudioSource eventSource;
 
     // Start is called before the first frame update
@@ -27,8 +26,6 @@ public class ScriptedEvent : MonoBehaviour
         enemy.transform.position = transform.position;
         enemy.transform.rotation = transform.rotation;
         enemy.SetActive(true);
-        if (enemy2 != null)
-            enemy2.SetActive(true);
         AudioManger.instance.ButtlerArrivalClip();
         Destroy(gameObject);
     }

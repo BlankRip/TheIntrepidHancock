@@ -81,6 +81,7 @@ public class BreakableObject : MonoBehaviour
                     Instantiate(relic, new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z), transform.rotation);
                     CameraShake.instance.ShakeCamera(0.7f, 0.7f, true);
                     GameManager.instance.relicsSpawned++;
+                    GameManager.instance.SpawnEnemy();
                     score_relic.spawnRelic = false;
                 }
                 ObjectPool.instance.SpawnPoolObj("FireFlies", transform.position, Quaternion.identity);

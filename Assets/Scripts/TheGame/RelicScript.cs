@@ -19,7 +19,6 @@ public class RelicScript : MonoBehaviour
         {
             Debug.Log("<color=blue> Relic Collected</color>");
             pickUpUI.SetActive(false);
-            GameManager.instance.SpawnEnemy();
             GameManager.instance.ReadyToExit();
             GameManager.instance.RelicUiUpdate();
             AudioManger.instance.RelicCollectedClip();

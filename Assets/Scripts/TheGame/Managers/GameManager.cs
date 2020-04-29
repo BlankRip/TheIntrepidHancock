@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool eResetUI;
     [Tooltip("The UI text object")]
     public GameObject eUIobj;
+    [SerializeField] GameObject bobObj;
+    [SerializeField] GameObject curryObj;
     [SerializeField] GameObject eventObject;
     [SerializeField] GameObject exitLight;
     [SerializeField] Collider exitTriggerCollider;
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        
+
         if (relicsSpawned == 1)
         {
             if (eventObject != null)
@@ -56,10 +58,10 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(StartTheEvent());
             }
         }
+        else if (relicsSpawned == 2)
+            bobObj.SetActive(true);
         else if (relicsSpawned == 3)
-        {
-            //Spawn The Curry
-        }
+            curryObj.SetActive(true);
     }
 
     public void RelicUiUpdate()
