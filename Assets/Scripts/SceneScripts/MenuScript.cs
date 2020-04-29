@@ -7,10 +7,12 @@ public class MenuScript : MonoBehaviour
     [Tooltip("The menu panle or all its options")] [SerializeField] GameObject menuOptions;
     [Tooltip("The credits panle")] [SerializeField] GameObject creditsPannel;
     [Tooltip("The animatic display panle")] [SerializeField] GameObject animaticDisplay;
+    [Tooltip("The background Music source")] [SerializeField] AudioSource backSource;
     [Tooltip("The length of the animatic in seconds")] [SerializeField] float animaticLength;
 
     public void StartGame()
     {
+        backSource.Stop();
         animaticDisplay.SetActive(true);
         menuOptions.SetActive(false);
         StartCoroutine(AfterAnimatic());
