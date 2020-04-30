@@ -68,6 +68,12 @@ MonoBehaviour:
   effect:
     overrideState: 1
     value: 0.03
+  heightShift:
+    overrideState: 0
+    value: 0.5
+  debug:
+    overrideState: 0
+    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
