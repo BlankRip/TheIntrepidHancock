@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: d42769d1dc6c5ba4f980b5636ca5c724
+guid: 339d0d3d4b57c1047bfa116b189d2ef0
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Attack2
+    second: Player_Attack2
+  - first:
+      74: 6314805233648574627
+    second: Player_Attack1
   - first:
       74: 1827226128182048838
     second: Take 001
   - first:
-      74: 7572344613039948371
-    second: Attack1
+      74: 8793833791230538531
+    second: Player_Attack2
   - first:
-      74: 8114531597553069840
-    second: Attack2
-  - first:
-      74: 5494613016829204386
-    second: Attack3
+      74: -5826170637095283266
+    second: Player_Attack3
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -81,7 +81,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Attack1
+      name: Player_Attack1
       takeName: Take 001
       internalID: 0
       firstFrame: 3
@@ -105,7 +105,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.98607886
+      - time: 0.969697
         functionName: AttackAnimationEndEvent
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -117,7 +117,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Attack2
+      name: Player_Attack2
       takeName: Take 001
       internalID: 0
       firstFrame: 13
@@ -141,7 +141,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.988399
+      - time: 0.90633607
         functionName: AttackAnimationEndEvent
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -153,7 +153,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Attack3
+      name: Player_Attack3
       takeName: Take 001
       internalID: 0
       firstFrame: 28
@@ -177,7 +177,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.87935036
+      - time: 0.85399455
         functionName: AttackAnimationEndEvent
         data: 
         objectReferenceParameter: {instanceID: 0}

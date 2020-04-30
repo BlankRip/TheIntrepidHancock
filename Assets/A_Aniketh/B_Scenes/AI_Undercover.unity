@@ -16195,6 +16195,8 @@ MonoBehaviour:
   relicsSpawned: 0
   eResetUI: 0
   eUIobj: {fileID: 0}
+  bobObj: {fileID: 0}
+  curryObj: {fileID: 0}
   eventObject: {fileID: 0}
   exitLight: {fileID: 0}
   exitTriggerCollider: {fileID: 0}

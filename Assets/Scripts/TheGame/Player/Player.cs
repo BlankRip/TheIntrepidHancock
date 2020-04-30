@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
             //if (verticalInput > 0.1f || verticalInput < -0.1f) 
             //    horizontalInput =  Mathf.Clamp(horizontalInput, -0.2f, 0.2f);
             if (!sprint)
-                verticalInput = Mathf.Clamp(verticalInput, -0.6f, 0.6f);
+                verticalInput = Mathf.Clamp(verticalInput, -0.5f, 0.5f);
 
             //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
 
