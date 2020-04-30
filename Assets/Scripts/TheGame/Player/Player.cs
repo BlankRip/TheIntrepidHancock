@@ -166,7 +166,6 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-
             //------------------------------------------------------- ANIMATIONS ---------------------------------------------------
         }
     }
@@ -234,6 +233,7 @@ public class Player : MonoBehaviour
         {
             AudioManger.instance.PlayGruntClip();
             PainManager.instance.AddPain(1);
+            CameraShake.instance.ShakeCamera(0.6f, 0.6f, true);
             animController.SetTrigger("Damaged");
             myStats.ReduceHealth();
         }
