@@ -1789,7 +1789,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -7050,7 +7050,7 @@ MonoBehaviour:
     <size=15><color=#F0D58A>Lead
     Animator: </color></size>Brad Mesina
 
-    <size=15><color=#F0D58A>Animatores:
+    <size=15><color=#F0D58A>Animators:
     </color></size> Bahar Mohammadi, Syed Irtaza, Justin Lemuel Yuan
 
 
