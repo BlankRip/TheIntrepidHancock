@@ -9,6 +9,7 @@ public class GoldenTablet : MonoBehaviour
     public Color glowColor;
     public AnimationCurve relicUIScaleCurve;
     public RectTransform relicUIImage;
+    public AudioSource audio;
     Color darkColor;
 
     float relicUIScaleTime;
@@ -58,6 +59,7 @@ public class GoldenTablet : MonoBehaviour
         glowMaterial.SetColor("_EmissionColor", glowColor);
         relicUIScaleTime = 0;
         emissionFadeValue = 2;
+        audio.Play();
         glowFade = true;
         relicUIAction = true;
     }
