@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 [Serializable]
-[PostProcess(typeof(AORenderer), PostProcessEvent.AfterStack, "Custom/CustomAO")]
+[PostProcess(typeof(AORenderer), PostProcessEvent.BeforeTransparent, "Custom/CustomAO")]
 public sealed class CustomAO : PostProcessEffectSettings
 {
     [Range(0f, 2f), Tooltip("Bloom effect intensity.")]

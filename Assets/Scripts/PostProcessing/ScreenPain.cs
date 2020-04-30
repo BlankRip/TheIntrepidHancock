@@ -13,7 +13,8 @@ public sealed class ScreenPain : PostProcessEffectSettings
     public FloatParameter painValue = new FloatParameter { value = 0f };
     [Range(0f, 1f), Tooltip("Pain Darkness.")]
     public FloatParameter painDarkness = new FloatParameter { value = 0f };
-    public SplineParameter curve = new SplineParameter {};
+ //   public static Keyframe[] keyframes = new Keyframe[]{ new Keyframe(0, 0), new Keyframe(1, 1) };
+    public SplineParameter animCurve = new SplineParameter { value = new Spline(new AnimationCurve(new Keyframe[] { new Keyframe(0, 0), new Keyframe(1, 1) }), 1, true, new Vector2(0, 1))};
 }
 
 public sealed class ScreenPainRenderer : PostProcessEffectRenderer<ScreenPain>
@@ -22,13 +23,14 @@ public sealed class ScreenPainRenderer : PostProcessEffectRenderer<ScreenPain>
     public override void Init()
     {
         base.Init();
+  
         gradedImage = RenderTexture.GetTemporary(Screen.width, Screen.height, 0, RenderTextureFormat.DefaultHDR);
     }
 
     public override void Render(PostProcessRenderContext context)
     {
         var sheet = context.propertySheets.Get(Shader.Find("Custom/PostEffects/PainPulse"));
-        sheet.properties.SetFloat("_Effect", settings.curve.value.Evaluate(Mathf.Repeat(Time.time * settings.pulseSpeed, 10)/10));
+        sheet.properties.SetFloat("_Effect", settings.animCurve.value.Evaluate(Mathf.Repeat(Time.time * settings.pulseSpeed, 10)/10));
         sheet.properties.SetFloat("_Strength", settings.painValue);
         sheet.properties.SetFloat("_Darkness", settings.painDarkness);
         context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
