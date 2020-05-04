@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: PostEffects Profile
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: 6079841079282098520}
+  - {fileID: 4846481734679065036}
+  - {fileID: 4492834527020793362}
+--- !u!114 &4492834527020793362
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd1539341d314a40ba2ab9c8bee1a73, type: 3}
+  m_Name: CustomAO
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.566
+  sampleShift:
+    overrideState: 1
+    value: 0.1
+  blurCount:
+    overrideState: 1
+    value: 0.5
+  shift:
+    overrideState: 1
+    value: 0.003
+  maxRange:
+    overrideState: 1
+    value: 5
+  scanDistance:
+    overrideState: 1
+    value: 0.5
+  strength:
+    overrideState: 1
+    value: 0.6
+  effect:
+    overrideState: 1
+    value: 0.869
+  heightShift:
+    overrideState: 1
+    value: 0.68
+  debug:
+    overrideState: 1
+    value: 0
+--- !u!114 &4846481734679065036
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61cd431106d4444e8f353976f02b6aa, type: 3}
+  m_Name: ColorLUT
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 1
+  LUTTex:
+    overrideState: 1
+    value: {fileID: 2800000, guid: 03dabfdf26df0f940b61b99eb17d6e7d, type: 3}
+    defaultState: 1
+--- !u!114 &6079841079282098520
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2c37c093534dd48b8f8209fdb36f9f, type: 3}
+  m_Name: CustomBloom
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.421
+  cutoff:
+    overrideState: 1
+    value: 0.166
+  shift:
+    overrideState: 1
+    value: 0.0074
+  bloomCount:
+    overrideState: 1
+    value: 5

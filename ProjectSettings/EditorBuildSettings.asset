@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/A_Aniketh/B_Scenes/B_Menu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 354fdde064881b94dbe82cf02b5c5470
   - enabled: 1
-    path: Assets/A_Aniketh/B_Scenes/B_Playground.unity
-    guid: 84c8afba2538fa74885897dd130c8904
+    path: Assets/Scenes/TheLevel.unity
+    guid: e9f16c050efbb9a42a7f783fe0c2171d
   - enabled: 1
-    path: Assets/A_Aniketh/B_Scenes/B_GameOver.unity
+    path: Assets/Scenes/GameOver.unity
     guid: 7832f0fd5a8e0014aaf44c73d50494c6
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 54d32c8b2eb2bfc408dab6382b491dc8
   m_configObjects: {}
